@@ -13,10 +13,10 @@ class CategoryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: $styles.insets.xs),
+      padding: EdgeInsets.only(bottom: $styles.insets.sm),
       child: Text(
         category,
-        style: $styles.text.h3.copyWith(color: Colors.white),
+        style: $styles.text.h4.copyWith(color: Colors.white),
       ),
     );
   }
