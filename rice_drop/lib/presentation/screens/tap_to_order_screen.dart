@@ -11,7 +11,7 @@ class TapToOrderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => context.router.pushAndPopUntil(
-        const CategoryRoute(),
+        const ItemSelectRoute(),
         predicate: (_) => false,
       ),
       child: Scaffold(

@@ -14,6 +14,8 @@ class MyOrderButton extends StatelessWidget {
       onTap: () => Scaffold.of(context).openEndDrawer(),
       child: Row(
         children: [
+          const Icon(Icons.shopping_basket_outlined),
+          VSpace(size: $styles.insets.xs),
           Text('MY ORDER', style: $styles.text.bodySmallBold),
           VSpace(size: $styles.insets.xs),
           Container(
