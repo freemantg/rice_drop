@@ -13,18 +13,28 @@ class ItemSelectScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        endDrawer: const Drawer(
-          child: Text('HELO'),
-        ),
+        endDrawer: const OrderEndDrawer(),
         body: Center(
           child: Row(
             children: [
               const CategoryMenu(),
-              Padding(
-                padding: EdgeInsets.all($styles.insets.lg),
-                child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [Text('HELLO')],
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all($styles.insets.lg),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [MyOrderButton()],
+                        ),
+                        Text('Drop Boxes', style: $styles.text.h1),
+                        HSpace(size: $styles.insets.md),
+                        const ItemGrid(),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
