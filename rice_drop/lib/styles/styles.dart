@@ -12,12 +12,13 @@ class _AppStyle {
 
 class _Colors {
   late final primaryThemeColor = const Color(0xFF085930);
+  late final onPrimaryThemeColor = const Color(0xFFFFFFFF);
 }
 
 @immutable
 class _Text {
   TextStyle get titleFontRhodesia => const TextStyle(fontFamily: 'Rhodesia');
-  TextStyle get titleFont => GoogleFonts.rubik();
+  TextStyle get titleFont => const TextStyle(fontFamily: 'Rubik');
 
   late final TextStyle h1 = copy(titleFontRhodesia, sizePx: 64);
   late final TextStyle h2 =

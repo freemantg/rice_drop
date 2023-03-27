@@ -1,78 +1,98 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:rice_drop/styles/space.dart';
+import 'package:rice_drop/presentation/core/app_router.gr.dart';
+import 'package:rice_drop/presentation/screens/item_select_screen.dart';
 
 import '../../../styles/styles.dart';
 
 class ItemGrid extends StatelessWidget {
-  const ItemGrid({
-    super.key,
-  });
+  const ItemGrid({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return GridView.builder(
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
-      crossAxisSpacing: $styles.insets.sm,
-      mainAxisSpacing: $styles.insets.sm,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: (screenWidth >= 1200)
+            ? 4
+            : (screenWidth >= 900)
+                ? 3
+                : (screenWidth >= 600)
+                    ? 2
+                    : 1,
+        crossAxisSpacing: $styles.insets.sm,
+        mainAxisSpacing: $styles.insets.sm,
+        childAspectRatio: 0.8,
+      ),
       physics: const BouncingScrollPhysics(),
-      crossAxisCount: 3,
-      children: List.generate(
-        7,
-        (index) {
-          return Align(
-            alignment: Alignment.bottomLeft,
-            child: Padding(
-              padding: EdgeInsets.all($styles.insets.md),
-              child: SingleChildScrollView(
-                physics: const NeverScrollableScrollPhysics(),
+      itemCount: categories.length,
+      itemBuilder: (context, index) {
+        return ItemCard(item: categories[index]);
+      },
+    );
+  }
+}
+
+class ItemCard extends StatelessWidget {
+  const ItemCard({
+    Key? key,
+    required this.item,
+  }) : super(key: key);
+
+  final String item;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => context.router.push(ItemRoute(item: item)),
+      child: Card(
+        child: Padding(
+          padding: EdgeInsets.all($styles.insets.xs),
+          child: Column(
+            children: [
+              Expanded(
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    return Hero(
+                      tag: item,
+                      child: Image.asset(
+                        'assets/pictures/1.png',
+                        fit: BoxFit.scaleDown,
+                        width: constraints.maxWidth,
+                        height: constraints.maxHeight,
+                      ),
+                    );
+                  },
+                ),
+              ),
+              SizedBox(height: $styles.insets.md),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        return Image.asset(
-                          'assets/pictures/1.png',
-                          height: MediaQuery.of(context).size.height / 4.5,
-                        );
-                      },
+                    Text(
+                      'Korean Fried Chicken Drop Box'.toUpperCase(),
+                      style: $styles.text.h4.copyWith(
+                        height: 0,
+                        fontSize: 16.0,
+                      ),
                     ),
-                    HSpace(size: $styles.insets.md),
+                    SizedBox(height: $styles.insets.xs),
                     Text(
                       '£8.89',
                       textAlign: TextAlign.center,
-                      style: $styles.text.body,
-                    ),
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        return Text(
-                          'Korean Fried Chicken Drop Box',
-                          textAlign: TextAlign.center,
-                          style: constraints.maxWidth > 400
-                              ? $styles.text.h4
-                              : $styles.text.bodySmallBold,
-                        );
-                      },
-                    ),
-                    HSpace(size: $styles.insets.xs),
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        return Text(
-                          'Crisp fried boneless chicken seasoned with a special blend of Chinese spices.',
-                          textAlign: TextAlign.center,
-                          style: constraints.maxWidth > 400
-                              ? $styles.text.bodySmall
-                              : $styles.text.caption,
-                        );
-                      },
+                      style: $styles.text.body.copyWith(height: 0),
                     ),
                   ],
                 ),
               ),
-            ),
-          );
-        },
+            ],
+          ),
+        ),
       ),
     );
   }

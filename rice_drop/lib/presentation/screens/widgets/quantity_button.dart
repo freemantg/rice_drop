@@ -8,33 +8,32 @@ class QuantityButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        IconButton(
-          padding: EdgeInsets.zero,
-          iconSize: 16.0,
-          onPressed: () {},
-          icon: const Icon(Icons.remove),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: $styles.colors.primaryThemeColor,
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey.shade200,
+        borderRadius: BorderRadius.circular($styles.corners.md),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+            padding: EdgeInsets.zero,
+            iconSize: 16.0,
+            onPressed: () {},
+            icon: const Icon(Icons.remove),
           ),
-          padding: EdgeInsets.all($styles.insets.xs),
-          child: Text(
+          Text(
             '2',
-            style: $styles.text.bodySmallBold.copyWith(color: Colors.white),
+            style: $styles.text.bodySmallBold,
           ),
-        ),
-        IconButton(
-          padding: EdgeInsets.zero,
-          iconSize: 16.0,
-          onPressed: () {},
-          icon: const Icon(Icons.add),
-        ),
-      ],
+          IconButton(
+            padding: EdgeInsets.zero,
+            iconSize: 16.0,
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
     );
   }
 }
