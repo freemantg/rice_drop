@@ -14,28 +14,27 @@ class ItemGridScreen extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.only(
-          top: $styles.insets.md,
-          right: $styles.insets.md,
-          left: $styles.insets.md,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title.toUpperCase(),
-                style: $styles.text.h3.copyWith(
-                  color: $styles.colors.primaryThemeColor,
-                  fontWeight: FontWeight.bold,
-                ),
+    return Padding(
+      padding: EdgeInsets.only(
+        top: $styles.insets.md,
+        right: $styles.insets.xl,
+        left: $styles.insets.xl,
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title.toUpperCase(),
+              style: $styles.text.h3.copyWith(
+                color: $styles.colors.primaryThemeColor,
+                fontWeight: FontWeight.bold,
               ),
-              HSpace(size: $styles.insets.sm),
-              const ItemGrid(),
-            ],
-          ),
+            ),
+            HSpace(size: $styles.insets.sm),
+            const ItemGrid(),
+            HSpace(size: $styles.insets.xl),
+          ],
         ),
       ),
     );

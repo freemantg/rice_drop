@@ -17,7 +17,7 @@ class ItemGrid extends StatelessWidget {
       scrollDirection: Axis.vertical,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: (screenWidth >= 1200)
-            ? 4
+            ? 3
             : (screenWidth >= 900)
                 ? 3
                 : (screenWidth >= 600)
@@ -25,7 +25,7 @@ class ItemGrid extends StatelessWidget {
                     : 1,
         crossAxisSpacing: $styles.insets.sm,
         mainAxisSpacing: $styles.insets.sm,
-        childAspectRatio: 0.8,
+        childAspectRatio: 0.9,
       ),
       physics: const BouncingScrollPhysics(),
       itemCount: categories.length,
@@ -52,6 +52,7 @@ class ItemCard extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all($styles.insets.xs),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: LayoutBuilder(

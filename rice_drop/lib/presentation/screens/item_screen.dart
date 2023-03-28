@@ -7,6 +7,7 @@ import 'package:rice_drop/presentation/screens/widgets/widgets.dart';
 import 'package:rice_drop/styles/space.dart';
 
 import '../../styles/styles.dart';
+import 'item_select_screen.dart';
 
 const List<String> dropBoxModifiers = [
   "Boiled Rice",
@@ -63,17 +64,106 @@ class ItemScreen extends HookWidget {
         () => addToBasketButtonController.forward());
 
     return Scaffold(
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(
+          bottom: $styles.insets.sm,
+          right: $styles.insets.sm,
+        ),
+        child: FractionallySizedBox(
+          alignment: Alignment.bottomRight,
+          widthFactor: 0.5,
+          heightFactor: 0.07,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const QuantityButton(),
+              VSpace(size: $styles.insets.sm),
+              Expanded(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          $styles.corners.md,
+                        ),
+                      ),
+                    ),
+                    backgroundColor: MaterialStatePropertyAll(
+                      $styles.colors.primaryThemeColor,
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Padding(
+                    padding: EdgeInsets.all($styles.insets.sm),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'ADD TO ORDER',
+                          style: $styles.text.bodyBold.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          '£8.80',
+                          style: $styles.text.bodyBold.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Padding(
+          padding: EdgeInsets.all($styles.insets.sm),
+          child: const RiceDropLogoHorizontal(),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Icon(
+                  Icons.info_outline,
+                  color: $styles.colors.onPrimaryThemeColor,
+                ),
+                VSpace(size: $styles.insets.xs),
+                Text(
+                  'Allergens',
+                  style: $styles.text.bodyBold.copyWith(
+                    color: $styles.colors.onPrimaryThemeColor,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          VSpace(size: $styles.insets.md),
+          const MyOrderButton(),
+        ],
+      ),
       endDrawer: const OrderEndDrawer(),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(
           children: [
             Padding(
               padding: EdgeInsets.only(
-                top: $styles.insets.md,
-                right: $styles.insets.md,
-                left: $styles.insets.md,
+                top: $styles.insets.sm,
+                right: $styles.insets.sm,
               ),
-              child: _buildTopBar(),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  onPressed: () => context.router.popUntilRoot(),
+                  icon: const Icon(Icons.close),
+                ),
+              ),
             ),
             const Spacer(),
             ConstrainedBox(
@@ -88,6 +178,7 @@ class ItemScreen extends HookWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const Spacer(),
                         FadeTransition(
                           opacity: animation1,
                           child: const ItemTitleAndDescription(),
@@ -185,73 +276,12 @@ class ItemScreen extends HookWidget {
                         const Spacer(),
                         FadeTransition(
                           opacity: animation3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    "£8.90",
-                                    style: $styles.text.h3.copyWith(height: 0),
-                                  ),
-                                  VSpace(size: $styles.insets.md),
-                                  const QuantityButton(),
-                                ],
-                              ),
-                              HSpace(size: $styles.insets.md),
-                              Padding(
-                                padding:
-                                    EdgeInsets.only(right: $styles.insets.xxl),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: ElevatedButton(
-                                        style: ButtonStyle(
-                                          shape: MaterialStateProperty.all(
-                                            RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                $styles.corners.md,
-                                              ),
-                                            ),
-                                          ),
-                                          backgroundColor:
-                                              MaterialStatePropertyAll(
-                                            $styles.colors.primaryThemeColor,
-                                          ),
-                                        ),
-                                        onPressed: () {},
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsets.all($styles.insets.sm),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'ADD TO ORDER',
-                                                style: $styles.text.bodyBold
-                                                    .copyWith(
-                                                  color: Colors.white,
-                                                ),
-                                              ),
-                                              const Spacer(),
-                                              Text(
-                                                '£8.80',
-                                                style: $styles.text.bodyBold
-                                                    .copyWith(
-                                                  color: Colors.white,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
+                          child: Text(
+                            "£8.90",
+                            style: $styles.text.h2.copyWith(height: 0),
                           ),
                         ),
+                        const Spacer(),
                       ],
                     ),
                   )
@@ -262,16 +292,6 @@ class ItemScreen extends HookWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Row _buildTopBar() {
-    return const Row(
-      children: [
-        BackToMenuButton(),
-        Spacer(),
-        MyOrderButton(),
-      ],
     );
   }
 }
@@ -285,7 +305,7 @@ class ItemTitleAndDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) => FractionallySizedBox(
-        widthFactor: 0.5,
+        widthFactor: 0.55,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

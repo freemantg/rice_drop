@@ -36,7 +36,6 @@ class ItemSelectScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    var selectedIndex = useState(0);
     var tabController = useTabController(initialLength: routes.length);
 
     return SafeArea(
@@ -71,7 +70,7 @@ class ItemSelectScreen extends HookWidget {
         ),
         endDrawer: const OrderEndDrawer(),
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TabBar(
               labelStyle:
@@ -104,34 +103,6 @@ class RiceDropLogoHorizontal extends StatelessWidget {
     return ConstrainedBox(
       constraints: const BoxConstraints(maxHeight: 42.0),
       child: Image.asset("assets/logo/Rice Drop Logo.png"),
-    );
-  }
-}
-
-class CategoryMenu extends StatelessWidget {
-  const CategoryMenu({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all($styles.insets.lg),
-      color: $styles.colors.primaryThemeColor,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'CATEGORIES',
-            style: $styles.text.title2.copyWith(color: Colors.white70),
-          ),
-          HSpace(size: $styles.insets.sm),
-          ...categories.map(
-            (e) => CategoryButton(category: e),
-          )
-        ],
-      ),
     );
   }
 }
