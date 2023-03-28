@@ -10,11 +10,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
-import 'package:rice_drop/presentation/screens/item_screen.dart' as _i1;
-import 'package:rice_drop/presentation/screens/item_select_screen.dart' as _i2;
-import 'package:rice_drop/presentation/screens/tap_to_order_screen.dart' as _i3;
-import 'package:rice_drop/presentation/screens/item_grid_screen.dart'
-    as _i4;
+import 'package:rice_drop/presentation/screens/item_grid_screen.dart' as _i1;
+import 'package:rice_drop/presentation/screens/item_screen.dart' as _i2;
+import 'package:rice_drop/presentation/screens/item_select_screen.dart' as _i3;
+import 'package:rice_drop/presentation/screens/tap_to_order_screen.dart' as _i4;
 
 abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter([_i6.GlobalKey<_i6.NavigatorState>? navigatorKey])
@@ -22,11 +21,21 @@ abstract class $AppRouter extends _i5.RootStackRouter {
 
   @override
   final Map<String, _i5.PageFactory> pagesMap = {
+    ItemGridRoute.name: (routeData) {
+      final args = routeData.argsAs<ItemGridRouteArgs>();
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i1.ItemGridScreen(
+          key: args.key,
+          title: args.title,
+        ),
+      );
+    },
     ItemRoute.name: (routeData) {
       final args = routeData.argsAs<ItemRouteArgs>();
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.ItemScreen(
+        child: _i2.ItemScreen(
           key: args.key,
           item: args.item,
         ),
@@ -36,7 +45,7 @@ abstract class $AppRouter extends _i5.RootStackRouter {
       final args = routeData.argsAs<ItemSelectRouteArgs>();
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i2.ItemSelectScreen(
+        child: _i3.ItemSelectScreen(
           key: args.key,
           title: args.title,
         ),
@@ -45,24 +54,52 @@ abstract class $AppRouter extends _i5.RootStackRouter {
     TapToOrderRoute.name: (routeData) {
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.TapToOrderScreen(),
-      );
-    },
-    ItemGridRoute.name: (routeData) {
-      final args = routeData.argsAs<ItemGridRouteArgs>();
-      return _i5.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i4.ItemGridScreen(
-          key: args.key,
-          title: args.title,
-        ),
+        child: const _i4.TapToOrderScreen(),
       );
     },
   };
 }
 
 /// generated route for
-/// [_i1.ItemScreen]
+/// [_i1.ItemGridScreen]
+class ItemGridRoute extends _i5.PageRouteInfo<ItemGridRouteArgs> {
+  ItemGridRoute({
+    _i6.Key? key,
+    required String title,
+    List<_i5.PageRouteInfo>? children,
+  }) : super(
+          ItemGridRoute.name,
+          args: ItemGridRouteArgs(
+            key: key,
+            title: title,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ItemGridRoute';
+
+  static const _i5.PageInfo<ItemGridRouteArgs> page =
+      _i5.PageInfo<ItemGridRouteArgs>(name);
+}
+
+class ItemGridRouteArgs {
+  const ItemGridRouteArgs({
+    this.key,
+    required this.title,
+  });
+
+  final _i6.Key? key;
+
+  final String title;
+
+  @override
+  String toString() {
+    return 'ItemGridRouteArgs{key: $key, title: $title}';
+  }
+}
+
+/// generated route for
+/// [_i2.ItemScreen]
 class ItemRoute extends _i5.PageRouteInfo<ItemRouteArgs> {
   ItemRoute({
     _i6.Key? key,
@@ -100,7 +137,7 @@ class ItemRouteArgs {
 }
 
 /// generated route for
-/// [_i2.ItemSelectScreen]
+/// [_i3.ItemSelectScreen]
 class ItemSelectRoute extends _i5.PageRouteInfo<ItemSelectRouteArgs> {
   ItemSelectRoute({
     _i6.Key? key,
@@ -138,7 +175,7 @@ class ItemSelectRouteArgs {
 }
 
 /// generated route for
-/// [_i3.TapToOrderScreen]
+/// [_i4.TapToOrderScreen]
 class TapToOrderRoute extends _i5.PageRouteInfo<void> {
   const TapToOrderRoute({List<_i5.PageRouteInfo>? children})
       : super(
@@ -149,42 +186,4 @@ class TapToOrderRoute extends _i5.PageRouteInfo<void> {
   static const String name = 'TapToOrderRoute';
 
   static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i4.ItemGridScreen]
-class ItemGridRoute extends _i5.PageRouteInfo<ItemGridRouteArgs> {
-  ItemGridRoute({
-    _i6.Key? key,
-    required String title,
-    List<_i5.PageRouteInfo>? children,
-  }) : super(
-          ItemGridRoute.name,
-          args: ItemGridRouteArgs(
-            key: key,
-            title: title,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'ItemGridRoute';
-
-  static const _i5.PageInfo<ItemGridRouteArgs> page =
-      _i5.PageInfo<ItemGridRouteArgs>(name);
-}
-
-class ItemGridRouteArgs {
-  const ItemGridRouteArgs({
-    this.key,
-    required this.title,
-  });
-
-  final _i6.Key? key;
-
-  final String title;
-
-  @override
-  String toString() {
-    return 'ItemGridRouteArgs{key: $key, title: $title}';
-  }
 }

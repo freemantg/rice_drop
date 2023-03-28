@@ -20,6 +20,7 @@ dependencies:
   freezed_annotation: ^2.2.0
   google_fonts: ^4.0.3
   hooks_riverpod: ^2.3.2
+  http: ^0.13.5
   json_serializable: ^6.6.1
   riverpod: ^2.3.2
 
@@ -36,6 +37,7 @@ flutter:
   assets:
     - assets/pictures/1.png
     - assets/logo/Rice Drop Logo.png
+    - .env
 
   fonts:
     - family: Rhodesia
