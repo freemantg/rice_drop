@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:rice_drop/presentation/screens/item_grid_screen.dart';
-import 'package:rice_drop/styles/space.dart';
 import 'package:rice_drop/styles/styles.dart';
 
 import 'widgets/widgets.dart';
@@ -40,55 +39,31 @@ class ItemSelectScreen extends HookWidget {
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Padding(
-            padding: EdgeInsets.all($styles.insets.sm),
-            child: const RiceDropLogoHorizontal(),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.info_outline,
-                    color: $styles.colors.onPrimaryThemeColor,
-                  ),
-                  VSpace(size: $styles.insets.xs),
-                  Text(
-                    'Allergens',
-                    style: $styles.text.bodyBold.copyWith(
-                      color: $styles.colors.onPrimaryThemeColor,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            VSpace(size: $styles.insets.md),
-            const MyOrderButton(),
-          ],
-        ),
+        appBar: const StyledAppBar(),
         endDrawer: const OrderEndDrawer(),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TabBar(
-              labelStyle:
-                  $styles.text.bodySmallBold.copyWith(color: Colors.white),
-              isScrollable: true,
-              controller: tabController,
-              tabs: routes.keys.map((e) => Tab(text: e)).toList(),
-            ),
-            const Divider(height: 0),
-            Expanded(
-              child: TabBarView(
-                controller: tabController,
-                children: routes.values.toList(),
-              ),
-            ),
-          ],
-        ),
+        body: _buildTabBar(tabController),
       ),
+    );
+  }
+
+  Column _buildTabBar(TabController tabController) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        TabBar(
+          labelStyle: $styles.text.bodySmallBold.copyWith(color: Colors.white),
+          isScrollable: true,
+          controller: tabController,
+          tabs: routes.keys.map((e) => Tab(text: e)).toList(),
+        ),
+        const Divider(height: 0),
+        Expanded(
+          child: TabBarView(
+            controller: tabController,
+            children: routes.values.toList(),
+          ),
+        ),
+      ],
     );
   }
 }
