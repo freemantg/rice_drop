@@ -26,9 +26,9 @@ class ItemGridScreen extends StatelessWidget {
           children: [
             Text(
               title.toUpperCase(),
-              style: $styles.text.h3.copyWith(
+              style: $styles.text.h2.copyWith(
                 color: $styles.colors.primaryThemeColor,
-                fontWeight: FontWeight.bold,
+                fontSize: 24.0,
               ),
             ),
             HSpace(size: $styles.insets.sm),
