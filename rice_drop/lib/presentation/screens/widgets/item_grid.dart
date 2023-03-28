@@ -17,7 +17,7 @@ class ItemGrid extends StatelessWidget {
       scrollDirection: Axis.vertical,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: (screenWidth >= 1200)
-            ? 3
+            ? 4
             : (screenWidth >= 900)
                 ? 3
                 : (screenWidth >= 600)
