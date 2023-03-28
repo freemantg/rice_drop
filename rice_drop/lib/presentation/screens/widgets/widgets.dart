@@ -7,4 +7,5 @@ export 'item_title_and_description.dart';
 export 'my_order_button.dart';
 export 'order_end_drawer.dart';
 export 'quantity_button.dart';
+export 'rice_drop_logo_horizontal.dart';
 export 'styled_app_bar.dart';
