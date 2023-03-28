@@ -1,0 +1,4 @@
+GET https://connect.squareup.com/v2/catalog/list
+Authorization: Bearer 
+Content-Type: application/json
+Accept: application/json
