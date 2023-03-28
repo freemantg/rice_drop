@@ -40,6 +40,8 @@ class ItemScreen extends HookWidget {
         useAnimationController(duration: const Duration(milliseconds: 500));
     final itemModifiersChipsController =
         useAnimationController(duration: const Duration(milliseconds: 500));
+    final itemPriceController =
+        useAnimationController(duration: const Duration(milliseconds: 500));
     final addToBasketButtonController =
         useAnimationController(duration: const Duration(milliseconds: 500));
 
@@ -52,6 +54,10 @@ class ItemScreen extends HookWidget {
       curve: Curves.easeInOut,
     );
     Animation<double> animation3 = CurvedAnimation(
+      parent: itemPriceController,
+      curve: Curves.easeInOut,
+    );
+    Animation<double> animation4 = CurvedAnimation(
       parent: addToBasketButtonController,
       curve: Curves.easeInOut,
     );
@@ -60,65 +66,13 @@ class ItemScreen extends HookWidget {
         () => titleAndDescriptionController.forward());
     Timer(const Duration(milliseconds: 150),
         () => itemModifiersChipsController.forward());
-    Timer(const Duration(milliseconds: 300),
+    Timer(
+        const Duration(milliseconds: 300), () => itemPriceController.forward());
+    Timer(const Duration(milliseconds: 400),
         () => addToBasketButtonController.forward());
 
     return Scaffold(
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(
-          bottom: $styles.insets.sm,
-          right: $styles.insets.sm,
-        ),
-        child: FractionallySizedBox(
-          alignment: Alignment.bottomRight,
-          widthFactor: 0.5,
-          heightFactor: 0.07,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const QuantityButton(),
-              VSpace(size: $styles.insets.sm),
-              Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          $styles.corners.md,
-                        ),
-                      ),
-                    ),
-                    backgroundColor: MaterialStatePropertyAll(
-                      $styles.colors.primaryThemeColor,
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Padding(
-                    padding: EdgeInsets.all($styles.insets.sm),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'ADD TO ORDER',
-                          style: $styles.text.bodyBold.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          '£8.80',
-                          style: $styles.text.bodyBold.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: _buildBottomNavigationBar(animation4),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Padding(
@@ -296,3 +250,63 @@ class ItemScreen extends HookWidget {
   }
 }
 
+Widget _buildBottomNavigationBar(Animation<double> animation) {
+  return FadeTransition(
+    opacity: animation,
+    child: Padding(
+      padding: EdgeInsets.only(
+        bottom: $styles.insets.sm,
+        right: $styles.insets.sm,
+      ),
+      child: FractionallySizedBox(
+        alignment: Alignment.bottomRight,
+        widthFactor: 0.5,
+        heightFactor: 0.07,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const QuantityButton(),
+            VSpace(size: $styles.insets.sm),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        $styles.corners.md,
+                      ),
+                    ),
+                  ),
+                  backgroundColor: MaterialStatePropertyAll(
+                    $styles.colors.primaryThemeColor,
+                  ),
+                ),
+                onPressed: () {},
+                child: Padding(
+                  padding: EdgeInsets.all($styles.insets.sm),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'ADD TO ORDER',
+                        style: $styles.text.bodyBold.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        '£8.80',
+                        style: $styles.text.bodyBold.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
