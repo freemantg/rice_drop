@@ -1,12 +1,24 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:rice_drop/domain/category.dart';
 import 'package:rice_drop/presentation/core/app_router.gr.dart';
-import 'package:rice_drop/presentation/screens/item_select_screen.dart';
 
+import '../../../domain/item.dart';
 import '../../../styles/styles.dart';
 
 class ItemGrid extends StatelessWidget {
-  const ItemGrid({Key? key}) : super(key: key);
+  const ItemGrid({
+    Key? key,
+    required this.items,
+    required this.categories,
+  }) : super(key: key);
+
+  final List<Item> items;
+  final List<CategoryModel> categories;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +40,14 @@ class ItemGrid extends StatelessWidget {
         childAspectRatio: 0.9,
       ),
       physics: const BouncingScrollPhysics(),
-      itemCount: categories.length,
+      itemCount: items.length,
       itemBuilder: (context, index) {
-        return ItemCard(item: categories[index]);
+        return Column(
+          children: [
+            const Text('HELLO'),
+            ItemCard(item: items[index]),
+          ],
+        );
       },
     );
   }
@@ -42,12 +59,12 @@ class ItemCard extends StatelessWidget {
     required this.item,
   }) : super(key: key);
 
-  final String item;
+  final Item item;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.router.push(ItemRoute(item: item)),
+      onTap: () => context.router.push(ItemRoute(item: item.name)),
       child: Card(
         child: Padding(
           padding: EdgeInsets.all($styles.insets.xs),
@@ -57,15 +74,19 @@ class ItemCard extends StatelessWidget {
               Expanded(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    return Hero(
-                      tag: item,
-                      child: Image.asset(
-                        'assets/pictures/1.png',
-                        fit: BoxFit.scaleDown,
-                        width: constraints.maxWidth,
-                        height: constraints.maxHeight,
-                      ),
-                    );
+                    if (item.imageUrl.isNotEmpty) {
+                      return Hero(
+                        tag: item,
+                        child: CachedNetworkImage(
+                          imageUrl: item.imageUrl,
+                          fit: BoxFit.scaleDown,
+                          width: constraints.maxWidth,
+                          height: constraints.maxHeight,
+                        ),
+                      );
+                    } else {
+                      return const Text('HELLO');
+                    }
                   },
                 ),
               ),
@@ -76,7 +97,7 @@ class ItemCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Korean Fried Chicken Drop Box'.toUpperCase(),
+                      item.name.toUpperCase(),
                       style: $styles.text.h4.copyWith(
                         height: 0,
                         fontSize: 16.0,
@@ -84,7 +105,8 @@ class ItemCard extends StatelessWidget {
                     ),
                     SizedBox(height: $styles.insets.xs),
                     Text(
-                      '£8.89',
+                      NumberFormat.simpleCurrency(locale: Platform.localeName)
+                          .format(item.price / 100),
                       textAlign: TextAlign.center,
                       style: $styles.text.body.copyWith(height: 0),
                     ),

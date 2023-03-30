@@ -10,7 +10,8 @@ class Item with _$Item {
     required String id,
     required String name,
     required String description,
-    required double price,
+    required int price,
+    required String imageUrl,
   }) = _Item;
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);

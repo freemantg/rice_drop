@@ -16,28 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ItemState {
+  List<Item> get items => throw _privateConstructorUsedError;
+  List<CategoryModel> get categories => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<Item> items) loadSuccess,
-    required TResult Function(String message) error,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        initial,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loading,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loadSuccess,
+    required TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<Item> items)? loadSuccess,
-    TResult? Function(String message)? error,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        initial,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loading,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult? Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<Item> items)? loadSuccess,
-    TResult Function(String message)? error,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
+    TResult Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,12 +81,18 @@ mixin _$ItemState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ItemStateCopyWith<ItemState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ItemStateCopyWith<$Res> {
   factory $ItemStateCopyWith(ItemState value, $Res Function(ItemState) then) =
       _$ItemStateCopyWithImpl<$Res, ItemState>;
+  @useResult
+  $Res call({List<Item> items, List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -83,13 +104,34 @@ class _$ItemStateCopyWithImpl<$Res, $Val extends ItemState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+    Object? categories = null,
+  }) {
+    return _then(_value.copyWith(
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<Item>,
+      categories: null == categories
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryModel>,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
+abstract class _$$_InitialCopyWith<$Res> implements $ItemStateCopyWith<$Res> {
   factory _$$_InitialCopyWith(
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Item> items, List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -98,60 +140,124 @@ class __$$_InitialCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+    Object? categories = null,
+  }) {
+    return _then(_$_Initial(
+      items: null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<Item>,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryModel>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial();
+  const _$_Initial(
+      {required final List<Item> items,
+      required final List<CategoryModel> categories})
+      : _items = items,
+        _categories = categories;
+
+  final List<Item> _items;
+  @override
+  List<Item> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  final List<CategoryModel> _categories;
+  @override
+  List<CategoryModel> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
 
   @override
   String toString() {
-    return 'ItemState.initial()';
+    return 'ItemState.initial(items: $items, categories: $categories)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_Initial &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_categories));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<Item> items) loadSuccess,
-    required TResult Function(String message) error,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        initial,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loading,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loadSuccess,
+    required TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)
+        error,
   }) {
-    return initial();
+    return initial(items, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<Item> items)? loadSuccess,
-    TResult? Function(String message)? error,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        initial,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loading,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult? Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
   }) {
-    return initial?.call();
+    return initial?.call(items, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<Item> items)? loadSuccess,
-    TResult Function(String message)? error,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
+    TResult Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial();
+      return initial(items, categories);
     }
     return orElse();
   }
@@ -195,14 +301,28 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements ItemState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial(
+      {required final List<Item> items,
+      required final List<CategoryModel> categories}) = _$_Initial;
+
+  @override
+  List<Item> get items;
+  @override
+  List<CategoryModel> get categories;
+  @override
+  @JsonKey(ignore: true)
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
+abstract class _$$_LoadingCopyWith<$Res> implements $ItemStateCopyWith<$Res> {
   factory _$$_LoadingCopyWith(
           _$_Loading value, $Res Function(_$_Loading) then) =
       __$$_LoadingCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Item> items, List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -211,60 +331,124 @@ class __$$_LoadingCopyWithImpl<$Res>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+    Object? categories = null,
+  }) {
+    return _then(_$_Loading(
+      items: null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<Item>,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryModel>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Loading implements _Loading {
-  const _$_Loading();
+  const _$_Loading(
+      {required final List<Item> items,
+      required final List<CategoryModel> categories})
+      : _items = items,
+        _categories = categories;
+
+  final List<Item> _items;
+  @override
+  List<Item> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  final List<CategoryModel> _categories;
+  @override
+  List<CategoryModel> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
 
   @override
   String toString() {
-    return 'ItemState.loading()';
+    return 'ItemState.loading(items: $items, categories: $categories)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType &&
+            other is _$_Loading &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_categories));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LoadingCopyWith<_$_Loading> get copyWith =>
+      __$$_LoadingCopyWithImpl<_$_Loading>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<Item> items) loadSuccess,
-    required TResult Function(String message) error,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        initial,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loading,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loadSuccess,
+    required TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)
+        error,
   }) {
-    return loading();
+    return loading(items, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<Item> items)? loadSuccess,
-    TResult? Function(String message)? error,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        initial,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loading,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult? Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
   }) {
-    return loading?.call();
+    return loading?.call(items, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<Item> items)? loadSuccess,
-    TResult Function(String message)? error,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
+    TResult Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading();
+      return loading(items, categories);
     }
     return orElse();
   }
@@ -308,16 +492,29 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements ItemState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading(
+      {required final List<Item> items,
+      required final List<CategoryModel> categories}) = _$_Loading;
+
+  @override
+  List<Item> get items;
+  @override
+  List<CategoryModel> get categories;
+  @override
+  @JsonKey(ignore: true)
+  _$$_LoadingCopyWith<_$_Loading> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_LoadSuccessCopyWith<$Res> {
+abstract class _$$_LoadSuccessCopyWith<$Res>
+    implements $ItemStateCopyWith<$Res> {
   factory _$$_LoadSuccessCopyWith(
           _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
       __$$_LoadSuccessCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({List<Item> items});
+  $Res call({List<Item> items, List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -332,12 +529,17 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
   @override
   $Res call({
     Object? items = null,
+    Object? categories = null,
   }) {
     return _then(_$_LoadSuccess(
-      null == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<Item>,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryModel>,
     ));
   }
 }
@@ -345,7 +547,11 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(final List<Item> items) : _items = items;
+  const _$_LoadSuccess(
+      {required final List<Item> items,
+      required final List<CategoryModel> categories})
+      : _items = items,
+        _categories = categories;
 
   final List<Item> _items;
   @override
@@ -355,9 +561,17 @@ class _$_LoadSuccess implements _LoadSuccess {
     return EqualUnmodifiableListView(_items);
   }
 
+  final List<CategoryModel> _categories;
+  @override
+  List<CategoryModel> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
   @override
   String toString() {
-    return 'ItemState.loadSuccess(items: $items)';
+    return 'ItemState.loadSuccess(items: $items, categories: $categories)';
   }
 
   @override
@@ -365,12 +579,16 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoadSuccess &&
-            const DeepCollectionEquality().equals(other._items, _items));
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
   @override
@@ -381,36 +599,49 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<Item> items) loadSuccess,
-    required TResult Function(String message) error,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        initial,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loading,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loadSuccess,
+    required TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)
+        error,
   }) {
-    return loadSuccess(items);
+    return loadSuccess(items, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<Item> items)? loadSuccess,
-    TResult? Function(String message)? error,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        initial,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loading,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult? Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
   }) {
-    return loadSuccess?.call(items);
+    return loadSuccess?.call(items, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<Item> items)? loadSuccess,
-    TResult Function(String message)? error,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
+    TResult Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(items);
+      return loadSuccess(items, categories);
     }
     return orElse();
   }
@@ -454,20 +685,27 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements ItemState {
-  const factory _LoadSuccess(final List<Item> items) = _$_LoadSuccess;
+  const factory _LoadSuccess(
+      {required final List<Item> items,
+      required final List<CategoryModel> categories}) = _$_LoadSuccess;
 
+  @override
   List<Item> get items;
+  @override
+  List<CategoryModel> get categories;
+  @override
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
+abstract class _$$_ErrorCopyWith<$Res> implements $ItemStateCopyWith<$Res> {
   factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
       __$$_ErrorCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({String message});
+  $Res call({String message, List<Item> items, List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -481,12 +719,22 @@ class __$$_ErrorCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? items = null,
+    Object? categories = null,
   }) {
     return _then(_$_Error(
-      null == message
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
+      items: null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<Item>,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryModel>,
     ));
   }
 }
@@ -494,14 +742,34 @@ class __$$_ErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Error implements _Error {
-  const _$_Error(this.message);
+  const _$_Error(
+      {required this.message,
+      required final List<Item> items,
+      required final List<CategoryModel> categories})
+      : _items = items,
+        _categories = categories;
 
   @override
   final String message;
+  final List<Item> _items;
+  @override
+  List<Item> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  final List<CategoryModel> _categories;
+  @override
+  List<CategoryModel> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
 
   @override
   String toString() {
-    return 'ItemState.error(message: $message)';
+    return 'ItemState.error(message: $message, items: $items, categories: $categories)';
   }
 
   @override
@@ -509,11 +777,18 @@ class _$_Error implements _Error {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Error &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.message, message) || other.message == message) &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      message,
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
   @override
@@ -524,36 +799,49 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<Item> items) loadSuccess,
-    required TResult Function(String message) error,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        initial,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loading,
+    required TResult Function(List<Item> items, List<CategoryModel> categories)
+        loadSuccess,
+    required TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)
+        error,
   }) {
-    return error(message);
+    return error(message, items, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<Item> items)? loadSuccess,
-    TResult? Function(String message)? error,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        initial,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loading,
+    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult? Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
   }) {
-    return error?.call(message);
+    return error?.call(message, items, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<Item> items)? loadSuccess,
-    TResult Function(String message)? error,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
+    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
+    TResult Function(List<Item> items, List<CategoryModel> categories)?
+        loadSuccess,
+    TResult Function(
+            String message, List<Item> items, List<CategoryModel> categories)?
+        error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(message);
+      return error(message, items, categories);
     }
     return orElse();
   }
@@ -597,9 +885,17 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements ItemState {
-  const factory _Error(final String message) = _$_Error;
+  const factory _Error(
+      {required final String message,
+      required final List<Item> items,
+      required final List<CategoryModel> categories}) = _$_Error;
 
   String get message;
+  @override
+  List<Item> get items;
+  @override
+  List<CategoryModel> get categories;
+  @override
   @JsonKey(ignore: true)
   _$$_ErrorCopyWith<_$_Error> get copyWith =>
       throw _privateConstructorUsedError;
