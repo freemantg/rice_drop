@@ -84,11 +84,7 @@ class _ItemSelectScreenState extends ConsumerState<ItemSelectScreen>
           child: TabBarView(
             controller: tabController,
             children: categories
-                .map(
-                  (category) => ItemGridScreen(
-                    category: category,
-                  ),
-                )
+                .map((category) => ItemGridScreen(category: category))
                 .toList(),
           ),
         ),

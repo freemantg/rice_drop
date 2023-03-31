@@ -1,56 +1,58 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rice_drop/domain/item_repository.dart';
 
-import '../domain/category.dart';
 import '../domain/item.dart';
-import '../domain/item_failure.dart';
 import '../domain/state/item_state.dart';
 
 class ItemNotifier extends StateNotifier<ItemState> {
   final ItemRepository _repository;
   ItemNotifier(this._repository)
-      : super(const ItemState.initial(
-        ));
+      : super(
+          const ItemState.initial(
+            itemsByCategory: {},
+            categories: [],
+          ),
+        );
 
   Future<void> fetchItems() async {
     state = ItemState.loading(
-      items: state.items,
+      itemsByCategory: state.itemsByCategory,
       categories: state.categories,
     );
 
-    final itemResult = await _repository.fetchItems();
+    // Fetch categories first
     final categoryResult = await _repository.fetchCategories();
-
-    _updateState(
-      itemResult: itemResult,
-      categoryResult: categoryResult,
+    state = categoryResult.fold(
+      (failure) => ItemState.error(
+        message: failure.toString(),
+        itemsByCategory: state.itemsByCategory,
+        categories: state.categories,
+      ),
+      (categories) => ItemState.loadSuccess(
+        itemsByCategory: state.itemsByCategory,
+        categories: categories,
+      ),
     );
-  }
 
-
-
-  void _updateState({
-    required Either<ItemFailure, List<Item>> itemResult,
-    required Either<ItemFailure, List<CategoryModel>> categoryResult,
-  }) {
+    // Then fetch items and filter by categories
+    final itemResult = await _repository.fetchItems();
     state = itemResult.fold(
       (failure) => ItemState.error(
         message: failure.toString(),
-        items: state.items,
+        itemsByCategory: state.itemsByCategory,
         categories: state.categories,
       ),
-      (items) => categoryResult.fold(
-        (failure) => ItemState.error(
-          message: failure.toString(),
-          items: items,
+      (items) {
+        final Map<String, List<Item>> itemsByCategory = {};
+        for (final category in state.categories) {
+          itemsByCategory[category.id] =
+              items.where((item) => item.categoryId == category.id).toList();
+        }
+        return ItemState.loadSuccess(
+          itemsByCategory: itemsByCategory,
           categories: state.categories,
-        ),
-        (categories) => ItemState.loadSuccess(
-          items: items,
-          categories: categories,
-        ),
-      ),
+        );
+      },
     );
   }
 }

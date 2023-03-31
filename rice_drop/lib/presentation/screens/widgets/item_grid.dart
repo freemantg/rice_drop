@@ -56,7 +56,7 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.router.push(ItemRoute(item: item.name)),
+      onTap: () => context.router.push(ItemRoute(item: item)),
       child: Card(
         child: Padding(
           padding: EdgeInsets.all($styles.insets.xs),
@@ -68,7 +68,7 @@ class ItemCard extends StatelessWidget {
                   builder: (context, constraints) {
                     if (item.imageUrl.isNotEmpty) {
                       return Hero(
-                        tag: item,
+                        tag: item.imageUrl,
                         child: CachedNetworkImage(
                           imageUrl: item.imageUrl,
                           fit: BoxFit.scaleDown,

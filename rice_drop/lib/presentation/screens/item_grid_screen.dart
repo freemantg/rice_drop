@@ -19,7 +19,6 @@ class ItemGridScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    
     return Padding(
       padding: EdgeInsets.only(
         top: $styles.insets.md,
@@ -40,7 +39,9 @@ class ItemGridScreen extends HookConsumerWidget {
             HSpace(size: $styles.insets.sm),
             ref.watch(itemNotifierProvider).maybeWhen(
                   loading: (_, __) => const CircularProgressIndicator(),
-                  loadSuccess: (items, categories) => ItemGrid(items: items),
+                  loadSuccess: (itemsByCategory, _) => ItemGrid(
+                    items: itemsByCategory[category.id] ?? [],
+                  ),
                   orElse: () => const Text('ERROR LOADING ITEMS'),
                 ),
             HSpace(size: $styles.insets.xl),

@@ -1,12 +1,13 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class FullSizeItemImage extends StatelessWidget {
   const FullSizeItemImage({
     super.key,
-    required this.item,
+    required this.imageUrl,
   });
 
-  final String item;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +19,9 @@ class FullSizeItemImage extends StatelessWidget {
             Positioned(
               left: -constraints.maxWidth * 0.1,
               child: Hero(
-                tag: item,
-                child: Image.asset(
-                  'assets/pictures/1.png',
+                tag: imageUrl,
+                child: CachedNetworkImage(
+                  imageUrl: imageUrl,
                   height: MediaQuery.of(context).size.height / 1.5,
                 ),
               ),

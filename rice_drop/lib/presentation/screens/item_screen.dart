@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:intl/intl.dart';
+import 'package:rice_drop/domain/item.dart';
 import 'package:rice_drop/presentation/screens/widgets/widgets.dart';
 import 'package:rice_drop/styles/space.dart';
 
@@ -28,7 +31,7 @@ class ItemScreen extends HookWidget {
     required this.item,
   });
 
-  final String item;
+  final Item item;
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +109,7 @@ class ItemScreen extends HookWidget {
             ),
             child: Row(
               children: [
-                FullSizeItemImage(item: item),
+                FullSizeItemImage(imageUrl: item.imageUrl),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -115,7 +118,7 @@ class ItemScreen extends HookWidget {
                       const Spacer(),
                       FadeTransition(
                         opacity: animation1,
-                        child: const ItemTitleAndDescription(),
+                        child: ItemTitleAndDescription(item: item),
                       ),
                       HSpace(size: $styles.insets.md),
                       FadeTransition(
@@ -139,7 +142,9 @@ class ItemScreen extends HookWidget {
                       FadeTransition(
                         opacity: animation3,
                         child: Text(
-                          "£8.90",
+                          NumberFormat.simpleCurrency(
+                                  locale: Platform.localeName)
+                              .format(item.price / 100),
                           style: $styles.text.h2.copyWith(height: 0),
                         ),
                       ),
@@ -157,10 +162,6 @@ class ItemScreen extends HookWidget {
   }
 }
 
-
-
-
-
 Widget _buildBottomNavigationBar(Animation<double> animation) {
   return FadeTransition(
     opacity: animation,
@@ -172,7 +173,7 @@ Widget _buildBottomNavigationBar(Animation<double> animation) {
       child: FractionallySizedBox(
         alignment: Alignment.bottomRight,
         widthFactor: 0.5,
-        heightFactor: 0.07,
+        heightFactor: 0.1,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

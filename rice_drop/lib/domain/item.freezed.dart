@@ -25,6 +25,7 @@ mixin _$Item {
   String get description => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
+  String get categoryId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +38,12 @@ abstract class $ItemCopyWith<$Res> {
       _$ItemCopyWithImpl<$Res, Item>;
   @useResult
   $Res call(
-      {String id, String name, String description, int price, String imageUrl});
+      {String id,
+      String name,
+      String description,
+      int price,
+      String imageUrl,
+      String categoryId});
 }
 
 /// @nodoc
@@ -58,6 +64,7 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
     Object? description = null,
     Object? price = null,
     Object? imageUrl = null,
+    Object? categoryId = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -80,6 +87,10 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -91,7 +102,12 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id, String name, String description, int price, String imageUrl});
+      {String id,
+      String name,
+      String description,
+      int price,
+      String imageUrl,
+      String categoryId});
 }
 
 /// @nodoc
@@ -108,6 +124,7 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res, _$_Item>
     Object? description = null,
     Object? price = null,
     Object? imageUrl = null,
+    Object? categoryId = null,
   }) {
     return _then(_$_Item(
       id: null == id
@@ -130,6 +147,10 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res, _$_Item>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -142,7 +163,8 @@ class _$_Item extends _Item {
       required this.name,
       required this.description,
       required this.price,
-      required this.imageUrl})
+      required this.imageUrl,
+      required this.categoryId})
       : super._();
 
   factory _$_Item.fromJson(Map<String, dynamic> json) => _$$_ItemFromJson(json);
@@ -157,10 +179,12 @@ class _$_Item extends _Item {
   final int price;
   @override
   final String imageUrl;
+  @override
+  final String categoryId;
 
   @override
   String toString() {
-    return 'Item(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl)';
+    return 'Item(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl, categoryId: $categoryId)';
   }
 
   @override
@@ -174,13 +198,15 @@ class _$_Item extends _Item {
                 other.description == description) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl));
+                other.imageUrl == imageUrl) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, description, price, imageUrl);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, description, price, imageUrl, categoryId);
 
   @JsonKey(ignore: true)
   @override
@@ -202,7 +228,8 @@ abstract class _Item extends Item {
       required final String name,
       required final String description,
       required final int price,
-      required final String imageUrl}) = _$_Item;
+      required final String imageUrl,
+      required final String categoryId}) = _$_Item;
   const _Item._() : super._();
 
   factory _Item.fromJson(Map<String, dynamic> json) = _$_Item.fromJson;
@@ -217,6 +244,8 @@ abstract class _Item extends Item {
   int get price;
   @override
   String get imageUrl;
+  @override
+  String get categoryId;
   @override
   @JsonKey(ignore: true)
   _$$_ItemCopyWith<_$_Item> get copyWith => throw _privateConstructorUsedError;

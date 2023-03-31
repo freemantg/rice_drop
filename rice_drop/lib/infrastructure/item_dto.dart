@@ -24,6 +24,7 @@ class ItemDto with _$ItemDto {
       price:
           item_data.variations[0].item_variation_data?.price_money.amount ?? 0,
       imageUrl: item_data.ecom_image_uris?[0] ?? '',
+      categoryId: item_data.category_id ?? '',
     );
   }
 }

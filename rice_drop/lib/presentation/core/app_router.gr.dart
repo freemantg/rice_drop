@@ -11,6 +11,7 @@
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
 import 'package:rice_drop/domain/category.dart' as _i7;
+import 'package:rice_drop/domain/item.dart' as _i8;
 import 'package:rice_drop/presentation/screens/item_grid_screen.dart' as _i1;
 import 'package:rice_drop/presentation/screens/item_screen.dart' as _i2;
 import 'package:rice_drop/presentation/screens/item_select_screen.dart' as _i3;
@@ -104,7 +105,7 @@ class ItemGridRouteArgs {
 class ItemRoute extends _i5.PageRouteInfo<ItemRouteArgs> {
   ItemRoute({
     _i6.Key? key,
-    required String item,
+    required _i8.Item item,
     List<_i5.PageRouteInfo>? children,
   }) : super(
           ItemRoute.name,
@@ -129,7 +130,7 @@ class ItemRouteArgs {
 
   final _i6.Key? key;
 
-  final String item;
+  final _i8.Item item;
 
   @override
   String toString() {
