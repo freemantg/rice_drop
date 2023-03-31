@@ -5,18 +5,21 @@ import 'package:rice_drop/presentation/providers/providers.dart';
 import 'package:rice_drop/styles/space.dart';
 import 'package:rice_drop/styles/styles.dart';
 
+import '../../domain/category.dart';
 import 'widgets/widgets.dart';
 
 @RoutePage()
 class ItemGridScreen extends HookConsumerWidget {
   const ItemGridScreen({
     super.key,
-    required this.title,
+    required this.category,
   });
 
-  final String title;
+  final CategoryModel category;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    
     return Padding(
       padding: EdgeInsets.only(
         top: $styles.insets.md,
@@ -27,13 +30,8 @@ class ItemGridScreen extends HookConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextButton(
-              onPressed: () =>
-                  ref.read(itemNotifierProvider.notifier).fetchItems(),
-              child: const Text('PRESS TO FETCH'),
-            ),
             Text(
-              title.toUpperCase(),
+              category.name.toUpperCase(),
               style: $styles.text.h2.copyWith(
                 color: $styles.colors.primaryThemeColor,
                 fontSize: 24.0,
@@ -42,10 +40,7 @@ class ItemGridScreen extends HookConsumerWidget {
             HSpace(size: $styles.insets.sm),
             ref.watch(itemNotifierProvider).maybeWhen(
                   loading: (_, __) => const CircularProgressIndicator(),
-                  loadSuccess: (items, categories) => ItemGrid(
-                    items: items,
-                    categories: categories,
-                  ),
+                  loadSuccess: (items, categories) => ItemGrid(items: items),
                   orElse: () => const Text('ERROR LOADING ITEMS'),
                 ),
             HSpace(size: $styles.insets.xl),

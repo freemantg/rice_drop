@@ -11,8 +11,6 @@ class ItemNotifier extends StateNotifier<ItemState> {
   final ItemRepository _repository;
   ItemNotifier(this._repository)
       : super(const ItemState.initial(
-          items: [],
-          categories: [],
         ));
 
   Future<void> fetchItems() async {
@@ -29,6 +27,8 @@ class ItemNotifier extends StateNotifier<ItemState> {
       categoryResult: categoryResult,
     );
   }
+
+
 
   void _updateState({
     required Either<ItemFailure, List<Item>> itemResult,

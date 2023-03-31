@@ -16,42 +16,60 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ItemState {
-  List<Item> get items => throw _privateConstructorUsedError;
+  Map<CategoryModel, List<Item>> get itemsByCategory =>
+      throw _privateConstructorUsedError;
   List<CategoryModel> get categories => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         initial,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loading,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loadSuccess,
     required TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         initial,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loading,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult? Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
-    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
-    TResult Function(List<Item> items, List<CategoryModel> categories)?
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        initial,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        loading,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
     required TResult orElse(),
   }) =>
@@ -92,7 +110,9 @@ abstract class $ItemStateCopyWith<$Res> {
   factory $ItemStateCopyWith(ItemState value, $Res Function(ItemState) then) =
       _$ItemStateCopyWithImpl<$Res, ItemState>;
   @useResult
-  $Res call({List<Item> items, List<CategoryModel> categories});
+  $Res call(
+      {Map<CategoryModel, List<Item>> itemsByCategory,
+      List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -108,14 +128,14 @@ class _$ItemStateCopyWithImpl<$Res, $Val extends ItemState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = null,
+    Object? itemsByCategory = null,
     Object? categories = null,
   }) {
     return _then(_value.copyWith(
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Item>,
+      itemsByCategory: null == itemsByCategory
+          ? _value.itemsByCategory
+          : itemsByCategory // ignore: cast_nullable_to_non_nullable
+              as Map<CategoryModel, List<Item>>,
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -131,7 +151,9 @@ abstract class _$$_InitialCopyWith<$Res> implements $ItemStateCopyWith<$Res> {
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Item> items, List<CategoryModel> categories});
+  $Res call(
+      {Map<CategoryModel, List<Item>> itemsByCategory,
+      List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -144,14 +166,14 @@ class __$$_InitialCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = null,
+    Object? itemsByCategory = null,
     Object? categories = null,
   }) {
     return _then(_$_Initial(
-      items: null == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Item>,
+      itemsByCategory: null == itemsByCategory
+          ? _value._itemsByCategory
+          : itemsByCategory // ignore: cast_nullable_to_non_nullable
+              as Map<CategoryModel, List<Item>>,
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -164,17 +186,17 @@ class __$$_InitialCopyWithImpl<$Res>
 
 class _$_Initial implements _Initial {
   const _$_Initial(
-      {required final List<Item> items,
+      {required final Map<CategoryModel, List<Item>> itemsByCategory,
       required final List<CategoryModel> categories})
-      : _items = items,
+      : _itemsByCategory = itemsByCategory,
         _categories = categories;
 
-  final List<Item> _items;
+  final Map<CategoryModel, List<Item>> _itemsByCategory;
   @override
-  List<Item> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
+  Map<CategoryModel, List<Item>> get itemsByCategory {
+    if (_itemsByCategory is EqualUnmodifiableMapView) return _itemsByCategory;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
+    return EqualUnmodifiableMapView(_itemsByCategory);
   }
 
   final List<CategoryModel> _categories;
@@ -187,7 +209,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ItemState.initial(items: $items, categories: $categories)';
+    return 'ItemState.initial(itemsByCategory: $itemsByCategory, categories: $categories)';
   }
 
   @override
@@ -195,7 +217,8 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
-            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._itemsByCategory, _itemsByCategory) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories));
   }
@@ -203,7 +226,7 @@ class _$_Initial implements _Initial {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_itemsByCategory),
       const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
@@ -215,49 +238,66 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         initial,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loading,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loadSuccess,
     required TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         error,
   }) {
-    return initial(items, categories);
+    return initial(itemsByCategory, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         initial,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loading,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult? Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
   }) {
-    return initial?.call(items, categories);
+    return initial?.call(itemsByCategory, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
-    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
-    TResult Function(List<Item> items, List<CategoryModel> categories)?
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        initial,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        loading,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(items, categories);
+      return initial(itemsByCategory, categories);
     }
     return orElse();
   }
@@ -302,11 +342,11 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements ItemState {
   const factory _Initial(
-      {required final List<Item> items,
+      {required final Map<CategoryModel, List<Item>> itemsByCategory,
       required final List<CategoryModel> categories}) = _$_Initial;
 
   @override
-  List<Item> get items;
+  Map<CategoryModel, List<Item>> get itemsByCategory;
   @override
   List<CategoryModel> get categories;
   @override
@@ -322,7 +362,9 @@ abstract class _$$_LoadingCopyWith<$Res> implements $ItemStateCopyWith<$Res> {
       __$$_LoadingCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Item> items, List<CategoryModel> categories});
+  $Res call(
+      {Map<CategoryModel, List<Item>> itemsByCategory,
+      List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -335,14 +377,14 @@ class __$$_LoadingCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = null,
+    Object? itemsByCategory = null,
     Object? categories = null,
   }) {
     return _then(_$_Loading(
-      items: null == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Item>,
+      itemsByCategory: null == itemsByCategory
+          ? _value._itemsByCategory
+          : itemsByCategory // ignore: cast_nullable_to_non_nullable
+              as Map<CategoryModel, List<Item>>,
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -355,17 +397,17 @@ class __$$_LoadingCopyWithImpl<$Res>
 
 class _$_Loading implements _Loading {
   const _$_Loading(
-      {required final List<Item> items,
+      {required final Map<CategoryModel, List<Item>> itemsByCategory,
       required final List<CategoryModel> categories})
-      : _items = items,
+      : _itemsByCategory = itemsByCategory,
         _categories = categories;
 
-  final List<Item> _items;
+  final Map<CategoryModel, List<Item>> _itemsByCategory;
   @override
-  List<Item> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
+  Map<CategoryModel, List<Item>> get itemsByCategory {
+    if (_itemsByCategory is EqualUnmodifiableMapView) return _itemsByCategory;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
+    return EqualUnmodifiableMapView(_itemsByCategory);
   }
 
   final List<CategoryModel> _categories;
@@ -378,7 +420,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'ItemState.loading(items: $items, categories: $categories)';
+    return 'ItemState.loading(itemsByCategory: $itemsByCategory, categories: $categories)';
   }
 
   @override
@@ -386,7 +428,8 @@ class _$_Loading implements _Loading {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loading &&
-            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._itemsByCategory, _itemsByCategory) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories));
   }
@@ -394,7 +437,7 @@ class _$_Loading implements _Loading {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_itemsByCategory),
       const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
@@ -406,49 +449,66 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         initial,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loading,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loadSuccess,
     required TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         error,
   }) {
-    return loading(items, categories);
+    return loading(itemsByCategory, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         initial,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loading,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult? Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
   }) {
-    return loading?.call(items, categories);
+    return loading?.call(itemsByCategory, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
-    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
-    TResult Function(List<Item> items, List<CategoryModel> categories)?
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        initial,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        loading,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(items, categories);
+      return loading(itemsByCategory, categories);
     }
     return orElse();
   }
@@ -493,11 +553,11 @@ class _$_Loading implements _Loading {
 
 abstract class _Loading implements ItemState {
   const factory _Loading(
-      {required final List<Item> items,
+      {required final Map<CategoryModel, List<Item>> itemsByCategory,
       required final List<CategoryModel> categories}) = _$_Loading;
 
   @override
-  List<Item> get items;
+  Map<CategoryModel, List<Item>> get itemsByCategory;
   @override
   List<CategoryModel> get categories;
   @override
@@ -514,7 +574,9 @@ abstract class _$$_LoadSuccessCopyWith<$Res>
       __$$_LoadSuccessCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Item> items, List<CategoryModel> categories});
+  $Res call(
+      {Map<CategoryModel, List<Item>> itemsByCategory,
+      List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -528,14 +590,14 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = null,
+    Object? itemsByCategory = null,
     Object? categories = null,
   }) {
     return _then(_$_LoadSuccess(
-      items: null == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Item>,
+      itemsByCategory: null == itemsByCategory
+          ? _value._itemsByCategory
+          : itemsByCategory // ignore: cast_nullable_to_non_nullable
+              as Map<CategoryModel, List<Item>>,
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -548,17 +610,17 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
 
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(
-      {required final List<Item> items,
+      {required final Map<CategoryModel, List<Item>> itemsByCategory,
       required final List<CategoryModel> categories})
-      : _items = items,
+      : _itemsByCategory = itemsByCategory,
         _categories = categories;
 
-  final List<Item> _items;
+  final Map<CategoryModel, List<Item>> _itemsByCategory;
   @override
-  List<Item> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
+  Map<CategoryModel, List<Item>> get itemsByCategory {
+    if (_itemsByCategory is EqualUnmodifiableMapView) return _itemsByCategory;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
+    return EqualUnmodifiableMapView(_itemsByCategory);
   }
 
   final List<CategoryModel> _categories;
@@ -571,7 +633,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   String toString() {
-    return 'ItemState.loadSuccess(items: $items, categories: $categories)';
+    return 'ItemState.loadSuccess(itemsByCategory: $itemsByCategory, categories: $categories)';
   }
 
   @override
@@ -579,7 +641,8 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoadSuccess &&
-            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._itemsByCategory, _itemsByCategory) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories));
   }
@@ -587,7 +650,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_itemsByCategory),
       const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
@@ -599,49 +662,66 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         initial,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loading,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loadSuccess,
     required TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         error,
   }) {
-    return loadSuccess(items, categories);
+    return loadSuccess(itemsByCategory, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         initial,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loading,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult? Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
   }) {
-    return loadSuccess?.call(items, categories);
+    return loadSuccess?.call(itemsByCategory, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
-    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
-    TResult Function(List<Item> items, List<CategoryModel> categories)?
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        initial,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        loading,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(items, categories);
+      return loadSuccess(itemsByCategory, categories);
     }
     return orElse();
   }
@@ -686,11 +766,11 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements ItemState {
   const factory _LoadSuccess(
-      {required final List<Item> items,
+      {required final Map<CategoryModel, List<Item>> itemsByCategory,
       required final List<CategoryModel> categories}) = _$_LoadSuccess;
 
   @override
-  List<Item> get items;
+  Map<CategoryModel, List<Item>> get itemsByCategory;
   @override
   List<CategoryModel> get categories;
   @override
@@ -705,7 +785,10 @@ abstract class _$$_ErrorCopyWith<$Res> implements $ItemStateCopyWith<$Res> {
       __$$_ErrorCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String message, List<Item> items, List<CategoryModel> categories});
+  $Res call(
+      {String message,
+      Map<CategoryModel, List<Item>> itemsByCategory,
+      List<CategoryModel> categories});
 }
 
 /// @nodoc
@@ -719,7 +802,7 @@ class __$$_ErrorCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
-    Object? items = null,
+    Object? itemsByCategory = null,
     Object? categories = null,
   }) {
     return _then(_$_Error(
@@ -727,10 +810,10 @@ class __$$_ErrorCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      items: null == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Item>,
+      itemsByCategory: null == itemsByCategory
+          ? _value._itemsByCategory
+          : itemsByCategory // ignore: cast_nullable_to_non_nullable
+              as Map<CategoryModel, List<Item>>,
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -744,19 +827,19 @@ class __$$_ErrorCopyWithImpl<$Res>
 class _$_Error implements _Error {
   const _$_Error(
       {required this.message,
-      required final List<Item> items,
+      required final Map<CategoryModel, List<Item>> itemsByCategory,
       required final List<CategoryModel> categories})
-      : _items = items,
+      : _itemsByCategory = itemsByCategory,
         _categories = categories;
 
   @override
   final String message;
-  final List<Item> _items;
+  final Map<CategoryModel, List<Item>> _itemsByCategory;
   @override
-  List<Item> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
+  Map<CategoryModel, List<Item>> get itemsByCategory {
+    if (_itemsByCategory is EqualUnmodifiableMapView) return _itemsByCategory;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
+    return EqualUnmodifiableMapView(_itemsByCategory);
   }
 
   final List<CategoryModel> _categories;
@@ -769,7 +852,7 @@ class _$_Error implements _Error {
 
   @override
   String toString() {
-    return 'ItemState.error(message: $message, items: $items, categories: $categories)';
+    return 'ItemState.error(message: $message, itemsByCategory: $itemsByCategory, categories: $categories)';
   }
 
   @override
@@ -778,7 +861,8 @@ class _$_Error implements _Error {
         (other.runtimeType == runtimeType &&
             other is _$_Error &&
             (identical(other.message, message) || other.message == message) &&
-            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._itemsByCategory, _itemsByCategory) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories));
   }
@@ -787,7 +871,7 @@ class _$_Error implements _Error {
   int get hashCode => Object.hash(
       runtimeType,
       message,
-      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_itemsByCategory),
       const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
@@ -799,49 +883,66 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         initial,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loading,
-    required TResult Function(List<Item> items, List<CategoryModel> categories)
+    required TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         loadSuccess,
     required TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)
         error,
   }) {
-    return error(message, items, categories);
+    return error(message, itemsByCategory, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         initial,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loading,
-    TResult? Function(List<Item> items, List<CategoryModel> categories)?
+    TResult? Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult? Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
   }) {
-    return error?.call(message, items, categories);
+    return error?.call(message, itemsByCategory, categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Item> items, List<CategoryModel> categories)? initial,
-    TResult Function(List<Item> items, List<CategoryModel> categories)? loading,
-    TResult Function(List<Item> items, List<CategoryModel> categories)?
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        initial,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
+        loading,
+    TResult Function(Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         loadSuccess,
     TResult Function(
-            String message, List<Item> items, List<CategoryModel> categories)?
+            String message,
+            Map<CategoryModel, List<Item>> itemsByCategory,
+            List<CategoryModel> categories)?
         error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(message, items, categories);
+      return error(message, itemsByCategory, categories);
     }
     return orElse();
   }
@@ -887,12 +988,12 @@ class _$_Error implements _Error {
 abstract class _Error implements ItemState {
   const factory _Error(
       {required final String message,
-      required final List<Item> items,
+      required final Map<CategoryModel, List<Item>> itemsByCategory,
       required final List<CategoryModel> categories}) = _$_Error;
 
   String get message;
   @override
-  List<Item> get items;
+  Map<CategoryModel, List<Item>> get itemsByCategory;
   @override
   List<CategoryModel> get categories;
   @override

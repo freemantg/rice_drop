@@ -35,7 +35,7 @@ class SquareDataSourceImp implements ItemRepository {
       fromJson: (json) => CategoryDto.fromJson(json),
       toDomain: (dto) => dto.toDomain(),
     );
-    return right([]);
+    return result;
   }
 
   Future<Either<ItemFailure, List<TDomain>>> _fetchData<TDto, TDomain>({
@@ -59,7 +59,6 @@ class SquareDataSourceImp implements ItemRepository {
             .map((json) => fromJson(json as Map<String, dynamic>))
             .map(toDomain)
             .toList();
-        print(result);
         return right(result);
       } else {
         return left(const ItemFailure.serverFailure());

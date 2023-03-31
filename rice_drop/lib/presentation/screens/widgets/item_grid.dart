@@ -4,7 +4,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:rice_drop/domain/category.dart';
 import 'package:rice_drop/presentation/core/app_router.gr.dart';
 
 import '../../../domain/item.dart';
@@ -14,11 +13,9 @@ class ItemGrid extends StatelessWidget {
   const ItemGrid({
     Key? key,
     required this.items,
-    required this.categories,
   }) : super(key: key);
 
   final List<Item> items;
-  final List<CategoryModel> categories;
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +39,7 @@ class ItemGrid extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return Column(
-          children: [
-            const Text('HELLO'),
-            ItemCard(item: items[index]),
-          ],
-        );
+        return ItemCard(item: items[index]);
       },
     );
   }
