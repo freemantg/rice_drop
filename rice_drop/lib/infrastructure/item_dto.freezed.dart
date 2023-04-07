@@ -22,7 +22,8 @@ ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
 mixin _$ItemDto {
   String get type => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  ItemData get item_data => throw _privateConstructorUsedError;
+  @JsonKey(name: 'item_data')
+  ItemData get itemData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,9 +35,10 @@ abstract class $ItemDtoCopyWith<$Res> {
   factory $ItemDtoCopyWith(ItemDto value, $Res Function(ItemDto) then) =
       _$ItemDtoCopyWithImpl<$Res, ItemDto>;
   @useResult
-  $Res call({String type, String id, ItemData item_data});
+  $Res call(
+      {String type, String id, @JsonKey(name: 'item_data') ItemData itemData});
 
-  $ItemDataCopyWith<$Res> get item_data;
+  $ItemDataCopyWith<$Res> get itemData;
 }
 
 /// @nodoc
@@ -54,7 +56,7 @@ class _$ItemDtoCopyWithImpl<$Res, $Val extends ItemDto>
   $Res call({
     Object? type = null,
     Object? id = null,
-    Object? item_data = null,
+    Object? itemData = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -65,18 +67,18 @@ class _$ItemDtoCopyWithImpl<$Res, $Val extends ItemDto>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      item_data: null == item_data
-          ? _value.item_data
-          : item_data // ignore: cast_nullable_to_non_nullable
+      itemData: null == itemData
+          ? _value.itemData
+          : itemData // ignore: cast_nullable_to_non_nullable
               as ItemData,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ItemDataCopyWith<$Res> get item_data {
-    return $ItemDataCopyWith<$Res>(_value.item_data, (value) {
-      return _then(_value.copyWith(item_data: value) as $Val);
+  $ItemDataCopyWith<$Res> get itemData {
+    return $ItemDataCopyWith<$Res>(_value.itemData, (value) {
+      return _then(_value.copyWith(itemData: value) as $Val);
     });
   }
 }
@@ -88,10 +90,11 @@ abstract class _$$_ItemDtoCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
       __$$_ItemDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, String id, ItemData item_data});
+  $Res call(
+      {String type, String id, @JsonKey(name: 'item_data') ItemData itemData});
 
   @override
-  $ItemDataCopyWith<$Res> get item_data;
+  $ItemDataCopyWith<$Res> get itemData;
 }
 
 /// @nodoc
@@ -106,7 +109,7 @@ class __$$_ItemDtoCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? id = null,
-    Object? item_data = null,
+    Object? itemData = null,
   }) {
     return _then(_$_ItemDto(
       type: null == type
@@ -117,9 +120,9 @@ class __$$_ItemDtoCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      item_data: null == item_data
-          ? _value.item_data
-          : item_data // ignore: cast_nullable_to_non_nullable
+      itemData: null == itemData
+          ? _value.itemData
+          : itemData // ignore: cast_nullable_to_non_nullable
               as ItemData,
     ));
   }
@@ -129,7 +132,9 @@ class __$$_ItemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ItemDto extends _ItemDto {
   const _$_ItemDto(
-      {required this.type, required this.id, required this.item_data})
+      {required this.type,
+      required this.id,
+      @JsonKey(name: 'item_data') required this.itemData})
       : super._();
 
   factory _$_ItemDto.fromJson(Map<String, dynamic> json) =>
@@ -140,11 +145,12 @@ class _$_ItemDto extends _ItemDto {
   @override
   final String id;
   @override
-  final ItemData item_data;
+  @JsonKey(name: 'item_data')
+  final ItemData itemData;
 
   @override
   String toString() {
-    return 'ItemDto(type: $type, id: $id, item_data: $item_data)';
+    return 'ItemDto(type: $type, id: $id, itemData: $itemData)';
   }
 
   @override
@@ -154,13 +160,13 @@ class _$_ItemDto extends _ItemDto {
             other is _$_ItemDto &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.item_data, item_data) ||
-                other.item_data == item_data));
+            (identical(other.itemData, itemData) ||
+                other.itemData == itemData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, id, item_data);
+  int get hashCode => Object.hash(runtimeType, type, id, itemData);
 
   @JsonKey(ignore: true)
   @override
@@ -178,9 +184,10 @@ class _$_ItemDto extends _ItemDto {
 
 abstract class _ItemDto extends ItemDto {
   const factory _ItemDto(
-      {required final String type,
-      required final String id,
-      required final ItemData item_data}) = _$_ItemDto;
+          {required final String type,
+          required final String id,
+          @JsonKey(name: 'item_data') required final ItemData itemData}) =
+      _$_ItemDto;
   const _ItemDto._() : super._();
 
   factory _ItemDto.fromJson(Map<String, dynamic> json) = _$_ItemDto.fromJson;
@@ -190,7 +197,8 @@ abstract class _ItemDto extends ItemDto {
   @override
   String get id;
   @override
-  ItemData get item_data;
+  @JsonKey(name: 'item_data')
+  ItemData get itemData;
   @override
   @JsonKey(ignore: true)
   _$$_ItemDtoCopyWith<_$_ItemDto> get copyWith =>
@@ -205,22 +213,35 @@ ItemData _$ItemDataFromJson(Map<String, dynamic> json) {
 mixin _$ItemData {
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  String? get label_color => throw _privateConstructorUsedError;
-  bool get is_taxable => throw _privateConstructorUsedError;
+  @JsonKey(name: 'label_color')
+  String? get labelColor => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_taxable')
+  bool get isTaxable => throw _privateConstructorUsedError;
   String? get visibility => throw _privateConstructorUsedError;
-  String? get category_id => throw _privateConstructorUsedError;
-  List<ModifierListInfo>? get modifier_list_info =>
+  @JsonKey(name: 'category_id')
+  String? get categoryId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'modifier_list_info')
+  List<ModifierListInfo>? get modifierListInfo =>
       throw _privateConstructorUsedError;
   List<Variation> get variations => throw _privateConstructorUsedError;
-  String? get product_type => throw _privateConstructorUsedError;
-  bool get skip_modifier_screen => throw _privateConstructorUsedError;
-  String? get ecom_uri => throw _privateConstructorUsedError;
-  bool get ecom_available => throw _privateConstructorUsedError;
-  String? get ecom_visibility => throw _privateConstructorUsedError;
-  List<String>? get ecom_image_uris => throw _privateConstructorUsedError;
-  String? get description_html => throw _privateConstructorUsedError;
-  String? get description_plaintext => throw _privateConstructorUsedError;
-  String? get kitchen_name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'product_type')
+  String? get productType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'skip_modifier_screen')
+  bool get skipModifierScreen => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ecom_uri')
+  String? get ecomUri => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ecom_available')
+  bool get ecomAvailable => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ecom_visibility')
+  String? get ecomVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ecom_image_uris')
+  List<String>? get ecomImageUris => throw _privateConstructorUsedError;
+  @JsonKey(name: 'description_html')
+  String? get descriptionHtml => throw _privateConstructorUsedError;
+  @JsonKey(name: 'description_plaintext')
+  String? get descriptionPlaintext => throw _privateConstructorUsedError;
+  @JsonKey(name: 'kitchen_name')
+  String? get kitchenName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -236,21 +257,34 @@ abstract class $ItemDataCopyWith<$Res> {
   $Res call(
       {String? name,
       String? description,
-      String? label_color,
-      bool is_taxable,
+      @JsonKey(name: 'label_color')
+          String? labelColor,
+      @JsonKey(name: 'is_taxable')
+          bool isTaxable,
       String? visibility,
-      String? category_id,
-      List<ModifierListInfo>? modifier_list_info,
+      @JsonKey(name: 'category_id')
+          String? categoryId,
+      @JsonKey(name: 'modifier_list_info')
+          List<ModifierListInfo>? modifierListInfo,
       List<Variation> variations,
-      String? product_type,
-      bool skip_modifier_screen,
-      String? ecom_uri,
-      bool ecom_available,
-      String? ecom_visibility,
-      List<String>? ecom_image_uris,
-      String? description_html,
-      String? description_plaintext,
-      String? kitchen_name});
+      @JsonKey(name: 'product_type')
+          String? productType,
+      @JsonKey(name: 'skip_modifier_screen')
+          bool skipModifierScreen,
+      @JsonKey(name: 'ecom_uri')
+          String? ecomUri,
+      @JsonKey(name: 'ecom_available')
+          bool ecomAvailable,
+      @JsonKey(name: 'ecom_visibility')
+          String? ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris')
+          List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html')
+          String? descriptionHtml,
+      @JsonKey(name: 'description_plaintext')
+          String? descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name')
+          String? kitchenName});
 }
 
 /// @nodoc
@@ -268,21 +302,21 @@ class _$ItemDataCopyWithImpl<$Res, $Val extends ItemData>
   $Res call({
     Object? name = freezed,
     Object? description = freezed,
-    Object? label_color = freezed,
-    Object? is_taxable = null,
+    Object? labelColor = freezed,
+    Object? isTaxable = null,
     Object? visibility = freezed,
-    Object? category_id = freezed,
-    Object? modifier_list_info = freezed,
+    Object? categoryId = freezed,
+    Object? modifierListInfo = freezed,
     Object? variations = null,
-    Object? product_type = freezed,
-    Object? skip_modifier_screen = null,
-    Object? ecom_uri = freezed,
-    Object? ecom_available = null,
-    Object? ecom_visibility = freezed,
-    Object? ecom_image_uris = freezed,
-    Object? description_html = freezed,
-    Object? description_plaintext = freezed,
-    Object? kitchen_name = freezed,
+    Object? productType = freezed,
+    Object? skipModifierScreen = null,
+    Object? ecomUri = freezed,
+    Object? ecomAvailable = null,
+    Object? ecomVisibility = freezed,
+    Object? ecomImageUris = freezed,
+    Object? descriptionHtml = freezed,
+    Object? descriptionPlaintext = freezed,
+    Object? kitchenName = freezed,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
@@ -293,65 +327,65 @@ class _$ItemDataCopyWithImpl<$Res, $Val extends ItemData>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      label_color: freezed == label_color
-          ? _value.label_color
-          : label_color // ignore: cast_nullable_to_non_nullable
+      labelColor: freezed == labelColor
+          ? _value.labelColor
+          : labelColor // ignore: cast_nullable_to_non_nullable
               as String?,
-      is_taxable: null == is_taxable
-          ? _value.is_taxable
-          : is_taxable // ignore: cast_nullable_to_non_nullable
+      isTaxable: null == isTaxable
+          ? _value.isTaxable
+          : isTaxable // ignore: cast_nullable_to_non_nullable
               as bool,
       visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as String?,
-      category_id: freezed == category_id
-          ? _value.category_id
-          : category_id // ignore: cast_nullable_to_non_nullable
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
               as String?,
-      modifier_list_info: freezed == modifier_list_info
-          ? _value.modifier_list_info
-          : modifier_list_info // ignore: cast_nullable_to_non_nullable
+      modifierListInfo: freezed == modifierListInfo
+          ? _value.modifierListInfo
+          : modifierListInfo // ignore: cast_nullable_to_non_nullable
               as List<ModifierListInfo>?,
       variations: null == variations
           ? _value.variations
           : variations // ignore: cast_nullable_to_non_nullable
               as List<Variation>,
-      product_type: freezed == product_type
-          ? _value.product_type
-          : product_type // ignore: cast_nullable_to_non_nullable
+      productType: freezed == productType
+          ? _value.productType
+          : productType // ignore: cast_nullable_to_non_nullable
               as String?,
-      skip_modifier_screen: null == skip_modifier_screen
-          ? _value.skip_modifier_screen
-          : skip_modifier_screen // ignore: cast_nullable_to_non_nullable
+      skipModifierScreen: null == skipModifierScreen
+          ? _value.skipModifierScreen
+          : skipModifierScreen // ignore: cast_nullable_to_non_nullable
               as bool,
-      ecom_uri: freezed == ecom_uri
-          ? _value.ecom_uri
-          : ecom_uri // ignore: cast_nullable_to_non_nullable
+      ecomUri: freezed == ecomUri
+          ? _value.ecomUri
+          : ecomUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      ecom_available: null == ecom_available
-          ? _value.ecom_available
-          : ecom_available // ignore: cast_nullable_to_non_nullable
+      ecomAvailable: null == ecomAvailable
+          ? _value.ecomAvailable
+          : ecomAvailable // ignore: cast_nullable_to_non_nullable
               as bool,
-      ecom_visibility: freezed == ecom_visibility
-          ? _value.ecom_visibility
-          : ecom_visibility // ignore: cast_nullable_to_non_nullable
+      ecomVisibility: freezed == ecomVisibility
+          ? _value.ecomVisibility
+          : ecomVisibility // ignore: cast_nullable_to_non_nullable
               as String?,
-      ecom_image_uris: freezed == ecom_image_uris
-          ? _value.ecom_image_uris
-          : ecom_image_uris // ignore: cast_nullable_to_non_nullable
+      ecomImageUris: freezed == ecomImageUris
+          ? _value.ecomImageUris
+          : ecomImageUris // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      description_html: freezed == description_html
-          ? _value.description_html
-          : description_html // ignore: cast_nullable_to_non_nullable
+      descriptionHtml: freezed == descriptionHtml
+          ? _value.descriptionHtml
+          : descriptionHtml // ignore: cast_nullable_to_non_nullable
               as String?,
-      description_plaintext: freezed == description_plaintext
-          ? _value.description_plaintext
-          : description_plaintext // ignore: cast_nullable_to_non_nullable
+      descriptionPlaintext: freezed == descriptionPlaintext
+          ? _value.descriptionPlaintext
+          : descriptionPlaintext // ignore: cast_nullable_to_non_nullable
               as String?,
-      kitchen_name: freezed == kitchen_name
-          ? _value.kitchen_name
-          : kitchen_name // ignore: cast_nullable_to_non_nullable
+      kitchenName: freezed == kitchenName
+          ? _value.kitchenName
+          : kitchenName // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -367,21 +401,34 @@ abstract class _$$_ItemDataCopyWith<$Res> implements $ItemDataCopyWith<$Res> {
   $Res call(
       {String? name,
       String? description,
-      String? label_color,
-      bool is_taxable,
+      @JsonKey(name: 'label_color')
+          String? labelColor,
+      @JsonKey(name: 'is_taxable')
+          bool isTaxable,
       String? visibility,
-      String? category_id,
-      List<ModifierListInfo>? modifier_list_info,
+      @JsonKey(name: 'category_id')
+          String? categoryId,
+      @JsonKey(name: 'modifier_list_info')
+          List<ModifierListInfo>? modifierListInfo,
       List<Variation> variations,
-      String? product_type,
-      bool skip_modifier_screen,
-      String? ecom_uri,
-      bool ecom_available,
-      String? ecom_visibility,
-      List<String>? ecom_image_uris,
-      String? description_html,
-      String? description_plaintext,
-      String? kitchen_name});
+      @JsonKey(name: 'product_type')
+          String? productType,
+      @JsonKey(name: 'skip_modifier_screen')
+          bool skipModifierScreen,
+      @JsonKey(name: 'ecom_uri')
+          String? ecomUri,
+      @JsonKey(name: 'ecom_available')
+          bool ecomAvailable,
+      @JsonKey(name: 'ecom_visibility')
+          String? ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris')
+          List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html')
+          String? descriptionHtml,
+      @JsonKey(name: 'description_plaintext')
+          String? descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name')
+          String? kitchenName});
 }
 
 /// @nodoc
@@ -397,21 +444,21 @@ class __$$_ItemDataCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? description = freezed,
-    Object? label_color = freezed,
-    Object? is_taxable = null,
+    Object? labelColor = freezed,
+    Object? isTaxable = null,
     Object? visibility = freezed,
-    Object? category_id = freezed,
-    Object? modifier_list_info = freezed,
+    Object? categoryId = freezed,
+    Object? modifierListInfo = freezed,
     Object? variations = null,
-    Object? product_type = freezed,
-    Object? skip_modifier_screen = null,
-    Object? ecom_uri = freezed,
-    Object? ecom_available = null,
-    Object? ecom_visibility = freezed,
-    Object? ecom_image_uris = freezed,
-    Object? description_html = freezed,
-    Object? description_plaintext = freezed,
-    Object? kitchen_name = freezed,
+    Object? productType = freezed,
+    Object? skipModifierScreen = null,
+    Object? ecomUri = freezed,
+    Object? ecomAvailable = null,
+    Object? ecomVisibility = freezed,
+    Object? ecomImageUris = freezed,
+    Object? descriptionHtml = freezed,
+    Object? descriptionPlaintext = freezed,
+    Object? kitchenName = freezed,
   }) {
     return _then(_$_ItemData(
       name: freezed == name
@@ -422,65 +469,65 @@ class __$$_ItemDataCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      label_color: freezed == label_color
-          ? _value.label_color
-          : label_color // ignore: cast_nullable_to_non_nullable
+      labelColor: freezed == labelColor
+          ? _value.labelColor
+          : labelColor // ignore: cast_nullable_to_non_nullable
               as String?,
-      is_taxable: null == is_taxable
-          ? _value.is_taxable
-          : is_taxable // ignore: cast_nullable_to_non_nullable
+      isTaxable: null == isTaxable
+          ? _value.isTaxable
+          : isTaxable // ignore: cast_nullable_to_non_nullable
               as bool,
       visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as String?,
-      category_id: freezed == category_id
-          ? _value.category_id
-          : category_id // ignore: cast_nullable_to_non_nullable
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
               as String?,
-      modifier_list_info: freezed == modifier_list_info
-          ? _value._modifier_list_info
-          : modifier_list_info // ignore: cast_nullable_to_non_nullable
+      modifierListInfo: freezed == modifierListInfo
+          ? _value._modifierListInfo
+          : modifierListInfo // ignore: cast_nullable_to_non_nullable
               as List<ModifierListInfo>?,
       variations: null == variations
           ? _value._variations
           : variations // ignore: cast_nullable_to_non_nullable
               as List<Variation>,
-      product_type: freezed == product_type
-          ? _value.product_type
-          : product_type // ignore: cast_nullable_to_non_nullable
+      productType: freezed == productType
+          ? _value.productType
+          : productType // ignore: cast_nullable_to_non_nullable
               as String?,
-      skip_modifier_screen: null == skip_modifier_screen
-          ? _value.skip_modifier_screen
-          : skip_modifier_screen // ignore: cast_nullable_to_non_nullable
+      skipModifierScreen: null == skipModifierScreen
+          ? _value.skipModifierScreen
+          : skipModifierScreen // ignore: cast_nullable_to_non_nullable
               as bool,
-      ecom_uri: freezed == ecom_uri
-          ? _value.ecom_uri
-          : ecom_uri // ignore: cast_nullable_to_non_nullable
+      ecomUri: freezed == ecomUri
+          ? _value.ecomUri
+          : ecomUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      ecom_available: null == ecom_available
-          ? _value.ecom_available
-          : ecom_available // ignore: cast_nullable_to_non_nullable
+      ecomAvailable: null == ecomAvailable
+          ? _value.ecomAvailable
+          : ecomAvailable // ignore: cast_nullable_to_non_nullable
               as bool,
-      ecom_visibility: freezed == ecom_visibility
-          ? _value.ecom_visibility
-          : ecom_visibility // ignore: cast_nullable_to_non_nullable
+      ecomVisibility: freezed == ecomVisibility
+          ? _value.ecomVisibility
+          : ecomVisibility // ignore: cast_nullable_to_non_nullable
               as String?,
-      ecom_image_uris: freezed == ecom_image_uris
-          ? _value._ecom_image_uris
-          : ecom_image_uris // ignore: cast_nullable_to_non_nullable
+      ecomImageUris: freezed == ecomImageUris
+          ? _value._ecomImageUris
+          : ecomImageUris // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      description_html: freezed == description_html
-          ? _value.description_html
-          : description_html // ignore: cast_nullable_to_non_nullable
+      descriptionHtml: freezed == descriptionHtml
+          ? _value.descriptionHtml
+          : descriptionHtml // ignore: cast_nullable_to_non_nullable
               as String?,
-      description_plaintext: freezed == description_plaintext
-          ? _value.description_plaintext
-          : description_plaintext // ignore: cast_nullable_to_non_nullable
+      descriptionPlaintext: freezed == descriptionPlaintext
+          ? _value.descriptionPlaintext
+          : descriptionPlaintext // ignore: cast_nullable_to_non_nullable
               as String?,
-      kitchen_name: freezed == kitchen_name
-          ? _value.kitchen_name
-          : kitchen_name // ignore: cast_nullable_to_non_nullable
+      kitchenName: freezed == kitchenName
+          ? _value.kitchenName
+          : kitchenName // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -492,24 +539,37 @@ class _$_ItemData extends _ItemData {
   const _$_ItemData(
       {this.name,
       this.description,
-      this.label_color,
-      required this.is_taxable,
+      @JsonKey(name: 'label_color')
+          this.labelColor,
+      @JsonKey(name: 'is_taxable')
+          required this.isTaxable,
       this.visibility,
-      this.category_id,
-      final List<ModifierListInfo>? modifier_list_info,
+      @JsonKey(name: 'category_id')
+          this.categoryId,
+      @JsonKey(name: 'modifier_list_info')
+          final List<ModifierListInfo>? modifierListInfo,
       required final List<Variation> variations,
-      this.product_type,
-      required this.skip_modifier_screen,
-      this.ecom_uri,
-      required this.ecom_available,
-      this.ecom_visibility,
-      final List<String>? ecom_image_uris,
-      this.description_html,
-      this.description_plaintext,
-      this.kitchen_name})
-      : _modifier_list_info = modifier_list_info,
+      @JsonKey(name: 'product_type')
+          this.productType,
+      @JsonKey(name: 'skip_modifier_screen')
+          required this.skipModifierScreen,
+      @JsonKey(name: 'ecom_uri')
+          this.ecomUri,
+      @JsonKey(name: 'ecom_available')
+          required this.ecomAvailable,
+      @JsonKey(name: 'ecom_visibility')
+          this.ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris')
+          final List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html')
+          this.descriptionHtml,
+      @JsonKey(name: 'description_plaintext')
+          this.descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name')
+          this.kitchenName})
+      : _modifierListInfo = modifierListInfo,
         _variations = variations,
-        _ecom_image_uris = ecom_image_uris,
+        _ecomImageUris = ecomImageUris,
         super._();
 
   factory _$_ItemData.fromJson(Map<String, dynamic> json) =>
@@ -520,20 +580,24 @@ class _$_ItemData extends _ItemData {
   @override
   final String? description;
   @override
-  final String? label_color;
+  @JsonKey(name: 'label_color')
+  final String? labelColor;
   @override
-  final bool is_taxable;
+  @JsonKey(name: 'is_taxable')
+  final bool isTaxable;
   @override
   final String? visibility;
   @override
-  final String? category_id;
-  final List<ModifierListInfo>? _modifier_list_info;
+  @JsonKey(name: 'category_id')
+  final String? categoryId;
+  final List<ModifierListInfo>? _modifierListInfo;
   @override
-  List<ModifierListInfo>? get modifier_list_info {
-    final value = _modifier_list_info;
+  @JsonKey(name: 'modifier_list_info')
+  List<ModifierListInfo>? get modifierListInfo {
+    final value = _modifierListInfo;
     if (value == null) return null;
-    if (_modifier_list_info is EqualUnmodifiableListView)
-      return _modifier_list_info;
+    if (_modifierListInfo is EqualUnmodifiableListView)
+      return _modifierListInfo;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -547,35 +611,44 @@ class _$_ItemData extends _ItemData {
   }
 
   @override
-  final String? product_type;
+  @JsonKey(name: 'product_type')
+  final String? productType;
   @override
-  final bool skip_modifier_screen;
+  @JsonKey(name: 'skip_modifier_screen')
+  final bool skipModifierScreen;
   @override
-  final String? ecom_uri;
+  @JsonKey(name: 'ecom_uri')
+  final String? ecomUri;
   @override
-  final bool ecom_available;
+  @JsonKey(name: 'ecom_available')
+  final bool ecomAvailable;
   @override
-  final String? ecom_visibility;
-  final List<String>? _ecom_image_uris;
+  @JsonKey(name: 'ecom_visibility')
+  final String? ecomVisibility;
+  final List<String>? _ecomImageUris;
   @override
-  List<String>? get ecom_image_uris {
-    final value = _ecom_image_uris;
+  @JsonKey(name: 'ecom_image_uris')
+  List<String>? get ecomImageUris {
+    final value = _ecomImageUris;
     if (value == null) return null;
-    if (_ecom_image_uris is EqualUnmodifiableListView) return _ecom_image_uris;
+    if (_ecomImageUris is EqualUnmodifiableListView) return _ecomImageUris;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
   @override
-  final String? description_html;
+  @JsonKey(name: 'description_html')
+  final String? descriptionHtml;
   @override
-  final String? description_plaintext;
+  @JsonKey(name: 'description_plaintext')
+  final String? descriptionPlaintext;
   @override
-  final String? kitchen_name;
+  @JsonKey(name: 'kitchen_name')
+  final String? kitchenName;
 
   @override
   String toString() {
-    return 'ItemData(name: $name, description: $description, label_color: $label_color, is_taxable: $is_taxable, visibility: $visibility, category_id: $category_id, modifier_list_info: $modifier_list_info, variations: $variations, product_type: $product_type, skip_modifier_screen: $skip_modifier_screen, ecom_uri: $ecom_uri, ecom_available: $ecom_available, ecom_visibility: $ecom_visibility, ecom_image_uris: $ecom_image_uris, description_html: $description_html, description_plaintext: $description_plaintext, kitchen_name: $kitchen_name)';
+    return 'ItemData(name: $name, description: $description, labelColor: $labelColor, isTaxable: $isTaxable, visibility: $visibility, categoryId: $categoryId, modifierListInfo: $modifierListInfo, variations: $variations, productType: $productType, skipModifierScreen: $skipModifierScreen, ecomUri: $ecomUri, ecomAvailable: $ecomAvailable, ecomVisibility: $ecomVisibility, ecomImageUris: $ecomImageUris, descriptionHtml: $descriptionHtml, descriptionPlaintext: $descriptionPlaintext, kitchenName: $kitchenName)';
   }
 
   @override
@@ -586,36 +659,35 @@ class _$_ItemData extends _ItemData {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.label_color, label_color) ||
-                other.label_color == label_color) &&
-            (identical(other.is_taxable, is_taxable) ||
-                other.is_taxable == is_taxable) &&
+            (identical(other.labelColor, labelColor) ||
+                other.labelColor == labelColor) &&
+            (identical(other.isTaxable, isTaxable) ||
+                other.isTaxable == isTaxable) &&
             (identical(other.visibility, visibility) ||
                 other.visibility == visibility) &&
-            (identical(other.category_id, category_id) ||
-                other.category_id == category_id) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
             const DeepCollectionEquality()
-                .equals(other._modifier_list_info, _modifier_list_info) &&
+                .equals(other._modifierListInfo, _modifierListInfo) &&
             const DeepCollectionEquality()
                 .equals(other._variations, _variations) &&
-            (identical(other.product_type, product_type) ||
-                other.product_type == product_type) &&
-            (identical(other.skip_modifier_screen, skip_modifier_screen) ||
-                other.skip_modifier_screen == skip_modifier_screen) &&
-            (identical(other.ecom_uri, ecom_uri) ||
-                other.ecom_uri == ecom_uri) &&
-            (identical(other.ecom_available, ecom_available) ||
-                other.ecom_available == ecom_available) &&
-            (identical(other.ecom_visibility, ecom_visibility) ||
-                other.ecom_visibility == ecom_visibility) &&
+            (identical(other.productType, productType) ||
+                other.productType == productType) &&
+            (identical(other.skipModifierScreen, skipModifierScreen) ||
+                other.skipModifierScreen == skipModifierScreen) &&
+            (identical(other.ecomUri, ecomUri) || other.ecomUri == ecomUri) &&
+            (identical(other.ecomAvailable, ecomAvailable) ||
+                other.ecomAvailable == ecomAvailable) &&
+            (identical(other.ecomVisibility, ecomVisibility) ||
+                other.ecomVisibility == ecomVisibility) &&
             const DeepCollectionEquality()
-                .equals(other._ecom_image_uris, _ecom_image_uris) &&
-            (identical(other.description_html, description_html) ||
-                other.description_html == description_html) &&
-            (identical(other.description_plaintext, description_plaintext) ||
-                other.description_plaintext == description_plaintext) &&
-            (identical(other.kitchen_name, kitchen_name) ||
-                other.kitchen_name == kitchen_name));
+                .equals(other._ecomImageUris, _ecomImageUris) &&
+            (identical(other.descriptionHtml, descriptionHtml) ||
+                other.descriptionHtml == descriptionHtml) &&
+            (identical(other.descriptionPlaintext, descriptionPlaintext) ||
+                other.descriptionPlaintext == descriptionPlaintext) &&
+            (identical(other.kitchenName, kitchenName) ||
+                other.kitchenName == kitchenName));
   }
 
   @JsonKey(ignore: true)
@@ -624,21 +696,21 @@ class _$_ItemData extends _ItemData {
       runtimeType,
       name,
       description,
-      label_color,
-      is_taxable,
+      labelColor,
+      isTaxable,
       visibility,
-      category_id,
-      const DeepCollectionEquality().hash(_modifier_list_info),
+      categoryId,
+      const DeepCollectionEquality().hash(_modifierListInfo),
       const DeepCollectionEquality().hash(_variations),
-      product_type,
-      skip_modifier_screen,
-      ecom_uri,
-      ecom_available,
-      ecom_visibility,
-      const DeepCollectionEquality().hash(_ecom_image_uris),
-      description_html,
-      description_plaintext,
-      kitchen_name);
+      productType,
+      skipModifierScreen,
+      ecomUri,
+      ecomAvailable,
+      ecomVisibility,
+      const DeepCollectionEquality().hash(_ecomImageUris),
+      descriptionHtml,
+      descriptionPlaintext,
+      kitchenName);
 
   @JsonKey(ignore: true)
   @override
@@ -658,21 +730,34 @@ abstract class _ItemData extends ItemData {
   const factory _ItemData(
       {final String? name,
       final String? description,
-      final String? label_color,
-      required final bool is_taxable,
+      @JsonKey(name: 'label_color')
+          final String? labelColor,
+      @JsonKey(name: 'is_taxable')
+          required final bool isTaxable,
       final String? visibility,
-      final String? category_id,
-      final List<ModifierListInfo>? modifier_list_info,
+      @JsonKey(name: 'category_id')
+          final String? categoryId,
+      @JsonKey(name: 'modifier_list_info')
+          final List<ModifierListInfo>? modifierListInfo,
       required final List<Variation> variations,
-      final String? product_type,
-      required final bool skip_modifier_screen,
-      final String? ecom_uri,
-      required final bool ecom_available,
-      final String? ecom_visibility,
-      final List<String>? ecom_image_uris,
-      final String? description_html,
-      final String? description_plaintext,
-      final String? kitchen_name}) = _$_ItemData;
+      @JsonKey(name: 'product_type')
+          final String? productType,
+      @JsonKey(name: 'skip_modifier_screen')
+          required final bool skipModifierScreen,
+      @JsonKey(name: 'ecom_uri')
+          final String? ecomUri,
+      @JsonKey(name: 'ecom_available')
+          required final bool ecomAvailable,
+      @JsonKey(name: 'ecom_visibility')
+          final String? ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris')
+          final List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html')
+          final String? descriptionHtml,
+      @JsonKey(name: 'description_plaintext')
+          final String? descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name')
+          final String? kitchenName}) = _$_ItemData;
   const _ItemData._() : super._();
 
   factory _ItemData.fromJson(Map<String, dynamic> json) = _$_ItemData.fromJson;
@@ -682,35 +767,48 @@ abstract class _ItemData extends ItemData {
   @override
   String? get description;
   @override
-  String? get label_color;
+  @JsonKey(name: 'label_color')
+  String? get labelColor;
   @override
-  bool get is_taxable;
+  @JsonKey(name: 'is_taxable')
+  bool get isTaxable;
   @override
   String? get visibility;
   @override
-  String? get category_id;
+  @JsonKey(name: 'category_id')
+  String? get categoryId;
   @override
-  List<ModifierListInfo>? get modifier_list_info;
+  @JsonKey(name: 'modifier_list_info')
+  List<ModifierListInfo>? get modifierListInfo;
   @override
   List<Variation> get variations;
   @override
-  String? get product_type;
+  @JsonKey(name: 'product_type')
+  String? get productType;
   @override
-  bool get skip_modifier_screen;
+  @JsonKey(name: 'skip_modifier_screen')
+  bool get skipModifierScreen;
   @override
-  String? get ecom_uri;
+  @JsonKey(name: 'ecom_uri')
+  String? get ecomUri;
   @override
-  bool get ecom_available;
+  @JsonKey(name: 'ecom_available')
+  bool get ecomAvailable;
   @override
-  String? get ecom_visibility;
+  @JsonKey(name: 'ecom_visibility')
+  String? get ecomVisibility;
   @override
-  List<String>? get ecom_image_uris;
+  @JsonKey(name: 'ecom_image_uris')
+  List<String>? get ecomImageUris;
   @override
-  String? get description_html;
+  @JsonKey(name: 'description_html')
+  String? get descriptionHtml;
   @override
-  String? get description_plaintext;
+  @JsonKey(name: 'description_plaintext')
+  String? get descriptionPlaintext;
   @override
-  String? get kitchen_name;
+  @JsonKey(name: 'kitchen_name')
+  String? get kitchenName;
   @override
   @JsonKey(ignore: true)
   _$$_ItemDataCopyWith<_$_ItemData> get copyWith =>
@@ -723,9 +821,12 @@ ModifierListInfo _$ModifierListInfoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ModifierListInfo {
-  String get modifier_list_id => throw _privateConstructorUsedError;
-  int get min_selected_modifiers => throw _privateConstructorUsedError;
-  int get max_selected_modifiers => throw _privateConstructorUsedError;
+  @JsonKey(name: 'modifier_list_id')
+  String get modifierListId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'min_selected_modifiers')
+  int get minSelectedModifiers => throw _privateConstructorUsedError;
+  @JsonKey(name: 'max_selected_modifiers')
+  int get maxSelectedModifiers => throw _privateConstructorUsedError;
   bool get enabled => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -741,9 +842,9 @@ abstract class $ModifierListInfoCopyWith<$Res> {
       _$ModifierListInfoCopyWithImpl<$Res, ModifierListInfo>;
   @useResult
   $Res call(
-      {String modifier_list_id,
-      int min_selected_modifiers,
-      int max_selected_modifiers,
+      {@JsonKey(name: 'modifier_list_id') String modifierListId,
+      @JsonKey(name: 'min_selected_modifiers') int minSelectedModifiers,
+      @JsonKey(name: 'max_selected_modifiers') int maxSelectedModifiers,
       bool enabled});
 }
 
@@ -760,23 +861,23 @@ class _$ModifierListInfoCopyWithImpl<$Res, $Val extends ModifierListInfo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? modifier_list_id = null,
-    Object? min_selected_modifiers = null,
-    Object? max_selected_modifiers = null,
+    Object? modifierListId = null,
+    Object? minSelectedModifiers = null,
+    Object? maxSelectedModifiers = null,
     Object? enabled = null,
   }) {
     return _then(_value.copyWith(
-      modifier_list_id: null == modifier_list_id
-          ? _value.modifier_list_id
-          : modifier_list_id // ignore: cast_nullable_to_non_nullable
+      modifierListId: null == modifierListId
+          ? _value.modifierListId
+          : modifierListId // ignore: cast_nullable_to_non_nullable
               as String,
-      min_selected_modifiers: null == min_selected_modifiers
-          ? _value.min_selected_modifiers
-          : min_selected_modifiers // ignore: cast_nullable_to_non_nullable
+      minSelectedModifiers: null == minSelectedModifiers
+          ? _value.minSelectedModifiers
+          : minSelectedModifiers // ignore: cast_nullable_to_non_nullable
               as int,
-      max_selected_modifiers: null == max_selected_modifiers
-          ? _value.max_selected_modifiers
-          : max_selected_modifiers // ignore: cast_nullable_to_non_nullable
+      maxSelectedModifiers: null == maxSelectedModifiers
+          ? _value.maxSelectedModifiers
+          : maxSelectedModifiers // ignore: cast_nullable_to_non_nullable
               as int,
       enabled: null == enabled
           ? _value.enabled
@@ -795,9 +896,9 @@ abstract class _$$_ModifierListInfoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String modifier_list_id,
-      int min_selected_modifiers,
-      int max_selected_modifiers,
+      {@JsonKey(name: 'modifier_list_id') String modifierListId,
+      @JsonKey(name: 'min_selected_modifiers') int minSelectedModifiers,
+      @JsonKey(name: 'max_selected_modifiers') int maxSelectedModifiers,
       bool enabled});
 }
 
@@ -812,23 +913,23 @@ class __$$_ModifierListInfoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? modifier_list_id = null,
-    Object? min_selected_modifiers = null,
-    Object? max_selected_modifiers = null,
+    Object? modifierListId = null,
+    Object? minSelectedModifiers = null,
+    Object? maxSelectedModifiers = null,
     Object? enabled = null,
   }) {
     return _then(_$_ModifierListInfo(
-      modifier_list_id: null == modifier_list_id
-          ? _value.modifier_list_id
-          : modifier_list_id // ignore: cast_nullable_to_non_nullable
+      modifierListId: null == modifierListId
+          ? _value.modifierListId
+          : modifierListId // ignore: cast_nullable_to_non_nullable
               as String,
-      min_selected_modifiers: null == min_selected_modifiers
-          ? _value.min_selected_modifiers
-          : min_selected_modifiers // ignore: cast_nullable_to_non_nullable
+      minSelectedModifiers: null == minSelectedModifiers
+          ? _value.minSelectedModifiers
+          : minSelectedModifiers // ignore: cast_nullable_to_non_nullable
               as int,
-      max_selected_modifiers: null == max_selected_modifiers
-          ? _value.max_selected_modifiers
-          : max_selected_modifiers // ignore: cast_nullable_to_non_nullable
+      maxSelectedModifiers: null == maxSelectedModifiers
+          ? _value.maxSelectedModifiers
+          : maxSelectedModifiers // ignore: cast_nullable_to_non_nullable
               as int,
       enabled: null == enabled
           ? _value.enabled
@@ -842,26 +943,32 @@ class __$$_ModifierListInfoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ModifierListInfo implements _ModifierListInfo {
   _$_ModifierListInfo(
-      {required this.modifier_list_id,
-      required this.min_selected_modifiers,
-      required this.max_selected_modifiers,
+      {@JsonKey(name: 'modifier_list_id')
+          required this.modifierListId,
+      @JsonKey(name: 'min_selected_modifiers')
+          required this.minSelectedModifiers,
+      @JsonKey(name: 'max_selected_modifiers')
+          required this.maxSelectedModifiers,
       required this.enabled});
 
   factory _$_ModifierListInfo.fromJson(Map<String, dynamic> json) =>
       _$$_ModifierListInfoFromJson(json);
 
   @override
-  final String modifier_list_id;
+  @JsonKey(name: 'modifier_list_id')
+  final String modifierListId;
   @override
-  final int min_selected_modifiers;
+  @JsonKey(name: 'min_selected_modifiers')
+  final int minSelectedModifiers;
   @override
-  final int max_selected_modifiers;
+  @JsonKey(name: 'max_selected_modifiers')
+  final int maxSelectedModifiers;
   @override
   final bool enabled;
 
   @override
   String toString() {
-    return 'ModifierListInfo(modifier_list_id: $modifier_list_id, min_selected_modifiers: $min_selected_modifiers, max_selected_modifiers: $max_selected_modifiers, enabled: $enabled)';
+    return 'ModifierListInfo(modifierListId: $modifierListId, minSelectedModifiers: $minSelectedModifiers, maxSelectedModifiers: $maxSelectedModifiers, enabled: $enabled)';
   }
 
   @override
@@ -869,19 +976,19 @@ class _$_ModifierListInfo implements _ModifierListInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ModifierListInfo &&
-            (identical(other.modifier_list_id, modifier_list_id) ||
-                other.modifier_list_id == modifier_list_id) &&
-            (identical(other.min_selected_modifiers, min_selected_modifiers) ||
-                other.min_selected_modifiers == min_selected_modifiers) &&
-            (identical(other.max_selected_modifiers, max_selected_modifiers) ||
-                other.max_selected_modifiers == max_selected_modifiers) &&
+            (identical(other.modifierListId, modifierListId) ||
+                other.modifierListId == modifierListId) &&
+            (identical(other.minSelectedModifiers, minSelectedModifiers) ||
+                other.minSelectedModifiers == minSelectedModifiers) &&
+            (identical(other.maxSelectedModifiers, maxSelectedModifiers) ||
+                other.maxSelectedModifiers == maxSelectedModifiers) &&
             (identical(other.enabled, enabled) || other.enabled == enabled));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, modifier_list_id,
-      min_selected_modifiers, max_selected_modifiers, enabled);
+  int get hashCode => Object.hash(runtimeType, modifierListId,
+      minSelectedModifiers, maxSelectedModifiers, enabled);
 
   @JsonKey(ignore: true)
   @override
@@ -899,20 +1006,26 @@ class _$_ModifierListInfo implements _ModifierListInfo {
 
 abstract class _ModifierListInfo implements ModifierListInfo {
   factory _ModifierListInfo(
-      {required final String modifier_list_id,
-      required final int min_selected_modifiers,
-      required final int max_selected_modifiers,
+      {@JsonKey(name: 'modifier_list_id')
+          required final String modifierListId,
+      @JsonKey(name: 'min_selected_modifiers')
+          required final int minSelectedModifiers,
+      @JsonKey(name: 'max_selected_modifiers')
+          required final int maxSelectedModifiers,
       required final bool enabled}) = _$_ModifierListInfo;
 
   factory _ModifierListInfo.fromJson(Map<String, dynamic> json) =
       _$_ModifierListInfo.fromJson;
 
   @override
-  String get modifier_list_id;
+  @JsonKey(name: 'modifier_list_id')
+  String get modifierListId;
   @override
-  int get min_selected_modifiers;
+  @JsonKey(name: 'min_selected_modifiers')
+  int get minSelectedModifiers;
   @override
-  int get max_selected_modifiers;
+  @JsonKey(name: 'max_selected_modifiers')
+  int get maxSelectedModifiers;
   @override
   bool get enabled;
   @override
@@ -929,12 +1042,17 @@ Variation _$VariationFromJson(Map<String, dynamic> json) {
 mixin _$Variation {
   String get type => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  DateTime get updated_at => throw _privateConstructorUsedError;
-  DateTime get created_at => throw _privateConstructorUsedError;
+  @JsonKey(name: 'updated_at')
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'created_at')
+  DateTime get createdAt => throw _privateConstructorUsedError;
   int get version => throw _privateConstructorUsedError;
-  bool get is_deleted => throw _privateConstructorUsedError;
-  bool get present_at_all_locations => throw _privateConstructorUsedError;
-  ItemVariationData? get item_variation_data =>
+  @JsonKey(name: 'is_deleted')
+  bool get isDeleted => throw _privateConstructorUsedError;
+  @JsonKey(name: 'present_at_all_locations')
+  bool get presentAtAllLocations => throw _privateConstructorUsedError;
+  @JsonKey(name: 'item_variation_data')
+  ItemVariationData? get itemVariationData =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -951,14 +1069,19 @@ abstract class $VariationCopyWith<$Res> {
   $Res call(
       {String type,
       String id,
-      DateTime updated_at,
-      DateTime created_at,
+      @JsonKey(name: 'updated_at')
+          DateTime updatedAt,
+      @JsonKey(name: 'created_at')
+          DateTime createdAt,
       int version,
-      bool is_deleted,
-      bool present_at_all_locations,
-      ItemVariationData? item_variation_data});
+      @JsonKey(name: 'is_deleted')
+          bool isDeleted,
+      @JsonKey(name: 'present_at_all_locations')
+          bool presentAtAllLocations,
+      @JsonKey(name: 'item_variation_data')
+          ItemVariationData? itemVariationData});
 
-  $ItemVariationDataCopyWith<$Res>? get item_variation_data;
+  $ItemVariationDataCopyWith<$Res>? get itemVariationData;
 }
 
 /// @nodoc
@@ -976,12 +1099,12 @@ class _$VariationCopyWithImpl<$Res, $Val extends Variation>
   $Res call({
     Object? type = null,
     Object? id = null,
-    Object? updated_at = null,
-    Object? created_at = null,
+    Object? updatedAt = null,
+    Object? createdAt = null,
     Object? version = null,
-    Object? is_deleted = null,
-    Object? present_at_all_locations = null,
-    Object? item_variation_data = freezed,
+    Object? isDeleted = null,
+    Object? presentAtAllLocations = null,
+    Object? itemVariationData = freezed,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -992,43 +1115,42 @@ class _$VariationCopyWithImpl<$Res, $Val extends Variation>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      updated_at: null == updated_at
-          ? _value.updated_at
-          : updated_at // ignore: cast_nullable_to_non_nullable
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      is_deleted: null == is_deleted
-          ? _value.is_deleted
-          : is_deleted // ignore: cast_nullable_to_non_nullable
+      isDeleted: null == isDeleted
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
               as bool,
-      present_at_all_locations: null == present_at_all_locations
-          ? _value.present_at_all_locations
-          : present_at_all_locations // ignore: cast_nullable_to_non_nullable
+      presentAtAllLocations: null == presentAtAllLocations
+          ? _value.presentAtAllLocations
+          : presentAtAllLocations // ignore: cast_nullable_to_non_nullable
               as bool,
-      item_variation_data: freezed == item_variation_data
-          ? _value.item_variation_data
-          : item_variation_data // ignore: cast_nullable_to_non_nullable
+      itemVariationData: freezed == itemVariationData
+          ? _value.itemVariationData
+          : itemVariationData // ignore: cast_nullable_to_non_nullable
               as ItemVariationData?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ItemVariationDataCopyWith<$Res>? get item_variation_data {
-    if (_value.item_variation_data == null) {
+  $ItemVariationDataCopyWith<$Res>? get itemVariationData {
+    if (_value.itemVariationData == null) {
       return null;
     }
 
-    return $ItemVariationDataCopyWith<$Res>(_value.item_variation_data!,
-        (value) {
-      return _then(_value.copyWith(item_variation_data: value) as $Val);
+    return $ItemVariationDataCopyWith<$Res>(_value.itemVariationData!, (value) {
+      return _then(_value.copyWith(itemVariationData: value) as $Val);
     });
   }
 }
@@ -1043,15 +1165,20 @@ abstract class _$$_VariationCopyWith<$Res> implements $VariationCopyWith<$Res> {
   $Res call(
       {String type,
       String id,
-      DateTime updated_at,
-      DateTime created_at,
+      @JsonKey(name: 'updated_at')
+          DateTime updatedAt,
+      @JsonKey(name: 'created_at')
+          DateTime createdAt,
       int version,
-      bool is_deleted,
-      bool present_at_all_locations,
-      ItemVariationData? item_variation_data});
+      @JsonKey(name: 'is_deleted')
+          bool isDeleted,
+      @JsonKey(name: 'present_at_all_locations')
+          bool presentAtAllLocations,
+      @JsonKey(name: 'item_variation_data')
+          ItemVariationData? itemVariationData});
 
   @override
-  $ItemVariationDataCopyWith<$Res>? get item_variation_data;
+  $ItemVariationDataCopyWith<$Res>? get itemVariationData;
 }
 
 /// @nodoc
@@ -1067,12 +1194,12 @@ class __$$_VariationCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? id = null,
-    Object? updated_at = null,
-    Object? created_at = null,
+    Object? updatedAt = null,
+    Object? createdAt = null,
     Object? version = null,
-    Object? is_deleted = null,
-    Object? present_at_all_locations = null,
-    Object? item_variation_data = freezed,
+    Object? isDeleted = null,
+    Object? presentAtAllLocations = null,
+    Object? itemVariationData = freezed,
   }) {
     return _then(_$_Variation(
       type: null == type
@@ -1083,29 +1210,29 @@ class __$$_VariationCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      updated_at: null == updated_at
-          ? _value.updated_at
-          : updated_at // ignore: cast_nullable_to_non_nullable
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      is_deleted: null == is_deleted
-          ? _value.is_deleted
-          : is_deleted // ignore: cast_nullable_to_non_nullable
+      isDeleted: null == isDeleted
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
               as bool,
-      present_at_all_locations: null == present_at_all_locations
-          ? _value.present_at_all_locations
-          : present_at_all_locations // ignore: cast_nullable_to_non_nullable
+      presentAtAllLocations: null == presentAtAllLocations
+          ? _value.presentAtAllLocations
+          : presentAtAllLocations // ignore: cast_nullable_to_non_nullable
               as bool,
-      item_variation_data: freezed == item_variation_data
-          ? _value.item_variation_data
-          : item_variation_data // ignore: cast_nullable_to_non_nullable
+      itemVariationData: freezed == itemVariationData
+          ? _value.itemVariationData
+          : itemVariationData // ignore: cast_nullable_to_non_nullable
               as ItemVariationData?,
     ));
   }
@@ -1117,12 +1244,17 @@ class _$_Variation implements _Variation {
   _$_Variation(
       {required this.type,
       required this.id,
-      required this.updated_at,
-      required this.created_at,
+      @JsonKey(name: 'updated_at')
+          required this.updatedAt,
+      @JsonKey(name: 'created_at')
+          required this.createdAt,
       required this.version,
-      required this.is_deleted,
-      required this.present_at_all_locations,
-      required this.item_variation_data});
+      @JsonKey(name: 'is_deleted')
+          required this.isDeleted,
+      @JsonKey(name: 'present_at_all_locations')
+          required this.presentAtAllLocations,
+      @JsonKey(name: 'item_variation_data')
+          required this.itemVariationData});
 
   factory _$_Variation.fromJson(Map<String, dynamic> json) =>
       _$$_VariationFromJson(json);
@@ -1132,21 +1264,26 @@ class _$_Variation implements _Variation {
   @override
   final String id;
   @override
-  final DateTime updated_at;
+  @JsonKey(name: 'updated_at')
+  final DateTime updatedAt;
   @override
-  final DateTime created_at;
+  @JsonKey(name: 'created_at')
+  final DateTime createdAt;
   @override
   final int version;
   @override
-  final bool is_deleted;
+  @JsonKey(name: 'is_deleted')
+  final bool isDeleted;
   @override
-  final bool present_at_all_locations;
+  @JsonKey(name: 'present_at_all_locations')
+  final bool presentAtAllLocations;
   @override
-  final ItemVariationData? item_variation_data;
+  @JsonKey(name: 'item_variation_data')
+  final ItemVariationData? itemVariationData;
 
   @override
   String toString() {
-    return 'Variation(type: $type, id: $id, updated_at: $updated_at, created_at: $created_at, version: $version, is_deleted: $is_deleted, present_at_all_locations: $present_at_all_locations, item_variation_data: $item_variation_data)';
+    return 'Variation(type: $type, id: $id, updatedAt: $updatedAt, createdAt: $createdAt, version: $version, isDeleted: $isDeleted, presentAtAllLocations: $presentAtAllLocations, itemVariationData: $itemVariationData)';
   }
 
   @override
@@ -1156,24 +1293,23 @@ class _$_Variation implements _Variation {
             other is _$_Variation &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.updated_at, updated_at) ||
-                other.updated_at == updated_at) &&
-            (identical(other.created_at, created_at) ||
-                other.created_at == created_at) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.version, version) || other.version == version) &&
-            (identical(other.is_deleted, is_deleted) ||
-                other.is_deleted == is_deleted) &&
-            (identical(
-                    other.present_at_all_locations, present_at_all_locations) ||
-                other.present_at_all_locations == present_at_all_locations) &&
-            (identical(other.item_variation_data, item_variation_data) ||
-                other.item_variation_data == item_variation_data));
+            (identical(other.isDeleted, isDeleted) ||
+                other.isDeleted == isDeleted) &&
+            (identical(other.presentAtAllLocations, presentAtAllLocations) ||
+                other.presentAtAllLocations == presentAtAllLocations) &&
+            (identical(other.itemVariationData, itemVariationData) ||
+                other.itemVariationData == itemVariationData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, id, updated_at, created_at,
-      version, is_deleted, present_at_all_locations, item_variation_data);
+  int get hashCode => Object.hash(runtimeType, type, id, updatedAt, createdAt,
+      version, isDeleted, presentAtAllLocations, itemVariationData);
 
   @JsonKey(ignore: true)
   @override
@@ -1193,12 +1329,17 @@ abstract class _Variation implements Variation {
   factory _Variation(
       {required final String type,
       required final String id,
-      required final DateTime updated_at,
-      required final DateTime created_at,
+      @JsonKey(name: 'updated_at')
+          required final DateTime updatedAt,
+      @JsonKey(name: 'created_at')
+          required final DateTime createdAt,
       required final int version,
-      required final bool is_deleted,
-      required final bool present_at_all_locations,
-      required final ItemVariationData? item_variation_data}) = _$_Variation;
+      @JsonKey(name: 'is_deleted')
+          required final bool isDeleted,
+      @JsonKey(name: 'present_at_all_locations')
+          required final bool presentAtAllLocations,
+      @JsonKey(name: 'item_variation_data')
+          required final ItemVariationData? itemVariationData}) = _$_Variation;
 
   factory _Variation.fromJson(Map<String, dynamic> json) =
       _$_Variation.fromJson;
@@ -1208,17 +1349,22 @@ abstract class _Variation implements Variation {
   @override
   String get id;
   @override
-  DateTime get updated_at;
+  @JsonKey(name: 'updated_at')
+  DateTime get updatedAt;
   @override
-  DateTime get created_at;
+  @JsonKey(name: 'created_at')
+  DateTime get createdAt;
   @override
   int get version;
   @override
-  bool get is_deleted;
+  @JsonKey(name: 'is_deleted')
+  bool get isDeleted;
   @override
-  bool get present_at_all_locations;
+  @JsonKey(name: 'present_at_all_locations')
+  bool get presentAtAllLocations;
   @override
-  ItemVariationData? get item_variation_data;
+  @JsonKey(name: 'item_variation_data')
+  ItemVariationData? get itemVariationData;
   @override
   @JsonKey(ignore: true)
   _$$_VariationCopyWith<_$_Variation> get copyWith =>
@@ -1231,11 +1377,14 @@ ItemVariationData _$ItemVariationDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ItemVariationData {
-  String get item_id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'item_id')
+  String get itemId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get ordinal => throw _privateConstructorUsedError;
-  String get pricing_type => throw _privateConstructorUsedError;
-  PriceMoney get price_money => throw _privateConstructorUsedError;
+  @JsonKey(name: 'pricing_type')
+  String get pricingType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'price_money')
+  PriceMoney get priceMoney => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1250,13 +1399,13 @@ abstract class $ItemVariationDataCopyWith<$Res> {
       _$ItemVariationDataCopyWithImpl<$Res, ItemVariationData>;
   @useResult
   $Res call(
-      {String item_id,
+      {@JsonKey(name: 'item_id') String itemId,
       String name,
       int ordinal,
-      String pricing_type,
-      PriceMoney price_money});
+      @JsonKey(name: 'pricing_type') String pricingType,
+      @JsonKey(name: 'price_money') PriceMoney priceMoney});
 
-  $PriceMoneyCopyWith<$Res> get price_money;
+  $PriceMoneyCopyWith<$Res> get priceMoney;
 }
 
 /// @nodoc
@@ -1272,16 +1421,16 @@ class _$ItemVariationDataCopyWithImpl<$Res, $Val extends ItemVariationData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? item_id = null,
+    Object? itemId = null,
     Object? name = null,
     Object? ordinal = null,
-    Object? pricing_type = null,
-    Object? price_money = null,
+    Object? pricingType = null,
+    Object? priceMoney = null,
   }) {
     return _then(_value.copyWith(
-      item_id: null == item_id
-          ? _value.item_id
-          : item_id // ignore: cast_nullable_to_non_nullable
+      itemId: null == itemId
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -1291,22 +1440,22 @@ class _$ItemVariationDataCopyWithImpl<$Res, $Val extends ItemVariationData>
           ? _value.ordinal
           : ordinal // ignore: cast_nullable_to_non_nullable
               as int,
-      pricing_type: null == pricing_type
-          ? _value.pricing_type
-          : pricing_type // ignore: cast_nullable_to_non_nullable
+      pricingType: null == pricingType
+          ? _value.pricingType
+          : pricingType // ignore: cast_nullable_to_non_nullable
               as String,
-      price_money: null == price_money
-          ? _value.price_money
-          : price_money // ignore: cast_nullable_to_non_nullable
+      priceMoney: null == priceMoney
+          ? _value.priceMoney
+          : priceMoney // ignore: cast_nullable_to_non_nullable
               as PriceMoney,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceMoneyCopyWith<$Res> get price_money {
-    return $PriceMoneyCopyWith<$Res>(_value.price_money, (value) {
-      return _then(_value.copyWith(price_money: value) as $Val);
+  $PriceMoneyCopyWith<$Res> get priceMoney {
+    return $PriceMoneyCopyWith<$Res>(_value.priceMoney, (value) {
+      return _then(_value.copyWith(priceMoney: value) as $Val);
     });
   }
 }
@@ -1320,14 +1469,14 @@ abstract class _$$_ItemVariationDataCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String item_id,
+      {@JsonKey(name: 'item_id') String itemId,
       String name,
       int ordinal,
-      String pricing_type,
-      PriceMoney price_money});
+      @JsonKey(name: 'pricing_type') String pricingType,
+      @JsonKey(name: 'price_money') PriceMoney priceMoney});
 
   @override
-  $PriceMoneyCopyWith<$Res> get price_money;
+  $PriceMoneyCopyWith<$Res> get priceMoney;
 }
 
 /// @nodoc
@@ -1341,16 +1490,16 @@ class __$$_ItemVariationDataCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? item_id = null,
+    Object? itemId = null,
     Object? name = null,
     Object? ordinal = null,
-    Object? pricing_type = null,
-    Object? price_money = null,
+    Object? pricingType = null,
+    Object? priceMoney = null,
   }) {
     return _then(_$_ItemVariationData(
-      item_id: null == item_id
-          ? _value.item_id
-          : item_id // ignore: cast_nullable_to_non_nullable
+      itemId: null == itemId
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -1360,13 +1509,13 @@ class __$$_ItemVariationDataCopyWithImpl<$Res>
           ? _value.ordinal
           : ordinal // ignore: cast_nullable_to_non_nullable
               as int,
-      pricing_type: null == pricing_type
-          ? _value.pricing_type
-          : pricing_type // ignore: cast_nullable_to_non_nullable
+      pricingType: null == pricingType
+          ? _value.pricingType
+          : pricingType // ignore: cast_nullable_to_non_nullable
               as String,
-      price_money: null == price_money
-          ? _value.price_money
-          : price_money // ignore: cast_nullable_to_non_nullable
+      priceMoney: null == priceMoney
+          ? _value.priceMoney
+          : priceMoney // ignore: cast_nullable_to_non_nullable
               as PriceMoney,
     ));
   }
@@ -1376,29 +1525,32 @@ class __$$_ItemVariationDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ItemVariationData implements _ItemVariationData {
   _$_ItemVariationData(
-      {required this.item_id,
+      {@JsonKey(name: 'item_id') required this.itemId,
       required this.name,
       required this.ordinal,
-      required this.pricing_type,
-      required this.price_money});
+      @JsonKey(name: 'pricing_type') required this.pricingType,
+      @JsonKey(name: 'price_money') required this.priceMoney});
 
   factory _$_ItemVariationData.fromJson(Map<String, dynamic> json) =>
       _$$_ItemVariationDataFromJson(json);
 
   @override
-  final String item_id;
+  @JsonKey(name: 'item_id')
+  final String itemId;
   @override
   final String name;
   @override
   final int ordinal;
   @override
-  final String pricing_type;
+  @JsonKey(name: 'pricing_type')
+  final String pricingType;
   @override
-  final PriceMoney price_money;
+  @JsonKey(name: 'price_money')
+  final PriceMoney priceMoney;
 
   @override
   String toString() {
-    return 'ItemVariationData(item_id: $item_id, name: $name, ordinal: $ordinal, pricing_type: $pricing_type, price_money: $price_money)';
+    return 'ItemVariationData(itemId: $itemId, name: $name, ordinal: $ordinal, pricingType: $pricingType, priceMoney: $priceMoney)';
   }
 
   @override
@@ -1406,19 +1558,19 @@ class _$_ItemVariationData implements _ItemVariationData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ItemVariationData &&
-            (identical(other.item_id, item_id) || other.item_id == item_id) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.ordinal, ordinal) || other.ordinal == ordinal) &&
-            (identical(other.pricing_type, pricing_type) ||
-                other.pricing_type == pricing_type) &&
-            (identical(other.price_money, price_money) ||
-                other.price_money == price_money));
+            (identical(other.pricingType, pricingType) ||
+                other.pricingType == pricingType) &&
+            (identical(other.priceMoney, priceMoney) ||
+                other.priceMoney == priceMoney));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, item_id, name, ordinal, pricing_type, price_money);
+  int get hashCode =>
+      Object.hash(runtimeType, itemId, name, ordinal, pricingType, priceMoney);
 
   @JsonKey(ignore: true)
   @override
@@ -1437,25 +1589,29 @@ class _$_ItemVariationData implements _ItemVariationData {
 
 abstract class _ItemVariationData implements ItemVariationData {
   factory _ItemVariationData(
-      {required final String item_id,
-      required final String name,
-      required final int ordinal,
-      required final String pricing_type,
-      required final PriceMoney price_money}) = _$_ItemVariationData;
+          {@JsonKey(name: 'item_id') required final String itemId,
+          required final String name,
+          required final int ordinal,
+          @JsonKey(name: 'pricing_type') required final String pricingType,
+          @JsonKey(name: 'price_money') required final PriceMoney priceMoney}) =
+      _$_ItemVariationData;
 
   factory _ItemVariationData.fromJson(Map<String, dynamic> json) =
       _$_ItemVariationData.fromJson;
 
   @override
-  String get item_id;
+  @JsonKey(name: 'item_id')
+  String get itemId;
   @override
   String get name;
   @override
   int get ordinal;
   @override
-  String get pricing_type;
+  @JsonKey(name: 'pricing_type')
+  String get pricingType;
   @override
-  PriceMoney get price_money;
+  @JsonKey(name: 'price_money')
+  PriceMoney get priceMoney;
   @override
   @JsonKey(ignore: true)
   _$$_ItemVariationDataCopyWith<_$_ItemVariationData> get copyWith =>

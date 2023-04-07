@@ -13,7 +13,27 @@ class Item with _$Item {
     required int price,
     required String imageUrl,
     required String categoryId,
+    required bool skip_modifier_screen,
+    required List<ModifierList> modifiers,
   }) = _Item;
+}
 
-  factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
+@freezed
+class ModifierList with _$ModifierList {
+  const ModifierList._();
+  factory ModifierList({
+    required String id,
+    required String name,
+    required List<Modifier> modifiers,
+  }) = _ModifierList;
+}
+
+@freezed
+class Modifier with _$Modifier {
+  const Modifier._();
+  factory Modifier({
+    required String id,
+    required String name,
+    required double price,
+  }) = _Modifier;
 }

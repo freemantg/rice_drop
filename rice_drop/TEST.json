@@ -1,0 +1,3358 @@
+{
+    "objects": [
+      {
+        "type": "CATEGORY",
+        "id": "T33BTK2EMJQDX2P57JJOG4WF",
+        "updated_at": "2023-02-20T11:15:37.61Z",
+        "created_at": "2022-11-07T16:34:02.223Z",
+        "version": 1676891737610,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Drop Boxes",
+          "ordinal": 0,
+          "abbreviation": "Boxes",
+          "label_color": "4AB200",
+          "is_top_level": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "JUUJYKRHW6PERLSVUP5G2N3F",
+        "updated_at": "2023-02-20T11:15:37.797Z",
+        "created_at": "2022-11-07T16:34:13.934Z",
+        "version": 1676891737797,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Sides and Snacks",
+          "ordinal": 0,
+          "abbreviation": "Sides",
+          "label_color": "2952CC",
+          "is_top_level": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "Z3GHEIYHKGD43BDF2IUYFONQ",
+        "updated_at": "2023-02-20T11:15:37.351Z",
+        "created_at": "2022-11-07T16:34:21.367Z",
+        "version": 1676891737351,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Rice \u0026 Noodles",
+          "ordinal": 0,
+          "abbreviation": "Rice",
+          "label_color": "E5BF00",
+          "is_top_level": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+        "updated_at": "2023-02-20T11:15:37.447Z",
+        "created_at": "2022-11-07T16:34:28.156Z",
+        "version": 1676891737447,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Sauces",
+          "ordinal": 0,
+          "abbreviation": "Sauce",
+          "label_color": "B21212",
+          "is_top_level": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "TXYKEUG6ABKUU2IOB64BDQSS",
+        "updated_at": "2023-02-20T11:15:37.735Z",
+        "created_at": "2022-11-07T16:34:31.707Z",
+        "version": 1676891737735,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Drinks",
+          "ordinal": 0,
+          "abbreviation": "Drinks",
+          "label_color": "593C00",
+          "is_top_level": true
+        }
+      },
+      {
+        "type": "MODIFIER_LIST",
+        "id": "RFERDAT7TX7CYMJQNU7YBBKN",
+        "updated_at": "2023-02-09T21:12:35.663Z",
+        "created_at": "2022-11-07T16:40:13.154Z",
+        "version": 1675977155663,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "modifier_list_data": {
+          "name": "Drop Boxes",
+          "selection_type": "SINGLE",
+          "modifiers": [
+            {
+              "type": "MODIFIER",
+              "id": "BQGHB5RVDQN4ANTMHD2BLE33",
+              "updated_at": "2023-02-08T20:48:38.676Z",
+              "created_at": "2022-11-22T17:14:01.347Z",
+              "version": 1675889318676,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "Boiled Rice",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": true,
+                "ordinal": 1,
+                "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+                "kitchen_name": "Boiled Rice - 白飯"
+              }
+            },
+            {
+              "type": "MODIFIER",
+              "id": "VFSJ7AAAAOORR5HJJJB3EBCQ",
+              "updated_at": "2023-02-08T20:48:38.676Z",
+              "created_at": "2022-11-22T17:14:01.347Z",
+              "version": 1675889318676,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "Chips",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 2,
+                "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+                "kitchen_name": "Chips - 薯條"
+              }
+            },
+            {
+              "type": "MODIFIER",
+              "id": "45G2SZYMCDGJ6YPHVGTKAREM",
+              "updated_at": "2023-02-09T21:12:35.663Z",
+              "created_at": "2022-11-22T17:14:01.347Z",
+              "version": 1675977155663,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "Half Boiled Rice \u0026 Half Chips",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 3,
+                "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN"
+              }
+            },
+            {
+              "type": "MODIFIER",
+              "id": "YWYU72XNJITNPC5DDEB33VDC",
+              "updated_at": "2023-02-08T20:48:38.676Z",
+              "created_at": "2022-11-07T16:40:13.154Z",
+              "version": 1675889318676,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "Egg Fried Rice",
+                "price_money": {
+                  "amount": 150,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 4,
+                "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+                "kitchen_name": "Egg Fried Rice - 蛋飯"
+              }
+            },
+            {
+              "type": "MODIFIER",
+              "id": "UIALHDI3Q2WELCUP4VI62GYK",
+              "updated_at": "2023-02-08T20:48:38.676Z",
+              "created_at": "2022-11-07T16:40:13.154Z",
+              "version": 1675889318676,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "Chow Mein",
+                "price_money": {
+                  "amount": 150,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 5,
+                "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+                "kitchen_name": "Chow Mein - 炒麵"
+              }
+            }
+          ],
+          "is_conversational": false
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "CBNREWGBBIGLRILSTMDGIFVW",
+        "updated_at": "2023-02-21T14:36:25.454Z",
+        "created_at": "2022-11-22T18:43:27.321Z",
+        "version": 1676990185454,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper Chicken Drop Box",
+          "description": "Crisp fried boneless chicken seasoned with a special blend of Chinese spices.",
+          "abbreviation": "Chick",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "JP2SRS46VBK6SRQVMY4LSBKL",
+              "updated_at": "2023-02-08T21:26:38.373Z",
+              "created_at": "2022-11-22T18:43:27.321Z",
+              "version": 1675891598373,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "CBNREWGBBIGLRILSTMDGIFVW",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 850,
+                  "currency": "GBP"
+                },
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-chicken-drop-box/1",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p1_i1_w2557.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "UGCBRWKVTK7H45DJVCOS4YNH"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcwcmadokf0rsnzthl5",
+          "delivery_fulfillment_preferences_id": "fprefs_127koedmvc4xzv8clbwobfeyn",
+          "description_html": "\u003cp\u003eCrisp fried boneless chicken seasoned with a special blend of Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Crisp fried boneless chicken seasoned with a special blend of Chinese spices.",
+          "kitchen_name": "SALT AND PEPPER CHICKEN DROP BOX – 椒鹽雞套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127koegvrbmnjohm8th0wvptr"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "CKUEKH2665NRQKWG52PR3GRI",
+        "updated_at": "2023-02-25T23:28:03.6Z",
+        "created_at": "2022-11-22T18:47:56.776Z",
+        "version": 1677367683600,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper Tofu Drop Box",
+          "description": "Our vegan offering. Crispy tofu puffs seasoned with Chinese spices.",
+          "abbreviation": "Tofu",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "7ADLZDF4DBPSTAXX22XIPH3S",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T18:47:56.776Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "CKUEKH2665NRQKWG52PR3GRI",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 850,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-tofu-drop-box/2",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p2_i1_w2657.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "32PK73AJVT3INAU4OJOGYJY3"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvblsihetpk1dfmz8cp5",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeeitdx8niscrs7vy1vdm",
+          "description_html": "\u003cp\u003eOur vegan offering. Crispy tofu puffs seasoned with Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Our vegan offering. Crispy tofu puffs seasoned with Chinese spices.",
+          "kitchen_name": "SALT \u0026 PEPPER TOFU DROP BOX - 椒鹽豆腐套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127koelo4rv3rrr3wppa1w6ly"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "DS57BPE7OAHRZL7ZXUREN3AZ",
+        "updated_at": "2023-02-25T23:57:02.616Z",
+        "created_at": "2022-11-22T18:54:12.385Z",
+        "version": 1677369422616,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper King Prawns Drop Box",
+          "description": "Deep fried prawns tossed in our blend of Chinese spices.",
+          "abbreviation": "Prawn",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "VBUNLHMHV3P372CURZJD6XVW",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T18:54:12.385Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "DS57BPE7OAHRZL7ZXUREN3AZ",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 920,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-king-prawns-drop-box/3",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p3_i1_w2852.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "44C3ZRVWWMRD3AICVFGPMVOJ"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvb1mxb0blfgod2kvm39",
+          "delivery_fulfillment_preferences_id": "fprefs_127koedycymseg2101dex2iyr",
+          "description_html": "\u003cp\u003eDeep fried prawns tossed in our blend of Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Deep fried prawns tossed in our blend of Chinese spices.",
+          "kitchen_name": "SALT AND PEPPER KING PRAWNS –椒鹽大蝦套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127koejw01tmczbcrlaxiht0a"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "JK2E25IJ3F6C3TPGEDBV75HT",
+        "updated_at": "2023-02-21T13:36:53.89Z",
+        "created_at": "2022-11-22T18:55:40.815Z",
+        "version": 1676986613890,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Korean Fried Chicken Drop Box",
+          "description": "Crispy boneless chicken with a crackly crust, glazed with a sauce of your choice. Includes chewy rice cake bits.",
+          "abbreviation": "Korea",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PNQ4X65P4WAAORTWN7YC3AH5",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "S555LCDWFVQB3GIRSB22GI3Y",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T18:55:40.815Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "JK2E25IJ3F6C3TPGEDBV75HT",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 890,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/korean-fried-chicken-drop-box/4",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p4_i1_w2675.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "EME47LMEZL4G2ZD7JNTDVNXM"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcygu856b8rh7yfloeq",
+          "delivery_fulfillment_preferences_id": "fprefs_127koecxc0pib3w1ugskj7x1e",
+          "description_html": "\u003cp\u003eCrispy boneless chicken with a crackly crust, glazed with a sauce of your choice. \u003cstrong\u003eIncludes chewy rice cake bits.\u003c/strong\u003e\u003c/p\u003e",
+          "description_plaintext": "Crispy boneless chicken with a crackly crust, glazed with a sauce of your choice. Includes chewy rice cake bits.",
+          "kitchen_name": "KOREAN FRIED CHICKEN DROPBOX - 韓式雞套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127koefrbqlfku3tr35vhr8yi"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "N6JW7T54XLPO2NFCLVE375QB",
+        "updated_at": "2023-02-25T23:38:41.32Z",
+        "created_at": "2022-11-22T18:56:42.754Z",
+        "version": 1677368321320,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Fried King Prawns Drop Box",
+          "description": "Deep-fried prawns tossed in a sauce of your choice.",
+          "abbreviation": "Prawn",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PNQ4X65P4WAAORTWN7YC3AH5",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "XF243I2D25WVEDYNGSMMMDIN",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T18:56:42.754Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "N6JW7T54XLPO2NFCLVE375QB",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 920,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/fried-king-prawns-drop-box/6",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p6_i1_w2693.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "63DI7KHKXRJTZMHKNE7URFG2"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvczhz2v5mbjjbh9smxs",
+          "delivery_fulfillment_preferences_id": "fprefs_127koecmjpfuhws2d1jutjtwa",
+          "description_html": "\u003cp\u003eDeep-fried prawns tossed in a sauce of your choice.\u003c/p\u003e",
+          "description_plaintext": "Deep-fried prawns tossed in a sauce of your choice.",
+          "kitchen_name": "FRIED KING PRAWNS DROPBOX - 炸大蝦套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127koef8lte7tdyi0rt5zw1ab"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "UXQBEU3UJHV4AHOPJDUSKR6E",
+        "updated_at": "2023-02-21T13:36:38.928Z",
+        "created_at": "2022-11-22T18:57:13.045Z",
+        "version": 1676986598928,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Crispy Chilli Beef Drop Box",
+          "description": "Deep-fried crispy beef tossed in our sticky chilli sauce.",
+          "abbreviation": "Beef",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "W3ZKGO3C7T64JHMERADNX65R",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T18:57:13.045Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "UXQBEU3UJHV4AHOPJDUSKR6E",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 920,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/crispy-chilli-beef-drop-box/7",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p7_i1_w2663.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "MTZ2R5ODS6H252M3372WKA4E"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvc47mcfwi6u3xw9syh2",
+          "delivery_fulfillment_preferences_id": "fprefs_127koecc2y1xd8l8ezouyrgv2",
+          "description_html": "\u003cp\u003eDeep-fried crispy beef tossed in our sticky chilli sauce.\u003c/p\u003e",
+          "description_plaintext": "Deep-fried crispy beef tossed in our sticky chilli sauce.",
+          "kitchen_name": "CRISPY CHILLI BEEF DROPBOX - 幹牛絲套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127koeg5t2n73qetadqu31gki"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "LW4CLT3ES3GK2JJC33U3LAJG",
+        "updated_at": "2023-02-21T13:35:32.092Z",
+        "created_at": "2022-11-22T18:57:46.103Z",
+        "version": 1676986532092,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Chicken Katsu Curry Drop Box",
+          "description": "Crispy breaded chicken in a spicy Japanese-style curry sauce.",
+          "abbreviation": "Katsu",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "DE2CF7XHM332PVGPKKHVC423",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T18:57:46.103Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "LW4CLT3ES3GK2JJC33U3LAJG",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 890,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/chicken-katsu-curry-drop-box/5",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p5_i1_w2557.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "5BG7U4MK356DLGD2YSKYVDCI"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvc8vi4drzgpma7x8b32",
+          "delivery_fulfillment_preferences_id": "fprefs_127koebk7ko78o12u613rnt3u",
+          "description_html": "\u003cp\u003eCrispy breaded chicken in a spicy Japanese-style curry sauce.\u003c/p\u003e",
+          "description_plaintext": "Crispy breaded chicken in a spicy Japanese-style curry sauce.",
+          "kitchen_name": "CHICKEN KATSU CURRY DROPBOX - 咖喱雞扒套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127koeeighjfa6d2dqyq4281g"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "MQA5YR7I4VX255AEIZ6VW2UY",
+        "updated_at": "2023-02-21T14:36:12.282Z",
+        "created_at": "2022-11-22T18:58:16.017Z",
+        "version": 1676990172282,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Orange Chicken Drop Box",
+          "description": "Crispy chicken wok-tossed in a sweet and spicy orange sauce.",
+          "abbreviation": "Pork",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "IOX5EBQLPZH7XTZ7XWQ3RXRO",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T18:58:16.017Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "MQA5YR7I4VX255AEIZ6VW2UY",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 890,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/orange-chicken-drop-box/8",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p8_i1_w2699.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "BZSCMJ6KFQHX4TI3H64OVLNR"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcx0gk73pya6fq0f9v4",
+          "delivery_fulfillment_preferences_id": "fprefs_127koed9u7o3ncj5vwhzmncn3",
+          "description_html": "\u003cp\u003eCrispy chicken wok-tossed in a sweet and spicy orange sauce.\u003c/p\u003e",
+          "description_plaintext": "Crispy chicken wok-tossed in a sweet and spicy orange sauce.",
+          "kitchen_name": "ORANGE CHICKEN DROP BOX - 特色橙汁雞套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127koeev6u7vjuoicabjk20xg"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "HQ6J2FKUD65REVTYJTVHJNPN",
+        "updated_at": "2023-02-20T11:48:16.203Z",
+        "created_at": "2022-11-22T19:01:20.677Z",
+        "version": 1676893696203,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Chicken Fried Rice",
+          "description": "Shredded chicken, free-range eggs and green peas.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "Z3GHEIYHKGD43BDF2IUYFONQ",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "BYRMTYQPTYVVPGUSY723QZEJ",
+              "updated_at": "2023-02-08T22:08:23.804Z",
+              "created_at": "2022-11-22T19:01:20.677Z",
+              "version": 1675894103804,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "HQ6J2FKUD65REVTYJTVHJNPN",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 610,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/chicken-fried-rice/10",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p10_i1_w2380.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "CWG533LL4X7JXDS33642LO2Z"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvd1ouczpqt6u5xq66qg",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeai2h9a4bwi7y3s7b7ru",
+          "description_html": "\u003cp\u003eShredded chicken, free-range eggs and green peas.\u003c/p\u003e",
+          "description_plaintext": "Shredded chicken, free-range eggs and green peas.",
+          "kitchen_name": "Chicken Fried Rice - 雞飯",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kog7z1n1u84ww6dvivdrfe"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "WCAPAJXWRGDJ6MVQSRRA5DZY",
+        "updated_at": "2023-02-09T13:28:16.782Z",
+        "created_at": "2022-11-22T19:01:50.797Z",
+        "version": 1675949296782,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Egg Fried Rice",
+          "description": "Free-range eggs are added at just the right temperature to coat every single grain of rice.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "Z3GHEIYHKGD43BDF2IUYFONQ",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "PQHUUXNQG2MYHFVEUM4WPUPA",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:01:50.797Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "WCAPAJXWRGDJ6MVQSRRA5DZY",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 490,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/egg-fried-rice/12",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p12_i1_w2244.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "ZGR4O5JOI6N2GKRVNIYWUAS7"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvbwv7iho7o996qr3frs",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeeyv9yran0ykz1rk59de",
+          "description_html": "\u003cp\u003eFree-range eggs are added at just the right temperature to coat every single grain of rice.\u003c/p\u003e",
+          "description_plaintext": "Free-range eggs are added at just the right temperature to coat every single grain of rice.",
+          "kitchen_name": "Egg Fried Rice - 蛋飯"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "K5GVEKJFYPX6Y4FIQMDHE76G",
+        "updated_at": "2023-02-14T12:37:51.798Z",
+        "created_at": "2022-11-22T19:09:27.707Z",
+        "version": 1676378271798,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Boiled Rice",
+          "description": "Simplicity at its best.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "Z3GHEIYHKGD43BDF2IUYFONQ",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "ZKHE4TBMAFDWO2DEZDIEYPRM",
+              "updated_at": "2023-02-08T22:08:23.804Z",
+              "created_at": "2022-11-22T19:09:27.707Z",
+              "version": 1675894103804,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "K5GVEKJFYPX6Y4FIQMDHE76G",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 390,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/boiled-rice/11",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p11_i1_w1990.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "DNS476QVAZKG6Z3JRZLHWVEI"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvbeueedjntt713wmfx3",
+          "delivery_fulfillment_preferences_id": "fprefs_127koe9wswdhydf7l0oor8jwf",
+          "description_html": "\u003cp\u003eSimplicity at its best.\u003c/p\u003e",
+          "description_plaintext": "Simplicity at its best.",
+          "kitchen_name": "Boiled Rice - 白飯"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "A7LI7E4DCFVNZC72UARAAZVN",
+        "updated_at": "2023-02-20T11:48:30.073Z",
+        "created_at": "2022-11-22T19:10:24.482Z",
+        "version": 1676893710073,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Chicken Chow Mein",
+          "description": "Wok-fried noodles with shredded chicken, onion, spring onion and bean sprouts.",
+          "label_color": "9da2a6",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "Z3GHEIYHKGD43BDF2IUYFONQ",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "I6VEU6F7RZRJFVABOX7JT7LR",
+              "min_selected_modifiers": 0,
+              "max_selected_modifiers": 3,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "G5CPHMO42TMKPMUFWCM37XRI",
+              "updated_at": "2023-02-08T22:08:23.804Z",
+              "created_at": "2022-11-22T19:10:24.482Z",
+              "version": 1675894103804,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "A7LI7E4DCFVNZC72UARAAZVN",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 630,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/chicken-chow-mein/14",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p14_i1_w2486.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "5LPZ4QNLRNITIR2N4HLQDNH3"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvbatqsc1m9k050sq2ix",
+          "delivery_fulfillment_preferences_id": "fprefs_127koea92ubmxp4y2ska5qw1r",
+          "description_html": "\u003cp\u003eWok-fried noodles with shredded chicken, onion, spring onion and bean sprouts.\u003c/p\u003e",
+          "description_plaintext": "Wok-fried noodles with shredded chicken, onion, spring onion and bean sprouts.",
+          "kitchen_name": "Chicken Chow Mein - 雞麵",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kogenweux8zotvnrlsxhbl"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "ZKWSEWVZQJAKZDPK7WP3NFRN",
+        "updated_at": "2023-02-20T11:49:01.023Z",
+        "created_at": "2022-11-22T19:10:51.21Z",
+        "version": 1676893741023,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Plain Chow Mein",
+          "description": "Wok-fried noodles, onion, spring onion and bean sprouts.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "Z3GHEIYHKGD43BDF2IUYFONQ",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "I6VEU6F7RZRJFVABOX7JT7LR",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "W5GYT42TBTDUFXMZKFRI5A5E",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:10:51.21Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "ZKWSEWVZQJAKZDPK7WP3NFRN",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 530,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/plain-chow-mein/15",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p15_i1_w2114.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "JU2UFZQPKDKBXFHPRY4B32AE"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvbs94esnb3psar3n4ta",
+          "delivery_fulfillment_preferences_id": "fprefs_127koef9sq0s8zylbgmddq7yo",
+          "description_html": "\u003cp\u003eWok-fried noodles, onion, spring onion and bean sprouts.\u003c/p\u003e",
+          "description_plaintext": "Wok-fried noodles, onion, spring onion and bean sprouts.",
+          "kitchen_name": "Plain Chow Mein - 芽麵",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kogdcwzmlmqs8rysbtil2b"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "LTJDXMHJEUD4JR2JNXR6GQI5",
+        "updated_at": "2023-02-09T13:28:16.983Z",
+        "created_at": "2022-11-22T19:11:23.749Z",
+        "version": 1675949296983,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Szechuan Chili Mayo",
+          "description": "Our signature spicy mayo.",
+          "abbreviation": "Szech",
+          "label_color": "911C12",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "NH4SG64UWGB4LF3FANXRHUUN",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:11:23.749Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "LTJDXMHJEUD4JR2JNXR6GQI5",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 130,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/szechuan-chili-mayo/16",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p16_i1_w475.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "LKXMRSQGDWORN67JIQONS54E"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcq5wzeu9s5zp0rv0w2",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeh53thhgyf5cjyjh7vo1",
+          "description_html": "\u003cp\u003eOur signature spicy mayo.\u003c/p\u003e",
+          "description_plaintext": "Our signature spicy mayo.",
+          "kitchen_name": "Szechuan Chili Mayo - 四川蛋黃醬"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "KSXQQWT3TOP4GU2ZAEEK7UMK",
+        "updated_at": "2023-02-09T13:28:08.248Z",
+        "created_at": "2022-11-22T19:11:44.495Z",
+        "version": 1675949288248,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Lemon Mayo",
+          "description": "Cool and citrusy.",
+          "abbreviation": "Lemon",
+          "label_color": "EFC158",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "CTMASHYHYDQAUMFCVCRT2AMM",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:11:44.495Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "KSXQQWT3TOP4GU2ZAEEK7UMK",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 130,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/lemon-mayo/17",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p17_i1_w475.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "BSK6ISW33RWUNDL6JIV74GHI"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvd1pi3aeyockiqck788",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeg2pzyskvzd2o9dm6h2p",
+          "description_html": "\u003cp\u003eCool and citrusy.\u003c/p\u003e",
+          "description_plaintext": "Cool and citrusy.",
+          "kitchen_name": "Lemon Mayo - 檸檬蛋黃醬"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "DNEYIBZN35IHE3IGTUWQE44J",
+        "updated_at": "2023-02-09T13:28:15.998Z",
+        "created_at": "2022-11-22T19:12:03.303Z",
+        "version": 1675949295998,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Chilli Oil",
+          "description": "Our homemade chilli oil. For those who like a dip with a kick.",
+          "abbreviation": "Oil",
+          "label_color": "BDBDBD",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "BYYAAUHQQXQSA3RRZLPIGNEU",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:12:03.303Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "DNEYIBZN35IHE3IGTUWQE44J",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 130,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/chilli-oil/18",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p18_i2_w475.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "DG4ODJNMCOLFMV5LPVQ3GM5C"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvby1gbpv85bs065gi0t",
+          "delivery_fulfillment_preferences_id": "fprefs_127koebso3wqh61jrjwbyeei6",
+          "description_html": "\u003cp\u003eOur homemade chilli oil. For those who like a dip with a kick.\u003c/p\u003e",
+          "description_plaintext": "Our homemade chilli oil. For those who like a dip with a kick.",
+          "kitchen_name": "Chilli Oil - 辣椒油"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "SDFFKRHBTO7GWV6GEDKXJAPO",
+        "updated_at": "2023-02-09T13:28:15.764Z",
+        "created_at": "2022-11-22T19:12:25.703Z",
+        "version": 1675949295764,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Orange Sauce",
+          "description": "Sweet \u0026 spicy.",
+          "abbreviation": "Orang",
+          "label_color": "E76132",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "AMWYDU6DG6XKRLZDN7PNDFFC",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:12:25.703Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "SDFFKRHBTO7GWV6GEDKXJAPO",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 170,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/orange-sauce/19",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p19_i1_w475.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "O72ULDGPYSNR5OIXYOELKXIC"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvd98aczatoct27usnku",
+          "delivery_fulfillment_preferences_id": "fprefs_127jjiyeg0f5jhvsk1gnbgeui",
+          "description_html": "\u003cp\u003eSweet \u0026amp; spicy.\u003c/p\u003e",
+          "description_plaintext": "Sweet \u0026 spicy.",
+          "kitchen_name": "Orange Sauce - 特色橙汁"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "J4VDPXBKB5IMX7S7M4YITX5X",
+        "updated_at": "2023-02-09T13:28:15.963Z",
+        "created_at": "2022-11-22T19:12:46.954Z",
+        "version": 1675949295963,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Honey Garlic Sauce",
+          "description": "A divine sticky honey butter sauce.",
+          "abbreviation": "Honey",
+          "label_color": "964C98",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "PRVEDTC33UHFLELWJHQVRWMG",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:12:46.954Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "J4VDPXBKB5IMX7S7M4YITX5X",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 170,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/honey-garlic-sauce/20",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p20_i1_w475.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "NVHMPH2VBL5LBAR2BHT5KB2F"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcu94jlvhrk8i8h53rl",
+          "delivery_fulfillment_preferences_id": "fprefs_127koefv9dwzayq5mgab7g440",
+          "description_html": "\u003cp\u003eA divine sticky honey butter sauce.\u003c/p\u003e",
+          "description_plaintext": "A divine sticky honey butter sauce.",
+          "kitchen_name": "Honey Garlic Sauce - 蒜泥蜜糖汁"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "OMNFJZEFVIBH6RUFNGFHQVBO",
+        "updated_at": "2023-02-09T13:28:09.004Z",
+        "created_at": "2022-11-22T19:13:04.63Z",
+        "version": 1675949289004,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Curry Sauce",
+          "description": "Our take on the classic takeaway favourite.",
+          "abbreviation": "Curry",
+          "label_color": "EFC158",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "3ECKTI3WYJ2CE25N4DMEGXRE",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:13:04.63Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "OMNFJZEFVIBH6RUFNGFHQVBO",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 170,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/curry-sauce/22",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p22_i1_w475.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "3KMBP4CTFHDZYIAGH5J6UHEA"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvdb29r0il548kfytnro",
+          "delivery_fulfillment_preferences_id": "fprefs_127koefnkh4ruwy4dvwd67pxt",
+          "description_html": "\u003cp\u003eOur take on the classic takeaway favourite.\u003c/p\u003e",
+          "description_plaintext": "Our take on the classic takeaway favourite.",
+          "kitchen_name": "Curry Sauce - 咖喱汁"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "SEKXZL7J5CSTGSXTQ5ZXEKDS",
+        "updated_at": "2023-02-09T13:28:15.823Z",
+        "created_at": "2022-11-22T19:13:19.812Z",
+        "version": 1675949295823,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Satay Sauce",
+          "description": "A rich blend of peanuts, coconut and chilli, bringing a sweet and nutty flavour.",
+          "abbreviation": "Satay",
+          "label_color": "694F9C",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "NL32A6KCSKLBB4ZRPSASWAWH",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:13:19.812Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "SEKXZL7J5CSTGSXTQ5ZXEKDS",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 170,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/satay-sauce/21",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p21_i1_w475.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "NAKFPZPD2YJMFW76OFE5YMZ4"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcir1h5dynfp0kycyh3",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeglblni0bt66l8gapt5h",
+          "description_html": "\u003cp\u003eA rich blend of peanuts, coconut and chilli, bringing a sweet and nutty flavour.\u003c/p\u003e",
+          "description_plaintext": "A rich blend of peanuts, coconut and chilli, bringing a sweet and nutty flavour.",
+          "kitchen_name": "Satay Sauce - 沙爹汁"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "MFXQ47FTOVKWUV3AUYRLD7RX",
+        "updated_at": "2023-02-09T13:28:15.937Z",
+        "created_at": "2022-11-22T19:13:37.556Z",
+        "version": 1675949295937,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Sweet \u0026 Sour Sauce",
+          "description": "A sweet yet tangy classic.",
+          "abbreviation": "Sweet",
+          "label_color": "911C12",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "7G6ZR5EEJZPYMQRDMMYOZTLX",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "3SBTEKI7R6T5LHZJHXU3IW7Y",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:13:37.556Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "MFXQ47FTOVKWUV3AUYRLD7RX",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 170,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/sweet-sour-sauce/23",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p23_i1_w475.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "QB22VXFQ2JOE3RTZPL6O2PKT"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcou2qb0n0jyb1082mp",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeguniehv6v9av9xuljv9",
+          "description_html": "\u003cp\u003eA sweet yet tangy classic.\u003c/p\u003e",
+          "description_plaintext": "A sweet yet tangy classic.",
+          "kitchen_name": "Sweet \u0026 Sour Sauce - 甜酸汁"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "5HNUVGWZ4D44Q2AQOXNCXXS5",
+        "updated_at": "2023-02-09T13:28:09.726Z",
+        "created_at": "2022-11-22T19:15:11.757Z",
+        "version": 1675949289726,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Coca-Cola",
+          "abbreviation": "Coke",
+          "label_color": "911C12",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "TXYKEUG6ABKUU2IOB64BDQSS",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "TI5CG3XIPAXF4UYVZD432BHP",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:15:11.757Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "5HNUVGWZ4D44Q2AQOXNCXXS5",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 180,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/coca-cola/25",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p25_i1_w502.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "UT6K4CCQDC4OHWJ6AF2ZIWVK"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvd2055bpdsjpq4cxoo3",
+          "delivery_fulfillment_preferences_id": "fprefs_127kpj5auhv9hl99f0co2s1pk",
+          "kitchen_name": "Coca-Cola - 可樂"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "YKBQTRXVA222SPQ4ZGNKNHGY",
+        "updated_at": "2023-02-09T13:28:16.912Z",
+        "created_at": "2022-11-22T19:15:45.639Z",
+        "version": 1675949296912,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Diet Coke",
+          "abbreviation": "Diet",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "TXYKEUG6ABKUU2IOB64BDQSS",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "IAOHJQKNHYHXH4O4AXR6SLA3",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:15:45.639Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "YKBQTRXVA222SPQ4ZGNKNHGY",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 180,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/diet-coke/24",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p24_i1_w427.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "S3OB2TTJCVLESQ3VV4HHF23W"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvczh0j8ploxrahol3c0",
+          "delivery_fulfillment_preferences_id": "fprefs_127kpj5ikicyp3h0jxgaoz4d1",
+          "kitchen_name": "Diet Coke - 減肥可樂"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "4SKPEF7FPIOOFTCYHHWSGOFS",
+        "updated_at": "2023-02-09T13:28:16.066Z",
+        "created_at": "2022-11-22T19:16:32.78Z",
+        "version": 1675949296066,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Fanta",
+          "abbreviation": "Tango",
+          "label_color": "E76132",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "TXYKEUG6ABKUU2IOB64BDQSS",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "YOHRZWRHVIJ4T6YJCLUWPJAI",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:16:32.78Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "4SKPEF7FPIOOFTCYHHWSGOFS",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 180,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/fanta/29",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p29_i1_w1024.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "56YADCGVUS6WBMYIHZFLG3XY"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcr4ddq6y77qlejm9t6",
+          "delivery_fulfillment_preferences_id": "fprefs_127kpj61l55orcs560l511xtb",
+          "kitchen_name": "Fanta - 芬達"
+        }
+      },
+      {
+        "type": "MODIFIER_LIST",
+        "id": "PNQ4X65P4WAAORTWN7YC3AH5",
+        "updated_at": "2023-02-25T14:06:12.05Z",
+        "created_at": "2022-11-22T19:19:10.089Z",
+        "version": 1677333972050,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "modifier_list_data": {
+          "name": "Sauces",
+          "selection_type": "SINGLE",
+          "modifiers": [
+            {
+              "type": "MODIFIER",
+              "id": "6VGUHIVROTYPORMLS3A3ANYL",
+              "updated_at": "2023-02-25T14:06:12.05Z",
+              "created_at": "2022-11-22T19:19:10.089Z",
+              "version": 1677333972050,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "Honey Garlic",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": true,
+                "ordinal": 1,
+                "modifier_list_id": "PNQ4X65P4WAAORTWN7YC3AH5",
+                "kitchen_name": "Honey 蒜泥蜜糖汁"
+              }
+            },
+            {
+              "type": "MODIFIER",
+              "id": "3BKFLFDU3HHJMIJ2ANDNZDQK",
+              "updated_at": "2023-02-25T14:06:12.05Z",
+              "created_at": "2022-11-22T19:19:10.089Z",
+              "version": 1677333972050,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "Sweet \u0026 Sour",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 3,
+                "modifier_list_id": "PNQ4X65P4WAAORTWN7YC3AH5",
+                "kitchen_name": "Sweet \u0026 Sour 甜酸汁"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "HYLBRRUGKYYKF2QGAJQ7VGLZ",
+        "updated_at": "2023-02-09T13:28:15.879Z",
+        "created_at": "2022-11-22T19:23:49.888Z",
+        "version": 1675949295879,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "7-Up",
+          "abbreviation": "7-Up",
+          "label_color": "86B73E",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "TXYKEUG6ABKUU2IOB64BDQSS",
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "ULXZ5XOL3G26UZ655GYA7L6R",
+              "updated_at": "2023-02-08T22:08:23.804Z",
+              "created_at": "2022-11-22T19:23:49.888Z",
+              "version": 1675894103804,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "HYLBRRUGKYYKF2QGAJQ7VGLZ",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 180,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/7-up/26",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p26_i1_w800.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "6NSUXJVNBIXM5KM526M3KPQZ"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvbu25dk664og7mlndj6",
+          "delivery_fulfillment_preferences_id": "fprefs_127kpj4qdhr6uw8bi5g8j3xnx"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "UHIAVP6GILFFQR5OLAG3QBUY",
+        "updated_at": "2023-03-27T08:42:37.865Z",
+        "created_at": "2022-11-22T19:26:26.861Z",
+        "version": 1679906557865,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Vegetable Spring Rolls",
+          "description": "Crispy, golden-brown rolls filled with a delicious blend of fresh veggies.",
+          "abbreviation": "Rolls",
+          "label_color": "86B73E",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "IEUPYC2GSWXDORGYLNI5LI6F",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:26:26.861Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "UHIAVP6GILFFQR5OLAG3QBUY",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 560,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/vegetable-spring-rolls/27",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p27_i1_w2073.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "ZPRZ4WUR7KE67BEO2OLOGPH3"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvc2pm82v01pop1oge5s",
+          "delivery_fulfillment_preferences_id": "fprefs_127koejsxhtywmacxc5ludrjm",
+          "description_html": "\u003cp\u003eCrispy, golden-brown rolls filled with a delicious blend of fresh veggies.\u003c/p\u003e",
+          "description_plaintext": "Crispy, golden-brown rolls filled with a delicious blend of fresh veggies.",
+          "kitchen_name": "Vegetable Spring Rolls - 齋卷",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kog5ndli2yyn421fh7omxu"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "L2KBOTQEPNYWYSKAUHKCUN74",
+        "updated_at": "2023-02-09T13:28:16.137Z",
+        "created_at": "2022-11-22T19:26:54.104Z",
+        "version": 1675949296137,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper Chips",
+          "description": "Seasoned with a special blend of Chinese spices.",
+          "abbreviation": "Chips",
+          "label_color": "964C98",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "FGSNWKBGX53HKXKS7WXQE2EI",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:26:54.104Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "L2KBOTQEPNYWYSKAUHKCUN74",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 420,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-chips/28",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p28_i1_w2279.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "PGSORKI46AOTR6I7OG7JGCYC"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvdaa5y5bjxi98iefsuq",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeibnv9y0lf0syh80p8do",
+          "description_html": "\u003cp\u003eSeasoned with a special blend of Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Seasoned with a special blend of Chinese spices.",
+          "kitchen_name": "Salt \u0026 Pepper Chips - 椒鹽薯條"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "PN7JDB6JP7WPPQYCPT4UAQ4F",
+        "updated_at": "2023-02-25T23:43:44.882Z",
+        "created_at": "2022-11-22T19:27:25.641Z",
+        "version": 1677368624882,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper Tofu",
+          "description": "Our vegan offering. Crispy tofu puffs seasoned with Chinese spices.",
+          "abbreviation": "Tofu",
+          "label_color": "86B73E",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "JHCA7VSTJDI2ATIBRFGQO5CP",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:27:25.641Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "PN7JDB6JP7WPPQYCPT4UAQ4F",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 680,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-tofu/30",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p30_i1_w2138.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "WHGSFCDIACRP2CWCBCO2F6NA"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvdlktc8n5k36q6dhoot",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeivj1mvrr3enpiu114bm",
+          "description_html": "\u003cp\u003eOur vegan offering. Crispy tofu puffs seasoned with Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Our vegan offering. Crispy tofu puffs seasoned with Chinese spices.",
+          "kitchen_name": "Salt \u0026 Pepper Tofu - 椒鹽豆腐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kogh3nz609vtalnbcde8c2"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "KX65Z4NZJMVBSPJB3IDHMSXO",
+        "updated_at": "2023-02-09T22:13:39.36Z",
+        "created_at": "2022-11-22T19:28:03.922Z",
+        "version": 1675980819360,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper Chicken",
+          "description": "Crisp fried boneless chicken seasoned with a special blend of Chinese spices.",
+          "abbreviation": "Chick",
+          "label_color": "56BEAE",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "Z5YU62OYAB6I6ECUUIRTRV6I",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:28:03.922Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "KX65Z4NZJMVBSPJB3IDHMSXO",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 680,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-chicken/37",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p37_i2_w2527.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "OXTQI3SA3HRPQZ5TYWZF2M33"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcmax06kxqcxj8djzjk",
+          "delivery_fulfillment_preferences_id": "fprefs_127koei1ztokhr3vdl98t6gum",
+          "description_html": "\u003cp\u003eCrisp fried boneless chicken seasoned with a special blend of Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Crisp fried boneless chicken seasoned with a special blend of Chinese spices.",
+          "kitchen_name": "Salt \u0026 Pepper Chicken - 椒鹽雞"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "HCGOECQOEFHBUVABDQDLVZ2P",
+        "updated_at": "2023-02-09T13:28:16.09Z",
+        "created_at": "2022-11-22T19:28:21.575Z",
+        "version": 1675949296090,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper Wings",
+          "description": "Fried chicken wings seasoned with a special blend of Chinese spices.",
+          "abbreviation": "Wings",
+          "label_color": "5675CB",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "ZWCLCCHYTPPQ2Q7EIXX24J5U",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:28:21.575Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "HCGOECQOEFHBUVABDQDLVZ2P",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 680,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-wings/32",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p32_i1_w2551.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "F4G72NS5O35NMHTXQCZQOH5W"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcso7eo1wbwpblg2zye",
+          "delivery_fulfillment_preferences_id": "fprefs_127koej48pqkrdcpnnq27kgdv",
+          "description_html": "\u003cp\u003eFried chicken wings seasoned with a special blend of Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Fried chicken wings seasoned with a special blend of Chinese spices.",
+          "kitchen_name": "Salt and Pepper Wings – 椒鹽雞翅"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "YJ2E7WVEJYBNL2P27JSV5UVI",
+        "updated_at": "2023-02-25T23:33:43.929Z",
+        "created_at": "2022-11-22T19:28:44.279Z",
+        "version": 1677368023929,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper King Prawns",
+          "description": "Deep-fried prawns tossed in our blend of Chinese spices.",
+          "abbreviation": "Prawn",
+          "label_color": "EFC158",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "S4ENWK6H33UYLWTO36UUKWHA",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:28:44.279Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "YJ2E7WVEJYBNL2P27JSV5UVI",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 780,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-king-prawns/31",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p31_i1_w2368.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "D5XBCTBTZFBK6RBPSH54W7ET"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvc4j9vaa8h69wt0hfm1",
+          "delivery_fulfillment_preferences_id": "fprefs_127koeikokxnzfv0pxkweo7ym",
+          "description_html": "\u003cp\u003eDeep-fried prawns tossed in our blend of Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Deep-fried prawns tossed in our blend of Chinese spices.",
+          "kitchen_name": "Salt and Pepper King Prawns – 椒鹽大蝦",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kog6j7sivdn7jstuggfkzo"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "BTI3N4OAMXIA2JD6OP2TTLFP",
+        "updated_at": "2023-02-26T00:04:25.432Z",
+        "created_at": "2022-11-22T19:29:11.577Z",
+        "version": 1677369865432,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Crispy King Prawns",
+          "description": "Succulent king prawns lightly breaded and fried to golden perfection.",
+          "abbreviation": "Prawn",
+          "label_color": "DE5471",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "MYAVTLZU35UH643PHQSVW7RP",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:29:11.577Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "BTI3N4OAMXIA2JD6OP2TTLFP",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 780,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/crispy-king-prawns/34",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p34_i1_w2604.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "TYBNFAO6DIVYGMA4U47KXLU3"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvc0gxjqo6i2mkbogns8",
+          "delivery_fulfillment_preferences_id": "fprefs_127koehjoogcr0gccra5ezcgg",
+          "description_html": "\u003cp\u003eSucculent king prawns lightly breaded and fried to golden perfection.\u003c/p\u003e",
+          "description_plaintext": "Succulent king prawns lightly breaded and fried to golden perfection.",
+          "kitchen_name": "Crispy King Prawns - 炸大蝦",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kog7frqf1koch7jz57gav6"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "DDJ2IYTQJO4B7RLMVNOKBE5N",
+        "updated_at": "2023-02-09T13:28:17.228Z",
+        "created_at": "2022-11-22T19:30:04.275Z",
+        "version": 1675949297228,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Chicken Katsu Curry",
+          "description": "Crispy breaded chicken in a spicy Japanese-style curry sauce.",
+          "abbreviation": "Katsu",
+          "label_color": "EFC158",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "UXZQ34ULSQQIWJR7466YHDCD",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:30:04.275Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "DDJ2IYTQJO4B7RLMVNOKBE5N",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 680,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/chicken-katsu-curry/36",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p36_i1_w2693.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "J22MPLT7LSPSLMVXOOHHHUCA"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvcgzuu51j0berdsld5e",
+          "delivery_fulfillment_preferences_id": "fprefs_127jjjcdvhvwy77dnlw578t3y",
+          "description_html": "\u003cp\u003eCrispy breaded chicken in a spicy Japanese-style curry sauce.\u003c/p\u003e",
+          "description_plaintext": "Crispy breaded chicken in a spicy Japanese-style curry sauce.",
+          "kitchen_name": "Chicken Katsu Curry - 咖喱 雞扒"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "IETA7V5GRSMUSQNKOP6AGAMF",
+        "updated_at": "2023-02-09T13:28:19.004Z",
+        "created_at": "2022-11-22T19:30:26.844Z",
+        "version": 1675949299004,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Orange Chicken",
+          "description": "Crispy chicken wok-tossed in a sweet and spicy orange sauce.",
+          "abbreviation": "Orang",
+          "label_color": "E76132",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "KWVY4BXODEHXJ3IZMAY3WRWQ",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2022-11-22T19:30:26.844Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "IETA7V5GRSMUSQNKOP6AGAMF",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 680,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/orange-chicken/35",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p35_i1_w2244.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "KCI6R5FCIGWEOWH2E44SVRLM"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127jirvdebl4x3ijqggfwutd2",
+          "delivery_fulfillment_preferences_id": "fprefs_127jjjbvcneg5r4t2fshxz8zt",
+          "description_html": "\u003cp\u003eCrispy chicken wok-tossed in a sweet and spicy orange sauce.\u003c/p\u003e",
+          "description_plaintext": "Crispy chicken wok-tossed in a sweet and spicy orange sauce.",
+          "kitchen_name": "Orange Chicken - 特色橙汁雞"
+        }
+      },
+      {
+        "type": "QUICK_AMOUNTS_SETTINGS",
+        "id": "YTZEWIH3DVM5KCB6TNKQANQV",
+        "updated_at": "2023-02-12T13:02:18.571Z",
+        "created_at": "2022-11-22T20:13:29.824Z",
+        "version": 1676206938571,
+        "is_deleted": false,
+        "present_at_all_locations": false,
+        "present_at_location_ids": [
+          "L5SPBZSB7YS0T"
+        ],
+        "quick_amounts_settings_data": {
+          "option": "DISABLED",
+          "eligible_for_auto_amounts": false
+        }
+      },
+      {
+        "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+        "id": "AA46K2RXI4JOFCBJ4UVCOVYE",
+        "updated_at": "2023-01-03T00:50:18.358Z",
+        "created_at": "2023-01-03T00:50:18.358Z",
+        "version": 1672707018358,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "custom_attribute_definition_data": {
+          "type": "BOOLEAN",
+          "name": "Is Alcoholic",
+          "description": "Enabling this toggle on an item indicates that it contains alcohol.",
+          "source_application": {
+            "application_id": "sq0idp-w46nJ_NCNDMSOywaCY0mwA",
+            "name": "Square Online Store"
+          },
+          "allowed_object_types": [
+            "ITEM"
+          ],
+          "seller_visibility": "SELLER_VISIBILITY_HIDDEN",
+          "app_visibility": "APP_VISIBILITY_HIDDEN",
+          "key": "is_alcoholic"
+        }
+      },
+      {
+        "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+        "id": "V2LQRWFWNMR7YV3MQVIBPA7P",
+        "updated_at": "2023-01-03T00:50:18.587Z",
+        "created_at": "2023-01-03T00:50:18.587Z",
+        "version": 1672707018587,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "custom_attribute_definition_data": {
+          "type": "STRING",
+          "name": "Ecom Storefront Classic Site ID",
+          "description": "Ecommerce bridge target storefront classic site ID. Used to create site-item associations after copying items.",
+          "source_application": {
+            "application_id": "sq0idp-w46nJ_NCNDMSOywaCY0mwA",
+            "name": "Square Online Store"
+          },
+          "allowed_object_types": [
+            "ITEM"
+          ],
+          "seller_visibility": "SELLER_VISIBILITY_HIDDEN",
+          "app_visibility": "APP_VISIBILITY_HIDDEN",
+          "string_config": {
+            "enforce_uniqueness": false
+          },
+          "key": "ecom_target_classic_site_id"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "GDPBA46JXC5WSD57ZBJT67PA",
+        "updated_at": "2023-02-09T22:18:12.866Z",
+        "created_at": "2023-02-07T21:55:02.55Z",
+        "version": 1675981092866,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Chips",
+          "description": "Golden-fried, crispy and perfectly salted. Ready to be dipped in your favourite sauce.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "Y3ZKBR5FZGV3BLCAOMCYO42P",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2023-02-07T21:55:02.55Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "GDPBA46JXC5WSD57ZBJT67PA",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 320,
+                  "currency": "GBP"
+                },
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/chips/38",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p38_i1_w2256.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "ZFTOWXXNX25CZK6GZAVBUBKU"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127kpju0ysi9egx4ddw24dhpw",
+          "delivery_fulfillment_preferences_id": "fprefs_127kpju0yc9z1vpv7o60jr5dg",
+          "description_html": "\u003cp\u003eGolden-fried, crispy and perfectly salted. Ready to be dipped in your favourite sauce.\u003c/p\u003e",
+          "description_plaintext": "Golden-fried, crispy and perfectly salted. Ready to be dipped in your favourite sauce.",
+          "kitchen_name": "Chips - 薯條"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "AW6JP5ZQGPY6EPZ7ZW567WEV",
+        "updated_at": "2023-02-09T13:28:12.12Z",
+        "created_at": "2023-02-07T21:56:40.751Z",
+        "version": 1675949292120,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Taiwanese Popcorn Chicken",
+          "description": "Our take on the street food staple. Juicy, crispy, and addictive.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "HWEG6HEHF3ZVATP6NNYSXRTW",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2023-02-07T21:56:40.751Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "AW6JP5ZQGPY6EPZ7ZW567WEV",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 680,
+                  "currency": "GBP"
+                },
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/taiwanese-popcorn-chicken/39",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p39_i1_w2628.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "GQDUNG5IAOJFH22V3QYJ6HCS"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127kpjwn7luzlmltzv9ax8i27",
+          "delivery_fulfillment_preferences_id": "fprefs_127kqr3zb4tittxvytkiq7j3l",
+          "description_html": "\u003cp\u003eOur take on the street food staple. Juicy, crispy, and addictive.\u003c/p\u003e",
+          "description_plaintext": "Our take on the street food staple. Juicy, crispy, and addictive.",
+          "kitchen_name": "Taiwanese Popcorn Chicken - 台式雞"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "7X5HNJRZ6UWFHOT3YQOKZH2D",
+        "updated_at": "2023-02-20T11:49:43.047Z",
+        "created_at": "2023-02-07T21:57:39.356Z",
+        "version": 1676893783047,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Korean Fried Chicken",
+          "description": "Crispy boneless chicken with a crackly crust, glazed with a sauce of your choice. Includes chewy rice cake bits.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "PNQ4X65P4WAAORTWN7YC3AH5",
+              "visibility": "PUBLIC",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "LO5A2TIVJFZQ6L2II6FO2ZN3",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2023-02-07T21:57:39.356Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "7X5HNJRZ6UWFHOT3YQOKZH2D",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 680,
+                  "currency": "GBP"
+                },
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/korean-fried-chicken/40",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p40_i1_w2356.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "BL7FRWDT4K3XFPGPSPQFEQAS"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127kpjws6dvrc06p17yptfg31",
+          "delivery_fulfillment_preferences_id": "fprefs_127kpjws5xnetwfjz9dafwmct",
+          "description_html": "\u003cp\u003eCrispy boneless chicken with a crackly crust, glazed with a sauce of your choice. \u003cstrong\u003eIncludes chewy rice cake bits.\u003c/strong\u003e\u003c/p\u003e",
+          "description_plaintext": "Crispy boneless chicken with a crackly crust, glazed with a sauce of your choice. Includes chewy rice cake bits.",
+          "kitchen_name": "Korean Fried Chicken - 韓式雞套",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kpjxoq03bqpyyneu2phf4e"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "QPSFWFHOYSYVEGVJAHY2Q4WT",
+        "updated_at": "2023-02-09T13:28:07.459Z",
+        "created_at": "2023-02-07T21:58:36.259Z",
+        "version": 1675949287459,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Crispy Chilli Beef",
+          "description": "Deep-fried crispy beef tossed in our sticky chilli sauce.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "WBE4OYQNFT6B4UDMRSH3KDUY",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2023-02-07T21:58:36.259Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "QPSFWFHOYSYVEGVJAHY2Q4WT",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 680,
+                  "currency": "GBP"
+                },
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/crispy-chilli-beef/41",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p41_i1_w2256.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "2OJKW2ZIBTXWWRBYLBJV2XJY"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127kpjy5qncjnkfw4ed8yq10o",
+          "delivery_fulfillment_preferences_id": "fprefs_127kqqsnpe0lr3vsus4avenmi",
+          "description_html": "\u003cp\u003eDeep-fried crispy beef tossed in our sticky chilli sauce.\u003c/p\u003e",
+          "description_plaintext": "Deep-fried crispy beef tossed in our sticky chilli sauce.",
+          "kitchen_name": "Crispy Chilli Beef - 幹牛絲"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "6NP7CWARHLMEF3C26RWWLWGV",
+        "updated_at": "2023-02-25T23:50:14.295Z",
+        "created_at": "2023-02-07T21:59:10.328Z",
+        "version": 1677369014295,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Fried King Prawns",
+          "description": "Deep-fried prawns tossed in a sauce of your choice.",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "available_online": false,
+          "available_for_pickup": false,
+          "available_electronically": false,
+          "category_id": "JUUJYKRHW6PERLSVUP5G2N3F",
+          "ordinal": 0,
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "PNQ4X65P4WAAORTWN7YC3AH5",
+              "min_selected_modifiers": 1,
+              "max_selected_modifiers": 1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "MIBUYETKBTF77O4PSYUO3UAU",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2023-02-07T21:59:10.328Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "6NP7CWARHLMEF3C26RWWLWGV",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 780,
+                  "currency": "GBP"
+                },
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": true,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/fried-king-prawns/42",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p42_i1_w2374.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "P6UPRFFQA7KCU4KPYF35BEAN"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127kpjzb2saxepj499qgwn5gn",
+          "delivery_fulfillment_preferences_id": "fprefs_127kqqvioyxaq3md12rwceasz",
+          "description_html": "\u003cp\u003eDeep-fried prawns tossed in a sauce of your choice.\u003c/p\u003e",
+          "description_plaintext": "Deep-fried prawns tossed in a sauce of your choice.",
+          "kitchen_name": "Fried King Prawns - 炸大蝦套",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kpjzb2cu9ydck7ewgbfjhj"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "CKJVF6V7QIYTY5ZFWO5ZFG4L",
+        "updated_at": "2023-02-21T14:37:05.457Z",
+        "created_at": "2023-02-07T22:01:18.622Z",
+        "version": 1676990225457,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Salt \u0026 Pepper Wings Drop Box",
+          "description": "Fried chicken wings seasoned with a special blend of Chinese spices.",
+          "abbreviation": "WINGS",
+          "label_color": "5675CB",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "OU6BGHMUZUEBS7U5HEJR7LTK",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2023-02-07T22:01:18.622Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "CKJVF6V7QIYTY5ZFWO5ZFG4L",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 850,
+                  "currency": "GBP"
+                },
+                "location_overrides": [
+                  {
+                    "location_id": "L5SPBZSB7YS0T",
+                    "track_inventory": false
+                  }
+                ],
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/salt-pepper-wings-drop-box/43",
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "pickup_fulfillment_preferences_id": "fprefs_127kqr2j1uqzg8gwjwfky7jtp",
+          "delivery_fulfillment_preferences_id": "fprefs_127kqr2j1gj4c9rkihjq8el25",
+          "description_html": "\u003cp\u003eFried chicken wings seasoned with a special blend of Chinese spices.\u003c/p\u003e",
+          "description_plaintext": "Fried chicken wings seasoned with a special blend of Chinese spices.",
+          "kitchen_name": "SALT \u0026 PEPPER WINGS DROP BOX - 椒鹽雞翅套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kqr5abp1ykce8yk95h0b35"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "YOVW43EBTKXMIILO4GFSMWE4",
+        "updated_at": "2023-02-21T14:37:19.086Z",
+        "created_at": "2023-02-07T22:03:28.87Z",
+        "version": 1676990239086,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Taiwanese Popcorn Chicken Drop Box",
+          "description": "Our take on the street food staple. Juicy, crispy, and addictive.",
+          "abbreviation": "Pork",
+          "label_color": "D9D9D9",
+          "is_taxable": true,
+          "visibility": "PRIVATE",
+          "category_id": "T33BTK2EMJQDX2P57JJOG4WF",
+          "modifier_list_info": [
+            {
+              "modifier_list_id": "RFERDAT7TX7CYMJQNU7YBBKN",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            },
+            {
+              "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED",
+              "min_selected_modifiers": -1,
+              "max_selected_modifiers": -1,
+              "enabled": true
+            }
+          ],
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "6W2WVTVMRAZAPTUSOC6554LP",
+              "updated_at": "2023-02-08T22:09:09.578Z",
+              "created_at": "2023-02-07T22:03:28.87Z",
+              "version": 1675894149578,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "YOVW43EBTKXMIILO4GFSMWE4",
+                "name": "Regular",
+                "ordinal": 1,
+                "pricing_type": "FIXED_PRICING",
+                "price_money": {
+                  "amount": 890,
+                  "currency": "GBP"
+                },
+                "track_inventory": false,
+                "inventory_alert_type": "NONE",
+                "sellable": true,
+                "stockable": true
+              }
+            }
+          ],
+          "product_type": "REGULAR",
+          "skip_modifier_screen": false,
+          "ecom_uri": "https://www.ricedrop.co.uk/product/taiwanese-popcorn-chicken-drop-box/44",
+          "ecom_image_uris": [
+            "https://www.ricedrop.co.uk/uploads/1/4/4/3/144331348/s348150161267872137_p44_i1_w2716.png"
+          ],
+          "ecom_available": true,
+          "ecom_visibility": "VISIBLE",
+          "image_ids": [
+            "3PEI3OWN6XQCS2ZVME6PVF3M"
+          ],
+          "pickup_fulfillment_preferences_id": "fprefs_127kqoju4hxizlbqa4lzv69bb",
+          "delivery_fulfillment_preferences_id": "fprefs_127kqoju430p8g7vd5letp607",
+          "description_html": "\u003cp\u003eOur take on the street food staple. Juicy, crispy, and addictive.\u003c/p\u003e",
+          "description_plaintext": "Our take on the street food staple. Juicy, crispy, and addictive.",
+          "kitchen_name": "TAIWANESE POPCORN CHICKEN DROP BOX - 台式雞套餐",
+          "dine_in_fulfillment_preferences_id": "fprefs_127kqolz2b7xmiqvtq2nwkpjg"
+        }
+      },
+      {
+        "type": "MODIFIER_LIST",
+        "id": "PEZFZ4OCV6LKDID4QN2V7SED",
+        "updated_at": "2023-02-08T21:19:31.512Z",
+        "created_at": "2023-02-08T21:11:37.756Z",
+        "version": 1675891171512,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "modifier_list_data": {
+          "name": "Slaw",
+          "selection_type": "MULTIPLE",
+          "modifiers": [
+            {
+              "type": "MODIFIER",
+              "id": "2U4I5JCCR3TKKQNQI6DJXITC",
+              "updated_at": "2023-02-08T21:19:31.512Z",
+              "created_at": "2023-02-08T21:11:37.756Z",
+              "version": 1675891171512,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "No Asian Slaw",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 1,
+                "modifier_list_id": "PEZFZ4OCV6LKDID4QN2V7SED"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "MODIFIER_LIST",
+        "id": "I6VEU6F7RZRJFVABOX7JT7LR",
+        "updated_at": "2023-02-25T14:04:35.133Z",
+        "created_at": "2023-02-08T21:12:33.57Z",
+        "version": 1677333875133,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "modifier_list_data": {
+          "name": "Modifiers",
+          "selection_type": "MULTIPLE",
+          "modifiers": [
+            {
+              "type": "MODIFIER",
+              "id": "4U4Y2M4N7CFT5URLOHXIX4WZ",
+              "updated_at": "2023-02-25T14:04:35.133Z",
+              "created_at": "2023-02-08T21:12:33.57Z",
+              "version": 1677333875133,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "No Onions",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 1,
+                "modifier_list_id": "I6VEU6F7RZRJFVABOX7JT7LR",
+                "kitchen_name": "沒有洋蔥"
+              }
+            },
+            {
+              "type": "MODIFIER",
+              "id": "BB4JRURQUROVGUY7NI3KIAP4",
+              "updated_at": "2023-02-25T14:04:35.133Z",
+              "created_at": "2023-02-08T21:12:33.57Z",
+              "version": 1677333875133,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "No Spring Onions",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 2,
+                "modifier_list_id": "I6VEU6F7RZRJFVABOX7JT7LR",
+                "kitchen_name": "沒有蔥"
+              }
+            },
+            {
+              "type": "MODIFIER",
+              "id": "NIHJWKYVCIJYDRP7F7RBUQEO",
+              "updated_at": "2023-02-25T14:04:35.133Z",
+              "created_at": "2023-02-08T21:12:33.57Z",
+              "version": 1677333875133,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "modifier_data": {
+                "name": "No Bean Sprouts",
+                "price_money": {
+                  "amount": 0,
+                  "currency": "GBP"
+                },
+                "on_by_default": false,
+                "ordinal": 3,
+                "modifier_list_id": "I6VEU6F7RZRJFVABOX7JT7LR",
+                "kitchen_name": " 沒有豆芽"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "DISCOUNT",
+        "id": "XITAN4O3LQWCYTBJEHNN3Y2Z",
+        "updated_at": "2023-02-23T13:30:47.354Z",
+        "created_at": "2023-02-23T13:30:47.354Z",
+        "version": 1677159047354,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "discount_data": {
+          "name": "10% off",
+          "discount_type": "FIXED_PERCENTAGE",
+          "percentage": "10.0",
+          "application_method": "MANUALLY_APPLIED",
+          "modify_tax_basis": "MODIFY_TAX_BASIS"
+        }
+      },
+      {
+        "type": "DISCOUNT",
+        "id": "KFWNF35VB47MF4O53NHCH35Q",
+        "updated_at": "2023-02-23T13:35:50.711Z",
+        "created_at": "2023-02-23T13:31:00.203Z",
+        "version": 1677159350711,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "discount_data": {
+          "name": "20% off",
+          "discount_type": "FIXED_PERCENTAGE",
+          "percentage": "20.0",
+          "application_method": "MANUALLY_APPLIED",
+          "modify_tax_basis": "MODIFY_TAX_BASIS"
+        }
+      },
+      {
+        "type": "DISCOUNT",
+        "id": "27BHZOZKGJNW7CFFK2JCPSRH",
+        "updated_at": "2023-02-23T13:31:28.875Z",
+        "created_at": "2023-02-23T13:31:14.073Z",
+        "version": 1677159088875,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "discount_data": {
+          "name": "30% off",
+          "discount_type": "FIXED_PERCENTAGE",
+          "percentage": "30.0",
+          "application_method": "MANUALLY_APPLIED",
+          "modify_tax_basis": "MODIFY_TAX_BASIS"
+        }
+      },
+      {
+        "type": "DISCOUNT",
+        "id": "6CBBKHEDDAR43JR5ORBV7UIE",
+        "updated_at": "2023-02-23T13:31:43.368Z",
+        "created_at": "2023-02-23T13:31:36.588Z",
+        "version": 1677159103368,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "discount_data": {
+          "name": "40% off",
+          "discount_type": "FIXED_PERCENTAGE",
+          "percentage": "40.0",
+          "application_method": "MANUALLY_APPLIED",
+          "modify_tax_basis": "MODIFY_TAX_BASIS"
+        }
+      },
+      {
+        "type": "DISCOUNT",
+        "id": "PQ3Z5NCGSLM3WYCHCOJXJACF",
+        "updated_at": "2023-02-23T13:31:53.785Z",
+        "created_at": "2023-02-23T13:31:53.785Z",
+        "version": 1677159113785,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "discount_data": {
+          "name": "50% off",
+          "discount_type": "FIXED_PERCENTAGE",
+          "percentage": "50.0",
+          "application_method": "MANUALLY_APPLIED",
+          "modify_tax_basis": "MODIFY_TAX_BASIS"
+        }
+      }
+    ]
+  }

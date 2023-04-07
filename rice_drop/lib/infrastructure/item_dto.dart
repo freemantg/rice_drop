@@ -10,7 +10,7 @@ class ItemDto with _$ItemDto {
   const factory ItemDto({
     required String type,
     required String id,
-    required ItemData item_data,
+    @JsonKey(name: 'item_data') required ItemData itemData,
   }) = _ItemDto;
 
   factory ItemDto.fromJson(Map<String, dynamic> json) =>
@@ -19,12 +19,12 @@ class ItemDto with _$ItemDto {
   Item toDomain() {
     return Item(
       id: id,
-      name: item_data.name ?? '',
-      description: item_data.description ?? '',
-      price:
-          item_data.variations[0].item_variation_data?.price_money.amount ?? 0,
-      imageUrl: item_data.ecom_image_uris?[0] ?? '',
-      categoryId: item_data.category_id ?? '',
+      name: itemData.name ?? '',
+      description: itemData.description ?? '',
+      price: itemData.variations[0].itemVariationData?.priceMoney.amount ?? 0,
+      imageUrl: itemData.ecomImageUris?.first ?? '',
+      categoryId: itemData.categoryId ?? '',
+      skip_modifier_screen: itemData.skipModifierScreen,
     );
   }
 }
@@ -35,21 +35,22 @@ class ItemData with _$ItemData {
   const factory ItemData({
     String? name,
     String? description,
-    String? label_color,
-    required bool is_taxable,
+    @JsonKey(name: 'label_color') String? labelColor,
+    @JsonKey(name: 'is_taxable') required bool isTaxable,
     String? visibility,
-    String? category_id,
-    List<ModifierListInfo>? modifier_list_info,
+    @JsonKey(name: 'category_id') String? categoryId,
+    @JsonKey(name: 'modifier_list_info')
+        List<ModifierListInfo>? modifierListInfo,
     required List<Variation> variations,
-    String? product_type,
-    required bool skip_modifier_screen,
-    String? ecom_uri,
-    required bool ecom_available,
-    String? ecom_visibility,
-    List<String>? ecom_image_uris,
-    String? description_html,
-    String? description_plaintext,
-    String? kitchen_name,
+    @JsonKey(name: 'product_type') String? productType,
+    @JsonKey(name: 'skip_modifier_screen') required bool skipModifierScreen,
+    @JsonKey(name: 'ecom_uri') String? ecomUri,
+    @JsonKey(name: 'ecom_available') required bool ecomAvailable,
+    @JsonKey(name: 'ecom_visibility') String? ecomVisibility,
+    @JsonKey(name: 'ecom_image_uris') List<String>? ecomImageUris,
+    @JsonKey(name: 'description_html') String? descriptionHtml,
+    @JsonKey(name: 'description_plaintext') String? descriptionPlaintext,
+    @JsonKey(name: 'kitchen_name') String? kitchenName,
   }) = _ItemData;
 
   factory ItemData.fromJson(Map<String, dynamic> json) =>
@@ -59,9 +60,9 @@ class ItemData with _$ItemData {
 @freezed
 class ModifierListInfo with _$ModifierListInfo {
   factory ModifierListInfo({
-    required String modifier_list_id,
-    required int min_selected_modifiers,
-    required int max_selected_modifiers,
+    @JsonKey(name: 'modifier_list_id') required String modifierListId,
+    @JsonKey(name: 'min_selected_modifiers') required int minSelectedModifiers,
+    @JsonKey(name: 'max_selected_modifiers') required int maxSelectedModifiers,
     required bool enabled,
   }) = _ModifierListInfo;
 
@@ -74,12 +75,14 @@ class Variation with _$Variation {
   factory Variation({
     required String type,
     required String id,
-    required DateTime updated_at,
-    required DateTime created_at,
+    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at') required DateTime createdAt,
     required int version,
-    required bool is_deleted,
-    required bool present_at_all_locations,
-    required ItemVariationData? item_variation_data,
+    @JsonKey(name: 'is_deleted') required bool isDeleted,
+    @JsonKey(name: 'present_at_all_locations')
+        required bool presentAtAllLocations,
+    @JsonKey(name: 'item_variation_data')
+        required ItemVariationData? itemVariationData,
   }) = _Variation;
 
   factory Variation.fromJson(Map<String, dynamic> json) =>
@@ -89,11 +92,11 @@ class Variation with _$Variation {
 @freezed
 class ItemVariationData with _$ItemVariationData {
   factory ItemVariationData({
-    required String item_id,
+    @JsonKey(name: 'item_id') required String itemId,
     required String name,
     required int ordinal,
-    required String pricing_type,
-    required PriceMoney price_money,
+    @JsonKey(name: 'pricing_type') required String pricingType,
+    @JsonKey(name: 'price_money') required PriceMoney priceMoney,
   }) = _ItemVariationData;
 
   factory ItemVariationData.fromJson(Map<String, dynamic> json) =>

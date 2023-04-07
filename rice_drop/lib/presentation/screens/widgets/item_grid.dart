@@ -4,10 +4,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:rice_drop/presentation/core/app_router.gr.dart';
 
 import '../../../domain/item.dart';
 import '../../../styles/styles.dart';
+import '../../core/app_router.gr.dart';
 
 class ItemGrid extends StatelessWidget {
   const ItemGrid({
@@ -56,7 +56,11 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.router.push(ItemRoute(item: item)),
+      onTap: () {
+        item.skip_modifier_screen
+            ? print('ADDED TO BASKET')
+            : context.router.push(ItemRoute(item: item));
+      },
       child: Card(
         child: Padding(
           padding: EdgeInsets.all($styles.insets.xs),
