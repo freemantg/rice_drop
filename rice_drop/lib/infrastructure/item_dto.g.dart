@@ -27,7 +27,7 @@ _$_ItemData _$$_ItemDataFromJson(Map<String, dynamic> json) => _$_ItemData(
       visibility: json['visibility'] as String?,
       categoryId: json['category_id'] as String?,
       modifierListInfo: (json['modifier_list_info'] as List<dynamic>?)
-          ?.map((e) => ModifierListInfo.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ModifierListInfoDto.fromJson(e as Map<String, dynamic>))
           .toList(),
       variations: (json['variations'] as List<dynamic>)
           .map((e) => Variation.fromJson(e as Map<String, dynamic>))
@@ -66,20 +66,36 @@ Map<String, dynamic> _$$_ItemDataToJson(_$_ItemData instance) =>
       'kitchen_name': instance.kitchenName,
     };
 
-_$_ModifierListInfo _$$_ModifierListInfoFromJson(Map<String, dynamic> json) =>
-    _$_ModifierListInfo(
+_$_ModifierListInfoDto _$$_ModifierListInfoDtoFromJson(
+        Map<String, dynamic> json) =>
+    _$_ModifierListInfoDto(
       modifierListId: json['modifier_list_id'] as String,
       minSelectedModifiers: json['min_selected_modifiers'] as int,
       maxSelectedModifiers: json['max_selected_modifiers'] as int,
       enabled: json['enabled'] as bool,
     );
 
-Map<String, dynamic> _$$_ModifierListInfoToJson(_$_ModifierListInfo instance) =>
+Map<String, dynamic> _$$_ModifierListInfoDtoToJson(
+        _$_ModifierListInfoDto instance) =>
     <String, dynamic>{
       'modifier_list_id': instance.modifierListId,
       'min_selected_modifiers': instance.minSelectedModifiers,
       'max_selected_modifiers': instance.maxSelectedModifiers,
       'enabled': instance.enabled,
+    };
+
+_$_ModifierDto _$$_ModifierDtoFromJson(Map<String, dynamic> json) =>
+    _$_ModifierDto(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      onByDefault: json['on_by_default'] as bool,
+    );
+
+Map<String, dynamic> _$$_ModifierDtoToJson(_$_ModifierDto instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'on_by_default': instance.onByDefault,
     };
 
 _$_Variation _$$_VariationFromJson(Map<String, dynamic> json) => _$_Variation(

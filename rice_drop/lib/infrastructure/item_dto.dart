@@ -24,7 +24,9 @@ class ItemDto with _$ItemDto {
       price: itemData.variations[0].itemVariationData?.priceMoney.amount ?? 0,
       imageUrl: itemData.ecomImageUris?.first ?? '',
       categoryId: itemData.categoryId ?? '',
-      skip_modifier_screen: itemData.skipModifierScreen,
+      skipModifierScreen: itemData.skipModifierScreen,
+      modifiers:
+          itemData.modifierListInfo?.map((e) => e.toDomain()).toList() ?? [],
     );
   }
 }
@@ -40,7 +42,7 @@ class ItemData with _$ItemData {
     String? visibility,
     @JsonKey(name: 'category_id') String? categoryId,
     @JsonKey(name: 'modifier_list_info')
-        List<ModifierListInfo>? modifierListInfo,
+        List<ModifierListInfoDto>? modifierListInfo,
     required List<Variation> variations,
     @JsonKey(name: 'product_type') String? productType,
     @JsonKey(name: 'skip_modifier_screen') required bool skipModifierScreen,
@@ -58,16 +60,24 @@ class ItemData with _$ItemData {
 }
 
 @freezed
-class ModifierListInfo with _$ModifierListInfo {
-  factory ModifierListInfo({
+class ModifierListInfoDto with _$ModifierListInfoDto {
+  const ModifierListInfoDto._();
+  factory ModifierListInfoDto({
     @JsonKey(name: 'modifier_list_id') required String modifierListId,
     @JsonKey(name: 'min_selected_modifiers') required int minSelectedModifiers,
     @JsonKey(name: 'max_selected_modifiers') required int maxSelectedModifiers,
     required bool enabled,
-  }) = _ModifierListInfo;
+  }) = _ModifierListInfoDto;
 
-  factory ModifierListInfo.fromJson(Map<String, dynamic> json) =>
-      _$ModifierListInfoFromJson(json);
+  factory ModifierListInfoDto.fromJson(Map<String, dynamic> json) =>
+      _$ModifierListInfoDtoFromJson(json);
+
+  ModifierListInfo toDomain() {
+    return ModifierListInfo(
+      modifierListId: modifierListId,
+      enabled: enabled,
+    );
+  }
 }
 
 @freezed

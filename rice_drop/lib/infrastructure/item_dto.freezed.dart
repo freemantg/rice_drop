@@ -221,7 +221,7 @@ mixin _$ItemData {
   @JsonKey(name: 'category_id')
   String? get categoryId => throw _privateConstructorUsedError;
   @JsonKey(name: 'modifier_list_info')
-  List<ModifierListInfo>? get modifierListInfo =>
+  List<ModifierListInfoDto>? get modifierListInfo =>
       throw _privateConstructorUsedError;
   List<Variation> get variations => throw _privateConstructorUsedError;
   @JsonKey(name: 'product_type')
@@ -265,7 +265,7 @@ abstract class $ItemDataCopyWith<$Res> {
       @JsonKey(name: 'category_id')
           String? categoryId,
       @JsonKey(name: 'modifier_list_info')
-          List<ModifierListInfo>? modifierListInfo,
+          List<ModifierListInfoDto>? modifierListInfo,
       List<Variation> variations,
       @JsonKey(name: 'product_type')
           String? productType,
@@ -346,7 +346,7 @@ class _$ItemDataCopyWithImpl<$Res, $Val extends ItemData>
       modifierListInfo: freezed == modifierListInfo
           ? _value.modifierListInfo
           : modifierListInfo // ignore: cast_nullable_to_non_nullable
-              as List<ModifierListInfo>?,
+              as List<ModifierListInfoDto>?,
       variations: null == variations
           ? _value.variations
           : variations // ignore: cast_nullable_to_non_nullable
@@ -409,7 +409,7 @@ abstract class _$$_ItemDataCopyWith<$Res> implements $ItemDataCopyWith<$Res> {
       @JsonKey(name: 'category_id')
           String? categoryId,
       @JsonKey(name: 'modifier_list_info')
-          List<ModifierListInfo>? modifierListInfo,
+          List<ModifierListInfoDto>? modifierListInfo,
       List<Variation> variations,
       @JsonKey(name: 'product_type')
           String? productType,
@@ -488,7 +488,7 @@ class __$$_ItemDataCopyWithImpl<$Res>
       modifierListInfo: freezed == modifierListInfo
           ? _value._modifierListInfo
           : modifierListInfo // ignore: cast_nullable_to_non_nullable
-              as List<ModifierListInfo>?,
+              as List<ModifierListInfoDto>?,
       variations: null == variations
           ? _value._variations
           : variations // ignore: cast_nullable_to_non_nullable
@@ -547,7 +547,7 @@ class _$_ItemData extends _ItemData {
       @JsonKey(name: 'category_id')
           this.categoryId,
       @JsonKey(name: 'modifier_list_info')
-          final List<ModifierListInfo>? modifierListInfo,
+          final List<ModifierListInfoDto>? modifierListInfo,
       required final List<Variation> variations,
       @JsonKey(name: 'product_type')
           this.productType,
@@ -590,10 +590,10 @@ class _$_ItemData extends _ItemData {
   @override
   @JsonKey(name: 'category_id')
   final String? categoryId;
-  final List<ModifierListInfo>? _modifierListInfo;
+  final List<ModifierListInfoDto>? _modifierListInfo;
   @override
   @JsonKey(name: 'modifier_list_info')
-  List<ModifierListInfo>? get modifierListInfo {
+  List<ModifierListInfoDto>? get modifierListInfo {
     final value = _modifierListInfo;
     if (value == null) return null;
     if (_modifierListInfo is EqualUnmodifiableListView)
@@ -738,7 +738,7 @@ abstract class _ItemData extends ItemData {
       @JsonKey(name: 'category_id')
           final String? categoryId,
       @JsonKey(name: 'modifier_list_info')
-          final List<ModifierListInfo>? modifierListInfo,
+          final List<ModifierListInfoDto>? modifierListInfo,
       required final List<Variation> variations,
       @JsonKey(name: 'product_type')
           final String? productType,
@@ -779,7 +779,7 @@ abstract class _ItemData extends ItemData {
   String? get categoryId;
   @override
   @JsonKey(name: 'modifier_list_info')
-  List<ModifierListInfo>? get modifierListInfo;
+  List<ModifierListInfoDto>? get modifierListInfo;
   @override
   List<Variation> get variations;
   @override
@@ -815,12 +815,12 @@ abstract class _ItemData extends ItemData {
       throw _privateConstructorUsedError;
 }
 
-ModifierListInfo _$ModifierListInfoFromJson(Map<String, dynamic> json) {
-  return _ModifierListInfo.fromJson(json);
+ModifierListInfoDto _$ModifierListInfoDtoFromJson(Map<String, dynamic> json) {
+  return _ModifierListInfoDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ModifierListInfo {
+mixin _$ModifierListInfoDto {
   @JsonKey(name: 'modifier_list_id')
   String get modifierListId => throw _privateConstructorUsedError;
   @JsonKey(name: 'min_selected_modifiers')
@@ -831,15 +831,15 @@ mixin _$ModifierListInfo {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ModifierListInfoCopyWith<ModifierListInfo> get copyWith =>
+  $ModifierListInfoDtoCopyWith<ModifierListInfoDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ModifierListInfoCopyWith<$Res> {
-  factory $ModifierListInfoCopyWith(
-          ModifierListInfo value, $Res Function(ModifierListInfo) then) =
-      _$ModifierListInfoCopyWithImpl<$Res, ModifierListInfo>;
+abstract class $ModifierListInfoDtoCopyWith<$Res> {
+  factory $ModifierListInfoDtoCopyWith(
+          ModifierListInfoDto value, $Res Function(ModifierListInfoDto) then) =
+      _$ModifierListInfoDtoCopyWithImpl<$Res, ModifierListInfoDto>;
   @useResult
   $Res call(
       {@JsonKey(name: 'modifier_list_id') String modifierListId,
@@ -849,9 +849,9 @@ abstract class $ModifierListInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ModifierListInfoCopyWithImpl<$Res, $Val extends ModifierListInfo>
-    implements $ModifierListInfoCopyWith<$Res> {
-  _$ModifierListInfoCopyWithImpl(this._value, this._then);
+class _$ModifierListInfoDtoCopyWithImpl<$Res, $Val extends ModifierListInfoDto>
+    implements $ModifierListInfoDtoCopyWith<$Res> {
+  _$ModifierListInfoDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -888,11 +888,11 @@ class _$ModifierListInfoCopyWithImpl<$Res, $Val extends ModifierListInfo>
 }
 
 /// @nodoc
-abstract class _$$_ModifierListInfoCopyWith<$Res>
-    implements $ModifierListInfoCopyWith<$Res> {
-  factory _$$_ModifierListInfoCopyWith(
-          _$_ModifierListInfo value, $Res Function(_$_ModifierListInfo) then) =
-      __$$_ModifierListInfoCopyWithImpl<$Res>;
+abstract class _$$_ModifierListInfoDtoCopyWith<$Res>
+    implements $ModifierListInfoDtoCopyWith<$Res> {
+  factory _$$_ModifierListInfoDtoCopyWith(_$_ModifierListInfoDto value,
+          $Res Function(_$_ModifierListInfoDto) then) =
+      __$$_ModifierListInfoDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -903,11 +903,11 @@ abstract class _$$_ModifierListInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ModifierListInfoCopyWithImpl<$Res>
-    extends _$ModifierListInfoCopyWithImpl<$Res, _$_ModifierListInfo>
-    implements _$$_ModifierListInfoCopyWith<$Res> {
-  __$$_ModifierListInfoCopyWithImpl(
-      _$_ModifierListInfo _value, $Res Function(_$_ModifierListInfo) _then)
+class __$$_ModifierListInfoDtoCopyWithImpl<$Res>
+    extends _$ModifierListInfoDtoCopyWithImpl<$Res, _$_ModifierListInfoDto>
+    implements _$$_ModifierListInfoDtoCopyWith<$Res> {
+  __$$_ModifierListInfoDtoCopyWithImpl(_$_ModifierListInfoDto _value,
+      $Res Function(_$_ModifierListInfoDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -918,7 +918,7 @@ class __$$_ModifierListInfoCopyWithImpl<$Res>
     Object? maxSelectedModifiers = null,
     Object? enabled = null,
   }) {
-    return _then(_$_ModifierListInfo(
+    return _then(_$_ModifierListInfoDto(
       modifierListId: null == modifierListId
           ? _value.modifierListId
           : modifierListId // ignore: cast_nullable_to_non_nullable
@@ -941,18 +941,19 @@ class __$$_ModifierListInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ModifierListInfo implements _ModifierListInfo {
-  _$_ModifierListInfo(
+class _$_ModifierListInfoDto extends _ModifierListInfoDto {
+  _$_ModifierListInfoDto(
       {@JsonKey(name: 'modifier_list_id')
           required this.modifierListId,
       @JsonKey(name: 'min_selected_modifiers')
           required this.minSelectedModifiers,
       @JsonKey(name: 'max_selected_modifiers')
           required this.maxSelectedModifiers,
-      required this.enabled});
+      required this.enabled})
+      : super._();
 
-  factory _$_ModifierListInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_ModifierListInfoFromJson(json);
+  factory _$_ModifierListInfoDto.fromJson(Map<String, dynamic> json) =>
+      _$$_ModifierListInfoDtoFromJson(json);
 
   @override
   @JsonKey(name: 'modifier_list_id')
@@ -968,14 +969,14 @@ class _$_ModifierListInfo implements _ModifierListInfo {
 
   @override
   String toString() {
-    return 'ModifierListInfo(modifierListId: $modifierListId, minSelectedModifiers: $minSelectedModifiers, maxSelectedModifiers: $maxSelectedModifiers, enabled: $enabled)';
+    return 'ModifierListInfoDto(modifierListId: $modifierListId, minSelectedModifiers: $minSelectedModifiers, maxSelectedModifiers: $maxSelectedModifiers, enabled: $enabled)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ModifierListInfo &&
+            other is _$_ModifierListInfoDto &&
             (identical(other.modifierListId, modifierListId) ||
                 other.modifierListId == modifierListId) &&
             (identical(other.minSelectedModifiers, minSelectedModifiers) ||
@@ -993,29 +994,31 @@ class _$_ModifierListInfo implements _ModifierListInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ModifierListInfoCopyWith<_$_ModifierListInfo> get copyWith =>
-      __$$_ModifierListInfoCopyWithImpl<_$_ModifierListInfo>(this, _$identity);
+  _$$_ModifierListInfoDtoCopyWith<_$_ModifierListInfoDto> get copyWith =>
+      __$$_ModifierListInfoDtoCopyWithImpl<_$_ModifierListInfoDto>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ModifierListInfoToJson(
+    return _$$_ModifierListInfoDtoToJson(
       this,
     );
   }
 }
 
-abstract class _ModifierListInfo implements ModifierListInfo {
-  factory _ModifierListInfo(
+abstract class _ModifierListInfoDto extends ModifierListInfoDto {
+  factory _ModifierListInfoDto(
       {@JsonKey(name: 'modifier_list_id')
           required final String modifierListId,
       @JsonKey(name: 'min_selected_modifiers')
           required final int minSelectedModifiers,
       @JsonKey(name: 'max_selected_modifiers')
           required final int maxSelectedModifiers,
-      required final bool enabled}) = _$_ModifierListInfo;
+      required final bool enabled}) = _$_ModifierListInfoDto;
+  _ModifierListInfoDto._() : super._();
 
-  factory _ModifierListInfo.fromJson(Map<String, dynamic> json) =
-      _$_ModifierListInfo.fromJson;
+  factory _ModifierListInfoDto.fromJson(Map<String, dynamic> json) =
+      _$_ModifierListInfoDto.fromJson;
 
   @override
   @JsonKey(name: 'modifier_list_id')
@@ -1030,7 +1033,404 @@ abstract class _ModifierListInfo implements ModifierListInfo {
   bool get enabled;
   @override
   @JsonKey(ignore: true)
-  _$$_ModifierListInfoCopyWith<_$_ModifierListInfo> get copyWith =>
+  _$$_ModifierListInfoDtoCopyWith<_$_ModifierListInfoDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$ModifierListDto {
+  @JsonKey(name: 'id')
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'selection_type')
+  String get selectionType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'modifiers')
+  List<ModifierDto> get modifiers => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ModifierListDtoCopyWith<ModifierListDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ModifierListDtoCopyWith<$Res> {
+  factory $ModifierListDtoCopyWith(
+          ModifierListDto value, $Res Function(ModifierListDto) then) =
+      _$ModifierListDtoCopyWithImpl<$Res, ModifierListDto>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'id') String id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'selection_type') String selectionType,
+      @JsonKey(name: 'modifiers') List<ModifierDto> modifiers});
+}
+
+/// @nodoc
+class _$ModifierListDtoCopyWithImpl<$Res, $Val extends ModifierListDto>
+    implements $ModifierListDtoCopyWith<$Res> {
+  _$ModifierListDtoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? selectionType = null,
+    Object? modifiers = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectionType: null == selectionType
+          ? _value.selectionType
+          : selectionType // ignore: cast_nullable_to_non_nullable
+              as String,
+      modifiers: null == modifiers
+          ? _value.modifiers
+          : modifiers // ignore: cast_nullable_to_non_nullable
+              as List<ModifierDto>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ModifierListDtoCopyWith<$Res>
+    implements $ModifierListDtoCopyWith<$Res> {
+  factory _$$_ModifierListDtoCopyWith(
+          _$_ModifierListDto value, $Res Function(_$_ModifierListDto) then) =
+      __$$_ModifierListDtoCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'id') String id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'selection_type') String selectionType,
+      @JsonKey(name: 'modifiers') List<ModifierDto> modifiers});
+}
+
+/// @nodoc
+class __$$_ModifierListDtoCopyWithImpl<$Res>
+    extends _$ModifierListDtoCopyWithImpl<$Res, _$_ModifierListDto>
+    implements _$$_ModifierListDtoCopyWith<$Res> {
+  __$$_ModifierListDtoCopyWithImpl(
+      _$_ModifierListDto _value, $Res Function(_$_ModifierListDto) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? selectionType = null,
+    Object? modifiers = null,
+  }) {
+    return _then(_$_ModifierListDto(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectionType: null == selectionType
+          ? _value.selectionType
+          : selectionType // ignore: cast_nullable_to_non_nullable
+              as String,
+      modifiers: null == modifiers
+          ? _value._modifiers
+          : modifiers // ignore: cast_nullable_to_non_nullable
+              as List<ModifierDto>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ModifierListDto implements _ModifierListDto {
+  _$_ModifierListDto(
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'name') required this.name,
+      @JsonKey(name: 'selection_type') required this.selectionType,
+      @JsonKey(name: 'modifiers') required final List<ModifierDto> modifiers})
+      : _modifiers = modifiers;
+
+  @override
+  @JsonKey(name: 'id')
+  final String id;
+  @override
+  @JsonKey(name: 'name')
+  final String name;
+  @override
+  @JsonKey(name: 'selection_type')
+  final String selectionType;
+  final List<ModifierDto> _modifiers;
+  @override
+  @JsonKey(name: 'modifiers')
+  List<ModifierDto> get modifiers {
+    if (_modifiers is EqualUnmodifiableListView) return _modifiers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_modifiers);
+  }
+
+  @override
+  String toString() {
+    return 'ModifierListDto(id: $id, name: $name, selectionType: $selectionType, modifiers: $modifiers)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ModifierListDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.selectionType, selectionType) ||
+                other.selectionType == selectionType) &&
+            const DeepCollectionEquality()
+                .equals(other._modifiers, _modifiers));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, selectionType,
+      const DeepCollectionEquality().hash(_modifiers));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ModifierListDtoCopyWith<_$_ModifierListDto> get copyWith =>
+      __$$_ModifierListDtoCopyWithImpl<_$_ModifierListDto>(this, _$identity);
+}
+
+abstract class _ModifierListDto implements ModifierListDto {
+  factory _ModifierListDto(
+      {@JsonKey(name: 'id')
+          required final String id,
+      @JsonKey(name: 'name')
+          required final String name,
+      @JsonKey(name: 'selection_type')
+          required final String selectionType,
+      @JsonKey(name: 'modifiers')
+          required final List<ModifierDto> modifiers}) = _$_ModifierListDto;
+
+  @override
+  @JsonKey(name: 'id')
+  String get id;
+  @override
+  @JsonKey(name: 'name')
+  String get name;
+  @override
+  @JsonKey(name: 'selection_type')
+  String get selectionType;
+  @override
+  @JsonKey(name: 'modifiers')
+  List<ModifierDto> get modifiers;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ModifierListDtoCopyWith<_$_ModifierListDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ModifierDto _$ModifierDtoFromJson(Map<String, dynamic> json) {
+  return _ModifierDto.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ModifierDto {
+  @JsonKey(name: 'id')
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'on_by_default')
+  bool get onByDefault => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ModifierDtoCopyWith<ModifierDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ModifierDtoCopyWith<$Res> {
+  factory $ModifierDtoCopyWith(
+          ModifierDto value, $Res Function(ModifierDto) then) =
+      _$ModifierDtoCopyWithImpl<$Res, ModifierDto>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'id') String id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'on_by_default') bool onByDefault});
+}
+
+/// @nodoc
+class _$ModifierDtoCopyWithImpl<$Res, $Val extends ModifierDto>
+    implements $ModifierDtoCopyWith<$Res> {
+  _$ModifierDtoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? onByDefault = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      onByDefault: null == onByDefault
+          ? _value.onByDefault
+          : onByDefault // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ModifierDtoCopyWith<$Res>
+    implements $ModifierDtoCopyWith<$Res> {
+  factory _$$_ModifierDtoCopyWith(
+          _$_ModifierDto value, $Res Function(_$_ModifierDto) then) =
+      __$$_ModifierDtoCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'id') String id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'on_by_default') bool onByDefault});
+}
+
+/// @nodoc
+class __$$_ModifierDtoCopyWithImpl<$Res>
+    extends _$ModifierDtoCopyWithImpl<$Res, _$_ModifierDto>
+    implements _$$_ModifierDtoCopyWith<$Res> {
+  __$$_ModifierDtoCopyWithImpl(
+      _$_ModifierDto _value, $Res Function(_$_ModifierDto) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? onByDefault = null,
+  }) {
+    return _then(_$_ModifierDto(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      onByDefault: null == onByDefault
+          ? _value.onByDefault
+          : onByDefault // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ModifierDto implements _ModifierDto {
+  const _$_ModifierDto(
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'name') required this.name,
+      @JsonKey(name: 'on_by_default') required this.onByDefault});
+
+  factory _$_ModifierDto.fromJson(Map<String, dynamic> json) =>
+      _$$_ModifierDtoFromJson(json);
+
+  @override
+  @JsonKey(name: 'id')
+  final String id;
+  @override
+  @JsonKey(name: 'name')
+  final String name;
+  @override
+  @JsonKey(name: 'on_by_default')
+  final bool onByDefault;
+
+  @override
+  String toString() {
+    return 'ModifierDto(id: $id, name: $name, onByDefault: $onByDefault)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ModifierDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.onByDefault, onByDefault) ||
+                other.onByDefault == onByDefault));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, onByDefault);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ModifierDtoCopyWith<_$_ModifierDto> get copyWith =>
+      __$$_ModifierDtoCopyWithImpl<_$_ModifierDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ModifierDtoToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ModifierDto implements ModifierDto {
+  const factory _ModifierDto(
+          {@JsonKey(name: 'id') required final String id,
+          @JsonKey(name: 'name') required final String name,
+          @JsonKey(name: 'on_by_default') required final bool onByDefault}) =
+      _$_ModifierDto;
+
+  factory _ModifierDto.fromJson(Map<String, dynamic> json) =
+      _$_ModifierDto.fromJson;
+
+  @override
+  @JsonKey(name: 'id')
+  String get id;
+  @override
+  @JsonKey(name: 'name')
+  String get name;
+  @override
+  @JsonKey(name: 'on_by_default')
+  bool get onByDefault;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ModifierDtoCopyWith<_$_ModifierDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

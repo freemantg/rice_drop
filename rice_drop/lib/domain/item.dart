@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'item.freezed.dart';
-part 'item.g.dart';
 
 @freezed
 class Item with _$Item {
@@ -13,9 +12,18 @@ class Item with _$Item {
     required int price,
     required String imageUrl,
     required String categoryId,
-    required bool skip_modifier_screen,
-    required List<ModifierList> modifiers,
+    required bool skipModifierScreen,
+    required List<ModifierListInfo> modifiers,
   }) = _Item;
+}
+
+@freezed
+class ModifierListInfo with _$ModifierListInfo {
+  const ModifierListInfo._();
+  factory ModifierListInfo({
+    required String modifierListId,
+    required bool enabled,
+  }) = _ModifierListInfo;
 }
 
 @freezed
@@ -23,7 +31,7 @@ class ModifierList with _$ModifierList {
   const ModifierList._();
   factory ModifierList({
     required String id,
-    required String name,
+    required String selectionType,
     required List<Modifier> modifiers,
   }) = _ModifierList;
 }
@@ -34,6 +42,6 @@ class Modifier with _$Modifier {
   factory Modifier({
     required String id,
     required String name,
-    required double price,
+    required bool onByDefault,
   }) = _Modifier;
 }

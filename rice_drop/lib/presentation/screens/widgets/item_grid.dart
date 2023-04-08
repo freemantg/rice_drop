@@ -57,7 +57,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        item.skip_modifier_screen
+        item.skipModifierScreen
             ? print('ADDED TO BASKET')
             : context.router.push(ItemRoute(item: item));
       },
