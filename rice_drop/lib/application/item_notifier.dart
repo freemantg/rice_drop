@@ -11,6 +11,7 @@ class ItemNotifier extends StateNotifier<ItemState> {
           const ItemState.initial(
             itemsByCategory: {},
             categories: [],
+            modifierLists: [],
           ),
         );
 
@@ -18,6 +19,7 @@ class ItemNotifier extends StateNotifier<ItemState> {
     state = ItemState.loading(
       itemsByCategory: state.itemsByCategory,
       categories: state.categories,
+      modifierLists: state.modifierLists,
     );
 
     // Fetch categories first
@@ -27,10 +29,12 @@ class ItemNotifier extends StateNotifier<ItemState> {
         message: failure.toString(),
         itemsByCategory: state.itemsByCategory,
         categories: state.categories,
+        modifierLists: state.modifierLists,
       ),
       (categories) => ItemState.loadSuccess(
         itemsByCategory: state.itemsByCategory,
         categories: categories,
+        modifierLists: state.modifierLists,
       ),
     );
 
@@ -41,6 +45,7 @@ class ItemNotifier extends StateNotifier<ItemState> {
         message: failure.toString(),
         itemsByCategory: state.itemsByCategory,
         categories: state.categories,
+        modifierLists: state.modifierLists,
       ),
       (items) {
         final Map<String, List<Item>> itemsByCategory = {};
@@ -51,6 +56,7 @@ class ItemNotifier extends StateNotifier<ItemState> {
         return ItemState.loadSuccess(
           itemsByCategory: itemsByCategory,
           categories: state.categories,
+          modifierLists: state.modifierLists,
         );
       },
     );

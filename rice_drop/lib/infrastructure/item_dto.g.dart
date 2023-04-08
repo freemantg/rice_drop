@@ -84,20 +84,6 @@ Map<String, dynamic> _$$_ModifierListInfoDtoToJson(
       'enabled': instance.enabled,
     };
 
-_$_ModifierDto _$$_ModifierDtoFromJson(Map<String, dynamic> json) =>
-    _$_ModifierDto(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      onByDefault: json['on_by_default'] as bool,
-    );
-
-Map<String, dynamic> _$$_ModifierDtoToJson(_$_ModifierDto instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'on_by_default': instance.onByDefault,
-    };
-
 _$_Variation _$$_VariationFromJson(Map<String, dynamic> json) => _$_Variation(
       type: json['type'] as String,
       id: json['id'] as String,

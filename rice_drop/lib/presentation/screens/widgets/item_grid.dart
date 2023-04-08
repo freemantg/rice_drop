@@ -67,6 +67,8 @@ class ItemCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              ...item.modifiers.map((e) => Text(e.modifierListId)),
+              Text(item.modifiers.length.toString()),
               Expanded(
                 child: LayoutBuilder(
                   builder: (context, constraints) {

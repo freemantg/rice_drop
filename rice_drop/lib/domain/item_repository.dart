@@ -7,4 +7,5 @@ import 'item.dart';
 abstract class ItemRepository {
   Future<Either<ItemFailure, List<Item>>> fetchItems();
   Future<Either<ItemFailure, List<CategoryModel>>> fetchCategories();
+  Future<Either<ItemFailure, List<ModifierList>>> fetchModifierLists();
 }

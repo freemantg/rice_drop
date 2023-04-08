@@ -69,4 +69,10 @@ class SquareDataSourceImp implements ItemRepository {
       return left(const ItemFailure.unexpectedFailure());
     }
   }
+
+  @override
+  Future<Either<ItemFailure, List<ModifierList>>> fetchModifierLists() {
+    // TODO: implement fetchModifierLists
+    throw UnimplementedError();
+  }
 }

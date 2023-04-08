@@ -38,8 +38,8 @@ class ItemGridScreen extends HookConsumerWidget {
             ),
             HSpace(size: $styles.insets.sm),
             ref.watch(itemNotifierProvider).maybeWhen(
-                  loading: (_, __) => const CircularProgressIndicator(),
-                  loadSuccess: (itemsByCategory, _) => ItemGrid(
+                  loading: (_, __, ___) => const CircularProgressIndicator(),
+                  loadSuccess: (itemsByCategory, _, modifierLists) => ItemGrid(
                     items: itemsByCategory[category.id] ?? [],
                   ),
                   orElse: () => const Text('ERROR LOADING ITEMS'),
