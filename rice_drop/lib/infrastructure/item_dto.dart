@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rice_drop/domain/item.dart';
 
+import 'modifier_list_dto.dart';
+
 part 'item_dto.freezed.dart';
 part 'item_dto.g.dart';
 
@@ -25,8 +27,6 @@ class ItemDto with _$ItemDto {
       imageUrl: itemData.ecomImageUris?.first ?? '',
       categoryId: itemData.categoryId ?? '',
       skipModifierScreen: itemData.skipModifierScreen,
-      modifiers:
-          itemData.modifierListInfo?.map((e) => e.toDomain()).toList() ?? [],
     );
   }
 }
@@ -41,8 +41,7 @@ class ItemData with _$ItemData {
     @JsonKey(name: 'is_taxable') required bool isTaxable,
     String? visibility,
     @JsonKey(name: 'category_id') String? categoryId,
-    @JsonKey(name: 'modifier_list_info')
-        List<ModifierListInfoDto>? modifierListInfo,
+    @JsonKey(name: 'modifier_list_info') List<ModifierListInfo>? modifierList,
     required List<Variation> variations,
     @JsonKey(name: 'product_type') String? productType,
     @JsonKey(name: 'skip_modifier_screen') required bool skipModifierScreen,
@@ -60,24 +59,16 @@ class ItemData with _$ItemData {
 }
 
 @freezed
-class ModifierListInfoDto with _$ModifierListInfoDto {
-  const ModifierListInfoDto._();
-  factory ModifierListInfoDto({
+class ModifierListInfo with _$ModifierListInfo {
+  const factory ModifierListInfo({
     @JsonKey(name: 'modifier_list_id') required String modifierListId,
     @JsonKey(name: 'min_selected_modifiers') required int minSelectedModifiers,
     @JsonKey(name: 'max_selected_modifiers') required int maxSelectedModifiers,
     required bool enabled,
-  }) = _ModifierListInfoDto;
+  }) = _ModifierListInfo;
 
-  factory ModifierListInfoDto.fromJson(Map<String, dynamic> json) =>
-      _$ModifierListInfoDtoFromJson(json);
-
-  ModifierListInfo toDomain() {
-    return ModifierListInfo(
-      modifierListId: modifierListId,
-      enabled: enabled,
-    );
-  }
+  factory ModifierListInfo.fromJson(Map<String, dynamic> json) =>
+      _$ModifierListInfoFromJson(json);
 }
 
 @freezed

@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../category.dart';
 import '../item.dart';
+import '../modifier_list.dart';
 
 part 'item_state.freezed.dart';
 

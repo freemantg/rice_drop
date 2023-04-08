@@ -6,8 +6,10 @@ import 'package:http/http.dart' as http;
 import 'package:rice_drop/domain/category.dart';
 import 'package:rice_drop/domain/item_failure.dart';
 import 'package:rice_drop/domain/item_repository.dart';
+import 'package:rice_drop/infrastructure/modifier_list_dto.dart';
 
 import '../../domain/item.dart';
+import '../../domain/modifier_list.dart';
 import '../category_dto.dart';
 import '../item_dto.dart';
 
@@ -33,6 +35,16 @@ class SquareDataSourceImp implements ItemRepository {
     final result = _fetchData<CategoryDto, CategoryModel>(
       type: 'CATEGORY',
       fromJson: (json) => CategoryDto.fromJson(json),
+      toDomain: (dto) => dto.toDomain(),
+    );
+    return result;
+  }
+
+  @override
+  Future<Either<ItemFailure, List<ModifierList>>> fetchModifierLists() async {
+    final result = _fetchData<ModifierListDto, ModifierList>(
+      type: 'MODIFIER_LIST',
+      fromJson: (json) => ModifierListDto.fromJson(json),
       toDomain: (dto) => dto.toDomain(),
     );
     return result;
@@ -68,11 +80,5 @@ class SquareDataSourceImp implements ItemRepository {
     } catch (e) {
       return left(const ItemFailure.unexpectedFailure());
     }
-  }
-
-  @override
-  Future<Either<ItemFailure, List<ModifierList>>> fetchModifierLists() {
-    // TODO: implement fetchModifierLists
-    throw UnimplementedError();
   }
 }

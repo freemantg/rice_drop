@@ -61,4 +61,27 @@ class ItemNotifier extends StateNotifier<ItemState> {
       },
     );
   }
+
+  Future<void> fetchModifiers() async {
+    state = ItemState.loading(
+      itemsByCategory: state.itemsByCategory,
+      categories: state.categories,
+      modifierLists: state.modifierLists,
+    );
+
+    final modifierResult = await _repository.fetchModifierLists();
+    state = modifierResult.fold(
+      (failure) => ItemState.error(
+        message: failure.toString(),
+        itemsByCategory: state.itemsByCategory,
+        categories: state.categories,
+        modifierLists: state.modifierLists,
+      ),
+      (modifierLists) => ItemState.loadSuccess(
+        itemsByCategory: state.itemsByCategory,
+        categories: state.categories,
+        modifierLists: modifierLists,
+      ),
+    );
+  }
 }

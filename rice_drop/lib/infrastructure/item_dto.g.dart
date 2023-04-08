@@ -26,8 +26,8 @@ _$_ItemData _$$_ItemDataFromJson(Map<String, dynamic> json) => _$_ItemData(
       isTaxable: json['is_taxable'] as bool,
       visibility: json['visibility'] as String?,
       categoryId: json['category_id'] as String?,
-      modifierListInfo: (json['modifier_list_info'] as List<dynamic>?)
-          ?.map((e) => ModifierListInfoDto.fromJson(e as Map<String, dynamic>))
+      modifierList: (json['modifier_list_info'] as List<dynamic>?)
+          ?.map((e) => ModifierListInfo.fromJson(e as Map<String, dynamic>))
           .toList(),
       variations: (json['variations'] as List<dynamic>)
           .map((e) => Variation.fromJson(e as Map<String, dynamic>))
@@ -53,7 +53,7 @@ Map<String, dynamic> _$$_ItemDataToJson(_$_ItemData instance) =>
       'is_taxable': instance.isTaxable,
       'visibility': instance.visibility,
       'category_id': instance.categoryId,
-      'modifier_list_info': instance.modifierListInfo,
+      'modifier_list_info': instance.modifierList,
       'variations': instance.variations,
       'product_type': instance.productType,
       'skip_modifier_screen': instance.skipModifierScreen,
@@ -66,17 +66,15 @@ Map<String, dynamic> _$$_ItemDataToJson(_$_ItemData instance) =>
       'kitchen_name': instance.kitchenName,
     };
 
-_$_ModifierListInfoDto _$$_ModifierListInfoDtoFromJson(
-        Map<String, dynamic> json) =>
-    _$_ModifierListInfoDto(
+_$_ModifierListInfo _$$_ModifierListInfoFromJson(Map<String, dynamic> json) =>
+    _$_ModifierListInfo(
       modifierListId: json['modifier_list_id'] as String,
       minSelectedModifiers: json['min_selected_modifiers'] as int,
       maxSelectedModifiers: json['max_selected_modifiers'] as int,
       enabled: json['enabled'] as bool,
     );
 
-Map<String, dynamic> _$$_ModifierListInfoDtoToJson(
-        _$_ModifierListInfoDto instance) =>
+Map<String, dynamic> _$$_ModifierListInfoToJson(_$_ModifierListInfo instance) =>
     <String, dynamic>{
       'modifier_list_id': instance.modifierListId,
       'min_selected_modifiers': instance.minSelectedModifiers,

@@ -42,6 +42,7 @@ class _ItemSelectScreenState extends ConsumerState<ItemSelectScreen>
 
   Future<void> _fetchItemsAndInitializeTabController() async {
     await ref.read(itemNotifierProvider.notifier).fetchItems();
+    await ref.read(itemNotifierProvider.notifier).fetchModifiers();
     _categories = ref.read(itemNotifierProvider).categories;
     _tabLength.value = _categories!.length;
   }

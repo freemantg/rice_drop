@@ -218,7 +218,7 @@ class __$$_ModifierListDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ModifierListDto implements _ModifierListDto {
+class _$_ModifierListDto extends _ModifierListDto {
   const _$_ModifierListDto(
       {required this.type,
       required this.id,
@@ -232,7 +232,8 @@ class _$_ModifierListDto implements _ModifierListDto {
       @JsonKey(name: 'present_at_all_locations')
           required this.presentAtAllLocations,
       @JsonKey(name: 'modifier_list_data')
-          required this.modifierListData});
+          required this.modifierListData})
+      : super._();
 
   factory _$_ModifierListDto.fromJson(Map<String, dynamic> json) =>
       _$$_ModifierListDtoFromJson(json);
@@ -303,7 +304,7 @@ class _$_ModifierListDto implements _ModifierListDto {
   }
 }
 
-abstract class _ModifierListDto implements ModifierListDto {
+abstract class _ModifierListDto extends ModifierListDto {
   const factory _ModifierListDto(
           {required final String type,
           required final String id,
@@ -319,6 +320,7 @@ abstract class _ModifierListDto implements ModifierListDto {
           @JsonKey(name: 'modifier_list_data')
               required final ModifierListDataDto modifierListData}) =
       _$_ModifierListDto;
+  const _ModifierListDto._() : super._();
 
   factory _ModifierListDto.fromJson(Map<String, dynamic> json) =
       _$_ModifierListDto.fromJson;
