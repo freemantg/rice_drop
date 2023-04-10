@@ -827,3 +827,158 @@ abstract class _ModifierData implements ModifierData {
   _$$_ModifierDataCopyWith<_$_ModifierData> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+PriceMoney _$PriceMoneyFromJson(Map<String, dynamic> json) {
+  return _PriceMoney.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PriceMoney {
+  int get amount => throw _privateConstructorUsedError;
+  String get currency => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PriceMoneyCopyWith<PriceMoney> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PriceMoneyCopyWith<$Res> {
+  factory $PriceMoneyCopyWith(
+          PriceMoney value, $Res Function(PriceMoney) then) =
+      _$PriceMoneyCopyWithImpl<$Res, PriceMoney>;
+  @useResult
+  $Res call({int amount, String currency});
+}
+
+/// @nodoc
+class _$PriceMoneyCopyWithImpl<$Res, $Val extends PriceMoney>
+    implements $PriceMoneyCopyWith<$Res> {
+  _$PriceMoneyCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? amount = null,
+    Object? currency = null,
+  }) {
+    return _then(_value.copyWith(
+      amount: null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      currency: null == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_PriceMoneyCopyWith<$Res>
+    implements $PriceMoneyCopyWith<$Res> {
+  factory _$$_PriceMoneyCopyWith(
+          _$_PriceMoney value, $Res Function(_$_PriceMoney) then) =
+      __$$_PriceMoneyCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int amount, String currency});
+}
+
+/// @nodoc
+class __$$_PriceMoneyCopyWithImpl<$Res>
+    extends _$PriceMoneyCopyWithImpl<$Res, _$_PriceMoney>
+    implements _$$_PriceMoneyCopyWith<$Res> {
+  __$$_PriceMoneyCopyWithImpl(
+      _$_PriceMoney _value, $Res Function(_$_PriceMoney) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? amount = null,
+    Object? currency = null,
+  }) {
+    return _then(_$_PriceMoney(
+      amount: null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      currency: null == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_PriceMoney implements _PriceMoney {
+  _$_PriceMoney({required this.amount, required this.currency});
+
+  factory _$_PriceMoney.fromJson(Map<String, dynamic> json) =>
+      _$$_PriceMoneyFromJson(json);
+
+  @override
+  final int amount;
+  @override
+  final String currency;
+
+  @override
+  String toString() {
+    return 'PriceMoney(amount: $amount, currency: $currency)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PriceMoney &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, amount, currency);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PriceMoneyCopyWith<_$_PriceMoney> get copyWith =>
+      __$$_PriceMoneyCopyWithImpl<_$_PriceMoney>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PriceMoneyToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PriceMoney implements PriceMoney {
+  factory _PriceMoney(
+      {required final int amount,
+      required final String currency}) = _$_PriceMoney;
+
+  factory _PriceMoney.fromJson(Map<String, dynamic> json) =
+      _$_PriceMoney.fromJson;
+
+  @override
+  int get amount;
+  @override
+  String get currency;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PriceMoneyCopyWith<_$_PriceMoney> get copyWith =>
+      throw _privateConstructorUsedError;
+}

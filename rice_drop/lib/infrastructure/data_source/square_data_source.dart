@@ -3,13 +3,11 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
-import 'package:rice_drop/domain/category.dart';
-import 'package:rice_drop/domain/item_failure.dart';
+import 'package:rice_drop/domain/object_failure.dart';
 import 'package:rice_drop/domain/item_repository.dart';
+import 'package:rice_drop/domain/square_object.dart';
 import 'package:rice_drop/infrastructure/modifier_list_dto.dart';
 
-import '../../domain/item.dart';
-import '../../domain/modifier_list.dart';
 import '../category_dto.dart';
 import '../item_dto.dart';
 
@@ -21,40 +19,7 @@ class SquareDataSourceImp implements ItemRepository {
   final accessToken = dotenv.env['SQUARE_ACCESS_TOKEN'];
   static const requestUrl = 'https://connect.squareup.com/v2/catalog/list';
 
-  @override
-  Future<Either<ItemFailure, List<Item>>> fetchItems() async {
-    return _fetchData<ItemDto, Item>(
-      type: 'ITEM',
-      fromJson: (json) => ItemDto.fromJson(json),
-      toDomain: (dto) => dto.toDomain(),
-    );
-  }
-
-  @override
-  Future<Either<ItemFailure, List<CategoryModel>>> fetchCategories() async {
-    final result = _fetchData<CategoryDto, CategoryModel>(
-      type: 'CATEGORY',
-      fromJson: (json) => CategoryDto.fromJson(json),
-      toDomain: (dto) => dto.toDomain(),
-    );
-    return result;
-  }
-
-  @override
-  Future<Either<ItemFailure, List<ModifierList>>> fetchModifierLists() async {
-    final result = _fetchData<ModifierListDto, ModifierList>(
-      type: 'MODIFIER_LIST',
-      fromJson: (json) => ModifierListDto.fromJson(json),
-      toDomain: (dto) => dto.toDomain(),
-    );
-    return result;
-  }
-
-  Future<Either<ItemFailure, List<TDomain>>> _fetchData<TDto, TDomain>({
-    required String type,
-    required TDto Function(Map<String, dynamic> json) fromJson,
-    required TDomain Function(TDto dto) toDomain,
-  }) async {
+  Future<Either<ObjectFailure, SquareObjects>> _fetchData() async {
     try {
       final response = await client.get(
         Uri.parse(requestUrl),
@@ -66,19 +31,43 @@ class SquareDataSourceImp implements ItemRepository {
       if (response.statusCode == 200) {
         final parsedResponse = jsonDecode(response.body);
         final objects = (parsedResponse['objects'] as List);
-        final result = objects
-            .where((obj) => obj['type'] == type)
-            .map((json) => fromJson(json as Map<String, dynamic>))
-            .map(toDomain)
+
+        final items = objects
+            .where((obj) => obj['type'] == 'ITEM')
+            .map((json) => ItemDto.fromJson(json as Map<String, dynamic>))
+            .map((dto) => dto.toDomain())
             .toList();
-        return right(result);
+
+        final categories = objects
+            .where((obj) => obj['type'] == 'CATEGORY')
+            .map((json) => CategoryDto.fromJson(json as Map<String, dynamic>))
+            .map((dto) => dto.toDomain())
+            .toList();
+
+        final modifierLists = objects
+            .where((obj) => obj['type'] == 'MODIFIER_LIST')
+            .map((json) =>
+                ModifierListDto.fromJson(json as Map<String, dynamic>))
+            .map((dto) => dto.toDomain())
+            .toList();
+
+        return right(
+          SquareObjects(
+            items: items,
+            categories: categories,
+            modifierLists: modifierLists,
+          ),
+        );
       } else {
-        return left(const ItemFailure.serverFailure());
+        return left(const ObjectFailure.serverFailure());
       }
     } on http.ClientException {
-      return left(const ItemFailure.networkFailure());
+      return left(const ObjectFailure.networkFailure());
     } catch (e) {
-      return left(const ItemFailure.unexpectedFailure());
+      return left(const ObjectFailure.unexpectedFailure());
     }
   }
+
+  @override
+  Future<Either<ObjectFailure, SquareObjects>> fetchAllData() => _fetchData();
 }

@@ -881,7 +881,7 @@ ModifierDataDto _$ModifierDataDtoFromJson(Map<String, dynamic> json) {
 mixin _$ModifierDataDto {
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'price_money')
-  PriceMoney get priceMoney => throw _privateConstructorUsedError;
+  PriceMoneyDto get priceMoney => throw _privateConstructorUsedError;
   @JsonKey(name: 'on_by_default')
   bool get onByDefault => throw _privateConstructorUsedError;
   int get ordinal => throw _privateConstructorUsedError;
@@ -904,13 +904,13 @@ abstract class $ModifierDataDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
-      @JsonKey(name: 'price_money') PriceMoney priceMoney,
+      @JsonKey(name: 'price_money') PriceMoneyDto priceMoney,
       @JsonKey(name: 'on_by_default') bool onByDefault,
       int ordinal,
       @JsonKey(name: 'modifier_list_id') String modifierListId,
       @JsonKey(name: 'kitchen_name') String? kitchenName});
 
-  $PriceMoneyCopyWith<$Res> get priceMoney;
+  $PriceMoneyDtoCopyWith<$Res> get priceMoney;
 }
 
 /// @nodoc
@@ -941,7 +941,7 @@ class _$ModifierDataDtoCopyWithImpl<$Res, $Val extends ModifierDataDto>
       priceMoney: null == priceMoney
           ? _value.priceMoney
           : priceMoney // ignore: cast_nullable_to_non_nullable
-              as PriceMoney,
+              as PriceMoneyDto,
       onByDefault: null == onByDefault
           ? _value.onByDefault
           : onByDefault // ignore: cast_nullable_to_non_nullable
@@ -963,8 +963,8 @@ class _$ModifierDataDtoCopyWithImpl<$Res, $Val extends ModifierDataDto>
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceMoneyCopyWith<$Res> get priceMoney {
-    return $PriceMoneyCopyWith<$Res>(_value.priceMoney, (value) {
+  $PriceMoneyDtoCopyWith<$Res> get priceMoney {
+    return $PriceMoneyDtoCopyWith<$Res>(_value.priceMoney, (value) {
       return _then(_value.copyWith(priceMoney: value) as $Val);
     });
   }
@@ -980,14 +980,14 @@ abstract class _$$_ModifierDataDtoCopyWith<$Res>
   @useResult
   $Res call(
       {String name,
-      @JsonKey(name: 'price_money') PriceMoney priceMoney,
+      @JsonKey(name: 'price_money') PriceMoneyDto priceMoney,
       @JsonKey(name: 'on_by_default') bool onByDefault,
       int ordinal,
       @JsonKey(name: 'modifier_list_id') String modifierListId,
       @JsonKey(name: 'kitchen_name') String? kitchenName});
 
   @override
-  $PriceMoneyCopyWith<$Res> get priceMoney;
+  $PriceMoneyDtoCopyWith<$Res> get priceMoney;
 }
 
 /// @nodoc
@@ -1016,7 +1016,7 @@ class __$$_ModifierDataDtoCopyWithImpl<$Res>
       priceMoney: null == priceMoney
           ? _value.priceMoney
           : priceMoney // ignore: cast_nullable_to_non_nullable
-              as PriceMoney,
+              as PriceMoneyDto,
       onByDefault: null == onByDefault
           ? _value.onByDefault
           : onByDefault // ignore: cast_nullable_to_non_nullable
@@ -1056,7 +1056,7 @@ class _$_ModifierDataDto extends _ModifierDataDto {
   final String name;
   @override
   @JsonKey(name: 'price_money')
-  final PriceMoney priceMoney;
+  final PriceMoneyDto priceMoney;
   @override
   @JsonKey(name: 'on_by_default')
   final bool onByDefault;
@@ -1114,7 +1114,7 @@ abstract class _ModifierDataDto extends ModifierDataDto {
   const factory _ModifierDataDto(
       {required final String name,
       @JsonKey(name: 'price_money')
-          required final PriceMoney priceMoney,
+          required final PriceMoneyDto priceMoney,
       @JsonKey(name: 'on_by_default')
           required final bool onByDefault,
       required final int ordinal,
@@ -1131,7 +1131,7 @@ abstract class _ModifierDataDto extends ModifierDataDto {
   String get name;
   @override
   @JsonKey(name: 'price_money')
-  PriceMoney get priceMoney;
+  PriceMoneyDto get priceMoney;
   @override
   @JsonKey(name: 'on_by_default')
   bool get onByDefault;

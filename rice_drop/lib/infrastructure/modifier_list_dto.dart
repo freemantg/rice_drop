@@ -86,7 +86,7 @@ class ModifierDataDto with _$ModifierDataDto {
   const ModifierDataDto._();
   const factory ModifierDataDto({
     required String name,
-    @JsonKey(name: 'price_money') required PriceMoney priceMoney,
+    @JsonKey(name: 'price_money') required PriceMoneyDto priceMoney,
     @JsonKey(name: 'on_by_default') required bool onByDefault,
     required int ordinal,
     @JsonKey(name: 'modifier_list_id') required String modifierListId,
@@ -99,7 +99,7 @@ class ModifierDataDto with _$ModifierDataDto {
   ModifierData toDomain() {
     return ModifierData(
       name: name,
-      priceMoney: priceMoney,
+      priceMoney: priceMoney.toDomain(),
       onByDefault: onByDefault,
       ordinal: ordinal,
       modifierListId: modifierListId,

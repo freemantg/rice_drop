@@ -23,7 +23,7 @@ mixin _$ItemDto {
   String get type => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'item_data')
-  ItemData get itemData => throw _privateConstructorUsedError;
+  ItemDataDto get itemData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,9 +36,11 @@ abstract class $ItemDtoCopyWith<$Res> {
       _$ItemDtoCopyWithImpl<$Res, ItemDto>;
   @useResult
   $Res call(
-      {String type, String id, @JsonKey(name: 'item_data') ItemData itemData});
+      {String type,
+      String id,
+      @JsonKey(name: 'item_data') ItemDataDto itemData});
 
-  $ItemDataCopyWith<$Res> get itemData;
+  $ItemDataDtoCopyWith<$Res> get itemData;
 }
 
 /// @nodoc
@@ -70,14 +72,14 @@ class _$ItemDtoCopyWithImpl<$Res, $Val extends ItemDto>
       itemData: null == itemData
           ? _value.itemData
           : itemData // ignore: cast_nullable_to_non_nullable
-              as ItemData,
+              as ItemDataDto,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ItemDataCopyWith<$Res> get itemData {
-    return $ItemDataCopyWith<$Res>(_value.itemData, (value) {
+  $ItemDataDtoCopyWith<$Res> get itemData {
+    return $ItemDataDtoCopyWith<$Res>(_value.itemData, (value) {
       return _then(_value.copyWith(itemData: value) as $Val);
     });
   }
@@ -91,10 +93,12 @@ abstract class _$$_ItemDtoCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String type, String id, @JsonKey(name: 'item_data') ItemData itemData});
+      {String type,
+      String id,
+      @JsonKey(name: 'item_data') ItemDataDto itemData});
 
   @override
-  $ItemDataCopyWith<$Res> get itemData;
+  $ItemDataDtoCopyWith<$Res> get itemData;
 }
 
 /// @nodoc
@@ -123,7 +127,7 @@ class __$$_ItemDtoCopyWithImpl<$Res>
       itemData: null == itemData
           ? _value.itemData
           : itemData // ignore: cast_nullable_to_non_nullable
-              as ItemData,
+              as ItemDataDto,
     ));
   }
 }
@@ -146,7 +150,7 @@ class _$_ItemDto extends _ItemDto {
   final String id;
   @override
   @JsonKey(name: 'item_data')
-  final ItemData itemData;
+  final ItemDataDto itemData;
 
   @override
   String toString() {
@@ -186,7 +190,7 @@ abstract class _ItemDto extends ItemDto {
   const factory _ItemDto(
           {required final String type,
           required final String id,
-          @JsonKey(name: 'item_data') required final ItemData itemData}) =
+          @JsonKey(name: 'item_data') required final ItemDataDto itemData}) =
       _$_ItemDto;
   const _ItemDto._() : super._();
 
@@ -198,19 +202,19 @@ abstract class _ItemDto extends ItemDto {
   String get id;
   @override
   @JsonKey(name: 'item_data')
-  ItemData get itemData;
+  ItemDataDto get itemData;
   @override
   @JsonKey(ignore: true)
   _$$_ItemDtoCopyWith<_$_ItemDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ItemData _$ItemDataFromJson(Map<String, dynamic> json) {
-  return _ItemData.fromJson(json);
+ItemDataDto _$ItemDataDtoFromJson(Map<String, dynamic> json) {
+  return _ItemDataDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ItemData {
+mixin _$ItemDataDto {
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'label_color')
@@ -221,9 +225,9 @@ mixin _$ItemData {
   @JsonKey(name: 'category_id')
   String? get categoryId => throw _privateConstructorUsedError;
   @JsonKey(name: 'modifier_list_info')
-  List<ModifierListInfo>? get modifierList =>
+  List<ModifierListInfoDto>? get modifierListInfo =>
       throw _privateConstructorUsedError;
-  List<Variation> get variations => throw _privateConstructorUsedError;
+  List<VariationDto> get variations => throw _privateConstructorUsedError;
   @JsonKey(name: 'product_type')
   String? get productType => throw _privateConstructorUsedError;
   @JsonKey(name: 'skip_modifier_screen')
@@ -245,39 +249,53 @@ mixin _$ItemData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ItemDataCopyWith<ItemData> get copyWith =>
+  $ItemDataDtoCopyWith<ItemDataDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ItemDataCopyWith<$Res> {
-  factory $ItemDataCopyWith(ItemData value, $Res Function(ItemData) then) =
-      _$ItemDataCopyWithImpl<$Res, ItemData>;
+abstract class $ItemDataDtoCopyWith<$Res> {
+  factory $ItemDataDtoCopyWith(
+          ItemDataDto value, $Res Function(ItemDataDto) then) =
+      _$ItemDataDtoCopyWithImpl<$Res, ItemDataDto>;
   @useResult
   $Res call(
       {String? name,
       String? description,
-      @JsonKey(name: 'label_color') String? labelColor,
-      @JsonKey(name: 'is_taxable') bool isTaxable,
+      @JsonKey(name: 'label_color')
+          String? labelColor,
+      @JsonKey(name: 'is_taxable')
+          bool isTaxable,
       String? visibility,
-      @JsonKey(name: 'category_id') String? categoryId,
-      @JsonKey(name: 'modifier_list_info') List<ModifierListInfo>? modifierList,
-      List<Variation> variations,
-      @JsonKey(name: 'product_type') String? productType,
-      @JsonKey(name: 'skip_modifier_screen') bool skipModifierScreen,
-      @JsonKey(name: 'ecom_uri') String? ecomUri,
-      @JsonKey(name: 'ecom_available') bool ecomAvailable,
-      @JsonKey(name: 'ecom_visibility') String? ecomVisibility,
-      @JsonKey(name: 'ecom_image_uris') List<String>? ecomImageUris,
-      @JsonKey(name: 'description_html') String? descriptionHtml,
-      @JsonKey(name: 'description_plaintext') String? descriptionPlaintext,
-      @JsonKey(name: 'kitchen_name') String? kitchenName});
+      @JsonKey(name: 'category_id')
+          String? categoryId,
+      @JsonKey(name: 'modifier_list_info')
+          List<ModifierListInfoDto>? modifierListInfo,
+      List<VariationDto> variations,
+      @JsonKey(name: 'product_type')
+          String? productType,
+      @JsonKey(name: 'skip_modifier_screen')
+          bool skipModifierScreen,
+      @JsonKey(name: 'ecom_uri')
+          String? ecomUri,
+      @JsonKey(name: 'ecom_available')
+          bool ecomAvailable,
+      @JsonKey(name: 'ecom_visibility')
+          String? ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris')
+          List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html')
+          String? descriptionHtml,
+      @JsonKey(name: 'description_plaintext')
+          String? descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name')
+          String? kitchenName});
 }
 
 /// @nodoc
-class _$ItemDataCopyWithImpl<$Res, $Val extends ItemData>
-    implements $ItemDataCopyWith<$Res> {
-  _$ItemDataCopyWithImpl(this._value, this._then);
+class _$ItemDataDtoCopyWithImpl<$Res, $Val extends ItemDataDto>
+    implements $ItemDataDtoCopyWith<$Res> {
+  _$ItemDataDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -293,7 +311,7 @@ class _$ItemDataCopyWithImpl<$Res, $Val extends ItemData>
     Object? isTaxable = null,
     Object? visibility = freezed,
     Object? categoryId = freezed,
-    Object? modifierList = freezed,
+    Object? modifierListInfo = freezed,
     Object? variations = null,
     Object? productType = freezed,
     Object? skipModifierScreen = null,
@@ -330,14 +348,14 @@ class _$ItemDataCopyWithImpl<$Res, $Val extends ItemData>
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
               as String?,
-      modifierList: freezed == modifierList
-          ? _value.modifierList
-          : modifierList // ignore: cast_nullable_to_non_nullable
-              as List<ModifierListInfo>?,
+      modifierListInfo: freezed == modifierListInfo
+          ? _value.modifierListInfo
+          : modifierListInfo // ignore: cast_nullable_to_non_nullable
+              as List<ModifierListInfoDto>?,
       variations: null == variations
           ? _value.variations
           : variations // ignore: cast_nullable_to_non_nullable
-              as List<Variation>,
+              as List<VariationDto>,
       productType: freezed == productType
           ? _value.productType
           : productType // ignore: cast_nullable_to_non_nullable
@@ -379,38 +397,52 @@ class _$ItemDataCopyWithImpl<$Res, $Val extends ItemData>
 }
 
 /// @nodoc
-abstract class _$$_ItemDataCopyWith<$Res> implements $ItemDataCopyWith<$Res> {
-  factory _$$_ItemDataCopyWith(
-          _$_ItemData value, $Res Function(_$_ItemData) then) =
-      __$$_ItemDataCopyWithImpl<$Res>;
+abstract class _$$_ItemDataDtoCopyWith<$Res>
+    implements $ItemDataDtoCopyWith<$Res> {
+  factory _$$_ItemDataDtoCopyWith(
+          _$_ItemDataDto value, $Res Function(_$_ItemDataDto) then) =
+      __$$_ItemDataDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String? name,
       String? description,
-      @JsonKey(name: 'label_color') String? labelColor,
-      @JsonKey(name: 'is_taxable') bool isTaxable,
+      @JsonKey(name: 'label_color')
+          String? labelColor,
+      @JsonKey(name: 'is_taxable')
+          bool isTaxable,
       String? visibility,
-      @JsonKey(name: 'category_id') String? categoryId,
-      @JsonKey(name: 'modifier_list_info') List<ModifierListInfo>? modifierList,
-      List<Variation> variations,
-      @JsonKey(name: 'product_type') String? productType,
-      @JsonKey(name: 'skip_modifier_screen') bool skipModifierScreen,
-      @JsonKey(name: 'ecom_uri') String? ecomUri,
-      @JsonKey(name: 'ecom_available') bool ecomAvailable,
-      @JsonKey(name: 'ecom_visibility') String? ecomVisibility,
-      @JsonKey(name: 'ecom_image_uris') List<String>? ecomImageUris,
-      @JsonKey(name: 'description_html') String? descriptionHtml,
-      @JsonKey(name: 'description_plaintext') String? descriptionPlaintext,
-      @JsonKey(name: 'kitchen_name') String? kitchenName});
+      @JsonKey(name: 'category_id')
+          String? categoryId,
+      @JsonKey(name: 'modifier_list_info')
+          List<ModifierListInfoDto>? modifierListInfo,
+      List<VariationDto> variations,
+      @JsonKey(name: 'product_type')
+          String? productType,
+      @JsonKey(name: 'skip_modifier_screen')
+          bool skipModifierScreen,
+      @JsonKey(name: 'ecom_uri')
+          String? ecomUri,
+      @JsonKey(name: 'ecom_available')
+          bool ecomAvailable,
+      @JsonKey(name: 'ecom_visibility')
+          String? ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris')
+          List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html')
+          String? descriptionHtml,
+      @JsonKey(name: 'description_plaintext')
+          String? descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name')
+          String? kitchenName});
 }
 
 /// @nodoc
-class __$$_ItemDataCopyWithImpl<$Res>
-    extends _$ItemDataCopyWithImpl<$Res, _$_ItemData>
-    implements _$$_ItemDataCopyWith<$Res> {
-  __$$_ItemDataCopyWithImpl(
-      _$_ItemData _value, $Res Function(_$_ItemData) _then)
+class __$$_ItemDataDtoCopyWithImpl<$Res>
+    extends _$ItemDataDtoCopyWithImpl<$Res, _$_ItemDataDto>
+    implements _$$_ItemDataDtoCopyWith<$Res> {
+  __$$_ItemDataDtoCopyWithImpl(
+      _$_ItemDataDto _value, $Res Function(_$_ItemDataDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -422,7 +454,7 @@ class __$$_ItemDataCopyWithImpl<$Res>
     Object? isTaxable = null,
     Object? visibility = freezed,
     Object? categoryId = freezed,
-    Object? modifierList = freezed,
+    Object? modifierListInfo = freezed,
     Object? variations = null,
     Object? productType = freezed,
     Object? skipModifierScreen = null,
@@ -434,7 +466,7 @@ class __$$_ItemDataCopyWithImpl<$Res>
     Object? descriptionPlaintext = freezed,
     Object? kitchenName = freezed,
   }) {
-    return _then(_$_ItemData(
+    return _then(_$_ItemDataDto(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -459,14 +491,14 @@ class __$$_ItemDataCopyWithImpl<$Res>
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
               as String?,
-      modifierList: freezed == modifierList
-          ? _value._modifierList
-          : modifierList // ignore: cast_nullable_to_non_nullable
-              as List<ModifierListInfo>?,
+      modifierListInfo: freezed == modifierListInfo
+          ? _value._modifierListInfo
+          : modifierListInfo // ignore: cast_nullable_to_non_nullable
+              as List<ModifierListInfoDto>?,
       variations: null == variations
           ? _value._variations
           : variations // ignore: cast_nullable_to_non_nullable
-              as List<Variation>,
+              as List<VariationDto>,
       productType: freezed == productType
           ? _value.productType
           : productType // ignore: cast_nullable_to_non_nullable
@@ -509,8 +541,8 @@ class __$$_ItemDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ItemData extends _ItemData {
-  const _$_ItemData(
+class _$_ItemDataDto extends _ItemDataDto {
+  const _$_ItemDataDto(
       {this.name,
       this.description,
       @JsonKey(name: 'label_color')
@@ -521,8 +553,8 @@ class _$_ItemData extends _ItemData {
       @JsonKey(name: 'category_id')
           this.categoryId,
       @JsonKey(name: 'modifier_list_info')
-          final List<ModifierListInfo>? modifierList,
-      required final List<Variation> variations,
+          final List<ModifierListInfoDto>? modifierListInfo,
+      required final List<VariationDto> variations,
       @JsonKey(name: 'product_type')
           this.productType,
       @JsonKey(name: 'skip_modifier_screen')
@@ -541,13 +573,13 @@ class _$_ItemData extends _ItemData {
           this.descriptionPlaintext,
       @JsonKey(name: 'kitchen_name')
           this.kitchenName})
-      : _modifierList = modifierList,
+      : _modifierListInfo = modifierListInfo,
         _variations = variations,
         _ecomImageUris = ecomImageUris,
         super._();
 
-  factory _$_ItemData.fromJson(Map<String, dynamic> json) =>
-      _$$_ItemDataFromJson(json);
+  factory _$_ItemDataDto.fromJson(Map<String, dynamic> json) =>
+      _$$_ItemDataDtoFromJson(json);
 
   @override
   final String? name;
@@ -564,20 +596,21 @@ class _$_ItemData extends _ItemData {
   @override
   @JsonKey(name: 'category_id')
   final String? categoryId;
-  final List<ModifierListInfo>? _modifierList;
+  final List<ModifierListInfoDto>? _modifierListInfo;
   @override
   @JsonKey(name: 'modifier_list_info')
-  List<ModifierListInfo>? get modifierList {
-    final value = _modifierList;
+  List<ModifierListInfoDto>? get modifierListInfo {
+    final value = _modifierListInfo;
     if (value == null) return null;
-    if (_modifierList is EqualUnmodifiableListView) return _modifierList;
+    if (_modifierListInfo is EqualUnmodifiableListView)
+      return _modifierListInfo;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
-  final List<Variation> _variations;
+  final List<VariationDto> _variations;
   @override
-  List<Variation> get variations {
+  List<VariationDto> get variations {
     if (_variations is EqualUnmodifiableListView) return _variations;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_variations);
@@ -621,14 +654,14 @@ class _$_ItemData extends _ItemData {
 
   @override
   String toString() {
-    return 'ItemData(name: $name, description: $description, labelColor: $labelColor, isTaxable: $isTaxable, visibility: $visibility, categoryId: $categoryId, modifierList: $modifierList, variations: $variations, productType: $productType, skipModifierScreen: $skipModifierScreen, ecomUri: $ecomUri, ecomAvailable: $ecomAvailable, ecomVisibility: $ecomVisibility, ecomImageUris: $ecomImageUris, descriptionHtml: $descriptionHtml, descriptionPlaintext: $descriptionPlaintext, kitchenName: $kitchenName)';
+    return 'ItemDataDto(name: $name, description: $description, labelColor: $labelColor, isTaxable: $isTaxable, visibility: $visibility, categoryId: $categoryId, modifierListInfo: $modifierListInfo, variations: $variations, productType: $productType, skipModifierScreen: $skipModifierScreen, ecomUri: $ecomUri, ecomAvailable: $ecomAvailable, ecomVisibility: $ecomVisibility, ecomImageUris: $ecomImageUris, descriptionHtml: $descriptionHtml, descriptionPlaintext: $descriptionPlaintext, kitchenName: $kitchenName)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ItemData &&
+            other is _$_ItemDataDto &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -641,7 +674,7 @@ class _$_ItemData extends _ItemData {
             (identical(other.categoryId, categoryId) ||
                 other.categoryId == categoryId) &&
             const DeepCollectionEquality()
-                .equals(other._modifierList, _modifierList) &&
+                .equals(other._modifierListInfo, _modifierListInfo) &&
             const DeepCollectionEquality()
                 .equals(other._variations, _variations) &&
             (identical(other.productType, productType) ||
@@ -673,7 +706,7 @@ class _$_ItemData extends _ItemData {
       isTaxable,
       visibility,
       categoryId,
-      const DeepCollectionEquality().hash(_modifierList),
+      const DeepCollectionEquality().hash(_modifierListInfo),
       const DeepCollectionEquality().hash(_variations),
       productType,
       skipModifierScreen,
@@ -688,19 +721,19 @@ class _$_ItemData extends _ItemData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ItemDataCopyWith<_$_ItemData> get copyWith =>
-      __$$_ItemDataCopyWithImpl<_$_ItemData>(this, _$identity);
+  _$$_ItemDataDtoCopyWith<_$_ItemDataDto> get copyWith =>
+      __$$_ItemDataDtoCopyWithImpl<_$_ItemDataDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ItemDataToJson(
+    return _$$_ItemDataDtoToJson(
       this,
     );
   }
 }
 
-abstract class _ItemData extends ItemData {
-  const factory _ItemData(
+abstract class _ItemDataDto extends ItemDataDto {
+  const factory _ItemDataDto(
       {final String? name,
       final String? description,
       @JsonKey(name: 'label_color')
@@ -711,8 +744,8 @@ abstract class _ItemData extends ItemData {
       @JsonKey(name: 'category_id')
           final String? categoryId,
       @JsonKey(name: 'modifier_list_info')
-          final List<ModifierListInfo>? modifierList,
-      required final List<Variation> variations,
+          final List<ModifierListInfoDto>? modifierListInfo,
+      required final List<VariationDto> variations,
       @JsonKey(name: 'product_type')
           final String? productType,
       @JsonKey(name: 'skip_modifier_screen')
@@ -730,10 +763,11 @@ abstract class _ItemData extends ItemData {
       @JsonKey(name: 'description_plaintext')
           final String? descriptionPlaintext,
       @JsonKey(name: 'kitchen_name')
-          final String? kitchenName}) = _$_ItemData;
-  const _ItemData._() : super._();
+          final String? kitchenName}) = _$_ItemDataDto;
+  const _ItemDataDto._() : super._();
 
-  factory _ItemData.fromJson(Map<String, dynamic> json) = _$_ItemData.fromJson;
+  factory _ItemDataDto.fromJson(Map<String, dynamic> json) =
+      _$_ItemDataDto.fromJson;
 
   @override
   String? get name;
@@ -752,9 +786,9 @@ abstract class _ItemData extends ItemData {
   String? get categoryId;
   @override
   @JsonKey(name: 'modifier_list_info')
-  List<ModifierListInfo>? get modifierList;
+  List<ModifierListInfoDto>? get modifierListInfo;
   @override
-  List<Variation> get variations;
+  List<VariationDto> get variations;
   @override
   @JsonKey(name: 'product_type')
   String? get productType;
@@ -784,16 +818,16 @@ abstract class _ItemData extends ItemData {
   String? get kitchenName;
   @override
   @JsonKey(ignore: true)
-  _$$_ItemDataCopyWith<_$_ItemData> get copyWith =>
+  _$$_ItemDataDtoCopyWith<_$_ItemDataDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ModifierListInfo _$ModifierListInfoFromJson(Map<String, dynamic> json) {
-  return _ModifierListInfo.fromJson(json);
+ModifierListInfoDto _$ModifierListInfoDtoFromJson(Map<String, dynamic> json) {
+  return _ModifierListInfoDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ModifierListInfo {
+mixin _$ModifierListInfoDto {
   @JsonKey(name: 'modifier_list_id')
   String get modifierListId => throw _privateConstructorUsedError;
   @JsonKey(name: 'min_selected_modifiers')
@@ -804,15 +838,15 @@ mixin _$ModifierListInfo {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ModifierListInfoCopyWith<ModifierListInfo> get copyWith =>
+  $ModifierListInfoDtoCopyWith<ModifierListInfoDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ModifierListInfoCopyWith<$Res> {
-  factory $ModifierListInfoCopyWith(
-          ModifierListInfo value, $Res Function(ModifierListInfo) then) =
-      _$ModifierListInfoCopyWithImpl<$Res, ModifierListInfo>;
+abstract class $ModifierListInfoDtoCopyWith<$Res> {
+  factory $ModifierListInfoDtoCopyWith(
+          ModifierListInfoDto value, $Res Function(ModifierListInfoDto) then) =
+      _$ModifierListInfoDtoCopyWithImpl<$Res, ModifierListInfoDto>;
   @useResult
   $Res call(
       {@JsonKey(name: 'modifier_list_id') String modifierListId,
@@ -822,9 +856,9 @@ abstract class $ModifierListInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ModifierListInfoCopyWithImpl<$Res, $Val extends ModifierListInfo>
-    implements $ModifierListInfoCopyWith<$Res> {
-  _$ModifierListInfoCopyWithImpl(this._value, this._then);
+class _$ModifierListInfoDtoCopyWithImpl<$Res, $Val extends ModifierListInfoDto>
+    implements $ModifierListInfoDtoCopyWith<$Res> {
+  _$ModifierListInfoDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -861,11 +895,11 @@ class _$ModifierListInfoCopyWithImpl<$Res, $Val extends ModifierListInfo>
 }
 
 /// @nodoc
-abstract class _$$_ModifierListInfoCopyWith<$Res>
-    implements $ModifierListInfoCopyWith<$Res> {
-  factory _$$_ModifierListInfoCopyWith(
-          _$_ModifierListInfo value, $Res Function(_$_ModifierListInfo) then) =
-      __$$_ModifierListInfoCopyWithImpl<$Res>;
+abstract class _$$_ModifierListInfoDtoCopyWith<$Res>
+    implements $ModifierListInfoDtoCopyWith<$Res> {
+  factory _$$_ModifierListInfoDtoCopyWith(_$_ModifierListInfoDto value,
+          $Res Function(_$_ModifierListInfoDto) then) =
+      __$$_ModifierListInfoDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -876,11 +910,11 @@ abstract class _$$_ModifierListInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ModifierListInfoCopyWithImpl<$Res>
-    extends _$ModifierListInfoCopyWithImpl<$Res, _$_ModifierListInfo>
-    implements _$$_ModifierListInfoCopyWith<$Res> {
-  __$$_ModifierListInfoCopyWithImpl(
-      _$_ModifierListInfo _value, $Res Function(_$_ModifierListInfo) _then)
+class __$$_ModifierListInfoDtoCopyWithImpl<$Res>
+    extends _$ModifierListInfoDtoCopyWithImpl<$Res, _$_ModifierListInfoDto>
+    implements _$$_ModifierListInfoDtoCopyWith<$Res> {
+  __$$_ModifierListInfoDtoCopyWithImpl(_$_ModifierListInfoDto _value,
+      $Res Function(_$_ModifierListInfoDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -891,7 +925,7 @@ class __$$_ModifierListInfoCopyWithImpl<$Res>
     Object? maxSelectedModifiers = null,
     Object? enabled = null,
   }) {
-    return _then(_$_ModifierListInfo(
+    return _then(_$_ModifierListInfoDto(
       modifierListId: null == modifierListId
           ? _value.modifierListId
           : modifierListId // ignore: cast_nullable_to_non_nullable
@@ -914,8 +948,8 @@ class __$$_ModifierListInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ModifierListInfo implements _ModifierListInfo {
-  const _$_ModifierListInfo(
+class _$_ModifierListInfoDto implements _ModifierListInfoDto {
+  const _$_ModifierListInfoDto(
       {@JsonKey(name: 'modifier_list_id')
           required this.modifierListId,
       @JsonKey(name: 'min_selected_modifiers')
@@ -924,8 +958,8 @@ class _$_ModifierListInfo implements _ModifierListInfo {
           required this.maxSelectedModifiers,
       required this.enabled});
 
-  factory _$_ModifierListInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_ModifierListInfoFromJson(json);
+  factory _$_ModifierListInfoDto.fromJson(Map<String, dynamic> json) =>
+      _$$_ModifierListInfoDtoFromJson(json);
 
   @override
   @JsonKey(name: 'modifier_list_id')
@@ -941,14 +975,14 @@ class _$_ModifierListInfo implements _ModifierListInfo {
 
   @override
   String toString() {
-    return 'ModifierListInfo(modifierListId: $modifierListId, minSelectedModifiers: $minSelectedModifiers, maxSelectedModifiers: $maxSelectedModifiers, enabled: $enabled)';
+    return 'ModifierListInfoDto(modifierListId: $modifierListId, minSelectedModifiers: $minSelectedModifiers, maxSelectedModifiers: $maxSelectedModifiers, enabled: $enabled)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ModifierListInfo &&
+            other is _$_ModifierListInfoDto &&
             (identical(other.modifierListId, modifierListId) ||
                 other.modifierListId == modifierListId) &&
             (identical(other.minSelectedModifiers, minSelectedModifiers) ||
@@ -966,29 +1000,30 @@ class _$_ModifierListInfo implements _ModifierListInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ModifierListInfoCopyWith<_$_ModifierListInfo> get copyWith =>
-      __$$_ModifierListInfoCopyWithImpl<_$_ModifierListInfo>(this, _$identity);
+  _$$_ModifierListInfoDtoCopyWith<_$_ModifierListInfoDto> get copyWith =>
+      __$$_ModifierListInfoDtoCopyWithImpl<_$_ModifierListInfoDto>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ModifierListInfoToJson(
+    return _$$_ModifierListInfoDtoToJson(
       this,
     );
   }
 }
 
-abstract class _ModifierListInfo implements ModifierListInfo {
-  const factory _ModifierListInfo(
+abstract class _ModifierListInfoDto implements ModifierListInfoDto {
+  const factory _ModifierListInfoDto(
       {@JsonKey(name: 'modifier_list_id')
           required final String modifierListId,
       @JsonKey(name: 'min_selected_modifiers')
           required final int minSelectedModifiers,
       @JsonKey(name: 'max_selected_modifiers')
           required final int maxSelectedModifiers,
-      required final bool enabled}) = _$_ModifierListInfo;
+      required final bool enabled}) = _$_ModifierListInfoDto;
 
-  factory _ModifierListInfo.fromJson(Map<String, dynamic> json) =
-      _$_ModifierListInfo.fromJson;
+  factory _ModifierListInfoDto.fromJson(Map<String, dynamic> json) =
+      _$_ModifierListInfoDto.fromJson;
 
   @override
   @JsonKey(name: 'modifier_list_id')
@@ -1003,16 +1038,16 @@ abstract class _ModifierListInfo implements ModifierListInfo {
   bool get enabled;
   @override
   @JsonKey(ignore: true)
-  _$$_ModifierListInfoCopyWith<_$_ModifierListInfo> get copyWith =>
+  _$$_ModifierListInfoDtoCopyWith<_$_ModifierListInfoDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Variation _$VariationFromJson(Map<String, dynamic> json) {
-  return _Variation.fromJson(json);
+VariationDto _$VariationDtoFromJson(Map<String, dynamic> json) {
+  return _VariationDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Variation {
+mixin _$VariationDto {
   String get type => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
@@ -1025,19 +1060,20 @@ mixin _$Variation {
   @JsonKey(name: 'present_at_all_locations')
   bool get presentAtAllLocations => throw _privateConstructorUsedError;
   @JsonKey(name: 'item_variation_data')
-  ItemVariationData? get itemVariationData =>
+  ItemVariationDataDto? get itemVariationData =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VariationCopyWith<Variation> get copyWith =>
+  $VariationDtoCopyWith<VariationDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VariationCopyWith<$Res> {
-  factory $VariationCopyWith(Variation value, $Res Function(Variation) then) =
-      _$VariationCopyWithImpl<$Res, Variation>;
+abstract class $VariationDtoCopyWith<$Res> {
+  factory $VariationDtoCopyWith(
+          VariationDto value, $Res Function(VariationDto) then) =
+      _$VariationDtoCopyWithImpl<$Res, VariationDto>;
   @useResult
   $Res call(
       {String type,
@@ -1052,15 +1088,15 @@ abstract class $VariationCopyWith<$Res> {
       @JsonKey(name: 'present_at_all_locations')
           bool presentAtAllLocations,
       @JsonKey(name: 'item_variation_data')
-          ItemVariationData? itemVariationData});
+          ItemVariationDataDto? itemVariationData});
 
-  $ItemVariationDataCopyWith<$Res>? get itemVariationData;
+  $ItemVariationDataDtoCopyWith<$Res>? get itemVariationData;
 }
 
 /// @nodoc
-class _$VariationCopyWithImpl<$Res, $Val extends Variation>
-    implements $VariationCopyWith<$Res> {
-  _$VariationCopyWithImpl(this._value, this._then);
+class _$VariationDtoCopyWithImpl<$Res, $Val extends VariationDto>
+    implements $VariationDtoCopyWith<$Res> {
+  _$VariationDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1111,28 +1147,30 @@ class _$VariationCopyWithImpl<$Res, $Val extends Variation>
       itemVariationData: freezed == itemVariationData
           ? _value.itemVariationData
           : itemVariationData // ignore: cast_nullable_to_non_nullable
-              as ItemVariationData?,
+              as ItemVariationDataDto?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ItemVariationDataCopyWith<$Res>? get itemVariationData {
+  $ItemVariationDataDtoCopyWith<$Res>? get itemVariationData {
     if (_value.itemVariationData == null) {
       return null;
     }
 
-    return $ItemVariationDataCopyWith<$Res>(_value.itemVariationData!, (value) {
+    return $ItemVariationDataDtoCopyWith<$Res>(_value.itemVariationData!,
+        (value) {
       return _then(_value.copyWith(itemVariationData: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_VariationCopyWith<$Res> implements $VariationCopyWith<$Res> {
-  factory _$$_VariationCopyWith(
-          _$_Variation value, $Res Function(_$_Variation) then) =
-      __$$_VariationCopyWithImpl<$Res>;
+abstract class _$$_VariationDtoCopyWith<$Res>
+    implements $VariationDtoCopyWith<$Res> {
+  factory _$$_VariationDtoCopyWith(
+          _$_VariationDto value, $Res Function(_$_VariationDto) then) =
+      __$$_VariationDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1148,18 +1186,18 @@ abstract class _$$_VariationCopyWith<$Res> implements $VariationCopyWith<$Res> {
       @JsonKey(name: 'present_at_all_locations')
           bool presentAtAllLocations,
       @JsonKey(name: 'item_variation_data')
-          ItemVariationData? itemVariationData});
+          ItemVariationDataDto? itemVariationData});
 
   @override
-  $ItemVariationDataCopyWith<$Res>? get itemVariationData;
+  $ItemVariationDataDtoCopyWith<$Res>? get itemVariationData;
 }
 
 /// @nodoc
-class __$$_VariationCopyWithImpl<$Res>
-    extends _$VariationCopyWithImpl<$Res, _$_Variation>
-    implements _$$_VariationCopyWith<$Res> {
-  __$$_VariationCopyWithImpl(
-      _$_Variation _value, $Res Function(_$_Variation) _then)
+class __$$_VariationDtoCopyWithImpl<$Res>
+    extends _$VariationDtoCopyWithImpl<$Res, _$_VariationDto>
+    implements _$$_VariationDtoCopyWith<$Res> {
+  __$$_VariationDtoCopyWithImpl(
+      _$_VariationDto _value, $Res Function(_$_VariationDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1174,7 +1212,7 @@ class __$$_VariationCopyWithImpl<$Res>
     Object? presentAtAllLocations = null,
     Object? itemVariationData = freezed,
   }) {
-    return _then(_$_Variation(
+    return _then(_$_VariationDto(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -1206,15 +1244,15 @@ class __$$_VariationCopyWithImpl<$Res>
       itemVariationData: freezed == itemVariationData
           ? _value.itemVariationData
           : itemVariationData // ignore: cast_nullable_to_non_nullable
-              as ItemVariationData?,
+              as ItemVariationDataDto?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Variation implements _Variation {
-  _$_Variation(
+class _$_VariationDto implements _VariationDto {
+  _$_VariationDto(
       {required this.type,
       required this.id,
       @JsonKey(name: 'updated_at')
@@ -1229,8 +1267,8 @@ class _$_Variation implements _Variation {
       @JsonKey(name: 'item_variation_data')
           required this.itemVariationData});
 
-  factory _$_Variation.fromJson(Map<String, dynamic> json) =>
-      _$$_VariationFromJson(json);
+  factory _$_VariationDto.fromJson(Map<String, dynamic> json) =>
+      _$$_VariationDtoFromJson(json);
 
   @override
   final String type;
@@ -1252,18 +1290,18 @@ class _$_Variation implements _Variation {
   final bool presentAtAllLocations;
   @override
   @JsonKey(name: 'item_variation_data')
-  final ItemVariationData? itemVariationData;
+  final ItemVariationDataDto? itemVariationData;
 
   @override
   String toString() {
-    return 'Variation(type: $type, id: $id, updatedAt: $updatedAt, createdAt: $createdAt, version: $version, isDeleted: $isDeleted, presentAtAllLocations: $presentAtAllLocations, itemVariationData: $itemVariationData)';
+    return 'VariationDto(type: $type, id: $id, updatedAt: $updatedAt, createdAt: $createdAt, version: $version, isDeleted: $isDeleted, presentAtAllLocations: $presentAtAllLocations, itemVariationData: $itemVariationData)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Variation &&
+            other is _$_VariationDto &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -1287,35 +1325,36 @@ class _$_Variation implements _Variation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_VariationCopyWith<_$_Variation> get copyWith =>
-      __$$_VariationCopyWithImpl<_$_Variation>(this, _$identity);
+  _$$_VariationDtoCopyWith<_$_VariationDto> get copyWith =>
+      __$$_VariationDtoCopyWithImpl<_$_VariationDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VariationToJson(
+    return _$$_VariationDtoToJson(
       this,
     );
   }
 }
 
-abstract class _Variation implements Variation {
-  factory _Variation(
-      {required final String type,
-      required final String id,
-      @JsonKey(name: 'updated_at')
-          required final DateTime updatedAt,
-      @JsonKey(name: 'created_at')
-          required final DateTime createdAt,
-      required final int version,
-      @JsonKey(name: 'is_deleted')
-          required final bool isDeleted,
-      @JsonKey(name: 'present_at_all_locations')
-          required final bool presentAtAllLocations,
-      @JsonKey(name: 'item_variation_data')
-          required final ItemVariationData? itemVariationData}) = _$_Variation;
+abstract class _VariationDto implements VariationDto {
+  factory _VariationDto(
+          {required final String type,
+          required final String id,
+          @JsonKey(name: 'updated_at')
+              required final DateTime updatedAt,
+          @JsonKey(name: 'created_at')
+              required final DateTime createdAt,
+          required final int version,
+          @JsonKey(name: 'is_deleted')
+              required final bool isDeleted,
+          @JsonKey(name: 'present_at_all_locations')
+              required final bool presentAtAllLocations,
+          @JsonKey(name: 'item_variation_data')
+              required final ItemVariationDataDto? itemVariationData}) =
+      _$_VariationDto;
 
-  factory _Variation.fromJson(Map<String, dynamic> json) =
-      _$_Variation.fromJson;
+  factory _VariationDto.fromJson(Map<String, dynamic> json) =
+      _$_VariationDto.fromJson;
 
   @override
   String get type;
@@ -1337,19 +1376,19 @@ abstract class _Variation implements Variation {
   bool get presentAtAllLocations;
   @override
   @JsonKey(name: 'item_variation_data')
-  ItemVariationData? get itemVariationData;
+  ItemVariationDataDto? get itemVariationData;
   @override
   @JsonKey(ignore: true)
-  _$$_VariationCopyWith<_$_Variation> get copyWith =>
+  _$$_VariationDtoCopyWith<_$_VariationDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ItemVariationData _$ItemVariationDataFromJson(Map<String, dynamic> json) {
-  return _ItemVariationData.fromJson(json);
+ItemVariationDataDto _$ItemVariationDataDtoFromJson(Map<String, dynamic> json) {
+  return _ItemVariationDataDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ItemVariationData {
+mixin _$ItemVariationDataDto {
   @JsonKey(name: 'item_id')
   String get itemId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -1357,34 +1396,35 @@ mixin _$ItemVariationData {
   @JsonKey(name: 'pricing_type')
   String get pricingType => throw _privateConstructorUsedError;
   @JsonKey(name: 'price_money')
-  PriceMoney get priceMoney => throw _privateConstructorUsedError;
+  PriceMoneyDto get priceMoney => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ItemVariationDataCopyWith<ItemVariationData> get copyWith =>
+  $ItemVariationDataDtoCopyWith<ItemVariationDataDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ItemVariationDataCopyWith<$Res> {
-  factory $ItemVariationDataCopyWith(
-          ItemVariationData value, $Res Function(ItemVariationData) then) =
-      _$ItemVariationDataCopyWithImpl<$Res, ItemVariationData>;
+abstract class $ItemVariationDataDtoCopyWith<$Res> {
+  factory $ItemVariationDataDtoCopyWith(ItemVariationDataDto value,
+          $Res Function(ItemVariationDataDto) then) =
+      _$ItemVariationDataDtoCopyWithImpl<$Res, ItemVariationDataDto>;
   @useResult
   $Res call(
       {@JsonKey(name: 'item_id') String itemId,
       String name,
       int ordinal,
       @JsonKey(name: 'pricing_type') String pricingType,
-      @JsonKey(name: 'price_money') PriceMoney priceMoney});
+      @JsonKey(name: 'price_money') PriceMoneyDto priceMoney});
 
-  $PriceMoneyCopyWith<$Res> get priceMoney;
+  $PriceMoneyDtoCopyWith<$Res> get priceMoney;
 }
 
 /// @nodoc
-class _$ItemVariationDataCopyWithImpl<$Res, $Val extends ItemVariationData>
-    implements $ItemVariationDataCopyWith<$Res> {
-  _$ItemVariationDataCopyWithImpl(this._value, this._then);
+class _$ItemVariationDataDtoCopyWithImpl<$Res,
+        $Val extends ItemVariationDataDto>
+    implements $ItemVariationDataDtoCopyWith<$Res> {
+  _$ItemVariationDataDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1420,25 +1460,25 @@ class _$ItemVariationDataCopyWithImpl<$Res, $Val extends ItemVariationData>
       priceMoney: null == priceMoney
           ? _value.priceMoney
           : priceMoney // ignore: cast_nullable_to_non_nullable
-              as PriceMoney,
+              as PriceMoneyDto,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceMoneyCopyWith<$Res> get priceMoney {
-    return $PriceMoneyCopyWith<$Res>(_value.priceMoney, (value) {
+  $PriceMoneyDtoCopyWith<$Res> get priceMoney {
+    return $PriceMoneyDtoCopyWith<$Res>(_value.priceMoney, (value) {
       return _then(_value.copyWith(priceMoney: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_ItemVariationDataCopyWith<$Res>
-    implements $ItemVariationDataCopyWith<$Res> {
-  factory _$$_ItemVariationDataCopyWith(_$_ItemVariationData value,
-          $Res Function(_$_ItemVariationData) then) =
-      __$$_ItemVariationDataCopyWithImpl<$Res>;
+abstract class _$$_ItemVariationDataDtoCopyWith<$Res>
+    implements $ItemVariationDataDtoCopyWith<$Res> {
+  factory _$$_ItemVariationDataDtoCopyWith(_$_ItemVariationDataDto value,
+          $Res Function(_$_ItemVariationDataDto) then) =
+      __$$_ItemVariationDataDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1446,18 +1486,18 @@ abstract class _$$_ItemVariationDataCopyWith<$Res>
       String name,
       int ordinal,
       @JsonKey(name: 'pricing_type') String pricingType,
-      @JsonKey(name: 'price_money') PriceMoney priceMoney});
+      @JsonKey(name: 'price_money') PriceMoneyDto priceMoney});
 
   @override
-  $PriceMoneyCopyWith<$Res> get priceMoney;
+  $PriceMoneyDtoCopyWith<$Res> get priceMoney;
 }
 
 /// @nodoc
-class __$$_ItemVariationDataCopyWithImpl<$Res>
-    extends _$ItemVariationDataCopyWithImpl<$Res, _$_ItemVariationData>
-    implements _$$_ItemVariationDataCopyWith<$Res> {
-  __$$_ItemVariationDataCopyWithImpl(
-      _$_ItemVariationData _value, $Res Function(_$_ItemVariationData) _then)
+class __$$_ItemVariationDataDtoCopyWithImpl<$Res>
+    extends _$ItemVariationDataDtoCopyWithImpl<$Res, _$_ItemVariationDataDto>
+    implements _$$_ItemVariationDataDtoCopyWith<$Res> {
+  __$$_ItemVariationDataDtoCopyWithImpl(_$_ItemVariationDataDto _value,
+      $Res Function(_$_ItemVariationDataDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1469,7 +1509,7 @@ class __$$_ItemVariationDataCopyWithImpl<$Res>
     Object? pricingType = null,
     Object? priceMoney = null,
   }) {
-    return _then(_$_ItemVariationData(
+    return _then(_$_ItemVariationDataDto(
       itemId: null == itemId
           ? _value.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
@@ -1489,23 +1529,23 @@ class __$$_ItemVariationDataCopyWithImpl<$Res>
       priceMoney: null == priceMoney
           ? _value.priceMoney
           : priceMoney // ignore: cast_nullable_to_non_nullable
-              as PriceMoney,
+              as PriceMoneyDto,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_ItemVariationData implements _ItemVariationData {
-  _$_ItemVariationData(
+class _$_ItemVariationDataDto implements _ItemVariationDataDto {
+  _$_ItemVariationDataDto(
       {@JsonKey(name: 'item_id') required this.itemId,
       required this.name,
       required this.ordinal,
       @JsonKey(name: 'pricing_type') required this.pricingType,
       @JsonKey(name: 'price_money') required this.priceMoney});
 
-  factory _$_ItemVariationData.fromJson(Map<String, dynamic> json) =>
-      _$$_ItemVariationDataFromJson(json);
+  factory _$_ItemVariationDataDto.fromJson(Map<String, dynamic> json) =>
+      _$$_ItemVariationDataDtoFromJson(json);
 
   @override
   @JsonKey(name: 'item_id')
@@ -1519,18 +1559,18 @@ class _$_ItemVariationData implements _ItemVariationData {
   final String pricingType;
   @override
   @JsonKey(name: 'price_money')
-  final PriceMoney priceMoney;
+  final PriceMoneyDto priceMoney;
 
   @override
   String toString() {
-    return 'ItemVariationData(itemId: $itemId, name: $name, ordinal: $ordinal, pricingType: $pricingType, priceMoney: $priceMoney)';
+    return 'ItemVariationDataDto(itemId: $itemId, name: $name, ordinal: $ordinal, pricingType: $pricingType, priceMoney: $priceMoney)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ItemVariationData &&
+            other is _$_ItemVariationDataDto &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.ordinal, ordinal) || other.ordinal == ordinal) &&
@@ -1548,29 +1588,31 @@ class _$_ItemVariationData implements _ItemVariationData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ItemVariationDataCopyWith<_$_ItemVariationData> get copyWith =>
-      __$$_ItemVariationDataCopyWithImpl<_$_ItemVariationData>(
+  _$$_ItemVariationDataDtoCopyWith<_$_ItemVariationDataDto> get copyWith =>
+      __$$_ItemVariationDataDtoCopyWithImpl<_$_ItemVariationDataDto>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ItemVariationDataToJson(
+    return _$$_ItemVariationDataDtoToJson(
       this,
     );
   }
 }
 
-abstract class _ItemVariationData implements ItemVariationData {
-  factory _ItemVariationData(
-          {@JsonKey(name: 'item_id') required final String itemId,
-          required final String name,
-          required final int ordinal,
-          @JsonKey(name: 'pricing_type') required final String pricingType,
-          @JsonKey(name: 'price_money') required final PriceMoney priceMoney}) =
-      _$_ItemVariationData;
+abstract class _ItemVariationDataDto implements ItemVariationDataDto {
+  factory _ItemVariationDataDto(
+      {@JsonKey(name: 'item_id')
+          required final String itemId,
+      required final String name,
+      required final int ordinal,
+      @JsonKey(name: 'pricing_type')
+          required final String pricingType,
+      @JsonKey(name: 'price_money')
+          required final PriceMoneyDto priceMoney}) = _$_ItemVariationDataDto;
 
-  factory _ItemVariationData.fromJson(Map<String, dynamic> json) =
-      _$_ItemVariationData.fromJson;
+  factory _ItemVariationDataDto.fromJson(Map<String, dynamic> json) =
+      _$_ItemVariationDataDto.fromJson;
 
   @override
   @JsonKey(name: 'item_id')
@@ -1584,41 +1626,41 @@ abstract class _ItemVariationData implements ItemVariationData {
   String get pricingType;
   @override
   @JsonKey(name: 'price_money')
-  PriceMoney get priceMoney;
+  PriceMoneyDto get priceMoney;
   @override
   @JsonKey(ignore: true)
-  _$$_ItemVariationDataCopyWith<_$_ItemVariationData> get copyWith =>
+  _$$_ItemVariationDataDtoCopyWith<_$_ItemVariationDataDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-PriceMoney _$PriceMoneyFromJson(Map<String, dynamic> json) {
-  return _PriceMoney.fromJson(json);
+PriceMoneyDto _$PriceMoneyDtoFromJson(Map<String, dynamic> json) {
+  return _PriceMoneyDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PriceMoney {
+mixin _$PriceMoneyDto {
   int get amount => throw _privateConstructorUsedError;
   String get currency => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PriceMoneyCopyWith<PriceMoney> get copyWith =>
+  $PriceMoneyDtoCopyWith<PriceMoneyDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PriceMoneyCopyWith<$Res> {
-  factory $PriceMoneyCopyWith(
-          PriceMoney value, $Res Function(PriceMoney) then) =
-      _$PriceMoneyCopyWithImpl<$Res, PriceMoney>;
+abstract class $PriceMoneyDtoCopyWith<$Res> {
+  factory $PriceMoneyDtoCopyWith(
+          PriceMoneyDto value, $Res Function(PriceMoneyDto) then) =
+      _$PriceMoneyDtoCopyWithImpl<$Res, PriceMoneyDto>;
   @useResult
   $Res call({int amount, String currency});
 }
 
 /// @nodoc
-class _$PriceMoneyCopyWithImpl<$Res, $Val extends PriceMoney>
-    implements $PriceMoneyCopyWith<$Res> {
-  _$PriceMoneyCopyWithImpl(this._value, this._then);
+class _$PriceMoneyDtoCopyWithImpl<$Res, $Val extends PriceMoneyDto>
+    implements $PriceMoneyDtoCopyWith<$Res> {
+  _$PriceMoneyDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1645,22 +1687,22 @@ class _$PriceMoneyCopyWithImpl<$Res, $Val extends PriceMoney>
 }
 
 /// @nodoc
-abstract class _$$_PriceMoneyCopyWith<$Res>
-    implements $PriceMoneyCopyWith<$Res> {
-  factory _$$_PriceMoneyCopyWith(
-          _$_PriceMoney value, $Res Function(_$_PriceMoney) then) =
-      __$$_PriceMoneyCopyWithImpl<$Res>;
+abstract class _$$_PriceMoneyDtoCopyWith<$Res>
+    implements $PriceMoneyDtoCopyWith<$Res> {
+  factory _$$_PriceMoneyDtoCopyWith(
+          _$_PriceMoneyDto value, $Res Function(_$_PriceMoneyDto) then) =
+      __$$_PriceMoneyDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int amount, String currency});
 }
 
 /// @nodoc
-class __$$_PriceMoneyCopyWithImpl<$Res>
-    extends _$PriceMoneyCopyWithImpl<$Res, _$_PriceMoney>
-    implements _$$_PriceMoneyCopyWith<$Res> {
-  __$$_PriceMoneyCopyWithImpl(
-      _$_PriceMoney _value, $Res Function(_$_PriceMoney) _then)
+class __$$_PriceMoneyDtoCopyWithImpl<$Res>
+    extends _$PriceMoneyDtoCopyWithImpl<$Res, _$_PriceMoneyDto>
+    implements _$$_PriceMoneyDtoCopyWith<$Res> {
+  __$$_PriceMoneyDtoCopyWithImpl(
+      _$_PriceMoneyDto _value, $Res Function(_$_PriceMoneyDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1669,7 +1711,7 @@ class __$$_PriceMoneyCopyWithImpl<$Res>
     Object? amount = null,
     Object? currency = null,
   }) {
-    return _then(_$_PriceMoney(
+    return _then(_$_PriceMoneyDto(
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -1684,11 +1726,11 @@ class __$$_PriceMoneyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PriceMoney implements _PriceMoney {
-  _$_PriceMoney({required this.amount, required this.currency});
+class _$_PriceMoneyDto implements _PriceMoneyDto {
+  _$_PriceMoneyDto({required this.amount, required this.currency});
 
-  factory _$_PriceMoney.fromJson(Map<String, dynamic> json) =>
-      _$$_PriceMoneyFromJson(json);
+  factory _$_PriceMoneyDto.fromJson(Map<String, dynamic> json) =>
+      _$$_PriceMoneyDtoFromJson(json);
 
   @override
   final int amount;
@@ -1697,14 +1739,14 @@ class _$_PriceMoney implements _PriceMoney {
 
   @override
   String toString() {
-    return 'PriceMoney(amount: $amount, currency: $currency)';
+    return 'PriceMoneyDto(amount: $amount, currency: $currency)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PriceMoney &&
+            other is _$_PriceMoneyDto &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.currency, currency) ||
                 other.currency == currency));
@@ -1717,24 +1759,24 @@ class _$_PriceMoney implements _PriceMoney {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PriceMoneyCopyWith<_$_PriceMoney> get copyWith =>
-      __$$_PriceMoneyCopyWithImpl<_$_PriceMoney>(this, _$identity);
+  _$$_PriceMoneyDtoCopyWith<_$_PriceMoneyDto> get copyWith =>
+      __$$_PriceMoneyDtoCopyWithImpl<_$_PriceMoneyDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PriceMoneyToJson(
+    return _$$_PriceMoneyDtoToJson(
       this,
     );
   }
 }
 
-abstract class _PriceMoney implements PriceMoney {
-  factory _PriceMoney(
+abstract class _PriceMoneyDto implements PriceMoneyDto {
+  factory _PriceMoneyDto(
       {required final int amount,
-      required final String currency}) = _$_PriceMoney;
+      required final String currency}) = _$_PriceMoneyDto;
 
-  factory _PriceMoney.fromJson(Map<String, dynamic> json) =
-      _$_PriceMoney.fromJson;
+  factory _PriceMoneyDto.fromJson(Map<String, dynamic> json) =
+      _$_PriceMoneyDto.fromJson;
 
   @override
   int get amount;
@@ -1742,6 +1784,6 @@ abstract class _PriceMoney implements PriceMoney {
   String get currency;
   @override
   @JsonKey(ignore: true)
-  _$$_PriceMoneyCopyWith<_$_PriceMoney> get copyWith =>
+  _$$_PriceMoneyDtoCopyWith<_$_PriceMoneyDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

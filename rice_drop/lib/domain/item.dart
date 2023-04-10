@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rice_drop/domain/modifier_list.dart';
 
 part 'item.freezed.dart';
 

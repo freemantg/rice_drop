@@ -9,7 +9,7 @@ part of 'item_dto.dart';
 _$_ItemDto _$$_ItemDtoFromJson(Map<String, dynamic> json) => _$_ItemDto(
       type: json['type'] as String,
       id: json['id'] as String,
-      itemData: ItemData.fromJson(json['item_data'] as Map<String, dynamic>),
+      itemData: ItemDataDto.fromJson(json['item_data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ItemDtoToJson(_$_ItemDto instance) =>
@@ -19,18 +19,19 @@ Map<String, dynamic> _$$_ItemDtoToJson(_$_ItemDto instance) =>
       'item_data': instance.itemData,
     };
 
-_$_ItemData _$$_ItemDataFromJson(Map<String, dynamic> json) => _$_ItemData(
+_$_ItemDataDto _$$_ItemDataDtoFromJson(Map<String, dynamic> json) =>
+    _$_ItemDataDto(
       name: json['name'] as String?,
       description: json['description'] as String?,
       labelColor: json['label_color'] as String?,
       isTaxable: json['is_taxable'] as bool,
       visibility: json['visibility'] as String?,
       categoryId: json['category_id'] as String?,
-      modifierList: (json['modifier_list_info'] as List<dynamic>?)
-          ?.map((e) => ModifierListInfo.fromJson(e as Map<String, dynamic>))
+      modifierListInfo: (json['modifier_list_info'] as List<dynamic>?)
+          ?.map((e) => ModifierListInfoDto.fromJson(e as Map<String, dynamic>))
           .toList(),
       variations: (json['variations'] as List<dynamic>)
-          .map((e) => Variation.fromJson(e as Map<String, dynamic>))
+          .map((e) => VariationDto.fromJson(e as Map<String, dynamic>))
           .toList(),
       productType: json['product_type'] as String?,
       skipModifierScreen: json['skip_modifier_screen'] as bool,
@@ -45,7 +46,7 @@ _$_ItemData _$$_ItemDataFromJson(Map<String, dynamic> json) => _$_ItemData(
       kitchenName: json['kitchen_name'] as String?,
     );
 
-Map<String, dynamic> _$$_ItemDataToJson(_$_ItemData instance) =>
+Map<String, dynamic> _$$_ItemDataDtoToJson(_$_ItemDataDto instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
@@ -53,7 +54,7 @@ Map<String, dynamic> _$$_ItemDataToJson(_$_ItemData instance) =>
       'is_taxable': instance.isTaxable,
       'visibility': instance.visibility,
       'category_id': instance.categoryId,
-      'modifier_list_info': instance.modifierList,
+      'modifier_list_info': instance.modifierListInfo,
       'variations': instance.variations,
       'product_type': instance.productType,
       'skip_modifier_screen': instance.skipModifierScreen,
@@ -66,15 +67,17 @@ Map<String, dynamic> _$$_ItemDataToJson(_$_ItemData instance) =>
       'kitchen_name': instance.kitchenName,
     };
 
-_$_ModifierListInfo _$$_ModifierListInfoFromJson(Map<String, dynamic> json) =>
-    _$_ModifierListInfo(
+_$_ModifierListInfoDto _$$_ModifierListInfoDtoFromJson(
+        Map<String, dynamic> json) =>
+    _$_ModifierListInfoDto(
       modifierListId: json['modifier_list_id'] as String,
       minSelectedModifiers: json['min_selected_modifiers'] as int,
       maxSelectedModifiers: json['max_selected_modifiers'] as int,
       enabled: json['enabled'] as bool,
     );
 
-Map<String, dynamic> _$$_ModifierListInfoToJson(_$_ModifierListInfo instance) =>
+Map<String, dynamic> _$$_ModifierListInfoDtoToJson(
+        _$_ModifierListInfoDto instance) =>
     <String, dynamic>{
       'modifier_list_id': instance.modifierListId,
       'min_selected_modifiers': instance.minSelectedModifiers,
@@ -82,7 +85,8 @@ Map<String, dynamic> _$$_ModifierListInfoToJson(_$_ModifierListInfo instance) =>
       'enabled': instance.enabled,
     };
 
-_$_Variation _$$_VariationFromJson(Map<String, dynamic> json) => _$_Variation(
+_$_VariationDto _$$_VariationDtoFromJson(Map<String, dynamic> json) =>
+    _$_VariationDto(
       type: json['type'] as String,
       id: json['id'] as String,
       updatedAt: DateTime.parse(json['updated_at'] as String),
@@ -92,11 +96,11 @@ _$_Variation _$$_VariationFromJson(Map<String, dynamic> json) => _$_Variation(
       presentAtAllLocations: json['present_at_all_locations'] as bool,
       itemVariationData: json['item_variation_data'] == null
           ? null
-          : ItemVariationData.fromJson(
+          : ItemVariationDataDto.fromJson(
               json['item_variation_data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_VariationToJson(_$_Variation instance) =>
+Map<String, dynamic> _$$_VariationDtoToJson(_$_VariationDto instance) =>
     <String, dynamic>{
       'type': instance.type,
       'id': instance.id,
@@ -108,18 +112,19 @@ Map<String, dynamic> _$$_VariationToJson(_$_Variation instance) =>
       'item_variation_data': instance.itemVariationData,
     };
 
-_$_ItemVariationData _$$_ItemVariationDataFromJson(Map<String, dynamic> json) =>
-    _$_ItemVariationData(
+_$_ItemVariationDataDto _$$_ItemVariationDataDtoFromJson(
+        Map<String, dynamic> json) =>
+    _$_ItemVariationDataDto(
       itemId: json['item_id'] as String,
       name: json['name'] as String,
       ordinal: json['ordinal'] as int,
       pricingType: json['pricing_type'] as String,
       priceMoney:
-          PriceMoney.fromJson(json['price_money'] as Map<String, dynamic>),
+          PriceMoneyDto.fromJson(json['price_money'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ItemVariationDataToJson(
-        _$_ItemVariationData instance) =>
+Map<String, dynamic> _$$_ItemVariationDataDtoToJson(
+        _$_ItemVariationDataDto instance) =>
     <String, dynamic>{
       'item_id': instance.itemId,
       'name': instance.name,
@@ -128,13 +133,13 @@ Map<String, dynamic> _$$_ItemVariationDataToJson(
       'price_money': instance.priceMoney,
     };
 
-_$_PriceMoney _$$_PriceMoneyFromJson(Map<String, dynamic> json) =>
-    _$_PriceMoney(
+_$_PriceMoneyDto _$$_PriceMoneyDtoFromJson(Map<String, dynamic> json) =>
+    _$_PriceMoneyDto(
       amount: json['amount'] as int,
       currency: json['currency'] as String,
     );
 
-Map<String, dynamic> _$$_PriceMoneyToJson(_$_PriceMoney instance) =>
+Map<String, dynamic> _$$_PriceMoneyDtoToJson(_$_PriceMoneyDto instance) =>
     <String, dynamic>{
       'amount': instance.amount,
       'currency': instance.currency,

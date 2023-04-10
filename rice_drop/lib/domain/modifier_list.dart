@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../infrastructure/item_dto.dart';
-
 part 'modifier_list.freezed.dart';
 part 'modifier_list.g.dart';
 
@@ -54,4 +52,15 @@ class ModifierData with _$ModifierData {
 
   factory ModifierData.fromJson(Map<String, dynamic> json) =>
       _$ModifierDataFromJson(json);
+}
+
+@freezed
+class PriceMoney with _$PriceMoney {
+  factory PriceMoney({
+    required int amount,
+    required String currency,
+  }) = _PriceMoney;
+
+  factory PriceMoney.fromJson(Map<String, dynamic> json) =>
+      _$PriceMoneyFromJson(json);
 }

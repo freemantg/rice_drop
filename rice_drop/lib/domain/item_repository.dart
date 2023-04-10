@@ -1,12 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:rice_drop/domain/category.dart';
-import 'package:rice_drop/domain/item_failure.dart';
+import 'package:rice_drop/domain/object_failure.dart';
 
-import 'item.dart';
-import 'modifier_list.dart';
+import 'square_object.dart';
 
 abstract class ItemRepository {
-  Future<Either<ItemFailure, List<Item>>> fetchItems();
-  Future<Either<ItemFailure, List<CategoryModel>>> fetchCategories();
-  Future<Either<ItemFailure, List<ModifierList>>> fetchModifierLists();
+  Future<Either<ObjectFailure, SquareObjects>> fetchAllData();
 }

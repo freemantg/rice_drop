@@ -78,7 +78,7 @@ _$_ModifierDataDto _$$_ModifierDataDtoFromJson(Map<String, dynamic> json) =>
     _$_ModifierDataDto(
       name: json['name'] as String,
       priceMoney:
-          PriceMoney.fromJson(json['price_money'] as Map<String, dynamic>),
+          PriceMoneyDto.fromJson(json['price_money'] as Map<String, dynamic>),
       onByDefault: json['on_by_default'] as bool,
       ordinal: json['ordinal'] as int,
       modifierListId: json['modifier_list_id'] as String,

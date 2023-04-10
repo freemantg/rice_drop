@@ -67,3 +67,15 @@ Map<String, dynamic> _$$_ModifierDataToJson(_$_ModifierData instance) =>
       'ordinal': instance.ordinal,
       'modifier_list_id': instance.modifierListId,
     };
+
+_$_PriceMoney _$$_PriceMoneyFromJson(Map<String, dynamic> json) =>
+    _$_PriceMoney(
+      amount: json['amount'] as int,
+      currency: json['currency'] as String,
+    );
+
+Map<String, dynamic> _$$_PriceMoneyToJson(_$_PriceMoney instance) =>
+    <String, dynamic>{
+      'amount': instance.amount,
+      'currency': instance.currency,
+    };

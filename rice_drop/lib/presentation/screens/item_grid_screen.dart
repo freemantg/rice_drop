@@ -41,6 +41,9 @@ class ItemGridScreen extends HookConsumerWidget {
                   loading: (_, __, ___) => const CircularProgressIndicator(),
                   loadSuccess: (itemsByCategory, _, modifierLists) => Column(
                     children: [
+                      ...modifierLists
+                          .map((modifierList) => Text(modifierList.id))
+                          .toList(),
                       ItemGrid(
                         items: itemsByCategory[category.id] ?? [],
                       ),

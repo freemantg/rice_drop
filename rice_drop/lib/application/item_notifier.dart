@@ -15,73 +15,34 @@ class ItemNotifier extends StateNotifier<ItemState> {
           ),
         );
 
-  Future<void> fetchItems() async {
+  Future<void> fetchData() async {
     state = ItemState.loading(
       itemsByCategory: state.itemsByCategory,
       categories: state.categories,
       modifierLists: state.modifierLists,
     );
-
-    // Fetch categories first
-    final categoryResult = await _repository.fetchCategories();
-    state = categoryResult.fold(
+    final objects = await _repository.fetchAllData();
+    state = objects.fold(
       (failure) => ItemState.error(
         message: failure.toString(),
         itemsByCategory: state.itemsByCategory,
         categories: state.categories,
         modifierLists: state.modifierLists,
       ),
-      (categories) => ItemState.loadSuccess(
-        itemsByCategory: state.itemsByCategory,
-        categories: categories,
-        modifierLists: state.modifierLists,
-      ),
-    );
-
-    // Then fetch items and filter by categories
-    final itemResult = await _repository.fetchItems();
-    state = itemResult.fold(
-      (failure) => ItemState.error(
-        message: failure.toString(),
-        itemsByCategory: state.itemsByCategory,
-        categories: state.categories,
-        modifierLists: state.modifierLists,
-      ),
-      (items) {
-        final Map<String, List<Item>> itemsByCategory = {};
-        for (final category in state.categories) {
-          itemsByCategory[category.id] =
-              items.where((item) => item.categoryId == category.id).toList();
+      (objects) {
+        final Map<String, List<Item>> itemsByCategories = {};
+        final categories = objects.categories;
+        for (final category in categories) {
+          itemsByCategories[category.id] = objects.items
+              .where((item) => item.categoryId == category.id)
+              .toList();
         }
         return ItemState.loadSuccess(
-          itemsByCategory: itemsByCategory,
-          categories: state.categories,
-          modifierLists: state.modifierLists,
+          itemsByCategory: itemsByCategories,
+          categories: objects.categories,
+          modifierLists: objects.modifierLists,
         );
       },
-    );
-  }
-
-  Future<void> fetchModifiers() async {
-    state = ItemState.loading(
-      itemsByCategory: state.itemsByCategory,
-      categories: state.categories,
-      modifierLists: state.modifierLists,
-    );
-
-    final modifierResult = await _repository.fetchModifierLists();
-    state = modifierResult.fold(
-      (failure) => ItemState.error(
-        message: failure.toString(),
-        itemsByCategory: state.itemsByCategory,
-        categories: state.categories,
-        modifierLists: state.modifierLists,
-      ),
-      (modifierLists) => ItemState.loadSuccess(
-        itemsByCategory: state.itemsByCategory,
-        categories: state.categories,
-        modifierLists: modifierLists,
-      ),
     );
   }
 }
