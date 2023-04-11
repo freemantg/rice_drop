@@ -6,10 +6,11 @@ import 'package:http/http.dart' as http;
 import 'package:rice_drop/domain/object_failure.dart';
 import 'package:rice_drop/domain/item_repository.dart';
 import 'package:rice_drop/domain/square_object.dart';
-import 'package:rice_drop/infrastructure/modifier_list_dto.dart';
 
-import '../category_dto.dart';
-import '../item_dto.dart';
+import '../catalog/category_dto.dart';
+import '../catalog/item_dto.dart';
+import '../catalog/modifier_list_dto.dart';
+
 
 class SquareDataSourceImp implements ItemRepository {
   final http.Client client;

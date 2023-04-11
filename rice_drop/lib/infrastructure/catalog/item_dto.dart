@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rice_drop/domain/item.dart';
 import 'package:rice_drop/domain/modifier_list.dart';
 
-import '../domain/modifier_list_info.dart';
+import '../../domain/modifier_list_info.dart';
 
 part 'item_dto.freezed.dart';
 part 'item_dto.g.dart';
