@@ -11,6 +11,11 @@ class Order with _$Order {
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
+
+  factory Order.empty() => Order(
+        id: '',
+        lineItems: List.empty(growable: true),
+      );
 }
 
 @freezed

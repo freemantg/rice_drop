@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 
 import 'catalog.dart';
-import 'object_failure.dart';
+import 'catalog_failure.dart';
 
-abstract class ItemRepository {
+abstract class CatalogRepository {
   Future<Either<CatalogFailure, Catalog>> fetchAllData();
 }

@@ -6,13 +6,13 @@ import 'package:http/http.dart' as http;
 
 import 'package:rice_drop/domain/catalog/catalog.dart';
 
-import '../../domain/catalog/item_repository.dart';
-import '../../domain/catalog/object_failure.dart';
+import '../../domain/catalog/catalog_repository.dart';
+import '../../domain/catalog/catalog_failure.dart';
 import '../catalog/category_dto.dart';
 import '../catalog/item_dto.dart';
 import '../catalog/modifier_list_dto.dart';
 
-class RemoteDataSourceImp implements ItemRepository {
+class RemoteDataSourceImp implements CatalogRepository {
   final http.Client client;
 
   RemoteDataSourceImp({required this.client});

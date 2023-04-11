@@ -6,6 +6,7 @@ import 'package:rice_drop/styles/space.dart';
 import 'package:rice_drop/styles/styles.dart';
 
 import '../../domain/catalog/category.dart';
+import '../../domain/category.dart';
 import 'widgets/widgets.dart';
 
 @RoutePage()
@@ -37,7 +38,7 @@ class ItemGridScreen extends HookConsumerWidget {
               ),
             ),
             HSpace(size: $styles.insets.sm),
-            ref.watch(itemNotifierProvider).maybeWhen(
+            ref.watch(catalogNotifierProvider).maybeWhen(
                   loading: (_, __, ___) => const CircularProgressIndicator(),
                   loadSuccess: (itemsByCategory, _, modifierLists) => ItemGrid(
                     items: itemsByCategory[category.id] ?? [],

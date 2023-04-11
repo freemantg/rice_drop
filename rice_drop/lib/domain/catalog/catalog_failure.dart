@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'object_failure.freezed.dart';
+part 'catalog_failure.freezed.dart';
 
 @freezed
 class CatalogFailure with _$CatalogFailure {
