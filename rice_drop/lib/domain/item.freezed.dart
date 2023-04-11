@@ -23,6 +23,8 @@ mixin _$Item {
   String get imageUrl => throw _privateConstructorUsedError;
   String get categoryId => throw _privateConstructorUsedError;
   bool get skipModifierScreen => throw _privateConstructorUsedError;
+  List<ModifierListInfo> get modifierListInfo =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ItemCopyWith<Item> get copyWith => throw _privateConstructorUsedError;
@@ -40,7 +42,8 @@ abstract class $ItemCopyWith<$Res> {
       int price,
       String imageUrl,
       String categoryId,
-      bool skipModifierScreen});
+      bool skipModifierScreen,
+      List<ModifierListInfo> modifierListInfo});
 }
 
 /// @nodoc
@@ -63,6 +66,7 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
     Object? imageUrl = null,
     Object? categoryId = null,
     Object? skipModifierScreen = null,
+    Object? modifierListInfo = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -93,6 +97,10 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
           ? _value.skipModifierScreen
           : skipModifierScreen // ignore: cast_nullable_to_non_nullable
               as bool,
+      modifierListInfo: null == modifierListInfo
+          ? _value.modifierListInfo
+          : modifierListInfo // ignore: cast_nullable_to_non_nullable
+              as List<ModifierListInfo>,
     ) as $Val);
   }
 }
@@ -110,7 +118,8 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       int price,
       String imageUrl,
       String categoryId,
-      bool skipModifierScreen});
+      bool skipModifierScreen,
+      List<ModifierListInfo> modifierListInfo});
 }
 
 /// @nodoc
@@ -129,6 +138,7 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res, _$_Item>
     Object? imageUrl = null,
     Object? categoryId = null,
     Object? skipModifierScreen = null,
+    Object? modifierListInfo = null,
   }) {
     return _then(_$_Item(
       id: null == id
@@ -159,6 +169,10 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res, _$_Item>
           ? _value.skipModifierScreen
           : skipModifierScreen // ignore: cast_nullable_to_non_nullable
               as bool,
+      modifierListInfo: null == modifierListInfo
+          ? _value._modifierListInfo
+          : modifierListInfo // ignore: cast_nullable_to_non_nullable
+              as List<ModifierListInfo>,
     ));
   }
 }
@@ -173,8 +187,10 @@ class _$_Item extends _Item {
       required this.price,
       required this.imageUrl,
       required this.categoryId,
-      required this.skipModifierScreen})
-      : super._();
+      required this.skipModifierScreen,
+      required final List<ModifierListInfo> modifierListInfo})
+      : _modifierListInfo = modifierListInfo,
+        super._();
 
   @override
   final String id;
@@ -190,10 +206,18 @@ class _$_Item extends _Item {
   final String categoryId;
   @override
   final bool skipModifierScreen;
+  final List<ModifierListInfo> _modifierListInfo;
+  @override
+  List<ModifierListInfo> get modifierListInfo {
+    if (_modifierListInfo is EqualUnmodifiableListView)
+      return _modifierListInfo;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_modifierListInfo);
+  }
 
   @override
   String toString() {
-    return 'Item(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl, categoryId: $categoryId, skipModifierScreen: $skipModifierScreen)';
+    return 'Item(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl, categoryId: $categoryId, skipModifierScreen: $skipModifierScreen, modifierListInfo: $modifierListInfo)';
   }
 
   @override
@@ -211,12 +235,22 @@ class _$_Item extends _Item {
             (identical(other.categoryId, categoryId) ||
                 other.categoryId == categoryId) &&
             (identical(other.skipModifierScreen, skipModifierScreen) ||
-                other.skipModifierScreen == skipModifierScreen));
+                other.skipModifierScreen == skipModifierScreen) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierListInfo, _modifierListInfo));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description, price,
-      imageUrl, categoryId, skipModifierScreen);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      description,
+      price,
+      imageUrl,
+      categoryId,
+      skipModifierScreen,
+      const DeepCollectionEquality().hash(_modifierListInfo));
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +267,8 @@ abstract class _Item extends Item {
       required final int price,
       required final String imageUrl,
       required final String categoryId,
-      required final bool skipModifierScreen}) = _$_Item;
+      required final bool skipModifierScreen,
+      required final List<ModifierListInfo> modifierListInfo}) = _$_Item;
   const _Item._() : super._();
 
   @override
@@ -250,6 +285,8 @@ abstract class _Item extends Item {
   String get categoryId;
   @override
   bool get skipModifierScreen;
+  @override
+  List<ModifierListInfo> get modifierListInfo;
   @override
   @JsonKey(ignore: true)
   _$$_ItemCopyWith<_$_Item> get copyWith => throw _privateConstructorUsedError;

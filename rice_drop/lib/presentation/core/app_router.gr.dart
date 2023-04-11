@@ -12,6 +12,7 @@ import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
 import 'package:rice_drop/domain/category.dart' as _i7;
 import 'package:rice_drop/domain/item.dart' as _i8;
+import 'package:rice_drop/domain/modifier_list.dart' as _i9;
 import 'package:rice_drop/presentation/screens/item_grid_screen.dart' as _i1;
 import 'package:rice_drop/presentation/screens/item_screen.dart' as _i2;
 import 'package:rice_drop/presentation/screens/item_select_screen.dart' as _i3;
@@ -40,6 +41,7 @@ abstract class $AppRouter extends _i5.RootStackRouter {
         child: _i2.ItemScreen(
           key: args.key,
           item: args.item,
+          modifierLists: args.modifierLists,
         ),
       );
     },
@@ -106,12 +108,14 @@ class ItemRoute extends _i5.PageRouteInfo<ItemRouteArgs> {
   ItemRoute({
     _i6.Key? key,
     required _i8.Item item,
+    required List<_i9.ModifierList> modifierLists,
     List<_i5.PageRouteInfo>? children,
   }) : super(
           ItemRoute.name,
           args: ItemRouteArgs(
             key: key,
             item: item,
+            modifierLists: modifierLists,
           ),
           initialChildren: children,
         );
@@ -126,15 +130,18 @@ class ItemRouteArgs {
   const ItemRouteArgs({
     this.key,
     required this.item,
+    required this.modifierLists,
   });
 
   final _i6.Key? key;
 
   final _i8.Item item;
 
+  final List<_i9.ModifierList> modifierLists;
+
   @override
   String toString() {
-    return 'ItemRouteArgs{key: $key, item: $item}';
+    return 'ItemRouteArgs{key: $key, item: $item, modifierLists: $modifierLists}';
   }
 }
 

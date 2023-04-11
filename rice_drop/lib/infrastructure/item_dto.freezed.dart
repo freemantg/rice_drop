@@ -948,7 +948,7 @@ class __$$_ModifierListInfoDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ModifierListInfoDto implements _ModifierListInfoDto {
+class _$_ModifierListInfoDto extends _ModifierListInfoDto {
   const _$_ModifierListInfoDto(
       {@JsonKey(name: 'modifier_list_id')
           required this.modifierListId,
@@ -956,7 +956,8 @@ class _$_ModifierListInfoDto implements _ModifierListInfoDto {
           required this.minSelectedModifiers,
       @JsonKey(name: 'max_selected_modifiers')
           required this.maxSelectedModifiers,
-      required this.enabled});
+      required this.enabled})
+      : super._();
 
   factory _$_ModifierListInfoDto.fromJson(Map<String, dynamic> json) =>
       _$$_ModifierListInfoDtoFromJson(json);
@@ -1012,7 +1013,7 @@ class _$_ModifierListInfoDto implements _ModifierListInfoDto {
   }
 }
 
-abstract class _ModifierListInfoDto implements ModifierListInfoDto {
+abstract class _ModifierListInfoDto extends ModifierListInfoDto {
   const factory _ModifierListInfoDto(
       {@JsonKey(name: 'modifier_list_id')
           required final String modifierListId,
@@ -1021,6 +1022,7 @@ abstract class _ModifierListInfoDto implements ModifierListInfoDto {
       @JsonKey(name: 'max_selected_modifiers')
           required final int maxSelectedModifiers,
       required final bool enabled}) = _$_ModifierListInfoDto;
+  const _ModifierListInfoDto._() : super._();
 
   factory _ModifierListInfoDto.fromJson(Map<String, dynamic> json) =
       _$_ModifierListInfoDto.fromJson;
@@ -1726,8 +1728,8 @@ class __$$_PriceMoneyDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PriceMoneyDto implements _PriceMoneyDto {
-  _$_PriceMoneyDto({required this.amount, required this.currency});
+class _$_PriceMoneyDto extends _PriceMoneyDto {
+  _$_PriceMoneyDto({required this.amount, required this.currency}) : super._();
 
   factory _$_PriceMoneyDto.fromJson(Map<String, dynamic> json) =>
       _$$_PriceMoneyDtoFromJson(json);
@@ -1770,10 +1772,11 @@ class _$_PriceMoneyDto implements _PriceMoneyDto {
   }
 }
 
-abstract class _PriceMoneyDto implements PriceMoneyDto {
+abstract class _PriceMoneyDto extends PriceMoneyDto {
   factory _PriceMoneyDto(
       {required final int amount,
       required final String currency}) = _$_PriceMoneyDto;
+  _PriceMoneyDto._() : super._();
 
   factory _PriceMoneyDto.fromJson(Map<String, dynamic> json) =
       _$_PriceMoneyDto.fromJson;

@@ -2,6 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rice_drop/domain/item.dart';
 import 'package:rice_drop/domain/modifier_list.dart';
 
+import '../domain/modifier_list_info.dart';
+
 part 'item_dto.freezed.dart';
 part 'item_dto.g.dart';
 
@@ -26,6 +28,8 @@ class ItemDto with _$ItemDto {
       imageUrl: itemData.ecomImageUris?.first ?? '',
       categoryId: itemData.categoryId ?? '',
       skipModifierScreen: itemData.skipModifierScreen,
+      modifierListInfo:
+          itemData.modifierListInfo?.map((e) => e.toDomain()).toList() ?? [],
     );
   }
 }
@@ -60,6 +64,7 @@ class ItemDataDto with _$ItemDataDto {
 
 @freezed
 class ModifierListInfoDto with _$ModifierListInfoDto {
+  const ModifierListInfoDto._();
   const factory ModifierListInfoDto({
     @JsonKey(name: 'modifier_list_id') required String modifierListId,
     @JsonKey(name: 'min_selected_modifiers') required int minSelectedModifiers,
@@ -69,6 +74,15 @@ class ModifierListInfoDto with _$ModifierListInfoDto {
 
   factory ModifierListInfoDto.fromJson(Map<String, dynamic> json) =>
       _$ModifierListInfoDtoFromJson(json);
+
+  ModifierListInfo toDomain() {
+    return ModifierListInfo(
+      modifierListId: modifierListId,
+      minSelectedModifiers: minSelectedModifiers,
+      maxSelectedModifiers: maxSelectedModifiers,
+      enabled: enabled,
+    );
+  }
 }
 
 @freezed

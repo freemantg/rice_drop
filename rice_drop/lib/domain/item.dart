@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rice_drop/domain/modifier_list_info.dart';
 
 part 'item.freezed.dart';
 
@@ -13,5 +14,6 @@ class Item with _$Item {
     required String imageUrl,
     required String categoryId,
     required bool skipModifierScreen,
+    required List<ModifierListInfo> modifierListInfo,
   }) = _Item;
 }

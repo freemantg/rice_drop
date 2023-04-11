@@ -32,7 +32,7 @@ class ChoiceChipGrid extends StatelessWidget {
               flex: 3,
               child: Wrap(
                 spacing: $styles.insets.xs,
-                runSpacing: $styles.insets.xxs,
+                runSpacing: $styles.insets.xs,
                 children:
                     modifiers.map((e) => StyledChoiceChip(title: e)).toList(),
               ),
@@ -66,7 +66,7 @@ class StyledChoiceChip extends StatelessWidget {
       ),
       //TODO: STATEMANAGEMENT
       label: Text(title),
-      selected: true,
+      selected: false,
       onSelected: (value) => title,
     );
   }

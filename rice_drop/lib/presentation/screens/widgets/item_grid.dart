@@ -2,23 +2,27 @@ import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../../domain/item.dart';
+import '../../../domain/modifier_list.dart';
 import '../../../styles/styles.dart';
 import '../../core/app_router.gr.dart';
 
-class ItemGrid extends StatelessWidget {
+class ItemGrid extends ConsumerWidget {
   const ItemGrid({
     Key? key,
     required this.items,
+    required this.modifiers,
   }) : super(key: key);
 
   final List<Item> items;
+  final List<ModifierList> modifiers;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return GridView.builder(
@@ -39,7 +43,17 @@ class ItemGrid extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return ItemCard(item: items[index]);
+        final itemModifiers = modifiers.where(
+          (modifier) {
+            return items[index].modifierListInfo.any(
+                (itemModifier) => itemModifier.modifierListId == modifier.id);
+          },
+        ).toList();
+
+        return ItemCard(
+          item: items[index],
+          modifiers: itemModifiers,
+        );
       },
     );
   }
@@ -49,9 +63,11 @@ class ItemCard extends StatelessWidget {
   const ItemCard({
     Key? key,
     required this.item,
+    required this.modifiers,
   }) : super(key: key);
 
   final Item item;
+  final List<ModifierList> modifiers;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +75,12 @@ class ItemCard extends StatelessWidget {
       onTap: () {
         item.skipModifierScreen
             ? print('ADDED TO BASKET')
-            : context.router.push(ItemRoute(item: item));
+            : context.router.push(
+                ItemRoute(
+                  item: item,
+                  modifierLists: modifiers,
+                ),
+              );
       },
       child: Card(
         child: Padding(
@@ -81,7 +102,7 @@ class ItemCard extends StatelessWidget {
                         ),
                       );
                     } else {
-                      return const Text('HELLO');
+                      return const Text('ERROR LOADING IMAGE');
                     }
                   },
                 ),

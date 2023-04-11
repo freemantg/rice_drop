@@ -9,35 +9,22 @@ import 'package:rice_drop/domain/item.dart';
 import 'package:rice_drop/presentation/screens/widgets/widgets.dart';
 import 'package:rice_drop/styles/space.dart';
 
+import '../../domain/modifier_list.dart';
 import '../../styles/styles.dart';
-
-const List<String> dropBoxModifiers = [
-  "Boiled Rice",
-  "Chips",
-  "Half & Half",
-  "Egg Fried Rice + £1.50",
-  "Chow Mein + £1.50",
-];
-
-const List<String> asianSlawModifiers = [
-  "Yes",
-  "No",
-];
 
 @RoutePage()
 class ItemScreen extends HookWidget {
   const ItemScreen({
     super.key,
     required this.item,
+    required this.modifierLists,
   });
 
   final Item item;
+  final List<ModifierList> modifierLists;
 
   @override
   Widget build(BuildContext context) {
-    final modifier1 = useState('Boiled Rice');
-    final modifier2 = useState('Yes');
-
     final titleAndDescriptionController =
         useAnimationController(duration: const Duration(milliseconds: 500));
     final itemModifiersChipsController =
@@ -77,16 +64,13 @@ class ItemScreen extends HookWidget {
       bottomNavigationBar: _buildBottomNavigationBar(animation4),
       appBar: const StyledAppBar(),
       endDrawer: const OrderEndDrawer(),
-      body:
-          _buildBody(animation1, animation2, modifier1, modifier2, animation3),
+      body: _buildBody(animation1, animation2, animation3),
     );
   }
 
   LayoutBuilder _buildBody(
     Animation<double> animation1,
     Animation<double> animation2,
-    ValueNotifier<String> modifier1,
-    ValueNotifier<String> modifier2,
     Animation<double> animation3,
   ) {
     return LayoutBuilder(
@@ -123,19 +107,21 @@ class ItemScreen extends HookWidget {
                       HSpace(size: $styles.insets.md),
                       FadeTransition(
                         opacity: animation2,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const ChoiceChipGrid(
-                              title: 'MAKE IT YOURS',
-                              modifiers: dropBoxModifiers,
-                            ),
-                            HSpace(size: $styles.insets.md),
-                            const ChoiceChipGrid(
-                              title: 'ADD ASIAN SLAW',
-                              modifiers: asianSlawModifiers,
-                            ),
-                          ],
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                          itemCount: modifierLists.length,
+                          separatorBuilder: (_, __) =>
+                              HSpace(size: $styles.insets.md),
+                          itemBuilder: (context, index) {
+                            final modifierList = modifierLists[index];
+                            return ChoiceChipGrid(
+                              title: modifierList.modifierListData.name
+                                  .toUpperCase(),
+                              modifiers: modifierList.modifierListData.modifiers
+                                  .map((e) => e.modifierData.name)
+                                  .toList(),
+                            );
+                          },
                         ),
                       ),
                       const Spacer(),
