@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:rice_drop/domain/state/catalog_state.dart';
 import 'package:rice_drop/presentation/providers/providers.dart';
 import 'package:rice_drop/styles/space.dart';
 import 'package:rice_drop/styles/styles.dart';
 
 import '../../domain/catalog/category.dart';
-import '../../domain/category.dart';
 import 'widgets/widgets.dart';
 
 @RoutePage()
@@ -20,6 +20,22 @@ class ItemGridScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final catalogState = ref.watch(catalogNotifierProvider);
+
+    Widget buildItemGridBody() {
+      switch (catalogState.status) {
+        case CatalogStatus.loading:
+          return const CircularProgressIndicator();
+        case CatalogStatus.loadSuccess:
+          return ItemGrid(
+            items: catalogState.itemsByCategory[category.id] ?? [],
+            modifiers: catalogState.modifierLists,
+          );
+        default:
+          return const Text('ERROR LOADING CATALOG');
+      }
+    }
+
     return Padding(
       padding: EdgeInsets.only(
         top: $styles.insets.md,
@@ -38,15 +54,7 @@ class ItemGridScreen extends HookConsumerWidget {
               ),
             ),
             HSpace(size: $styles.insets.sm),
-            ref.watch(catalogNotifierProvider).maybeWhen(
-                  loading: (_, __, ___) => const CircularProgressIndicator(),
-                  loadSuccess: (itemsByCategory, _, modifierLists) => ItemGrid(
-                    items: itemsByCategory[category.id] ?? [],
-                    modifiers: modifierLists,
-                  ),
-                  error: (message, _, __, ___) => Text(message),
-                  orElse: () => const Text('ERROR LOADING ITEMS'),
-                ),
+            buildItemGridBody(),
             HSpace(size: $styles.insets.xl),
           ],
         ),
