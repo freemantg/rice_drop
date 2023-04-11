@@ -5,7 +5,7 @@ import 'package:rice_drop/presentation/providers/providers.dart';
 import 'package:rice_drop/styles/space.dart';
 import 'package:rice_drop/styles/styles.dart';
 
-import '../../domain/category.dart';
+import '../../domain/catalog/category.dart';
 import 'widgets/widgets.dart';
 
 @RoutePage()

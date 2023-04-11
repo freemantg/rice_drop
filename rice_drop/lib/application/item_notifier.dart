@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rice_drop/domain/item_repository.dart';
 
-import '../domain/item.dart';
+import '../domain/catalog/item.dart';
+import '../domain/catalog/item_repository.dart';
 import '../domain/state/item_state.dart';
 
 class ItemNotifier extends StateNotifier<ItemState> {

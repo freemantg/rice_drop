@@ -4,12 +4,12 @@ import 'category.dart';
 import 'item.dart';
 import 'modifier_list.dart';
 
-class SquareObjects {
+class Catalog {
   final List<Item> items;
   final List<CategoryModel> categories;
   final List<ModifierList> modifierLists;
 
-  SquareObjects({
+  Catalog({
     required this.items,
     required this.categories,
     required this.modifierLists,

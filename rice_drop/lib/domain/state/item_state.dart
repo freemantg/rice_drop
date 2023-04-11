@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../category.dart';
-import '../item.dart';
-import '../modifier_list.dart';
+import '../catalog/category.dart';
+import '../catalog/item.dart';
+import '../catalog/modifier_list.dart';
 
 part 'item_state.freezed.dart';
 

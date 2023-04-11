@@ -3,24 +3,24 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
-import 'package:rice_drop/domain/object_failure.dart';
-import 'package:rice_drop/domain/item_repository.dart';
-import 'package:rice_drop/domain/square_object.dart';
 
+import 'package:rice_drop/domain/catalog/catalog.dart';
+
+import '../../domain/catalog/item_repository.dart';
+import '../../domain/catalog/object_failure.dart';
 import '../catalog/category_dto.dart';
 import '../catalog/item_dto.dart';
 import '../catalog/modifier_list_dto.dart';
 
-
-class SquareDataSourceImp implements ItemRepository {
+class RemoteDataSourceImp implements ItemRepository {
   final http.Client client;
 
-  SquareDataSourceImp({required this.client});
+  RemoteDataSourceImp({required this.client});
 
   final accessToken = dotenv.env['SQUARE_ACCESS_TOKEN'];
   static const requestUrl = 'https://connect.squareup.com/v2/catalog/list';
 
-  Future<Either<ObjectFailure, SquareObjects>> _fetchData() async {
+  Future<Either<CatalogFailure, Catalog>> _fetchData() async {
     try {
       final response = await client.get(
         Uri.parse(requestUrl),
@@ -53,22 +53,22 @@ class SquareDataSourceImp implements ItemRepository {
             .toList();
 
         return right(
-          SquareObjects(
+          Catalog(
             items: items,
             categories: categories,
             modifierLists: modifierLists,
           ),
         );
       } else {
-        return left(const ObjectFailure.serverFailure());
+        return left(const CatalogFailure.serverFailure());
       }
     } on http.ClientException {
-      return left(const ObjectFailure.networkFailure());
+      return left(const CatalogFailure.networkFailure());
     } catch (e) {
-      return left(const ObjectFailure.unexpectedFailure());
+      return left(const CatalogFailure.unexpectedFailure());
     }
   }
 
   @override
-  Future<Either<ObjectFailure, SquareObjects>> fetchAllData() => _fetchData();
+  Future<Either<CatalogFailure, Catalog>> fetchAllData() => _fetchData();
 }

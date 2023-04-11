@@ -10,9 +10,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
-import 'package:rice_drop/domain/category.dart' as _i7;
-import 'package:rice_drop/domain/item.dart' as _i8;
-import 'package:rice_drop/domain/modifier_list.dart' as _i9;
+import 'package:rice_drop/domain/catalog/category.dart' as _i7;
+import 'package:rice_drop/domain/catalog/item.dart' as _i8;
+import 'package:rice_drop/domain/catalog/modifier_list.dart' as _i9;
 import 'package:rice_drop/presentation/screens/item_grid_screen.dart' as _i1;
 import 'package:rice_drop/presentation/screens/item_screen.dart' as _i2;
 import 'package:rice_drop/presentation/screens/item_select_screen.dart' as _i3;

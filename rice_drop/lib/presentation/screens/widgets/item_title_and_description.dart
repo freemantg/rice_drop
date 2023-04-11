@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/item.dart';
+import '../../../domain/catalog/item.dart';
 import '../../../styles/space.dart';
 import '../../../styles/styles.dart';
 

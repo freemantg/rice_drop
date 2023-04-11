@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ObjectFailure {
+mixin _$CatalogFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
@@ -88,16 +88,16 @@ mixin _$ObjectFailure {
 }
 
 /// @nodoc
-abstract class $ObjectFailureCopyWith<$Res> {
-  factory $ObjectFailureCopyWith(
-          ObjectFailure value, $Res Function(ObjectFailure) then) =
-      _$ObjectFailureCopyWithImpl<$Res, ObjectFailure>;
+abstract class $CatalogFailureCopyWith<$Res> {
+  factory $CatalogFailureCopyWith(
+          CatalogFailure value, $Res Function(CatalogFailure) then) =
+      _$CatalogFailureCopyWithImpl<$Res, CatalogFailure>;
 }
 
 /// @nodoc
-class _$ObjectFailureCopyWithImpl<$Res, $Val extends ObjectFailure>
-    implements $ObjectFailureCopyWith<$Res> {
-  _$ObjectFailureCopyWithImpl(this._value, this._then);
+class _$CatalogFailureCopyWithImpl<$Res, $Val extends CatalogFailure>
+    implements $CatalogFailureCopyWith<$Res> {
+  _$CatalogFailureCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -114,7 +114,7 @@ abstract class _$$_ServerFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ServerFailureCopyWithImpl<$Res>
-    extends _$ObjectFailureCopyWithImpl<$Res, _$_ServerFailure>
+    extends _$CatalogFailureCopyWithImpl<$Res, _$_ServerFailure>
     implements _$$_ServerFailureCopyWith<$Res> {
   __$$_ServerFailureCopyWithImpl(
       _$_ServerFailure _value, $Res Function(_$_ServerFailure) _then)
@@ -128,7 +128,7 @@ class _$_ServerFailure implements _ServerFailure {
 
   @override
   String toString() {
-    return 'ObjectFailure.serverFailure()';
+    return 'CatalogFailure.serverFailure()';
   }
 
   @override
@@ -234,7 +234,7 @@ class _$_ServerFailure implements _ServerFailure {
   }
 }
 
-abstract class _ServerFailure implements ObjectFailure {
+abstract class _ServerFailure implements CatalogFailure {
   const factory _ServerFailure() = _$_ServerFailure;
 }
 
@@ -247,7 +247,7 @@ abstract class _$$_UnauthorizedFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnauthorizedFailureCopyWithImpl<$Res>
-    extends _$ObjectFailureCopyWithImpl<$Res, _$_UnauthorizedFailure>
+    extends _$CatalogFailureCopyWithImpl<$Res, _$_UnauthorizedFailure>
     implements _$$_UnauthorizedFailureCopyWith<$Res> {
   __$$_UnauthorizedFailureCopyWithImpl(_$_UnauthorizedFailure _value,
       $Res Function(_$_UnauthorizedFailure) _then)
@@ -261,7 +261,7 @@ class _$_UnauthorizedFailure implements _UnauthorizedFailure {
 
   @override
   String toString() {
-    return 'ObjectFailure.unauthorizedFailure()';
+    return 'CatalogFailure.unauthorizedFailure()';
   }
 
   @override
@@ -367,7 +367,7 @@ class _$_UnauthorizedFailure implements _UnauthorizedFailure {
   }
 }
 
-abstract class _UnauthorizedFailure implements ObjectFailure {
+abstract class _UnauthorizedFailure implements CatalogFailure {
   const factory _UnauthorizedFailure() = _$_UnauthorizedFailure;
 }
 
@@ -380,7 +380,7 @@ abstract class _$$_DataConversionFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DataConversionFailureCopyWithImpl<$Res>
-    extends _$ObjectFailureCopyWithImpl<$Res, _$_DataConversionFailure>
+    extends _$CatalogFailureCopyWithImpl<$Res, _$_DataConversionFailure>
     implements _$$_DataConversionFailureCopyWith<$Res> {
   __$$_DataConversionFailureCopyWithImpl(_$_DataConversionFailure _value,
       $Res Function(_$_DataConversionFailure) _then)
@@ -394,7 +394,7 @@ class _$_DataConversionFailure implements _DataConversionFailure {
 
   @override
   String toString() {
-    return 'ObjectFailure.dataConversionFailure()';
+    return 'CatalogFailure.dataConversionFailure()';
   }
 
   @override
@@ -500,7 +500,7 @@ class _$_DataConversionFailure implements _DataConversionFailure {
   }
 }
 
-abstract class _DataConversionFailure implements ObjectFailure {
+abstract class _DataConversionFailure implements CatalogFailure {
   const factory _DataConversionFailure() = _$_DataConversionFailure;
 }
 
@@ -513,7 +513,7 @@ abstract class _$$_NetworkFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NetworkFailureCopyWithImpl<$Res>
-    extends _$ObjectFailureCopyWithImpl<$Res, _$_NetworkFailure>
+    extends _$CatalogFailureCopyWithImpl<$Res, _$_NetworkFailure>
     implements _$$_NetworkFailureCopyWith<$Res> {
   __$$_NetworkFailureCopyWithImpl(
       _$_NetworkFailure _value, $Res Function(_$_NetworkFailure) _then)
@@ -527,7 +527,7 @@ class _$_NetworkFailure implements _NetworkFailure {
 
   @override
   String toString() {
-    return 'ObjectFailure.networkFailure()';
+    return 'CatalogFailure.networkFailure()';
   }
 
   @override
@@ -633,7 +633,7 @@ class _$_NetworkFailure implements _NetworkFailure {
   }
 }
 
-abstract class _NetworkFailure implements ObjectFailure {
+abstract class _NetworkFailure implements CatalogFailure {
   const factory _NetworkFailure() = _$_NetworkFailure;
 }
 
@@ -646,7 +646,7 @@ abstract class _$$_NotFoundFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NotFoundFailureCopyWithImpl<$Res>
-    extends _$ObjectFailureCopyWithImpl<$Res, _$_NotFoundFailure>
+    extends _$CatalogFailureCopyWithImpl<$Res, _$_NotFoundFailure>
     implements _$$_NotFoundFailureCopyWith<$Res> {
   __$$_NotFoundFailureCopyWithImpl(
       _$_NotFoundFailure _value, $Res Function(_$_NotFoundFailure) _then)
@@ -660,7 +660,7 @@ class _$_NotFoundFailure implements _NotFoundFailure {
 
   @override
   String toString() {
-    return 'ObjectFailure.notFoundFailure()';
+    return 'CatalogFailure.notFoundFailure()';
   }
 
   @override
@@ -766,7 +766,7 @@ class _$_NotFoundFailure implements _NotFoundFailure {
   }
 }
 
-abstract class _NotFoundFailure implements ObjectFailure {
+abstract class _NotFoundFailure implements CatalogFailure {
   const factory _NotFoundFailure() = _$_NotFoundFailure;
 }
 
@@ -779,7 +779,7 @@ abstract class _$$_BadRequestFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_BadRequestFailureCopyWithImpl<$Res>
-    extends _$ObjectFailureCopyWithImpl<$Res, _$_BadRequestFailure>
+    extends _$CatalogFailureCopyWithImpl<$Res, _$_BadRequestFailure>
     implements _$$_BadRequestFailureCopyWith<$Res> {
   __$$_BadRequestFailureCopyWithImpl(
       _$_BadRequestFailure _value, $Res Function(_$_BadRequestFailure) _then)
@@ -793,7 +793,7 @@ class _$_BadRequestFailure implements _BadRequestFailure {
 
   @override
   String toString() {
-    return 'ObjectFailure.badRequestFailure()';
+    return 'CatalogFailure.badRequestFailure()';
   }
 
   @override
@@ -899,7 +899,7 @@ class _$_BadRequestFailure implements _BadRequestFailure {
   }
 }
 
-abstract class _BadRequestFailure implements ObjectFailure {
+abstract class _BadRequestFailure implements CatalogFailure {
   const factory _BadRequestFailure() = _$_BadRequestFailure;
 }
 
@@ -912,7 +912,7 @@ abstract class _$$_UnexpectedFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnexpectedFailureCopyWithImpl<$Res>
-    extends _$ObjectFailureCopyWithImpl<$Res, _$_UnexpectedFailure>
+    extends _$CatalogFailureCopyWithImpl<$Res, _$_UnexpectedFailure>
     implements _$$_UnexpectedFailureCopyWith<$Res> {
   __$$_UnexpectedFailureCopyWithImpl(
       _$_UnexpectedFailure _value, $Res Function(_$_UnexpectedFailure) _then)
@@ -926,7 +926,7 @@ class _$_UnexpectedFailure implements _UnexpectedFailure {
 
   @override
   String toString() {
-    return 'ObjectFailure.unexpectedFailure()';
+    return 'CatalogFailure.unexpectedFailure()';
   }
 
   @override
@@ -1032,6 +1032,6 @@ class _$_UnexpectedFailure implements _UnexpectedFailure {
   }
 }
 
-abstract class _UnexpectedFailure implements ObjectFailure {
+abstract class _UnexpectedFailure implements CatalogFailure {
   const factory _UnexpectedFailure() = _$_UnexpectedFailure;
 }

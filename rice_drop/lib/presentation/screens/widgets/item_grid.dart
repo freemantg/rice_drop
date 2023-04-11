@@ -6,8 +6,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import '../../../domain/item.dart';
-import '../../../domain/modifier_list.dart';
+import '../../../domain/catalog/item.dart';
+import '../../../domain/catalog/modifier_list.dart';
+
 import '../../../styles/styles.dart';
 import '../../core/app_router.gr.dart';
 

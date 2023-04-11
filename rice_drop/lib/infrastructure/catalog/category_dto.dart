@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rice_drop/domain/category.dart';
+
+import '../../domain/catalog/category.dart';
 
 part 'category_dto.freezed.dart';
 part 'category_dto.g.dart';

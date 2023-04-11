@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rice_drop/domain/modifier_list_info.dart';
+
+import 'modifier_list_info.dart';
 
 part 'item.freezed.dart';
 
