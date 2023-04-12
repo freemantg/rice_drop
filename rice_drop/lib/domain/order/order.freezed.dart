@@ -96,9 +96,10 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
 
 /// @nodoc
 
-class _$_Order implements _Order {
+class _$_Order extends _Order {
   const _$_Order({required this.id, required final List<LineItem> lineItems})
-      : _lineItems = lineItems;
+      : _lineItems = lineItems,
+        super._();
 
   @override
   final String id;
@@ -136,10 +137,11 @@ class _$_Order implements _Order {
       __$$_OrderCopyWithImpl<_$_Order>(this, _$identity);
 }
 
-abstract class _Order implements Order {
+abstract class _Order extends Order {
   const factory _Order(
       {required final String id,
       required final List<LineItem> lineItems}) = _$_Order;
+  const _Order._() : super._();
 
   @override
   String get id;
