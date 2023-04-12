@@ -61,7 +61,7 @@ class ItemScreen extends HookWidget {
         () => addToBasketButtonController.forward());
 
     return Scaffold(
-      bottomNavigationBar: _buildBottomNavigationBar(animation4),
+      bottomNavigationBar: _buildBottomNavigationBar(animation4, item),
       appBar: const StyledAppBar(),
       endDrawer: const OrderEndDrawer(),
       body: _buildBody(animation1, animation2, animation3),
@@ -148,7 +148,7 @@ class ItemScreen extends HookWidget {
   }
 }
 
-Widget _buildBottomNavigationBar(Animation<double> animation) {
+Widget _buildBottomNavigationBar(Animation<double> animation, Item item) {
   return FadeTransition(
     opacity: animation,
     child: Padding(
@@ -163,10 +163,10 @@ Widget _buildBottomNavigationBar(Animation<double> animation) {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const QuantityButton(),
+            const QuantityButton(quantity: 1),
             VSpace(size: $styles.insets.sm),
-            const Expanded(
-              child: AddToOrderButton(),
+            Expanded(
+              child: AddToOrderButton(item: item),
             ),
           ],
         ),

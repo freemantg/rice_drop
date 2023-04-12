@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rice_drop/domain/order/order.dart';
+import 'package:rice_drop/infrastructure/catalog/item_dto.dart';
+import 'package:rice_drop/infrastructure/catalog/modifier_list_dto.dart';
 
 part 'order_dto.freezed.dart';
 part 'order_dto.g.dart';
@@ -27,9 +29,9 @@ class OrderDto with _$OrderDto {
 class LineItemDto with _$LineItemDto {
   const LineItemDto._();
   const factory LineItemDto({
-    required String catalogObjectId,
-    required String quantity,
-    List<ItemModifierDto>? modifiers,
+    required ItemDto catalogObject,
+    required int quantity,
+    List<ModifierDto>? modifiers,
   }) = _LineItemDto;
 
   factory LineItemDto.fromJson(Map<String, dynamic> json) =>
@@ -37,22 +39,9 @@ class LineItemDto with _$LineItemDto {
 
   LineItem toDomain() {
     return LineItem(
-      catalogObjectId: catalogObjectId,
+      catalogObject: catalogObject.toDomain(),
       quantity: quantity,
-      modifiers: modifiers?.map((e) => e.toDomain()).toList(),
+      modifiers: modifiers?.map((e)=> e.toDomain()).toList(),
     );
   }
-}
-
-@freezed
-class ItemModifierDto with _$ItemModifierDto {
-  const ItemModifierDto._();
-  const factory ItemModifierDto({
-    required String catalogObjectId,
-  }) = _ItemModifierDto;
-
-  factory ItemModifierDto.fromJson(Map<String, dynamic> json) =>
-      _$ItemModifierDtoFromJson(json);
-
-  ItemModifier toDomain() => ItemModifier(catalogObjectId: catalogObjectId);
 }

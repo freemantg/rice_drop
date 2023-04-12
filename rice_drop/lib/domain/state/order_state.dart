@@ -12,6 +12,14 @@ class OrderState with _$OrderState {
     required Order order,
     required OrderFailure? failure,
   }) = _OrderState;
+
+  factory OrderState.initial() {
+    return OrderState(
+      status: OrderStatus.initial,
+      order: Order.empty(),
+      failure: null,
+    );
+  }
 }
 
 enum OrderStatus { initial, loading, loadSuccess, error }

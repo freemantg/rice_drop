@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rice_drop/presentation/providers/providers.dart';
 
+import '../../../domain/catalog/item.dart';
 import '../../../styles/styles.dart';
 
-class AddToOrderButton extends StatelessWidget {
+class AddToOrderButton extends ConsumerWidget {
   const AddToOrderButton({
     super.key,
+    required this.item,
   });
 
+  final Item item;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ElevatedButton(
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
@@ -22,7 +28,8 @@ class AddToOrderButton extends StatelessWidget {
           $styles.colors.primaryThemeColor,
         ),
       ),
-      onPressed: () {},
+      onPressed: () =>
+          ref.read(orderNotifierProvider.notifier).addLineItem(item, []),
       child: Padding(
         padding: EdgeInsets.all($styles.insets.sm),
         child: Row(

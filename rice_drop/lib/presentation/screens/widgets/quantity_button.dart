@@ -4,7 +4,10 @@ import 'package:rice_drop/styles/styles.dart';
 class QuantityButton extends StatelessWidget {
   const QuantityButton({
     super.key,
+    required this.quantity,
   });
+
+  final int quantity;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class QuantityButton extends StatelessWidget {
             icon: const Icon(Icons.remove),
           ),
           Text(
-            '2',
+            quantity.toString(),
             style: $styles.text.bodySmallBold,
           ),
           IconButton(

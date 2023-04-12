@@ -1,17 +1,25 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
+import 'package:rice_drop/presentation/providers/providers.dart';
 import 'package:rice_drop/styles/space.dart';
 import 'package:rice_drop/styles/styles.dart';
 
 import 'widgets.dart';
 
-class OrderEndDrawer extends StatelessWidget {
+class OrderEndDrawer extends ConsumerWidget {
   const OrderEndDrawer({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final order = ref.watch(orderNotifierProvider).order;
+
     return Drawer(
       surfaceTintColor: Colors.white,
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
@@ -31,28 +39,32 @@ class OrderEndDrawer extends StatelessWidget {
                   child: ListView.separated(
                     separatorBuilder: (_, __) => const Divider(),
                     shrinkWrap: true,
-                    itemCount: 3,
+                    itemCount: order.lineItems.length,
                     itemBuilder: (context, index) {
+                      final item = order.lineItems[index];
+
                       return Column(
                         children: [
                           HSpace(size: $styles.insets.xs),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Image.asset(
-                                "assets/pictures/1.png",
-                                height: 48,
+                              CachedNetworkImage(
+                                imageUrl: item.catalogObject.imageUrl,
+                                height: 48.0,
                               ),
                               VSpace(size: $styles.insets.sm),
                               Expanded(
                                 child: Text(
-                                  'Korean Fried Chicken Drop Box',
+                                  item.catalogObject.name,
                                   style: $styles.text.bodySmall
                                       .copyWith(height: 0),
                                 ),
                               ),
                               Text(
-                                '£8.90',
+                                NumberFormat.simpleCurrency(
+                                        locale: Platform.localeName)
+                                    .format(item.catalogObject.price / 100),
                                 style: $styles.text.bodySmall.copyWith(
                                   height: 0,
                                   fontSize: 12.0,
@@ -74,7 +86,7 @@ class OrderEndDrawer extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              const QuantityButton(),
+                              QuantityButton(quantity: item.quantity),
                               IconButton(
                                 iconSize: 16.0,
                                 onPressed: () {},

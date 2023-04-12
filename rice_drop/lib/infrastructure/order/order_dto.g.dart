@@ -21,26 +21,17 @@ Map<String, dynamic> _$$_OrderDtoToJson(_$_OrderDto instance) =>
 
 _$_LineItemDto _$$_LineItemDtoFromJson(Map<String, dynamic> json) =>
     _$_LineItemDto(
-      catalogObjectId: json['catalogObjectId'] as String,
-      quantity: json['quantity'] as String,
+      catalogObject:
+          ItemDto.fromJson(json['catalogObject'] as Map<String, dynamic>),
+      quantity: json['quantity'] as int,
       modifiers: (json['modifiers'] as List<dynamic>?)
-          ?.map((e) => ItemModifierDto.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ModifierDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$$_LineItemDtoToJson(_$_LineItemDto instance) =>
     <String, dynamic>{
-      'catalogObjectId': instance.catalogObjectId,
+      'catalogObject': instance.catalogObject,
       'quantity': instance.quantity,
       'modifiers': instance.modifiers,
-    };
-
-_$_ItemModifierDto _$$_ItemModifierDtoFromJson(Map<String, dynamic> json) =>
-    _$_ItemModifierDto(
-      catalogObjectId: json['catalogObjectId'] as String,
-    );
-
-Map<String, dynamic> _$$_ItemModifierDtoToJson(_$_ItemModifierDto instance) =>
-    <String, dynamic>{
-      'catalogObjectId': instance.catalogObjectId,
     };
