@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rice_drop/presentation/providers/providers.dart';
+import 'package:rice_drop/shared/extensions.dart';
 
 import '../../../domain/catalog/item.dart';
 import '../../../styles/styles.dart';
@@ -9,9 +10,11 @@ class AddToOrderButton extends ConsumerWidget {
   const AddToOrderButton({
     super.key,
     required this.item,
+    required this.quantity,
   });
 
   final Item item;
+  final int quantity;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,8 +31,14 @@ class AddToOrderButton extends ConsumerWidget {
           $styles.colors.primaryThemeColor,
         ),
       ),
-      onPressed: () =>
-          ref.read(orderNotifierProvider.notifier).addLineItem(item, []),
+      onPressed: () {
+        ref.read(orderNotifierProvider.notifier).addLineItem(
+              item: item,
+              modifiers: [],
+              quantity: quantity,
+            );
+        Scaffold.of(context).openEndDrawer();
+      },
       child: Padding(
         padding: EdgeInsets.all($styles.insets.sm),
         child: Row(
@@ -42,7 +51,7 @@ class AddToOrderButton extends ConsumerWidget {
               ),
             ),
             Text(
-              '£8.80',
+              (item.price * quantity).toCurrency(),
               style: $styles.text.bodyBold.copyWith(
                 color: Colors.white,
               ),

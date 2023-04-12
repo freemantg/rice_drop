@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rice_drop/presentation/providers/providers.dart';
+import 'package:rice_drop/shared/extensions.dart';
 import 'package:rice_drop/styles/space.dart';
 
 import '../../../styles/styles.dart';
@@ -31,7 +32,7 @@ class MyOrderButton extends ConsumerWidget {
             ),
             VSpace(size: $styles.insets.xs),
             Text(
-              "£14.49 / ${order.lineItems.length} items",
+              "${order.totalPrice.toCurrency()} / ${order.totalItems} items",
               style: $styles.text.bodySmallBold
                   .copyWith(color: $styles.colors.onPrimaryThemeColor),
             ),

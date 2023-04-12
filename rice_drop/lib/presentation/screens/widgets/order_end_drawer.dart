@@ -1,15 +1,13 @@
-import 'dart:io';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
 import 'package:rice_drop/presentation/providers/providers.dart';
+import 'package:rice_drop/shared/extensions.dart';
 import 'package:rice_drop/styles/space.dart';
 import 'package:rice_drop/styles/styles.dart';
 
-import 'widgets.dart';
+import 'quantity_button.dart';
 
 class OrderEndDrawer extends ConsumerWidget {
   const OrderEndDrawer({
@@ -62,9 +60,7 @@ class OrderEndDrawer extends ConsumerWidget {
                                 ),
                               ),
                               Text(
-                                NumberFormat.simpleCurrency(
-                                        locale: Platform.localeName)
-                                    .format(item.catalogObject.price / 100),
+                                order.totalLineItemPrice(item).toCurrency(),
                                 style: $styles.text.bodySmall.copyWith(
                                   height: 0,
                                   fontSize: 12.0,
@@ -86,7 +82,10 @@ class OrderEndDrawer extends ConsumerWidget {
                                   ),
                                 ),
                               ),
-                              QuantityButton(quantity: item.quantity),
+                              QuantityButton(
+                                quantity: item.quantity,
+                                onQuantityChanged: (quantity) {},
+                              ),
                               IconButton(
                                 iconSize: 16.0,
                                 onPressed: () {},
@@ -126,13 +125,15 @@ class OrderEndDrawerHeader extends StatelessWidget {
   }
 }
 
-class OrderEndDrawerBottomBar extends StatelessWidget {
+class OrderEndDrawerBottomBar extends ConsumerWidget {
   const OrderEndDrawerBottomBar({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final order = ref.watch(orderNotifierProvider).order;
+
     return Container(
       color: Colors.grey.withOpacity(0.1),
       child: Column(
@@ -150,7 +151,7 @@ class OrderEndDrawerBottomBar extends StatelessWidget {
               children: [
                 HSpace(size: $styles.insets.sm),
                 Text(
-                  '3 items',
+                  '${order.totalItems} items',
                   style: $styles.text.h4.copyWith(fontSize: 16.0),
                 ),
                 const Divider(),
@@ -162,7 +163,7 @@ class OrderEndDrawerBottomBar extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      '£44.48',
+                      order.totalPrice.toCurrency(),
                       style: $styles.text.h3.copyWith(
                         fontWeight: FontWeight.bold,
                         fontSize: 22.0,

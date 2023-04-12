@@ -21,22 +21,34 @@ class Order with _$Order {
   int get totalPrice {
     int total = 0;
     for (LineItem lineItem in lineItems) {
-      //Calculate item price with quantity
-      int itemPrice = lineItem.catalogObject.price * lineItem.quantity;
-
-      //Calculate price of modifiers, if any
-      int modifiersPrice = 0;
-      if (lineItem.modifiers != null) {
-        for (Modifier modifier in lineItem.modifiers!) {
-          modifiersPrice += modifier.modifierData.priceMoney.amount;
-        }
-        // Multiply modifers price by quantity
-        modifiersPrice *= lineItem.quantity;
-      }
-      // Add item price and modifiers price to the total price
-      total += itemPrice + modifiersPrice;
+      total += totalLineItemPrice(lineItem);
     }
     return total;
+  }
+
+  int get totalItems {
+    int itemCount = 0;
+    for (LineItem lineItem in lineItems) {
+      itemCount += lineItem.quantity;
+    }
+    return itemCount;
+  }
+
+  int totalLineItemPrice(LineItem lineItem) {
+    // Calculate item price with quantity
+    int itemPrice = lineItem.catalogObject.price * lineItem.quantity;
+
+    // Calculate price of modifiers, if any
+    int modifiersPrice = 0;
+    if (lineItem.modifiers != null) {
+      for (Modifier modifier in lineItem.modifiers!) {
+        modifiersPrice += modifier.modifierData.priceMoney.amount;
+      }
+      // Multiply modifiers price by quantity
+      modifiersPrice *= lineItem.quantity;
+    }
+    // Return the total price of the line item, including modifiers and quantity
+    return itemPrice + modifiersPrice;
   }
 }
 

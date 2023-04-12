@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:rice_drop/presentation/providers/providers.dart';
 
 import '../../../domain/catalog/item.dart';
 import '../../../domain/catalog/modifier_list.dart';
@@ -60,7 +61,7 @@ class ItemGrid extends ConsumerWidget {
   }
 }
 
-class ItemCard extends StatelessWidget {
+class ItemCard extends ConsumerWidget {
   const ItemCard({
     Key? key,
     required this.item,
@@ -71,11 +72,18 @@ class ItemCard extends StatelessWidget {
   final List<ModifierList> modifiers;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () {
         item.skipModifierScreen
-            ? print('ADDED TO BASKET')
+            ? ref
+                .read(orderNotifierProvider.notifier)
+                .addLineItem(
+                  item: item,
+                  modifiers: List.empty(),
+                  quantity: 1,
+                )
+                .then((value) => Scaffold.of(context).openEndDrawer())
             : context.router.push(
                 ItemRoute(
                   item: item,
