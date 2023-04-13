@@ -29,6 +29,7 @@ class OrderDto with _$OrderDto {
 class LineItemDto with _$LineItemDto {
   const LineItemDto._();
   const factory LineItemDto({
+    required String id,
     required ItemDto catalogObject,
     required int quantity,
     List<ModifierDto>? modifiers,
@@ -39,6 +40,7 @@ class LineItemDto with _$LineItemDto {
 
   LineItem toDomain() {
     return LineItem(
+      id: id,
       catalogObject: catalogObject.toDomain(),
       quantity: quantity,
       modifiers: modifiers?.map((e)=> e.toDomain()).toList(),

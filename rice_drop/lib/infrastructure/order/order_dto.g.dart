@@ -21,6 +21,7 @@ Map<String, dynamic> _$$_OrderDtoToJson(_$_OrderDto instance) =>
 
 _$_LineItemDto _$$_LineItemDtoFromJson(Map<String, dynamic> json) =>
     _$_LineItemDto(
+      id: json['id'] as String,
       catalogObject:
           ItemDto.fromJson(json['catalogObject'] as Map<String, dynamic>),
       quantity: json['quantity'] as int,
@@ -31,6 +32,7 @@ _$_LineItemDto _$$_LineItemDtoFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_LineItemDtoToJson(_$_LineItemDto instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'catalogObject': instance.catalogObject,
       'quantity': instance.quantity,
       'modifiers': instance.modifiers,

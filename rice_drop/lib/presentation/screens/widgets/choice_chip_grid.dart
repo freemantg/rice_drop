@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rice_drop/presentation/providers/providers.dart';
 
+import '../../../domain/catalog/modifier_list.dart';
 import '../../../styles/space.dart';
 import '../../../styles/styles.dart';
 
-class ChoiceChipGrid extends StatelessWidget {
+class ChoiceChipGrid extends ConsumerWidget {
   const ChoiceChipGrid({
     super.key,
-    required this.title,
-    required this.modifiers,
+    required this.modifierList,
   });
 
-  final String title;
-  final List<String> modifiers;
+  final ModifierList modifierList;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedModifiers = ref.watch(modifierSelectionNotifierProvider);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          modifierList.modifierListData.name,
           style: $styles.text.caption.copyWith(
             fontWeight: FontWeight.bold,
             color: Colors.grey,
@@ -33,8 +36,29 @@ class ChoiceChipGrid extends StatelessWidget {
               child: Wrap(
                 spacing: $styles.insets.xs,
                 runSpacing: $styles.insets.xs,
-                children:
-                    modifiers.map((e) => StyledChoiceChip(title: e)).toList(),
+                children: modifierList.modifierListData.modifiers
+                    .map(
+                      (modifier) => StyledChoiceChip(
+                        title: modifier.modifierData.name,
+                        selected: selectedModifiers[modifierList.id]
+                                ?.contains(modifier) ??
+                            false,
+                        onSelected: () {
+                          final selectionType =
+                              modifierList.modifierListData.selectionType;
+
+                          ref
+                              .read(modifierSelectionNotifierProvider.notifier)
+                              .selectModifier(
+                                modifierList.id,
+                                modifier,
+                                multipleModifiers:
+                                    selectionType == "MULTIPLE" ? true : false,
+                              );
+                        },
+                      ),
+                    )
+                    .toList(),
               ),
             ),
             const Spacer(),
@@ -49,9 +73,13 @@ class StyledChoiceChip extends StatelessWidget {
   const StyledChoiceChip({
     super.key,
     required this.title,
+    required this.selected,
+    required this.onSelected,
   });
 
   final String title;
+  final bool selected;
+  final VoidCallback onSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +92,9 @@ class StyledChoiceChip extends StatelessWidget {
           $styles.corners.lg,
         ),
       ),
-      //TODO: STATEMANAGEMENT
       label: Text(title),
-      selected: false,
-      onSelected: (value) => title,
+      selected: selected,
+      onSelected: (_) => onSelected(),
     );
   }
 }

@@ -27,6 +27,7 @@ dependencies:
   json_serializable: ^6.6.1
   riverpod: ^2.3.2
   tuple: ^2.0.1
+  uuid: ^3.0.7
 
 dev_dependencies:
   auto_route_generator: ^6.0.0

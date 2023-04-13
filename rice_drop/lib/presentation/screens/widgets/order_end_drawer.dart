@@ -39,7 +39,7 @@ class OrderEndDrawer extends ConsumerWidget {
                     shrinkWrap: true,
                     itemCount: order.lineItems.length,
                     itemBuilder: (context, index) {
-                      final item = order.lineItems[index];
+                      final lineItem = order.lineItems[index];
 
                       return Column(
                         children: [
@@ -48,19 +48,19 @@ class OrderEndDrawer extends ConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               CachedNetworkImage(
-                                imageUrl: item.catalogObject.imageUrl,
+                                imageUrl: lineItem.catalogObject.imageUrl,
                                 height: 48.0,
                               ),
                               VSpace(size: $styles.insets.sm),
                               Expanded(
                                 child: Text(
-                                  item.catalogObject.name,
+                                  lineItem.catalogObject.name,
                                   style: $styles.text.bodySmall
                                       .copyWith(height: 0),
                                 ),
                               ),
                               Text(
-                                order.totalLineItemPrice(item).toCurrency(),
+                                order.totalLineItemPrice(lineItem).toCurrency(),
                                 style: $styles.text.bodySmall.copyWith(
                                   height: 0,
                                   fontSize: 12.0,
@@ -72,23 +72,35 @@ class OrderEndDrawer extends ConsumerWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Edit',
-                                  style: $styles.text.bodySmall.copyWith(
-                                    height: 0,
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                              ),
+                              lineItem.catalogObject.skipModifierScreen
+                                  ? const SizedBox(width: 48.0)
+                                  : TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        'Edit',
+                                        style: $styles.text.bodySmall.copyWith(
+                                          height: 0,
+                                          fontSize: 12.0,
+                                        ),
+                                      ),
+                                    ),
                               QuantityButton(
-                                quantity: item.quantity,
-                                onQuantityChanged: (quantity) {},
+                                quantity: lineItem.quantity,
+                                onQuantityChanged: (newQuantity) {
+                                  ref
+                                      .read(orderNotifierProvider.notifier)
+                                      .updateLineItem(
+                                        lineItemId: lineItem.id,
+                                        newQuantity: newQuantity,
+                                        newModifiers: lineItem.modifiers,
+                                      );
+                                },
                               ),
                               IconButton(
                                 iconSize: 16.0,
-                                onPressed: () {},
+                                onPressed: () => ref
+                                    .read(orderNotifierProvider.notifier)
+                                    .removeLineItem(lineItemId: lineItem.id),
                                 icon: const Icon(Icons.close),
                               ),
                             ],

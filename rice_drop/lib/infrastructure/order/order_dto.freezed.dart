@@ -182,6 +182,7 @@ LineItemDto _$LineItemDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LineItemDto {
+  String get id => throw _privateConstructorUsedError;
   ItemDto get catalogObject => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
   List<ModifierDto>? get modifiers => throw _privateConstructorUsedError;
@@ -199,7 +200,10 @@ abstract class $LineItemDtoCopyWith<$Res> {
       _$LineItemDtoCopyWithImpl<$Res, LineItemDto>;
   @useResult
   $Res call(
-      {ItemDto catalogObject, int quantity, List<ModifierDto>? modifiers});
+      {String id,
+      ItemDto catalogObject,
+      int quantity,
+      List<ModifierDto>? modifiers});
 
   $ItemDtoCopyWith<$Res> get catalogObject;
 }
@@ -217,11 +221,16 @@ class _$LineItemDtoCopyWithImpl<$Res, $Val extends LineItemDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? catalogObject = null,
     Object? quantity = null,
     Object? modifiers = freezed,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       catalogObject: null == catalogObject
           ? _value.catalogObject
           : catalogObject // ignore: cast_nullable_to_non_nullable
@@ -255,7 +264,10 @@ abstract class _$$_LineItemDtoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ItemDto catalogObject, int quantity, List<ModifierDto>? modifiers});
+      {String id,
+      ItemDto catalogObject,
+      int quantity,
+      List<ModifierDto>? modifiers});
 
   @override
   $ItemDtoCopyWith<$Res> get catalogObject;
@@ -272,11 +284,16 @@ class __$$_LineItemDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? catalogObject = null,
     Object? quantity = null,
     Object? modifiers = freezed,
   }) {
     return _then(_$_LineItemDto(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       catalogObject: null == catalogObject
           ? _value.catalogObject
           : catalogObject // ignore: cast_nullable_to_non_nullable
@@ -297,7 +314,8 @@ class __$$_LineItemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_LineItemDto extends _LineItemDto {
   const _$_LineItemDto(
-      {required this.catalogObject,
+      {required this.id,
+      required this.catalogObject,
       required this.quantity,
       final List<ModifierDto>? modifiers})
       : _modifiers = modifiers,
@@ -306,6 +324,8 @@ class _$_LineItemDto extends _LineItemDto {
   factory _$_LineItemDto.fromJson(Map<String, dynamic> json) =>
       _$$_LineItemDtoFromJson(json);
 
+  @override
+  final String id;
   @override
   final ItemDto catalogObject;
   @override
@@ -322,7 +342,7 @@ class _$_LineItemDto extends _LineItemDto {
 
   @override
   String toString() {
-    return 'LineItemDto(catalogObject: $catalogObject, quantity: $quantity, modifiers: $modifiers)';
+    return 'LineItemDto(id: $id, catalogObject: $catalogObject, quantity: $quantity, modifiers: $modifiers)';
   }
 
   @override
@@ -330,6 +350,7 @@ class _$_LineItemDto extends _LineItemDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LineItemDto &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.catalogObject, catalogObject) ||
                 other.catalogObject == catalogObject) &&
             (identical(other.quantity, quantity) ||
@@ -340,7 +361,7 @@ class _$_LineItemDto extends _LineItemDto {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, catalogObject, quantity,
+  int get hashCode => Object.hash(runtimeType, id, catalogObject, quantity,
       const DeepCollectionEquality().hash(_modifiers));
 
   @JsonKey(ignore: true)
@@ -359,7 +380,8 @@ class _$_LineItemDto extends _LineItemDto {
 
 abstract class _LineItemDto extends LineItemDto {
   const factory _LineItemDto(
-      {required final ItemDto catalogObject,
+      {required final String id,
+      required final ItemDto catalogObject,
       required final int quantity,
       final List<ModifierDto>? modifiers}) = _$_LineItemDto;
   const _LineItemDto._() : super._();
@@ -367,6 +389,8 @@ abstract class _LineItemDto extends LineItemDto {
   factory _LineItemDto.fromJson(Map<String, dynamic> json) =
       _$_LineItemDto.fromJson;
 
+  @override
+  String get id;
   @override
   ItemDto get catalogObject;
   @override

@@ -66,11 +66,9 @@ class AnimatedModifiersChips extends HookWidget {
         separatorBuilder: (_, __) => HSpace(size: $styles.insets.md),
         itemBuilder: (context, index) {
           final modifierList = modifierLists[index];
+      
           return ChoiceChipGrid(
-            title: modifierList.modifierListData.name.toUpperCase(),
-            modifiers: modifierList.modifierListData.modifiers
-                .map((e) => e.modifierData.name)
-                .toList(),
+            modifierList: modifierList,
           );
         },
       ),

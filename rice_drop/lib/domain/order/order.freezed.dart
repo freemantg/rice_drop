@@ -155,6 +155,7 @@ abstract class _Order extends Order {
 
 /// @nodoc
 mixin _$LineItem {
+  String get id => throw _privateConstructorUsedError;
   Item get catalogObject => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
   List<Modifier>? get modifiers => throw _privateConstructorUsedError;
@@ -169,7 +170,8 @@ abstract class $LineItemCopyWith<$Res> {
   factory $LineItemCopyWith(LineItem value, $Res Function(LineItem) then) =
       _$LineItemCopyWithImpl<$Res, LineItem>;
   @useResult
-  $Res call({Item catalogObject, int quantity, List<Modifier>? modifiers});
+  $Res call(
+      {String id, Item catalogObject, int quantity, List<Modifier>? modifiers});
 
   $ItemCopyWith<$Res> get catalogObject;
 }
@@ -187,11 +189,16 @@ class _$LineItemCopyWithImpl<$Res, $Val extends LineItem>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? catalogObject = null,
     Object? quantity = null,
     Object? modifiers = freezed,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       catalogObject: null == catalogObject
           ? _value.catalogObject
           : catalogObject // ignore: cast_nullable_to_non_nullable
@@ -223,7 +230,8 @@ abstract class _$$_LineItemCopyWith<$Res> implements $LineItemCopyWith<$Res> {
       __$$_LineItemCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Item catalogObject, int quantity, List<Modifier>? modifiers});
+  $Res call(
+      {String id, Item catalogObject, int quantity, List<Modifier>? modifiers});
 
   @override
   $ItemCopyWith<$Res> get catalogObject;
@@ -240,11 +248,16 @@ class __$$_LineItemCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? catalogObject = null,
     Object? quantity = null,
     Object? modifiers = freezed,
   }) {
     return _then(_$_LineItem(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       catalogObject: null == catalogObject
           ? _value.catalogObject
           : catalogObject // ignore: cast_nullable_to_non_nullable
@@ -265,11 +278,14 @@ class __$$_LineItemCopyWithImpl<$Res>
 
 class _$_LineItem implements _LineItem {
   const _$_LineItem(
-      {required this.catalogObject,
+      {required this.id,
+      required this.catalogObject,
       required this.quantity,
       final List<Modifier>? modifiers})
       : _modifiers = modifiers;
 
+  @override
+  final String id;
   @override
   final Item catalogObject;
   @override
@@ -286,7 +302,7 @@ class _$_LineItem implements _LineItem {
 
   @override
   String toString() {
-    return 'LineItem(catalogObject: $catalogObject, quantity: $quantity, modifiers: $modifiers)';
+    return 'LineItem(id: $id, catalogObject: $catalogObject, quantity: $quantity, modifiers: $modifiers)';
   }
 
   @override
@@ -294,6 +310,7 @@ class _$_LineItem implements _LineItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LineItem &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.catalogObject, catalogObject) ||
                 other.catalogObject == catalogObject) &&
             (identical(other.quantity, quantity) ||
@@ -303,7 +320,7 @@ class _$_LineItem implements _LineItem {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, catalogObject, quantity,
+  int get hashCode => Object.hash(runtimeType, id, catalogObject, quantity,
       const DeepCollectionEquality().hash(_modifiers));
 
   @JsonKey(ignore: true)
@@ -315,10 +332,13 @@ class _$_LineItem implements _LineItem {
 
 abstract class _LineItem implements LineItem {
   const factory _LineItem(
-      {required final Item catalogObject,
+      {required final String id,
+      required final Item catalogObject,
       required final int quantity,
       final List<Modifier>? modifiers}) = _$_LineItem;
 
+  @override
+  String get id;
   @override
   Item get catalogObject;
   @override

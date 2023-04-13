@@ -32,9 +32,10 @@ class AddToOrderButton extends ConsumerWidget {
         ),
       ),
       onPressed: () {
+        final modifiers = ref.watch(modifierSelectionNotifierProvider);
         ref.read(orderNotifierProvider.notifier).addLineItem(
               item: item,
-              modifiers: [],
+              modifiers: ,
               quantity: quantity,
             );
         Scaffold.of(context).openEndDrawer();

@@ -55,6 +55,7 @@ class Order with _$Order {
 @freezed
 class LineItem with _$LineItem {
   const factory LineItem({
+    required String id,
     required Item catalogObject,
     required int quantity,
     List<Modifier>? modifiers,
