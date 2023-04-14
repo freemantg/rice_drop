@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rice_drop/presentation/providers/providers.dart';
 
 import '../../../domain/catalog/modifier_list.dart';
 import '../../../styles/space.dart';
 import '../../../styles/styles.dart';
 
-class ChoiceChipGrid extends ConsumerWidget {
+class ChoiceChipGrid extends HookConsumerWidget {
   const ChoiceChipGrid({
     super.key,
     required this.modifierList,
@@ -16,6 +17,24 @@ class ChoiceChipGrid extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    useEffect(
+      () {
+        Future.microtask(
+          () {
+            final onByDefaultModifiers = modifierList.modifierListData.modifiers
+                .where((m) => m.modifierData.onByDefault)
+                .toList();
+            for (Modifier modifier in onByDefaultModifiers) {
+              ref
+                  .read(modifierSelectionNotifierProvider.notifier)
+                  .selectModifier(modifierList.id, modifier);
+            }
+          },
+        );
+
+        return null;
+      },
+    );
     final selectedModifiers = ref.watch(modifierSelectionNotifierProvider);
 
     return Column(

@@ -39,6 +39,7 @@ class OrderNotifier extends StateNotifier<OrderState> {
         id: uuid.v4(),
         catalogObject: item,
         quantity: quantity,
+        modifiers: modifiers,
       );
       state = state.copyWith(
         order: state.order.copyWith(
