@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rice_drop/presentation/providers/providers.dart';
+import 'package:rice_drop/shared/extensions.dart';
 
 import '../../../domain/catalog/modifier_list.dart';
 import '../../../styles/space.dart';
@@ -17,24 +18,22 @@ class ChoiceChipGrid extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    useEffect(
-      () {
-        Future.microtask(
-          () {
-            final onByDefaultModifiers = modifierList.modifierListData.modifiers
-                .where((m) => m.modifierData.onByDefault)
-                .toList();
-            for (Modifier modifier in onByDefaultModifiers) {
-              ref
-                  .read(modifierSelectionNotifierProvider.notifier)
-                  .selectModifier(modifierList.id, modifier);
-            }
-          },
-        );
+    useEffect(() {
+      Future.microtask(
+        () {
+          final onByDefaultModifiers = modifierList.modifierListData.modifiers
+              .where((m) => m.modifierData.onByDefault)
+              .toList();
+          for (Modifier modifier in onByDefaultModifiers) {
+            ref
+                .read(modifierSelectionNotifierProvider.notifier)
+                .selectModifier(modifierList.id, modifier);
+          }
+        },
+      );
 
-        return null;
-      },
-    );
+      return null;
+    }, []);
     final selectedModifiers = ref.watch(modifierSelectionNotifierProvider);
 
     return Column(
@@ -58,8 +57,8 @@ class ChoiceChipGrid extends HookConsumerWidget {
                 children: modifierList.modifierListData.modifiers
                     .map(
                       (modifier) => StyledChoiceChip(
-                        title: modifier.modifierData.name,
-                        selected: selectedModifiers[modifierList.id]
+                        modifier: modifier,
+                        selected: selectedModifiers.modifierSelection[modifierList.id]
                                 ?.contains(modifier) ??
                             false,
                         onSelected: () {
@@ -91,17 +90,19 @@ class ChoiceChipGrid extends HookConsumerWidget {
 class StyledChoiceChip extends StatelessWidget {
   const StyledChoiceChip({
     super.key,
-    required this.title,
+    required this.modifier,
     required this.selected,
     required this.onSelected,
   });
 
-  final String title;
+  final Modifier modifier;
   final bool selected;
   final VoidCallback onSelected;
 
   @override
   Widget build(BuildContext context) {
+    final modifierData = modifier.modifierData;
+
     return ChoiceChip(
       backgroundColor: Colors.grey.shade200,
       side: BorderSide.none,
@@ -111,7 +112,11 @@ class StyledChoiceChip extends StatelessWidget {
           $styles.corners.lg,
         ),
       ),
-      label: Text(title),
+      label: (modifier.modifierData.priceMoney.amount != 0)
+          ? Text(
+              "${modifierData.name} + ${modifierData.priceMoney.amount.toCurrency()}",
+            )
+          : Text(modifierData.name),
       selected: selected,
       onSelected: (_) => onSelected(),
     );

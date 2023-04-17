@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rice_drop/presentation/core/app_router.gr.dart';
 import 'package:rice_drop/presentation/providers/providers.dart';
 import 'package:rice_drop/shared/extensions.dart';
 import 'package:rice_drop/styles/space.dart';
@@ -17,6 +18,7 @@ class OrderEndDrawer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final order = ref.watch(orderNotifierProvider).order;
+    final modifiers = ref.watch(catalogNotifierProvider).modifierLists;
 
     return Drawer(
       surfaceTintColor: Colors.white,
@@ -75,7 +77,25 @@ class OrderEndDrawer extends ConsumerWidget {
                               lineItem.catalogObject.skipModifierScreen
                                   ? const SizedBox(width: 48.0)
                                   : TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        final itemModifiers = modifiers.where(
+                                          (modifier) {
+                                            return lineItem
+                                                .catalogObject.modifierListInfo
+                                                .any((itemModifier) =>
+                                                    itemModifier
+                                                        .modifierListId ==
+                                                    modifier.id);
+                                          },
+                                        ).toList();
+
+                                        context.router.push(
+                                          ItemRoute(
+                                            item: lineItem.catalogObject,
+                                            modifierLists: const [],
+                                          ),
+                                        );
+                                      },
                                       child: Text(
                                         'Edit',
                                         style: $styles.text.bodySmall.copyWith(

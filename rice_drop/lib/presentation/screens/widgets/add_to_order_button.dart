@@ -18,6 +18,10 @@ class AddToOrderButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final totalModifierPrice =
+        (ref.watch(modifierSelectionNotifierProvider).totalPrice);
+    final totalPrice = (item.price + totalModifierPrice) * quantity;
+
     return ElevatedButton(
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
@@ -35,8 +39,9 @@ class AddToOrderButton extends ConsumerWidget {
         final modifiers = ref.watch(modifierSelectionNotifierProvider);
         ref.read(orderNotifierProvider.notifier).addLineItem(
               item: item,
-              modifiers:
-                  modifiers.values.expand((modifiers) => modifiers).toList(),
+              modifiers: modifiers.modifierSelection.values
+                  .expand((modifiers) => modifiers)
+                  .toList(),
               quantity: quantity,
             );
         Scaffold.of(context).openEndDrawer();
@@ -53,7 +58,7 @@ class AddToOrderButton extends ConsumerWidget {
               ),
             ),
             Text(
-              (item.price * quantity).toCurrency(),
+              totalPrice.toCurrency(),
               style: $styles.text.bodyBold.copyWith(
                 color: Colors.white,
               ),
