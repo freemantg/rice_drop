@@ -7,6 +7,7 @@ import 'package:rice_drop/shared/extensions.dart';
 
 import '../../../domain/catalog/item.dart';
 import '../../../domain/catalog/modifier_list.dart';
+import '../../../domain/order/order.dart';
 import '../../../styles/space.dart';
 import '../../../styles/styles.dart';
 
@@ -40,10 +41,14 @@ class AnimatedTitleAndDescription extends HookWidget {
 }
 
 class AnimatedModifiersChips extends HookWidget {
-  const AnimatedModifiersChips({required this.modifierLists, Key? key})
-      : super(key: key);
+  const AnimatedModifiersChips({
+    required this.modifierLists,
+    this.initialLineItem,
+    Key? key,
+  }) : super(key: key);
 
   final List<ModifierList> modifierLists;
+  final LineItem? initialLineItem;
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +71,10 @@ class AnimatedModifiersChips extends HookWidget {
         separatorBuilder: (_, __) => HSpace(size: $styles.insets.md),
         itemBuilder: (context, index) {
           final modifierList = modifierLists[index];
-      
+
           return ChoiceChipGrid(
             modifierList: modifierList,
+            initialLineItem: initialLineItem,
           );
         },
       ),

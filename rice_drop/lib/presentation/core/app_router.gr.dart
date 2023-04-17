@@ -13,6 +13,7 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:rice_drop/domain/catalog/category.dart' as _i7;
 import 'package:rice_drop/domain/catalog/item.dart' as _i8;
 import 'package:rice_drop/domain/catalog/modifier_list.dart' as _i9;
+import 'package:rice_drop/domain/order/order.dart' as _i10;
 import 'package:rice_drop/presentation/screens/item_grid_screen.dart' as _i1;
 import 'package:rice_drop/presentation/screens/item_screen.dart' as _i2;
 import 'package:rice_drop/presentation/screens/item_select_screen.dart' as _i3;
@@ -42,6 +43,7 @@ abstract class $AppRouter extends _i5.RootStackRouter {
           key: args.key,
           item: args.item,
           modifierLists: args.modifierLists,
+          initialLineItem: args.initialLineItem,
         ),
       );
     },
@@ -109,6 +111,7 @@ class ItemRoute extends _i5.PageRouteInfo<ItemRouteArgs> {
     _i6.Key? key,
     required _i8.Item item,
     required List<_i9.ModifierList> modifierLists,
+    _i10.LineItem? initialLineItem,
     List<_i5.PageRouteInfo>? children,
   }) : super(
           ItemRoute.name,
@@ -116,6 +119,7 @@ class ItemRoute extends _i5.PageRouteInfo<ItemRouteArgs> {
             key: key,
             item: item,
             modifierLists: modifierLists,
+            initialLineItem: initialLineItem,
           ),
           initialChildren: children,
         );
@@ -131,6 +135,7 @@ class ItemRouteArgs {
     this.key,
     required this.item,
     required this.modifierLists,
+    this.initialLineItem,
   });
 
   final _i6.Key? key;
@@ -139,9 +144,11 @@ class ItemRouteArgs {
 
   final List<_i9.ModifierList> modifierLists;
 
+  final _i10.LineItem? initialLineItem;
+
   @override
   String toString() {
-    return 'ItemRouteArgs{key: $key, item: $item, modifierLists: $modifierLists}';
+    return 'ItemRouteArgs{key: $key, item: $item, modifierLists: $modifierLists, initialLineItem: $initialLineItem}';
   }
 }
 

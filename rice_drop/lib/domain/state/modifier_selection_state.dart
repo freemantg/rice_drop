@@ -9,13 +9,13 @@ class ModifierSelectionState with _$ModifierSelectionState {
   const ModifierSelectionState._();
   factory ModifierSelectionState({
     required Map<String, List<Modifier>> modifierSelection,
-    required int totalPrice,
+    required int totalModifierPrice,
   }) = _ModifierSelectionState;
 
   factory ModifierSelectionState.initial() {
     return ModifierSelectionState(
       modifierSelection: const {},
-      totalPrice: 0,
+      totalModifierPrice: 0,
     );
   }
 }

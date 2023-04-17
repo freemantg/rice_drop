@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ModifierSelectionState {
   Map<String, List<Modifier>> get modifierSelection =>
       throw _privateConstructorUsedError;
-  int get totalPrice => throw _privateConstructorUsedError;
+  int get totalModifierPrice => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ModifierSelectionStateCopyWith<ModifierSelectionState> get copyWith =>
@@ -31,7 +31,8 @@ abstract class $ModifierSelectionStateCopyWith<$Res> {
           $Res Function(ModifierSelectionState) then) =
       _$ModifierSelectionStateCopyWithImpl<$Res, ModifierSelectionState>;
   @useResult
-  $Res call({Map<String, List<Modifier>> modifierSelection, int totalPrice});
+  $Res call(
+      {Map<String, List<Modifier>> modifierSelection, int totalModifierPrice});
 }
 
 /// @nodoc
@@ -49,16 +50,16 @@ class _$ModifierSelectionStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? modifierSelection = null,
-    Object? totalPrice = null,
+    Object? totalModifierPrice = null,
   }) {
     return _then(_value.copyWith(
       modifierSelection: null == modifierSelection
           ? _value.modifierSelection
           : modifierSelection // ignore: cast_nullable_to_non_nullable
               as Map<String, List<Modifier>>,
-      totalPrice: null == totalPrice
-          ? _value.totalPrice
-          : totalPrice // ignore: cast_nullable_to_non_nullable
+      totalModifierPrice: null == totalModifierPrice
+          ? _value.totalModifierPrice
+          : totalModifierPrice // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -72,7 +73,8 @@ abstract class _$$_ModifierSelectionStateCopyWith<$Res>
       __$$_ModifierSelectionStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Map<String, List<Modifier>> modifierSelection, int totalPrice});
+  $Res call(
+      {Map<String, List<Modifier>> modifierSelection, int totalModifierPrice});
 }
 
 /// @nodoc
@@ -88,16 +90,16 @@ class __$$_ModifierSelectionStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? modifierSelection = null,
-    Object? totalPrice = null,
+    Object? totalModifierPrice = null,
   }) {
     return _then(_$_ModifierSelectionState(
       modifierSelection: null == modifierSelection
           ? _value._modifierSelection
           : modifierSelection // ignore: cast_nullable_to_non_nullable
               as Map<String, List<Modifier>>,
-      totalPrice: null == totalPrice
-          ? _value.totalPrice
-          : totalPrice // ignore: cast_nullable_to_non_nullable
+      totalModifierPrice: null == totalModifierPrice
+          ? _value.totalModifierPrice
+          : totalModifierPrice // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -108,7 +110,7 @@ class __$$_ModifierSelectionStateCopyWithImpl<$Res>
 class _$_ModifierSelectionState extends _ModifierSelectionState {
   _$_ModifierSelectionState(
       {required final Map<String, List<Modifier>> modifierSelection,
-      required this.totalPrice})
+      required this.totalModifierPrice})
       : _modifierSelection = modifierSelection,
         super._();
 
@@ -122,11 +124,11 @@ class _$_ModifierSelectionState extends _ModifierSelectionState {
   }
 
   @override
-  final int totalPrice;
+  final int totalModifierPrice;
 
   @override
   String toString() {
-    return 'ModifierSelectionState(modifierSelection: $modifierSelection, totalPrice: $totalPrice)';
+    return 'ModifierSelectionState(modifierSelection: $modifierSelection, totalModifierPrice: $totalModifierPrice)';
   }
 
   @override
@@ -136,13 +138,15 @@ class _$_ModifierSelectionState extends _ModifierSelectionState {
             other is _$_ModifierSelectionState &&
             const DeepCollectionEquality()
                 .equals(other._modifierSelection, _modifierSelection) &&
-            (identical(other.totalPrice, totalPrice) ||
-                other.totalPrice == totalPrice));
+            (identical(other.totalModifierPrice, totalModifierPrice) ||
+                other.totalModifierPrice == totalModifierPrice));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_modifierSelection), totalPrice);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_modifierSelection),
+      totalModifierPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -155,13 +159,13 @@ class _$_ModifierSelectionState extends _ModifierSelectionState {
 abstract class _ModifierSelectionState extends ModifierSelectionState {
   factory _ModifierSelectionState(
       {required final Map<String, List<Modifier>> modifierSelection,
-      required final int totalPrice}) = _$_ModifierSelectionState;
+      required final int totalModifierPrice}) = _$_ModifierSelectionState;
   _ModifierSelectionState._() : super._();
 
   @override
   Map<String, List<Modifier>> get modifierSelection;
   @override
-  int get totalPrice;
+  int get totalModifierPrice;
   @override
   @JsonKey(ignore: true)
   _$$_ModifierSelectionStateCopyWith<_$_ModifierSelectionState> get copyWith =>

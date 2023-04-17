@@ -27,7 +27,7 @@ class OrderNotifier extends StateNotifier<OrderState> {
       },
     );
 
-    if (existingLineItem != null && item.skipModifierScreen) {
+    if (existingLineItem != null) {
       // If there's an existing line item and skipModifierScreen is true, update the quantity
       await updateLineItem(
         lineItemId: existingLineItem.id,
@@ -50,7 +50,6 @@ class OrderNotifier extends StateNotifier<OrderState> {
         ),
       );
     }
-    print(state);
   }
 
   Future<void> removeLineItem({required String lineItemId}) async {

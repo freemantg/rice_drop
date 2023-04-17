@@ -5,6 +5,7 @@ import 'package:rice_drop/presentation/providers/providers.dart';
 import 'package:rice_drop/shared/extensions.dart';
 
 import '../../../domain/catalog/modifier_list.dart';
+import '../../../domain/order/order.dart';
 import '../../../styles/space.dart';
 import '../../../styles/styles.dart';
 
@@ -12,22 +13,32 @@ class ChoiceChipGrid extends HookConsumerWidget {
   const ChoiceChipGrid({
     super.key,
     required this.modifierList,
+    this.initialLineItem,
   });
 
   final ModifierList modifierList;
+  final LineItem? initialLineItem;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     useEffect(() {
       Future.microtask(
         () {
-          final onByDefaultModifiers = modifierList.modifierListData.modifiers
-              .where((m) => m.modifierData.onByDefault)
-              .toList();
-          for (Modifier modifier in onByDefaultModifiers) {
+          if (initialLineItem != null) {
             ref
                 .read(modifierSelectionNotifierProvider.notifier)
-                .selectModifier(modifierList.id, modifier);
+                .initializeModifierSelector(
+                  selectedModifiers: initialLineItem?.modifiers,
+                );
+          } else {
+            final onByDefaultModifiers = modifierList.modifierListData.modifiers
+                .where((m) => m.modifierData.onByDefault)
+                .toList();
+            for (Modifier modifier in onByDefaultModifiers) {
+              ref
+                  .read(modifierSelectionNotifierProvider.notifier)
+                  .selectModifier(modifierList.id, modifier);
+            }
           }
         },
       );
@@ -58,7 +69,8 @@ class ChoiceChipGrid extends HookConsumerWidget {
                     .map(
                       (modifier) => StyledChoiceChip(
                         modifier: modifier,
-                        selected: selectedModifiers.modifierSelection[modifierList.id]
+                        selected: selectedModifiers
+                                .modifierSelection[modifierList.id]
                                 ?.contains(modifier) ??
                             false,
                         onSelected: () {

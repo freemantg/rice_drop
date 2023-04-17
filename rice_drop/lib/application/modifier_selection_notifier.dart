@@ -10,6 +10,38 @@ class ModifierSelectionNotifier extends StateNotifier<ModifierSelectionState> {
     return state.modifierSelection[modifierListId];
   }
 
+  void initializeModifierSelector({
+    List<Modifier>? selectedModifiers,
+  }) {
+    final groupedSelectedModifiersByListId =
+        groupSelectedModifiersByListId(selectedModifiers);
+
+    if (groupedSelectedModifiersByListId != null) {
+      state =
+          state.copyWith(modifierSelection: groupedSelectedModifiersByListId);
+    } else {
+      state = state.copyWith(modifierSelection: {});
+    }
+    _updateTotalPrice();
+  }
+
+  Map<String, List<Modifier>>? groupSelectedModifiersByListId(
+      List<Modifier>? selectedModifiers) {
+    Map<String, List<Modifier>> groupedModifiers = {};
+
+    if (selectedModifiers != null) {
+      for (var modifier in selectedModifiers) {
+        String modifierListId = modifier.modifierData.modifierListId;
+
+        if (!groupedModifiers.containsKey(modifierListId)) {
+          groupedModifiers[modifierListId] = [];
+        }
+        groupedModifiers[modifierListId]?.add(modifier);
+      }
+    }
+    return groupedModifiers;
+  }
+
   void updateState(String modifierListId, List<Modifier> newModifiers) {
     state = state.copyWith(
       modifierSelection: {
@@ -47,7 +79,7 @@ class ModifierSelectionNotifier extends StateNotifier<ModifierSelectionState> {
     }
   }
 
-  int get totalPrice {
+  int get totalModifierPrice {
     int total = 0;
     state.modifierSelection.forEach((_, List<Modifier> modifiers) {
       total += modifiers.fold(
@@ -57,6 +89,6 @@ class ModifierSelectionNotifier extends StateNotifier<ModifierSelectionState> {
   }
 
   void _updateTotalPrice() {
-    state = state.copyWith(totalPrice: totalPrice);
+    state = state.copyWith(totalModifierPrice: totalModifierPrice);
   }
 }

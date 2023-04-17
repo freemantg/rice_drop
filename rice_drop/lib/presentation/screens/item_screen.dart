@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:rice_drop/domain/order/order.dart';
 import 'package:rice_drop/presentation/screens/widgets/widgets.dart';
 import 'package:rice_drop/styles/space.dart';
 import 'package:rice_drop/domain/catalog/item.dart';
 import 'package:rice_drop/domain/catalog/modifier_list.dart';
 import 'package:rice_drop/styles/styles.dart';
-
-import 'widgets/animated_widgets.dart';
 
 @RoutePage()
 class ItemScreen extends HookWidget {
@@ -15,10 +14,12 @@ class ItemScreen extends HookWidget {
     Key? key,
     required this.item,
     required this.modifierLists,
+    this.initialLineItem,
   }) : super(key: key);
 
   final Item item;
   final List<ModifierList> modifierLists;
+  final LineItem? initialLineItem;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +61,10 @@ class ItemScreen extends HookWidget {
                       const Spacer(),
                       AnimatedTitleAndDescription(item: item),
                       HSpace(size: $styles.insets.md),
-                      AnimatedModifiersChips(modifierLists: modifierLists),
+                      AnimatedModifiersChips(
+                        modifierLists: modifierLists,
+                        initialLineItem: initialLineItem,
+                      ),
                       const Spacer(),
                       AnimatedItemPrice(item: item),
                       const Spacer(),
