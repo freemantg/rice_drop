@@ -5,6 +5,7 @@ import 'package:rice_drop/application/order_notifier.dart';
 import 'package:rice_drop/domain/state/modifier_selection_state.dart';
 import 'package:rice_drop/infrastructure/data_source/remote_data_source.dart';
 
+import '../../application/end_drawer_notifier.dart';
 import '../../domain/catalog/catalog_repository.dart';
 import '../../domain/state/catalog_state.dart';
 import '../../domain/state/order_state.dart';
@@ -26,3 +27,7 @@ final orderNotifierProvider = StateNotifierProvider<OrderNotifier, OrderState>(
 final modifierSelectionNotifierProvider = StateNotifierProvider.autoDispose<
     ModifierSelectionNotifier,
     ModifierSelectionState>((ref) => ModifierSelectionNotifier());
+
+final endDrawerNotifierProvider =
+    StateNotifierProvider<EndDrawerNotifier, bool>(
+        (ref) => EndDrawerNotifier());

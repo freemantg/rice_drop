@@ -24,19 +24,19 @@ _$_ItemDataDto _$$_ItemDataDtoFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
       description: json['description'] as String?,
       labelColor: json['label_color'] as String?,
-      isTaxable: json['is_taxable'] as bool,
+      isTaxable: json['is_taxable'] as bool?,
       visibility: json['visibility'] as String?,
       categoryId: json['category_id'] as String?,
       modifierListInfo: (json['modifier_list_info'] as List<dynamic>?)
           ?.map((e) => ModifierListInfoDto.fromJson(e as Map<String, dynamic>))
           .toList(),
-      variations: (json['variations'] as List<dynamic>)
-          .map((e) => VariationDto.fromJson(e as Map<String, dynamic>))
+      variations: (json['variations'] as List<dynamic>?)
+          ?.map((e) => VariationDto.fromJson(e as Map<String, dynamic>))
           .toList(),
       productType: json['product_type'] as String?,
-      skipModifierScreen: json['skip_modifier_screen'] as bool,
+      skipModifierScreen: json['skip_modifier_screen'] as bool?,
       ecomUri: json['ecom_uri'] as String?,
-      ecomAvailable: json['ecom_available'] as bool,
+      ecomAvailable: json['ecom_available'] as bool?,
       ecomVisibility: json['ecom_visibility'] as String?,
       ecomImageUris: (json['ecom_image_uris'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -115,12 +115,13 @@ Map<String, dynamic> _$$_VariationDtoToJson(_$_VariationDto instance) =>
 _$_ItemVariationDataDto _$$_ItemVariationDataDtoFromJson(
         Map<String, dynamic> json) =>
     _$_ItemVariationDataDto(
-      itemId: json['item_id'] as String,
+      itemId: json['item_id'] as String?,
       name: json['name'] as String,
-      ordinal: json['ordinal'] as int,
-      pricingType: json['pricing_type'] as String,
-      priceMoney:
-          PriceMoneyDto.fromJson(json['price_money'] as Map<String, dynamic>),
+      ordinal: json['ordinal'] as int?,
+      pricingType: json['pricing_type'] as String?,
+      priceMoney: json['price_money'] == null
+          ? null
+          : PriceMoneyDto.fromJson(json['price_money'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ItemVariationDataDtoToJson(

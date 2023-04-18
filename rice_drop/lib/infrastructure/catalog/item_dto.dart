@@ -4,7 +4,6 @@ import '../../domain/catalog/item.dart';
 import '../../domain/catalog/modifier_list.dart';
 import '../../domain/catalog/modifier_list_info.dart';
 
-
 part 'item_dto.freezed.dart';
 part 'item_dto.g.dart';
 
@@ -25,10 +24,10 @@ class ItemDto with _$ItemDto {
       id: id,
       name: itemData.name ?? '',
       description: itemData.description ?? '',
-      price: itemData.variations[0].itemVariationData?.priceMoney.amount ?? 0,
+      price: itemData.variations?[0].itemVariationData?.priceMoney?.amount ?? 0,
       imageUrl: itemData.ecomImageUris?.first ?? '',
       categoryId: itemData.categoryId ?? '',
-      skipModifierScreen: itemData.skipModifierScreen,
+      skipModifierScreen: itemData.skipModifierScreen ?? false,
       modifierListInfo:
           itemData.modifierListInfo?.map((e) => e.toDomain()).toList() ?? [],
     );
@@ -42,16 +41,16 @@ class ItemDataDto with _$ItemDataDto {
     String? name,
     String? description,
     @JsonKey(name: 'label_color') String? labelColor,
-    @JsonKey(name: 'is_taxable') required bool isTaxable,
+    @JsonKey(name: 'is_taxable') bool? isTaxable,
     String? visibility,
     @JsonKey(name: 'category_id') String? categoryId,
     @JsonKey(name: 'modifier_list_info')
         List<ModifierListInfoDto>? modifierListInfo,
-    required List<VariationDto> variations,
+    List<VariationDto>? variations,
     @JsonKey(name: 'product_type') String? productType,
-    @JsonKey(name: 'skip_modifier_screen') required bool skipModifierScreen,
+    @JsonKey(name: 'skip_modifier_screen') bool? skipModifierScreen,
     @JsonKey(name: 'ecom_uri') String? ecomUri,
-    @JsonKey(name: 'ecom_available') required bool ecomAvailable,
+    @JsonKey(name: 'ecom_available') bool? ecomAvailable,
     @JsonKey(name: 'ecom_visibility') String? ecomVisibility,
     @JsonKey(name: 'ecom_image_uris') List<String>? ecomImageUris,
     @JsonKey(name: 'description_html') String? descriptionHtml,
@@ -108,12 +107,23 @@ class VariationDto with _$VariationDto {
 @freezed
 class ItemVariationDataDto with _$ItemVariationDataDto {
   factory ItemVariationDataDto({
-    @JsonKey(name: 'item_id') required String itemId,
+    @JsonKey(name: 'item_id') String? itemId,
     required String name,
-    required int ordinal,
-    @JsonKey(name: 'pricing_type') required String pricingType,
-    @JsonKey(name: 'price_money') required PriceMoneyDto priceMoney,
+    int? ordinal,
+    @JsonKey(name: 'pricing_type') String? pricingType,
+    @JsonKey(name: 'price_money') PriceMoneyDto? priceMoney,
   }) = _ItemVariationDataDto;
+
+  factory ItemVariationDataDto.fromDomain(Item item) {
+    return ItemVariationDataDto(
+      itemId: item.categoryId,
+      name: item.name,
+      priceMoney: PriceMoneyDto(
+        amount: item.price,
+        currency: 'GBP',
+      ),
+    );
+  }
 
   factory ItemVariationDataDto.fromJson(Map<String, dynamic> json) =>
       _$ItemVariationDataDtoFromJson(json);

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rice_drop/domain/order/order.dart';
@@ -62,7 +63,12 @@ class AddToOrderButton extends ConsumerWidget {
                 quantity: quantity,
               );
         }
-        Scaffold.of(context).openEndDrawer();
+        // Schedule the opening of the EndDrawer after navigating back to the home page
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          ref.read(endDrawerNotifierProvider.notifier).openEndDrawer();
+        });
+        // Navigate back to the home page
+        AutoRouter.of(context).pop();
       },
       child: Padding(
         padding: EdgeInsets.all($styles.insets.sm),

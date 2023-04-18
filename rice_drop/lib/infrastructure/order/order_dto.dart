@@ -17,12 +17,29 @@ class OrderDto with _$OrderDto {
   factory OrderDto.fromJson(Map<String, dynamic> json) =>
       _$OrderDtoFromJson(json);
 
-  Order toDomain() {
-    return Order(
-      id: id,
-      lineItems: lineItems.map((e) => e.toDomain()).toList(),
-    );
-  }
+  // factory OrderDto.fromDomain(Order order) {
+  //   return OrderDto(
+  //     id: order.id,
+  //     lineItems: order.lineItems.map((lineItem) {
+  //       return LineItemDto(
+  //         id: lineItem.id,
+  //         catalogObject: ItemDto(
+  //           type: lineItem.catalogObject.id,
+  //           id:lineItem.id,
+  //           itemData: lineItem.catalogObject,
+  //         ),
+  //         quantity: lineItem.quantity,
+  //       );
+  //     }).toList(),
+  //   );
+  // }
+
+  // Order toDomain() {
+  //   return Order(
+  //     id: id,
+  //     lineItems: lineItems.map((e) => e.toDomain()).toList(),
+  //   );
+  // }
 }
 
 @freezed
@@ -38,12 +55,11 @@ class LineItemDto with _$LineItemDto {
   factory LineItemDto.fromJson(Map<String, dynamic> json) =>
       _$LineItemDtoFromJson(json);
 
-  LineItem toDomain() {
-    return LineItem(
-      id: id,
-      catalogObject: catalogObject.toDomain(),
-      quantity: quantity,
-      modifiers: modifiers?.map((e)=> e.toDomain()).toList(),
-    );
-  }
+  // LineItem toDomain() {
+  //   return LineItem(
+  //     id: id,
+  //     catalogObject: catalogObject,
+  //     quantity: quantity,
+  //   );
+  // }
 }

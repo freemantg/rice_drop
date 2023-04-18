@@ -66,8 +66,6 @@ class ItemScreen extends HookWidget {
                         initialLineItem: initialLineItem,
                       ),
                       const Spacer(),
-                      AnimatedItemPrice(item: item),
-                      const Spacer(),
                     ],
                   ),
                 )

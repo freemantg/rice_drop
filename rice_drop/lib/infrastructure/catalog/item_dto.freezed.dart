@@ -220,22 +220,22 @@ mixin _$ItemDataDto {
   @JsonKey(name: 'label_color')
   String? get labelColor => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_taxable')
-  bool get isTaxable => throw _privateConstructorUsedError;
+  bool? get isTaxable => throw _privateConstructorUsedError;
   String? get visibility => throw _privateConstructorUsedError;
   @JsonKey(name: 'category_id')
   String? get categoryId => throw _privateConstructorUsedError;
   @JsonKey(name: 'modifier_list_info')
   List<ModifierListInfoDto>? get modifierListInfo =>
       throw _privateConstructorUsedError;
-  List<VariationDto> get variations => throw _privateConstructorUsedError;
+  List<VariationDto>? get variations => throw _privateConstructorUsedError;
   @JsonKey(name: 'product_type')
   String? get productType => throw _privateConstructorUsedError;
   @JsonKey(name: 'skip_modifier_screen')
-  bool get skipModifierScreen => throw _privateConstructorUsedError;
+  bool? get skipModifierScreen => throw _privateConstructorUsedError;
   @JsonKey(name: 'ecom_uri')
   String? get ecomUri => throw _privateConstructorUsedError;
   @JsonKey(name: 'ecom_available')
-  bool get ecomAvailable => throw _privateConstructorUsedError;
+  bool? get ecomAvailable => throw _privateConstructorUsedError;
   @JsonKey(name: 'ecom_visibility')
   String? get ecomVisibility => throw _privateConstructorUsedError;
   @JsonKey(name: 'ecom_image_uris')
@@ -265,21 +265,21 @@ abstract class $ItemDataDtoCopyWith<$Res> {
       @JsonKey(name: 'label_color')
           String? labelColor,
       @JsonKey(name: 'is_taxable')
-          bool isTaxable,
+          bool? isTaxable,
       String? visibility,
       @JsonKey(name: 'category_id')
           String? categoryId,
       @JsonKey(name: 'modifier_list_info')
           List<ModifierListInfoDto>? modifierListInfo,
-      List<VariationDto> variations,
+      List<VariationDto>? variations,
       @JsonKey(name: 'product_type')
           String? productType,
       @JsonKey(name: 'skip_modifier_screen')
-          bool skipModifierScreen,
+          bool? skipModifierScreen,
       @JsonKey(name: 'ecom_uri')
           String? ecomUri,
       @JsonKey(name: 'ecom_available')
-          bool ecomAvailable,
+          bool? ecomAvailable,
       @JsonKey(name: 'ecom_visibility')
           String? ecomVisibility,
       @JsonKey(name: 'ecom_image_uris')
@@ -308,15 +308,15 @@ class _$ItemDataDtoCopyWithImpl<$Res, $Val extends ItemDataDto>
     Object? name = freezed,
     Object? description = freezed,
     Object? labelColor = freezed,
-    Object? isTaxable = null,
+    Object? isTaxable = freezed,
     Object? visibility = freezed,
     Object? categoryId = freezed,
     Object? modifierListInfo = freezed,
-    Object? variations = null,
+    Object? variations = freezed,
     Object? productType = freezed,
-    Object? skipModifierScreen = null,
+    Object? skipModifierScreen = freezed,
     Object? ecomUri = freezed,
-    Object? ecomAvailable = null,
+    Object? ecomAvailable = freezed,
     Object? ecomVisibility = freezed,
     Object? ecomImageUris = freezed,
     Object? descriptionHtml = freezed,
@@ -336,10 +336,10 @@ class _$ItemDataDtoCopyWithImpl<$Res, $Val extends ItemDataDto>
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
               as String?,
-      isTaxable: null == isTaxable
+      isTaxable: freezed == isTaxable
           ? _value.isTaxable
           : isTaxable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
@@ -352,26 +352,26 @@ class _$ItemDataDtoCopyWithImpl<$Res, $Val extends ItemDataDto>
           ? _value.modifierListInfo
           : modifierListInfo // ignore: cast_nullable_to_non_nullable
               as List<ModifierListInfoDto>?,
-      variations: null == variations
+      variations: freezed == variations
           ? _value.variations
           : variations // ignore: cast_nullable_to_non_nullable
-              as List<VariationDto>,
+              as List<VariationDto>?,
       productType: freezed == productType
           ? _value.productType
           : productType // ignore: cast_nullable_to_non_nullable
               as String?,
-      skipModifierScreen: null == skipModifierScreen
+      skipModifierScreen: freezed == skipModifierScreen
           ? _value.skipModifierScreen
           : skipModifierScreen // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       ecomUri: freezed == ecomUri
           ? _value.ecomUri
           : ecomUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      ecomAvailable: null == ecomAvailable
+      ecomAvailable: freezed == ecomAvailable
           ? _value.ecomAvailable
           : ecomAvailable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       ecomVisibility: freezed == ecomVisibility
           ? _value.ecomVisibility
           : ecomVisibility // ignore: cast_nullable_to_non_nullable
@@ -410,21 +410,21 @@ abstract class _$$_ItemDataDtoCopyWith<$Res>
       @JsonKey(name: 'label_color')
           String? labelColor,
       @JsonKey(name: 'is_taxable')
-          bool isTaxable,
+          bool? isTaxable,
       String? visibility,
       @JsonKey(name: 'category_id')
           String? categoryId,
       @JsonKey(name: 'modifier_list_info')
           List<ModifierListInfoDto>? modifierListInfo,
-      List<VariationDto> variations,
+      List<VariationDto>? variations,
       @JsonKey(name: 'product_type')
           String? productType,
       @JsonKey(name: 'skip_modifier_screen')
-          bool skipModifierScreen,
+          bool? skipModifierScreen,
       @JsonKey(name: 'ecom_uri')
           String? ecomUri,
       @JsonKey(name: 'ecom_available')
-          bool ecomAvailable,
+          bool? ecomAvailable,
       @JsonKey(name: 'ecom_visibility')
           String? ecomVisibility,
       @JsonKey(name: 'ecom_image_uris')
@@ -451,15 +451,15 @@ class __$$_ItemDataDtoCopyWithImpl<$Res>
     Object? name = freezed,
     Object? description = freezed,
     Object? labelColor = freezed,
-    Object? isTaxable = null,
+    Object? isTaxable = freezed,
     Object? visibility = freezed,
     Object? categoryId = freezed,
     Object? modifierListInfo = freezed,
-    Object? variations = null,
+    Object? variations = freezed,
     Object? productType = freezed,
-    Object? skipModifierScreen = null,
+    Object? skipModifierScreen = freezed,
     Object? ecomUri = freezed,
-    Object? ecomAvailable = null,
+    Object? ecomAvailable = freezed,
     Object? ecomVisibility = freezed,
     Object? ecomImageUris = freezed,
     Object? descriptionHtml = freezed,
@@ -479,10 +479,10 @@ class __$$_ItemDataDtoCopyWithImpl<$Res>
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
               as String?,
-      isTaxable: null == isTaxable
+      isTaxable: freezed == isTaxable
           ? _value.isTaxable
           : isTaxable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
@@ -495,26 +495,26 @@ class __$$_ItemDataDtoCopyWithImpl<$Res>
           ? _value._modifierListInfo
           : modifierListInfo // ignore: cast_nullable_to_non_nullable
               as List<ModifierListInfoDto>?,
-      variations: null == variations
+      variations: freezed == variations
           ? _value._variations
           : variations // ignore: cast_nullable_to_non_nullable
-              as List<VariationDto>,
+              as List<VariationDto>?,
       productType: freezed == productType
           ? _value.productType
           : productType // ignore: cast_nullable_to_non_nullable
               as String?,
-      skipModifierScreen: null == skipModifierScreen
+      skipModifierScreen: freezed == skipModifierScreen
           ? _value.skipModifierScreen
           : skipModifierScreen // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       ecomUri: freezed == ecomUri
           ? _value.ecomUri
           : ecomUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      ecomAvailable: null == ecomAvailable
+      ecomAvailable: freezed == ecomAvailable
           ? _value.ecomAvailable
           : ecomAvailable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       ecomVisibility: freezed == ecomVisibility
           ? _value.ecomVisibility
           : ecomVisibility // ignore: cast_nullable_to_non_nullable
@@ -548,21 +548,21 @@ class _$_ItemDataDto extends _ItemDataDto {
       @JsonKey(name: 'label_color')
           this.labelColor,
       @JsonKey(name: 'is_taxable')
-          required this.isTaxable,
+          this.isTaxable,
       this.visibility,
       @JsonKey(name: 'category_id')
           this.categoryId,
       @JsonKey(name: 'modifier_list_info')
           final List<ModifierListInfoDto>? modifierListInfo,
-      required final List<VariationDto> variations,
+      final List<VariationDto>? variations,
       @JsonKey(name: 'product_type')
           this.productType,
       @JsonKey(name: 'skip_modifier_screen')
-          required this.skipModifierScreen,
+          this.skipModifierScreen,
       @JsonKey(name: 'ecom_uri')
           this.ecomUri,
       @JsonKey(name: 'ecom_available')
-          required this.ecomAvailable,
+          this.ecomAvailable,
       @JsonKey(name: 'ecom_visibility')
           this.ecomVisibility,
       @JsonKey(name: 'ecom_image_uris')
@@ -590,7 +590,7 @@ class _$_ItemDataDto extends _ItemDataDto {
   final String? labelColor;
   @override
   @JsonKey(name: 'is_taxable')
-  final bool isTaxable;
+  final bool? isTaxable;
   @override
   final String? visibility;
   @override
@@ -608,12 +608,14 @@ class _$_ItemDataDto extends _ItemDataDto {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<VariationDto> _variations;
+  final List<VariationDto>? _variations;
   @override
-  List<VariationDto> get variations {
+  List<VariationDto>? get variations {
+    final value = _variations;
+    if (value == null) return null;
     if (_variations is EqualUnmodifiableListView) return _variations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_variations);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -621,13 +623,13 @@ class _$_ItemDataDto extends _ItemDataDto {
   final String? productType;
   @override
   @JsonKey(name: 'skip_modifier_screen')
-  final bool skipModifierScreen;
+  final bool? skipModifierScreen;
   @override
   @JsonKey(name: 'ecom_uri')
   final String? ecomUri;
   @override
   @JsonKey(name: 'ecom_available')
-  final bool ecomAvailable;
+  final bool? ecomAvailable;
   @override
   @JsonKey(name: 'ecom_visibility')
   final String? ecomVisibility;
@@ -739,21 +741,21 @@ abstract class _ItemDataDto extends ItemDataDto {
       @JsonKey(name: 'label_color')
           final String? labelColor,
       @JsonKey(name: 'is_taxable')
-          required final bool isTaxable,
+          final bool? isTaxable,
       final String? visibility,
       @JsonKey(name: 'category_id')
           final String? categoryId,
       @JsonKey(name: 'modifier_list_info')
           final List<ModifierListInfoDto>? modifierListInfo,
-      required final List<VariationDto> variations,
+      final List<VariationDto>? variations,
       @JsonKey(name: 'product_type')
           final String? productType,
       @JsonKey(name: 'skip_modifier_screen')
-          required final bool skipModifierScreen,
+          final bool? skipModifierScreen,
       @JsonKey(name: 'ecom_uri')
           final String? ecomUri,
       @JsonKey(name: 'ecom_available')
-          required final bool ecomAvailable,
+          final bool? ecomAvailable,
       @JsonKey(name: 'ecom_visibility')
           final String? ecomVisibility,
       @JsonKey(name: 'ecom_image_uris')
@@ -778,7 +780,7 @@ abstract class _ItemDataDto extends ItemDataDto {
   String? get labelColor;
   @override
   @JsonKey(name: 'is_taxable')
-  bool get isTaxable;
+  bool? get isTaxable;
   @override
   String? get visibility;
   @override
@@ -788,19 +790,19 @@ abstract class _ItemDataDto extends ItemDataDto {
   @JsonKey(name: 'modifier_list_info')
   List<ModifierListInfoDto>? get modifierListInfo;
   @override
-  List<VariationDto> get variations;
+  List<VariationDto>? get variations;
   @override
   @JsonKey(name: 'product_type')
   String? get productType;
   @override
   @JsonKey(name: 'skip_modifier_screen')
-  bool get skipModifierScreen;
+  bool? get skipModifierScreen;
   @override
   @JsonKey(name: 'ecom_uri')
   String? get ecomUri;
   @override
   @JsonKey(name: 'ecom_available')
-  bool get ecomAvailable;
+  bool? get ecomAvailable;
   @override
   @JsonKey(name: 'ecom_visibility')
   String? get ecomVisibility;
@@ -1392,13 +1394,13 @@ ItemVariationDataDto _$ItemVariationDataDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ItemVariationDataDto {
   @JsonKey(name: 'item_id')
-  String get itemId => throw _privateConstructorUsedError;
+  String? get itemId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  int get ordinal => throw _privateConstructorUsedError;
+  int? get ordinal => throw _privateConstructorUsedError;
   @JsonKey(name: 'pricing_type')
-  String get pricingType => throw _privateConstructorUsedError;
+  String? get pricingType => throw _privateConstructorUsedError;
   @JsonKey(name: 'price_money')
-  PriceMoneyDto get priceMoney => throw _privateConstructorUsedError;
+  PriceMoneyDto? get priceMoney => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1413,13 +1415,13 @@ abstract class $ItemVariationDataDtoCopyWith<$Res> {
       _$ItemVariationDataDtoCopyWithImpl<$Res, ItemVariationDataDto>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'item_id') String itemId,
+      {@JsonKey(name: 'item_id') String? itemId,
       String name,
-      int ordinal,
-      @JsonKey(name: 'pricing_type') String pricingType,
-      @JsonKey(name: 'price_money') PriceMoneyDto priceMoney});
+      int? ordinal,
+      @JsonKey(name: 'pricing_type') String? pricingType,
+      @JsonKey(name: 'price_money') PriceMoneyDto? priceMoney});
 
-  $PriceMoneyDtoCopyWith<$Res> get priceMoney;
+  $PriceMoneyDtoCopyWith<$Res>? get priceMoney;
 }
 
 /// @nodoc
@@ -1436,40 +1438,44 @@ class _$ItemVariationDataDtoCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? itemId = null,
+    Object? itemId = freezed,
     Object? name = null,
-    Object? ordinal = null,
-    Object? pricingType = null,
-    Object? priceMoney = null,
+    Object? ordinal = freezed,
+    Object? pricingType = freezed,
+    Object? priceMoney = freezed,
   }) {
     return _then(_value.copyWith(
-      itemId: null == itemId
+      itemId: freezed == itemId
           ? _value.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      ordinal: null == ordinal
+      ordinal: freezed == ordinal
           ? _value.ordinal
           : ordinal // ignore: cast_nullable_to_non_nullable
-              as int,
-      pricingType: null == pricingType
+              as int?,
+      pricingType: freezed == pricingType
           ? _value.pricingType
           : pricingType // ignore: cast_nullable_to_non_nullable
-              as String,
-      priceMoney: null == priceMoney
+              as String?,
+      priceMoney: freezed == priceMoney
           ? _value.priceMoney
           : priceMoney // ignore: cast_nullable_to_non_nullable
-              as PriceMoneyDto,
+              as PriceMoneyDto?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceMoneyDtoCopyWith<$Res> get priceMoney {
-    return $PriceMoneyDtoCopyWith<$Res>(_value.priceMoney, (value) {
+  $PriceMoneyDtoCopyWith<$Res>? get priceMoney {
+    if (_value.priceMoney == null) {
+      return null;
+    }
+
+    return $PriceMoneyDtoCopyWith<$Res>(_value.priceMoney!, (value) {
       return _then(_value.copyWith(priceMoney: value) as $Val);
     });
   }
@@ -1484,14 +1490,14 @@ abstract class _$$_ItemVariationDataDtoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'item_id') String itemId,
+      {@JsonKey(name: 'item_id') String? itemId,
       String name,
-      int ordinal,
-      @JsonKey(name: 'pricing_type') String pricingType,
-      @JsonKey(name: 'price_money') PriceMoneyDto priceMoney});
+      int? ordinal,
+      @JsonKey(name: 'pricing_type') String? pricingType,
+      @JsonKey(name: 'price_money') PriceMoneyDto? priceMoney});
 
   @override
-  $PriceMoneyDtoCopyWith<$Res> get priceMoney;
+  $PriceMoneyDtoCopyWith<$Res>? get priceMoney;
 }
 
 /// @nodoc
@@ -1505,33 +1511,33 @@ class __$$_ItemVariationDataDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? itemId = null,
+    Object? itemId = freezed,
     Object? name = null,
-    Object? ordinal = null,
-    Object? pricingType = null,
-    Object? priceMoney = null,
+    Object? ordinal = freezed,
+    Object? pricingType = freezed,
+    Object? priceMoney = freezed,
   }) {
     return _then(_$_ItemVariationDataDto(
-      itemId: null == itemId
+      itemId: freezed == itemId
           ? _value.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      ordinal: null == ordinal
+      ordinal: freezed == ordinal
           ? _value.ordinal
           : ordinal // ignore: cast_nullable_to_non_nullable
-              as int,
-      pricingType: null == pricingType
+              as int?,
+      pricingType: freezed == pricingType
           ? _value.pricingType
           : pricingType // ignore: cast_nullable_to_non_nullable
-              as String,
-      priceMoney: null == priceMoney
+              as String?,
+      priceMoney: freezed == priceMoney
           ? _value.priceMoney
           : priceMoney // ignore: cast_nullable_to_non_nullable
-              as PriceMoneyDto,
+              as PriceMoneyDto?,
     ));
   }
 }
@@ -1540,28 +1546,28 @@ class __$$_ItemVariationDataDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ItemVariationDataDto implements _ItemVariationDataDto {
   _$_ItemVariationDataDto(
-      {@JsonKey(name: 'item_id') required this.itemId,
+      {@JsonKey(name: 'item_id') this.itemId,
       required this.name,
-      required this.ordinal,
-      @JsonKey(name: 'pricing_type') required this.pricingType,
-      @JsonKey(name: 'price_money') required this.priceMoney});
+      this.ordinal,
+      @JsonKey(name: 'pricing_type') this.pricingType,
+      @JsonKey(name: 'price_money') this.priceMoney});
 
   factory _$_ItemVariationDataDto.fromJson(Map<String, dynamic> json) =>
       _$$_ItemVariationDataDtoFromJson(json);
 
   @override
   @JsonKey(name: 'item_id')
-  final String itemId;
+  final String? itemId;
   @override
   final String name;
   @override
-  final int ordinal;
+  final int? ordinal;
   @override
   @JsonKey(name: 'pricing_type')
-  final String pricingType;
+  final String? pricingType;
   @override
   @JsonKey(name: 'price_money')
-  final PriceMoneyDto priceMoney;
+  final PriceMoneyDto? priceMoney;
 
   @override
   String toString() {
@@ -1604,31 +1610,29 @@ class _$_ItemVariationDataDto implements _ItemVariationDataDto {
 
 abstract class _ItemVariationDataDto implements ItemVariationDataDto {
   factory _ItemVariationDataDto(
-      {@JsonKey(name: 'item_id')
-          required final String itemId,
-      required final String name,
-      required final int ordinal,
-      @JsonKey(name: 'pricing_type')
-          required final String pricingType,
-      @JsonKey(name: 'price_money')
-          required final PriceMoneyDto priceMoney}) = _$_ItemVariationDataDto;
+          {@JsonKey(name: 'item_id') final String? itemId,
+          required final String name,
+          final int? ordinal,
+          @JsonKey(name: 'pricing_type') final String? pricingType,
+          @JsonKey(name: 'price_money') final PriceMoneyDto? priceMoney}) =
+      _$_ItemVariationDataDto;
 
   factory _ItemVariationDataDto.fromJson(Map<String, dynamic> json) =
       _$_ItemVariationDataDto.fromJson;
 
   @override
   @JsonKey(name: 'item_id')
-  String get itemId;
+  String? get itemId;
   @override
   String get name;
   @override
-  int get ordinal;
+  int? get ordinal;
   @override
   @JsonKey(name: 'pricing_type')
-  String get pricingType;
+  String? get pricingType;
   @override
   @JsonKey(name: 'price_money')
-  PriceMoneyDto get priceMoney;
+  PriceMoneyDto? get priceMoney;
   @override
   @JsonKey(ignore: true)
   _$$_ItemVariationDataDtoCopyWith<_$_ItemVariationDataDto> get copyWith =>

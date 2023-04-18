@@ -84,4 +84,6 @@ class OrderNotifier extends StateNotifier<OrderState> {
     state = state.copyWith(
         order: state.order.copyWith(lineItems: updatedLineItems));
   }
+
+  
 }
