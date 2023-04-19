@@ -20,7 +20,7 @@ ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ItemDto {
-  String get type => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'item_data')
   ItemDataDto get itemData => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $ItemDtoCopyWith<$Res> {
       _$ItemDtoCopyWithImpl<$Res, ItemDto>;
   @useResult
   $Res call(
-      {String type,
+      {String? type,
       String id,
       @JsonKey(name: 'item_data') ItemDataDto itemData});
 
@@ -56,15 +56,15 @@ class _$ItemDtoCopyWithImpl<$Res, $Val extends ItemDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? type = freezed,
     Object? id = null,
     Object? itemData = null,
   }) {
     return _then(_value.copyWith(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -93,7 +93,7 @@ abstract class _$$_ItemDtoCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String type,
+      {String? type,
       String id,
       @JsonKey(name: 'item_data') ItemDataDto itemData});
 
@@ -111,15 +111,15 @@ class __$$_ItemDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? type = freezed,
     Object? id = null,
     Object? itemData = null,
   }) {
     return _then(_$_ItemDto(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -136,7 +136,7 @@ class __$$_ItemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ItemDto extends _ItemDto {
   const _$_ItemDto(
-      {required this.type,
+      {this.type,
       required this.id,
       @JsonKey(name: 'item_data') required this.itemData})
       : super._();
@@ -145,7 +145,7 @@ class _$_ItemDto extends _ItemDto {
       _$$_ItemDtoFromJson(json);
 
   @override
-  final String type;
+  final String? type;
   @override
   final String id;
   @override
@@ -188,7 +188,7 @@ class _$_ItemDto extends _ItemDto {
 
 abstract class _ItemDto extends ItemDto {
   const factory _ItemDto(
-          {required final String type,
+          {final String? type,
           required final String id,
           @JsonKey(name: 'item_data') required final ItemDataDto itemData}) =
       _$_ItemDto;
@@ -197,7 +197,7 @@ abstract class _ItemDto extends ItemDto {
   factory _ItemDto.fromJson(Map<String, dynamic> json) = _$_ItemDto.fromJson;
 
   @override
-  String get type;
+  String? get type;
   @override
   String get id;
   @override
@@ -1052,17 +1052,17 @@ VariationDto _$VariationDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$VariationDto {
-  String get type => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  int get version => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+  int? get version => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_deleted')
-  bool get isDeleted => throw _privateConstructorUsedError;
+  bool? get isDeleted => throw _privateConstructorUsedError;
   @JsonKey(name: 'present_at_all_locations')
-  bool get presentAtAllLocations => throw _privateConstructorUsedError;
+  bool? get presentAtAllLocations => throw _privateConstructorUsedError;
   @JsonKey(name: 'item_variation_data')
   ItemVariationDataDto? get itemVariationData =>
       throw _privateConstructorUsedError;
@@ -1080,17 +1080,17 @@ abstract class $VariationDtoCopyWith<$Res> {
       _$VariationDtoCopyWithImpl<$Res, VariationDto>;
   @useResult
   $Res call(
-      {String type,
-      String id,
+      {String? type,
+      String? id,
       @JsonKey(name: 'updated_at')
-          DateTime updatedAt,
+          DateTime? updatedAt,
       @JsonKey(name: 'created_at')
-          DateTime createdAt,
-      int version,
+          DateTime? createdAt,
+      int? version,
       @JsonKey(name: 'is_deleted')
-          bool isDeleted,
+          bool? isDeleted,
       @JsonKey(name: 'present_at_all_locations')
-          bool presentAtAllLocations,
+          bool? presentAtAllLocations,
       @JsonKey(name: 'item_variation_data')
           ItemVariationDataDto? itemVariationData});
 
@@ -1110,44 +1110,44 @@ class _$VariationDtoCopyWithImpl<$Res, $Val extends VariationDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
-    Object? id = null,
-    Object? updatedAt = null,
-    Object? createdAt = null,
-    Object? version = null,
-    Object? isDeleted = null,
-    Object? presentAtAllLocations = null,
+    Object? type = freezed,
+    Object? id = freezed,
+    Object? updatedAt = freezed,
+    Object? createdAt = freezed,
+    Object? version = freezed,
+    Object? isDeleted = freezed,
+    Object? presentAtAllLocations = freezed,
     Object? itemVariationData = freezed,
   }) {
     return _then(_value.copyWith(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
+              as String?,
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      updatedAt: null == updatedAt
+              as String?,
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
+              as DateTime?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      version: null == version
+              as DateTime?,
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      isDeleted: null == isDeleted
+              as int?,
+      isDeleted: freezed == isDeleted
           ? _value.isDeleted
           : isDeleted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      presentAtAllLocations: null == presentAtAllLocations
+              as bool?,
+      presentAtAllLocations: freezed == presentAtAllLocations
           ? _value.presentAtAllLocations
           : presentAtAllLocations // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       itemVariationData: freezed == itemVariationData
           ? _value.itemVariationData
           : itemVariationData // ignore: cast_nullable_to_non_nullable
@@ -1178,17 +1178,17 @@ abstract class _$$_VariationDtoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String type,
-      String id,
+      {String? type,
+      String? id,
       @JsonKey(name: 'updated_at')
-          DateTime updatedAt,
+          DateTime? updatedAt,
       @JsonKey(name: 'created_at')
-          DateTime createdAt,
-      int version,
+          DateTime? createdAt,
+      int? version,
       @JsonKey(name: 'is_deleted')
-          bool isDeleted,
+          bool? isDeleted,
       @JsonKey(name: 'present_at_all_locations')
-          bool presentAtAllLocations,
+          bool? presentAtAllLocations,
       @JsonKey(name: 'item_variation_data')
           ItemVariationDataDto? itemVariationData});
 
@@ -1207,44 +1207,44 @@ class __$$_VariationDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
-    Object? id = null,
-    Object? updatedAt = null,
-    Object? createdAt = null,
-    Object? version = null,
-    Object? isDeleted = null,
-    Object? presentAtAllLocations = null,
+    Object? type = freezed,
+    Object? id = freezed,
+    Object? updatedAt = freezed,
+    Object? createdAt = freezed,
+    Object? version = freezed,
+    Object? isDeleted = freezed,
+    Object? presentAtAllLocations = freezed,
     Object? itemVariationData = freezed,
   }) {
     return _then(_$_VariationDto(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
+              as String?,
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      updatedAt: null == updatedAt
+              as String?,
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
+              as DateTime?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      version: null == version
+              as DateTime?,
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      isDeleted: null == isDeleted
+              as int?,
+      isDeleted: freezed == isDeleted
           ? _value.isDeleted
           : isDeleted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      presentAtAllLocations: null == presentAtAllLocations
+              as bool?,
+      presentAtAllLocations: freezed == presentAtAllLocations
           ? _value.presentAtAllLocations
           : presentAtAllLocations // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       itemVariationData: freezed == itemVariationData
           ? _value.itemVariationData
           : itemVariationData // ignore: cast_nullable_to_non_nullable
@@ -1257,41 +1257,36 @@ class __$$_VariationDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_VariationDto implements _VariationDto {
   _$_VariationDto(
-      {required this.type,
-      required this.id,
-      @JsonKey(name: 'updated_at')
-          required this.updatedAt,
-      @JsonKey(name: 'created_at')
-          required this.createdAt,
-      required this.version,
-      @JsonKey(name: 'is_deleted')
-          required this.isDeleted,
-      @JsonKey(name: 'present_at_all_locations')
-          required this.presentAtAllLocations,
-      @JsonKey(name: 'item_variation_data')
-          required this.itemVariationData});
+      {this.type,
+      this.id,
+      @JsonKey(name: 'updated_at') this.updatedAt,
+      @JsonKey(name: 'created_at') this.createdAt,
+      this.version,
+      @JsonKey(name: 'is_deleted') this.isDeleted,
+      @JsonKey(name: 'present_at_all_locations') this.presentAtAllLocations,
+      @JsonKey(name: 'item_variation_data') this.itemVariationData});
 
   factory _$_VariationDto.fromJson(Map<String, dynamic> json) =>
       _$$_VariationDtoFromJson(json);
 
   @override
-  final String type;
+  final String? type;
   @override
-  final String id;
+  final String? id;
   @override
   @JsonKey(name: 'updated_at')
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
   @override
   @JsonKey(name: 'created_at')
-  final DateTime createdAt;
+  final DateTime? createdAt;
   @override
-  final int version;
+  final int? version;
   @override
   @JsonKey(name: 'is_deleted')
-  final bool isDeleted;
+  final bool? isDeleted;
   @override
   @JsonKey(name: 'present_at_all_locations')
-  final bool presentAtAllLocations;
+  final bool? presentAtAllLocations;
   @override
   @JsonKey(name: 'item_variation_data')
   final ItemVariationDataDto? itemVariationData;
@@ -1342,42 +1337,41 @@ class _$_VariationDto implements _VariationDto {
 
 abstract class _VariationDto implements VariationDto {
   factory _VariationDto(
-          {required final String type,
-          required final String id,
-          @JsonKey(name: 'updated_at')
-              required final DateTime updatedAt,
-          @JsonKey(name: 'created_at')
-              required final DateTime createdAt,
-          required final int version,
-          @JsonKey(name: 'is_deleted')
-              required final bool isDeleted,
-          @JsonKey(name: 'present_at_all_locations')
-              required final bool presentAtAllLocations,
-          @JsonKey(name: 'item_variation_data')
-              required final ItemVariationDataDto? itemVariationData}) =
-      _$_VariationDto;
+      {final String? type,
+      final String? id,
+      @JsonKey(name: 'updated_at')
+          final DateTime? updatedAt,
+      @JsonKey(name: 'created_at')
+          final DateTime? createdAt,
+      final int? version,
+      @JsonKey(name: 'is_deleted')
+          final bool? isDeleted,
+      @JsonKey(name: 'present_at_all_locations')
+          final bool? presentAtAllLocations,
+      @JsonKey(name: 'item_variation_data')
+          final ItemVariationDataDto? itemVariationData}) = _$_VariationDto;
 
   factory _VariationDto.fromJson(Map<String, dynamic> json) =
       _$_VariationDto.fromJson;
 
   @override
-  String get type;
+  String? get type;
   @override
-  String get id;
+  String? get id;
   @override
   @JsonKey(name: 'updated_at')
-  DateTime get updatedAt;
+  DateTime? get updatedAt;
   @override
   @JsonKey(name: 'created_at')
-  DateTime get createdAt;
+  DateTime? get createdAt;
   @override
-  int get version;
+  int? get version;
   @override
   @JsonKey(name: 'is_deleted')
-  bool get isDeleted;
+  bool? get isDeleted;
   @override
   @JsonKey(name: 'present_at_all_locations')
-  bool get presentAtAllLocations;
+  bool? get presentAtAllLocations;
   @override
   @JsonKey(name: 'item_variation_data')
   ItemVariationDataDto? get itemVariationData;

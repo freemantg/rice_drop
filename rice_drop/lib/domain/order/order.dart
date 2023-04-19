@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rice_drop/domain/catalog/modifier_list.dart';
+import 'package:uuid/uuid.dart';
 
 import '../catalog/item.dart';
 
@@ -7,16 +8,21 @@ part 'order.freezed.dart';
 
 @freezed
 class Order with _$Order {
-  const Order._();
-  const factory Order({
-    required String id,
+  Order._();
+   factory Order({
+    required String idempotencyKey,
     required List<LineItem> lineItems,
   }) = _Order;
 
-  factory Order.empty() => Order(
-        id: '',
-        lineItems: List.empty(growable: true),
-      );
+  factory Order.empty() {
+    final uuid = Uuid();
+    final idempotencyKey = uuid.v4();
+
+    return Order(
+      lineItems: List.empty(growable: true),
+      idempotencyKey: idempotencyKey,
+    );
+  }
 
   int get totalPrice {
     int total = 0;
@@ -36,7 +42,8 @@ class Order with _$Order {
 
   int totalLineItemPrice(LineItem lineItem) {
     // Calculate item price with quantity
-    int itemPrice = lineItem.catalogObject.price * lineItem.quantity;
+    int itemPrice =
+        lineItem.catalogObject.priceMoney.amount * lineItem.quantity;
 
     // Calculate price of modifiers, if any
     int modifiersPrice = 0;

@@ -7,7 +7,7 @@ part of 'order_dto.dart';
 // **************************************************************************
 
 _$_OrderDto _$$_OrderDtoFromJson(Map<String, dynamic> json) => _$_OrderDto(
-      id: json['id'] as String,
+      idempotencyKey: json['idempotencyKey'] as String,
       lineItems: (json['lineItems'] as List<dynamic>)
           .map((e) => LineItemDto.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -15,7 +15,7 @@ _$_OrderDto _$$_OrderDtoFromJson(Map<String, dynamic> json) => _$_OrderDto(
 
 Map<String, dynamic> _$$_OrderDtoToJson(_$_OrderDto instance) =>
     <String, dynamic>{
-      'id': instance.id,
+      'idempotencyKey': instance.idempotencyKey,
       'lineItems': instance.lineItems,
     };
 

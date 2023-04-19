@@ -7,7 +7,7 @@ part of 'item_dto.dart';
 // **************************************************************************
 
 _$_ItemDto _$$_ItemDtoFromJson(Map<String, dynamic> json) => _$_ItemDto(
-      type: json['type'] as String,
+      type: json['type'] as String?,
       id: json['id'] as String,
       itemData: ItemDataDto.fromJson(json['item_data'] as Map<String, dynamic>),
     );
@@ -87,13 +87,17 @@ Map<String, dynamic> _$$_ModifierListInfoDtoToJson(
 
 _$_VariationDto _$$_VariationDtoFromJson(Map<String, dynamic> json) =>
     _$_VariationDto(
-      type: json['type'] as String,
-      id: json['id'] as String,
-      updatedAt: DateTime.parse(json['updated_at'] as String),
-      createdAt: DateTime.parse(json['created_at'] as String),
-      version: json['version'] as int,
-      isDeleted: json['is_deleted'] as bool,
-      presentAtAllLocations: json['present_at_all_locations'] as bool,
+      type: json['type'] as String?,
+      id: json['id'] as String?,
+      updatedAt: json['updated_at'] == null
+          ? null
+          : DateTime.parse(json['updated_at'] as String),
+      createdAt: json['created_at'] == null
+          ? null
+          : DateTime.parse(json['created_at'] as String),
+      version: json['version'] as int?,
+      isDeleted: json['is_deleted'] as bool?,
+      presentAtAllLocations: json['present_at_all_locations'] as bool?,
       itemVariationData: json['item_variation_data'] == null
           ? null
           : ItemVariationDataDto.fromJson(
@@ -104,8 +108,8 @@ Map<String, dynamic> _$$_VariationDtoToJson(_$_VariationDto instance) =>
     <String, dynamic>{
       'type': instance.type,
       'id': instance.id,
-      'updated_at': instance.updatedAt.toIso8601String(),
-      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
       'version': instance.version,
       'is_deleted': instance.isDeleted,
       'present_at_all_locations': instance.presentAtAllLocations,

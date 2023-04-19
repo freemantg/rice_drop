@@ -93,7 +93,9 @@ class OrderEndDrawerBottomBar extends ConsumerWidget {
                       ),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () => ref
+                      .read(orderNotifierProvider.notifier)
+                      .createOrder(order),
                 )
               ],
             ),

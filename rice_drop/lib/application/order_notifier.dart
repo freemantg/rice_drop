@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:collection/collection.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rice_drop/domain/order/order.dart';
+import 'package:rice_drop/domain/order/order_repository.dart';
 import 'package:uuid/uuid.dart';
 
 import '../domain/catalog/item.dart';
@@ -9,7 +10,19 @@ import '../domain/catalog/modifier_list.dart';
 import '../domain/state/order_state.dart';
 
 class OrderNotifier extends StateNotifier<OrderState> {
-  OrderNotifier() : super(OrderState.initial());
+  OrderNotifier({required OrderRepository orderRepository})
+      : _orderRepository = orderRepository,
+        super(OrderState.initial());
+
+  final OrderRepository _orderRepository;
+
+  Future<void> createOrder(Order order) async {
+    final successOrFailure = await _orderRepository.createOrder(order);
+    state = successOrFailure.fold(
+      (failure) => state.copyWith(status: OrderStatus.error),
+      (_) => state,
+    );
+  }
 
   Future<void> addLineItem({
     required Item item,
@@ -84,6 +97,4 @@ class OrderNotifier extends StateNotifier<OrderState> {
     state = state.copyWith(
         order: state.order.copyWith(lineItems: updatedLineItems));
   }
-
-  
 }

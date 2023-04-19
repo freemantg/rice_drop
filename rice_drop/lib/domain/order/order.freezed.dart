@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Order {
-  String get id => throw _privateConstructorUsedError;
+  String get idempotencyKey => throw _privateConstructorUsedError;
   List<LineItem> get lineItems => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -28,7 +28,7 @@ abstract class $OrderCopyWith<$Res> {
   factory $OrderCopyWith(Order value, $Res Function(Order) then) =
       _$OrderCopyWithImpl<$Res, Order>;
   @useResult
-  $Res call({String id, List<LineItem> lineItems});
+  $Res call({String idempotencyKey, List<LineItem> lineItems});
 }
 
 /// @nodoc
@@ -44,13 +44,13 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? idempotencyKey = null,
     Object? lineItems = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      idempotencyKey: null == idempotencyKey
+          ? _value.idempotencyKey
+          : idempotencyKey // ignore: cast_nullable_to_non_nullable
               as String,
       lineItems: null == lineItems
           ? _value.lineItems
@@ -66,7 +66,7 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
       __$$_OrderCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, List<LineItem> lineItems});
+  $Res call({String idempotencyKey, List<LineItem> lineItems});
 }
 
 /// @nodoc
@@ -78,13 +78,13 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? idempotencyKey = null,
     Object? lineItems = null,
   }) {
     return _then(_$_Order(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      idempotencyKey: null == idempotencyKey
+          ? _value.idempotencyKey
+          : idempotencyKey // ignore: cast_nullable_to_non_nullable
               as String,
       lineItems: null == lineItems
           ? _value._lineItems
@@ -97,12 +97,13 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
 /// @nodoc
 
 class _$_Order extends _Order {
-  const _$_Order({required this.id, required final List<LineItem> lineItems})
+  _$_Order(
+      {required this.idempotencyKey, required final List<LineItem> lineItems})
       : _lineItems = lineItems,
         super._();
 
   @override
-  final String id;
+  final String idempotencyKey;
   final List<LineItem> _lineItems;
   @override
   List<LineItem> get lineItems {
@@ -113,7 +114,7 @@ class _$_Order extends _Order {
 
   @override
   String toString() {
-    return 'Order(id: $id, lineItems: $lineItems)';
+    return 'Order(idempotencyKey: $idempotencyKey, lineItems: $lineItems)';
   }
 
   @override
@@ -121,14 +122,15 @@ class _$_Order extends _Order {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Order &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.idempotencyKey, idempotencyKey) ||
+                other.idempotencyKey == idempotencyKey) &&
             const DeepCollectionEquality()
                 .equals(other._lineItems, _lineItems));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, const DeepCollectionEquality().hash(_lineItems));
+  int get hashCode => Object.hash(runtimeType, idempotencyKey,
+      const DeepCollectionEquality().hash(_lineItems));
 
   @JsonKey(ignore: true)
   @override
@@ -138,13 +140,13 @@ class _$_Order extends _Order {
 }
 
 abstract class _Order extends Order {
-  const factory _Order(
-      {required final String id,
+  factory _Order(
+      {required final String idempotencyKey,
       required final List<LineItem> lineItems}) = _$_Order;
-  const _Order._() : super._();
+  _Order._() : super._();
 
   @override
-  String get id;
+  String get idempotencyKey;
   @override
   List<LineItem> get lineItems;
   @override

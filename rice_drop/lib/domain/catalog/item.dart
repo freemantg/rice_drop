@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rice_drop/domain/catalog/modifier_list.dart';
 
 import 'modifier_list_info.dart';
 
@@ -11,7 +12,7 @@ class Item with _$Item {
     required String id,
     required String name,
     required String description,
-    required int price,
+    required PriceMoney priceMoney,
     required String imageUrl,
     required String categoryId,
     required bool skipModifierScreen,

@@ -11,7 +11,7 @@ part 'item_dto.g.dart';
 class ItemDto with _$ItemDto {
   const ItemDto._();
   const factory ItemDto({
-    required String type,
+    String? type,
     required String id,
     @JsonKey(name: 'item_data') required ItemDataDto itemData,
   }) = _ItemDto;
@@ -19,12 +19,21 @@ class ItemDto with _$ItemDto {
   factory ItemDto.fromJson(Map<String, dynamic> json) =>
       _$ItemDtoFromJson(json);
 
+  factory ItemDto.fromDomain(Item item) {
+    return ItemDto(
+      id: item.id,
+      itemData: ItemDataDto.fromDomain(item),
+    );
+  }
+
   Item toDomain() {
     return Item(
       id: id,
       name: itemData.name ?? '',
       description: itemData.description ?? '',
-      price: itemData.variations?[0].itemVariationData?.priceMoney?.amount ?? 0,
+      priceMoney:
+          itemData.variations?[0].itemVariationData?.priceMoney?.toDomain() ??
+              PriceMoney.empty(),
       imageUrl: itemData.ecomImageUris?.first ?? '',
       categoryId: itemData.categoryId ?? '',
       skipModifierScreen: itemData.skipModifierScreen ?? false,
@@ -58,6 +67,20 @@ class ItemDataDto with _$ItemDataDto {
     @JsonKey(name: 'kitchen_name') String? kitchenName,
   }) = _ItemDataDto;
 
+  factory ItemDataDto.fromDomain(Item item) {
+    return ItemDataDto(
+      categoryId: item.categoryId,
+      name: item.name,
+      description: item.description,
+      ecomUri: item.imageUrl,
+      skipModifierScreen: item.skipModifierScreen,
+      variations: [VariationDto.fromDomain(item)],
+      modifierListInfo: item.modifierListInfo
+          .map((e) => ModifierListInfoDto.fromDomain(e))
+          .toList(),
+    );
+  }
+
   factory ItemDataDto.fromJson(Map<String, dynamic> json) =>
       _$ItemDataDtoFromJson(json);
 }
@@ -75,6 +98,15 @@ class ModifierListInfoDto with _$ModifierListInfoDto {
   factory ModifierListInfoDto.fromJson(Map<String, dynamic> json) =>
       _$ModifierListInfoDtoFromJson(json);
 
+  factory ModifierListInfoDto.fromDomain(ModifierListInfo modifierListInfo) {
+    return ModifierListInfoDto(
+      modifierListId: modifierListInfo.modifierListId,
+      minSelectedModifiers: modifierListInfo.minSelectedModifiers,
+      maxSelectedModifiers: modifierListInfo.maxSelectedModifiers,
+      enabled: modifierListInfo.enabled,
+    );
+  }
+
   ModifierListInfo toDomain() {
     return ModifierListInfo(
       modifierListId: modifierListId,
@@ -88,20 +120,24 @@ class ModifierListInfoDto with _$ModifierListInfoDto {
 @freezed
 class VariationDto with _$VariationDto {
   factory VariationDto({
-    required String type,
-    required String id,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    required int version,
-    @JsonKey(name: 'is_deleted') required bool isDeleted,
-    @JsonKey(name: 'present_at_all_locations')
-        required bool presentAtAllLocations,
+    String? type,
+    String? id,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    int? version,
+    @JsonKey(name: 'is_deleted') bool? isDeleted,
+    @JsonKey(name: 'present_at_all_locations') bool? presentAtAllLocations,
     @JsonKey(name: 'item_variation_data')
-        required ItemVariationDataDto? itemVariationData,
+        ItemVariationDataDto? itemVariationData,
   }) = _VariationDto;
 
   factory VariationDto.fromJson(Map<String, dynamic> json) =>
       _$VariationDtoFromJson(json);
+
+  factory VariationDto.fromDomain(Item item) {
+    return VariationDto(
+        itemVariationData: ItemVariationDataDto.fromDomain(item));
+  }
 }
 
 @freezed
@@ -118,10 +154,7 @@ class ItemVariationDataDto with _$ItemVariationDataDto {
     return ItemVariationDataDto(
       itemId: item.categoryId,
       name: item.name,
-      priceMoney: PriceMoneyDto(
-        amount: item.price,
-        currency: 'GBP',
-      ),
+      priceMoney: PriceMoneyDto.fromDomain(item.priceMoney),
     );
   }
 
@@ -139,6 +172,13 @@ class PriceMoneyDto with _$PriceMoneyDto {
 
   factory PriceMoneyDto.fromJson(Map<String, dynamic> json) =>
       _$PriceMoneyDtoFromJson(json);
+
+  factory PriceMoneyDto.fromDomain(PriceMoney priceMoney) {
+    return PriceMoneyDto(
+      amount: priceMoney.amount,
+      currency: priceMoney.currency,
+    );
+  }
 
   PriceMoney toDomain() {
     return PriceMoney(

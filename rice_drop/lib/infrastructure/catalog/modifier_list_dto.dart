@@ -59,19 +59,33 @@ class ModifierListDataDto with _$ModifierListDataDto {
 class ModifierDto with _$ModifierDto {
   const ModifierDto._();
   const factory ModifierDto({
-    required String type,
+    String? type,
     required String id,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    required int version,
-    @JsonKey(name: 'is_deleted') required bool isDeleted,
-    @JsonKey(name: 'present_at_all_locations')
-        required bool presentAtAllLocations,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    int? version,
+    @JsonKey(name: 'is_deleted') bool? isDeleted,
+    @JsonKey(name: 'present_at_all_locations') bool? presentAtAllLocations,
     @JsonKey(name: 'modifier_data') required ModifierDataDto modifierData,
   }) = _ModifierDto;
 
   factory ModifierDto.fromJson(Map<String, dynamic> json) =>
       _$ModifierDtoFromJson(json);
+
+  factory ModifierDto.fromDomain(Modifier modifier) {
+    return ModifierDto(
+      id: modifier.id,
+      isDeleted: false,
+      modifierData: ModifierDataDto.fromDomain(modifier.modifierData),
+    );
+  }
+
+  Map<String, dynamic>? toApiMap() {
+    return {
+      'catalog_object_id': id,
+      'quantity': '1',
+    };
+  }
 
   Modifier toDomain() {
     return Modifier(
@@ -95,6 +109,16 @@ class ModifierDataDto with _$ModifierDataDto {
 
   factory ModifierDataDto.fromJson(Map<String, dynamic> json) =>
       _$ModifierDataDtoFromJson(json);
+
+  factory ModifierDataDto.fromDomain(ModifierData modifierData) {
+    return ModifierDataDto(
+      name: modifierData.name,
+      priceMoney: PriceMoneyDto.fromDomain(modifierData.priceMoney),
+      onByDefault: modifierData.onByDefault,
+      ordinal: modifierData.ordinal,
+      modifierListId: modifierData.modifierListId,
+    );
+  }
 
   ModifierData toDomain() {
     return ModifierData(

@@ -3,3 +3,5 @@ rice_drop/.env
 rice_drop/.rest
 rice_drop/.restenv.json
 rice_drop/TEST_ORDER.json
+rice_drop/square_api_test.rest
+rice_drop/TEST_orderResponse.json

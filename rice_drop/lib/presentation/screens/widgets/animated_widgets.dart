@@ -103,7 +103,7 @@ class AnimatedItemPrice extends HookWidget {
     return FadeTransition(
       opacity: animation,
       child: Text(
-        item.price.toCurrency(),
+        item.priceMoney.amount.toCurrency(),
         style: $styles.text.h2.copyWith(height: 0),
       ),
     );

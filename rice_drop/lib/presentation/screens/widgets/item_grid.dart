@@ -132,7 +132,7 @@ class ItemCard extends ConsumerWidget {
                     SizedBox(height: $styles.insets.xs),
                     Text(
                       NumberFormat.simpleCurrency(locale: Platform.localeName)
-                          .format(item.price / 100),
+                          .format(item.priceMoney.amount / 100),
                       textAlign: TextAlign.center,
                       style: $styles.text.body.copyWith(height: 0),
                     ),

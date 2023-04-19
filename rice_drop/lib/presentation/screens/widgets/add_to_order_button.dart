@@ -24,7 +24,7 @@ class AddToOrderButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final totalModifierPrice =
         (ref.watch(modifierSelectionNotifierProvider).totalModifierPrice);
-    final totalPrice = (item.price + totalModifierPrice) * quantity;
+    final totalPrice = (item.priceMoney.amount + totalModifierPrice) * quantity;
 
     return ElevatedButton(
       style: ButtonStyle(

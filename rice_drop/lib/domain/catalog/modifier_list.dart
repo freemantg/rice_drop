@@ -63,4 +63,11 @@ class PriceMoney with _$PriceMoney {
 
   factory PriceMoney.fromJson(Map<String, dynamic> json) =>
       _$PriceMoneyFromJson(json);
+
+  factory PriceMoney.empty() {
+    return PriceMoney(
+      amount: 0,
+      currency: 'GBP',
+    );
+  }
 }

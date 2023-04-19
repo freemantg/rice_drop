@@ -553,17 +553,17 @@ ModifierDto _$ModifierDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ModifierDto {
-  String get type => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  int get version => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+  int? get version => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_deleted')
-  bool get isDeleted => throw _privateConstructorUsedError;
+  bool? get isDeleted => throw _privateConstructorUsedError;
   @JsonKey(name: 'present_at_all_locations')
-  bool get presentAtAllLocations => throw _privateConstructorUsedError;
+  bool? get presentAtAllLocations => throw _privateConstructorUsedError;
   @JsonKey(name: 'modifier_data')
   ModifierDataDto get modifierData => throw _privateConstructorUsedError;
 
@@ -580,13 +580,13 @@ abstract class $ModifierDtoCopyWith<$Res> {
       _$ModifierDtoCopyWithImpl<$Res, ModifierDto>;
   @useResult
   $Res call(
-      {String type,
+      {String? type,
       String id,
-      @JsonKey(name: 'updated_at') DateTime updatedAt,
-      @JsonKey(name: 'created_at') DateTime createdAt,
-      int version,
-      @JsonKey(name: 'is_deleted') bool isDeleted,
-      @JsonKey(name: 'present_at_all_locations') bool presentAtAllLocations,
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'created_at') DateTime? createdAt,
+      int? version,
+      @JsonKey(name: 'is_deleted') bool? isDeleted,
+      @JsonKey(name: 'present_at_all_locations') bool? presentAtAllLocations,
       @JsonKey(name: 'modifier_data') ModifierDataDto modifierData});
 
   $ModifierDataDtoCopyWith<$Res> get modifierData;
@@ -605,44 +605,44 @@ class _$ModifierDtoCopyWithImpl<$Res, $Val extends ModifierDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? type = freezed,
     Object? id = null,
-    Object? updatedAt = null,
-    Object? createdAt = null,
-    Object? version = null,
-    Object? isDeleted = null,
-    Object? presentAtAllLocations = null,
+    Object? updatedAt = freezed,
+    Object? createdAt = freezed,
+    Object? version = freezed,
+    Object? isDeleted = freezed,
+    Object? presentAtAllLocations = freezed,
     Object? modifierData = null,
   }) {
     return _then(_value.copyWith(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: null == updatedAt
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
+              as DateTime?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      version: null == version
+              as DateTime?,
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      isDeleted: null == isDeleted
+              as int?,
+      isDeleted: freezed == isDeleted
           ? _value.isDeleted
           : isDeleted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      presentAtAllLocations: null == presentAtAllLocations
+              as bool?,
+      presentAtAllLocations: freezed == presentAtAllLocations
           ? _value.presentAtAllLocations
           : presentAtAllLocations // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       modifierData: null == modifierData
           ? _value.modifierData
           : modifierData // ignore: cast_nullable_to_non_nullable
@@ -668,13 +668,13 @@ abstract class _$$_ModifierDtoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String type,
+      {String? type,
       String id,
-      @JsonKey(name: 'updated_at') DateTime updatedAt,
-      @JsonKey(name: 'created_at') DateTime createdAt,
-      int version,
-      @JsonKey(name: 'is_deleted') bool isDeleted,
-      @JsonKey(name: 'present_at_all_locations') bool presentAtAllLocations,
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'created_at') DateTime? createdAt,
+      int? version,
+      @JsonKey(name: 'is_deleted') bool? isDeleted,
+      @JsonKey(name: 'present_at_all_locations') bool? presentAtAllLocations,
       @JsonKey(name: 'modifier_data') ModifierDataDto modifierData});
 
   @override
@@ -692,44 +692,44 @@ class __$$_ModifierDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? type = freezed,
     Object? id = null,
-    Object? updatedAt = null,
-    Object? createdAt = null,
-    Object? version = null,
-    Object? isDeleted = null,
-    Object? presentAtAllLocations = null,
+    Object? updatedAt = freezed,
+    Object? createdAt = freezed,
+    Object? version = freezed,
+    Object? isDeleted = freezed,
+    Object? presentAtAllLocations = freezed,
     Object? modifierData = null,
   }) {
     return _then(_$_ModifierDto(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: null == updatedAt
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
+              as DateTime?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      version: null == version
+              as DateTime?,
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      isDeleted: null == isDeleted
+              as int?,
+      isDeleted: freezed == isDeleted
           ? _value.isDeleted
           : isDeleted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      presentAtAllLocations: null == presentAtAllLocations
+              as bool?,
+      presentAtAllLocations: freezed == presentAtAllLocations
           ? _value.presentAtAllLocations
           : presentAtAllLocations // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       modifierData: null == modifierData
           ? _value.modifierData
           : modifierData // ignore: cast_nullable_to_non_nullable
@@ -742,42 +742,37 @@ class __$$_ModifierDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ModifierDto extends _ModifierDto {
   const _$_ModifierDto(
-      {required this.type,
+      {this.type,
       required this.id,
-      @JsonKey(name: 'updated_at')
-          required this.updatedAt,
-      @JsonKey(name: 'created_at')
-          required this.createdAt,
-      required this.version,
-      @JsonKey(name: 'is_deleted')
-          required this.isDeleted,
-      @JsonKey(name: 'present_at_all_locations')
-          required this.presentAtAllLocations,
-      @JsonKey(name: 'modifier_data')
-          required this.modifierData})
+      @JsonKey(name: 'updated_at') this.updatedAt,
+      @JsonKey(name: 'created_at') this.createdAt,
+      this.version,
+      @JsonKey(name: 'is_deleted') this.isDeleted,
+      @JsonKey(name: 'present_at_all_locations') this.presentAtAllLocations,
+      @JsonKey(name: 'modifier_data') required this.modifierData})
       : super._();
 
   factory _$_ModifierDto.fromJson(Map<String, dynamic> json) =>
       _$$_ModifierDtoFromJson(json);
 
   @override
-  final String type;
+  final String? type;
   @override
   final String id;
   @override
   @JsonKey(name: 'updated_at')
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
   @override
   @JsonKey(name: 'created_at')
-  final DateTime createdAt;
+  final DateTime? createdAt;
   @override
-  final int version;
+  final int? version;
   @override
   @JsonKey(name: 'is_deleted')
-  final bool isDeleted;
+  final bool? isDeleted;
   @override
   @JsonKey(name: 'present_at_all_locations')
-  final bool presentAtAllLocations;
+  final bool? presentAtAllLocations;
   @override
   @JsonKey(name: 'modifier_data')
   final ModifierDataDto modifierData;
@@ -828,17 +823,17 @@ class _$_ModifierDto extends _ModifierDto {
 
 abstract class _ModifierDto extends ModifierDto {
   const factory _ModifierDto(
-      {required final String type,
+      {final String? type,
       required final String id,
       @JsonKey(name: 'updated_at')
-          required final DateTime updatedAt,
+          final DateTime? updatedAt,
       @JsonKey(name: 'created_at')
-          required final DateTime createdAt,
-      required final int version,
+          final DateTime? createdAt,
+      final int? version,
       @JsonKey(name: 'is_deleted')
-          required final bool isDeleted,
+          final bool? isDeleted,
       @JsonKey(name: 'present_at_all_locations')
-          required final bool presentAtAllLocations,
+          final bool? presentAtAllLocations,
       @JsonKey(name: 'modifier_data')
           required final ModifierDataDto modifierData}) = _$_ModifierDto;
   const _ModifierDto._() : super._();
@@ -847,23 +842,23 @@ abstract class _ModifierDto extends ModifierDto {
       _$_ModifierDto.fromJson;
 
   @override
-  String get type;
+  String? get type;
   @override
   String get id;
   @override
   @JsonKey(name: 'updated_at')
-  DateTime get updatedAt;
+  DateTime? get updatedAt;
   @override
   @JsonKey(name: 'created_at')
-  DateTime get createdAt;
+  DateTime? get createdAt;
   @override
-  int get version;
+  int? get version;
   @override
   @JsonKey(name: 'is_deleted')
-  bool get isDeleted;
+  bool? get isDeleted;
   @override
   @JsonKey(name: 'present_at_all_locations')
-  bool get presentAtAllLocations;
+  bool? get presentAtAllLocations;
   @override
   @JsonKey(name: 'modifier_data')
   ModifierDataDto get modifierData;

@@ -19,7 +19,7 @@ mixin _$Item {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  int get price => throw _privateConstructorUsedError;
+  PriceMoney get priceMoney => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   String get categoryId => throw _privateConstructorUsedError;
   bool get skipModifierScreen => throw _privateConstructorUsedError;
@@ -39,11 +39,13 @@ abstract class $ItemCopyWith<$Res> {
       {String id,
       String name,
       String description,
-      int price,
+      PriceMoney priceMoney,
       String imageUrl,
       String categoryId,
       bool skipModifierScreen,
       List<ModifierListInfo> modifierListInfo});
+
+  $PriceMoneyCopyWith<$Res> get priceMoney;
 }
 
 /// @nodoc
@@ -62,7 +64,7 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
     Object? id = null,
     Object? name = null,
     Object? description = null,
-    Object? price = null,
+    Object? priceMoney = null,
     Object? imageUrl = null,
     Object? categoryId = null,
     Object? skipModifierScreen = null,
@@ -81,10 +83,10 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as int,
+      priceMoney: null == priceMoney
+          ? _value.priceMoney
+          : priceMoney // ignore: cast_nullable_to_non_nullable
+              as PriceMoney,
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -103,6 +105,14 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
               as List<ModifierListInfo>,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PriceMoneyCopyWith<$Res> get priceMoney {
+    return $PriceMoneyCopyWith<$Res>(_value.priceMoney, (value) {
+      return _then(_value.copyWith(priceMoney: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -115,11 +125,14 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       {String id,
       String name,
       String description,
-      int price,
+      PriceMoney priceMoney,
       String imageUrl,
       String categoryId,
       bool skipModifierScreen,
       List<ModifierListInfo> modifierListInfo});
+
+  @override
+  $PriceMoneyCopyWith<$Res> get priceMoney;
 }
 
 /// @nodoc
@@ -134,7 +147,7 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res, _$_Item>
     Object? id = null,
     Object? name = null,
     Object? description = null,
-    Object? price = null,
+    Object? priceMoney = null,
     Object? imageUrl = null,
     Object? categoryId = null,
     Object? skipModifierScreen = null,
@@ -153,10 +166,10 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res, _$_Item>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as int,
+      priceMoney: null == priceMoney
+          ? _value.priceMoney
+          : priceMoney // ignore: cast_nullable_to_non_nullable
+              as PriceMoney,
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -184,7 +197,7 @@ class _$_Item extends _Item {
       {required this.id,
       required this.name,
       required this.description,
-      required this.price,
+      required this.priceMoney,
       required this.imageUrl,
       required this.categoryId,
       required this.skipModifierScreen,
@@ -199,7 +212,7 @@ class _$_Item extends _Item {
   @override
   final String description;
   @override
-  final int price;
+  final PriceMoney priceMoney;
   @override
   final String imageUrl;
   @override
@@ -217,7 +230,7 @@ class _$_Item extends _Item {
 
   @override
   String toString() {
-    return 'Item(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl, categoryId: $categoryId, skipModifierScreen: $skipModifierScreen, modifierListInfo: $modifierListInfo)';
+    return 'Item(id: $id, name: $name, description: $description, priceMoney: $priceMoney, imageUrl: $imageUrl, categoryId: $categoryId, skipModifierScreen: $skipModifierScreen, modifierListInfo: $modifierListInfo)';
   }
 
   @override
@@ -229,7 +242,8 @@ class _$_Item extends _Item {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.price, price) || other.price == price) &&
+            (identical(other.priceMoney, priceMoney) ||
+                other.priceMoney == priceMoney) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.categoryId, categoryId) ||
@@ -246,7 +260,7 @@ class _$_Item extends _Item {
       id,
       name,
       description,
-      price,
+      priceMoney,
       imageUrl,
       categoryId,
       skipModifierScreen,
@@ -264,7 +278,7 @@ abstract class _Item extends Item {
       {required final String id,
       required final String name,
       required final String description,
-      required final int price,
+      required final PriceMoney priceMoney,
       required final String imageUrl,
       required final String categoryId,
       required final bool skipModifierScreen,
@@ -278,7 +292,7 @@ abstract class _Item extends Item {
   @override
   String get description;
   @override
-  int get price;
+  PriceMoney get priceMoney;
   @override
   String get imageUrl;
   @override
