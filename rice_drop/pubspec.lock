@@ -696,6 +696,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.3"
+  square_in_app_payments:
+    dependency: "direct main"
+    description:
+      name: square_in_app_payments
+      sha256: ecec53e460793ffc5bd1fd89b9070b9e1960ae82399ba4927e29c585d9ce3ecc
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.7.6"
   stack_trace:
     dependency: transitive
     description:
@@ -768,14 +776,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
-  tuple:
-    dependency: "direct main"
-    description:
-      name: tuple
-      sha256: "0ea99cd2f9352b2586583ab2ce6489d1f95a5f6de6fb9492faaf97ae2060f0aa"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.1"
   typed_data:
     dependency: transitive
     description:

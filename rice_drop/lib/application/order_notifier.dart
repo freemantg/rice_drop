@@ -20,7 +20,9 @@ class OrderNotifier extends StateNotifier<OrderState> {
     final successOrFailure = await _orderRepository.createOrder(order);
     state = successOrFailure.fold(
       (failure) => state.copyWith(status: OrderStatus.error),
-      (_) => state,
+      (createOrder) {
+        return state;
+      },
     );
   }
 
