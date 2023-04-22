@@ -1,0 +1,52 @@
+PODS:
+  - Flutter (1.0.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - sqflite (0.0.2):
+    - Flutter
+    - FMDB (>= 2.7.5)
+  - square_in_app_payments (1.6.1):
+    - Flutter
+    - SquareBuyerVerificationSDK (= 1.6.1)
+    - SquareInAppPaymentsSDK (= 1.6.1)
+  - SquareBuyerVerificationSDK (1.6.1)
+  - SquareInAppPaymentsSDK (1.6.1)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - square_in_app_payments (from `.symlinks/plugins/square_in_app_payments/ios`)
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+    - SquareBuyerVerificationSDK
+    - SquareInAppPaymentsSDK
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
+  square_in_app_payments:
+    :path: ".symlinks/plugins/square_in_app_payments/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
+  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  square_in_app_payments: 66e1c6c99b152893d989b8f1b837bfd9b2cf371a
+  SquareBuyerVerificationSDK: f200ad95adc08bdefc80619cfa462f0451a7c436
+  SquareInAppPaymentsSDK: 44371b3788070e74b43009ab90649455277653b4
+
+PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
+
+COCOAPODS: 1.12.1
