@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../styles/space.dart';
 import '../../../styles/styles.dart';
-import '../item_select_screen.dart';
 import 'widgets.dart';
 
 class StyledAppBar extends StatelessWidget implements PreferredSizeWidget {

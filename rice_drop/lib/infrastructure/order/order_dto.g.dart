@@ -16,7 +16,7 @@ _$_OrderDto _$$_OrderDtoFromJson(Map<String, dynamic> json) => _$_OrderDto(
 Map<String, dynamic> _$$_OrderDtoToJson(_$_OrderDto instance) =>
     <String, dynamic>{
       'idempotencyKey': instance.idempotencyKey,
-      'lineItems': instance.lineItems,
+      'lineItems': instance.lineItems.map((e) => e.toJson()).toList(),
     };
 
 _$_LineItemDto _$$_LineItemDtoFromJson(Map<String, dynamic> json) =>
@@ -33,7 +33,7 @@ _$_LineItemDto _$$_LineItemDtoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_LineItemDtoToJson(_$_LineItemDto instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'catalogObject': instance.catalogObject,
+      'catalogObject': instance.catalogObject.toJson(),
       'quantity': instance.quantity,
-      'modifiers': instance.modifiers,
+      'modifiers': instance.modifiers?.map((e) => e.toJson()).toList(),
     };

@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rice_drop/presentation/core/app_router.dart';
-import 'package:rice_drop/styles/styles.dart';
+
+import 'presentation/core/app_router.dart';
+import 'styles/styles.dart';
 
 Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
-  runApp(ProviderScope(child: MyApp()));
+  runApp(
+    ProviderScope(child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -27,5 +32,23 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: $styles.colors.primaryThemeColor),
       ),
     );
+  }
+
+  Future<void> initiatePayment(
+      int amountCents, String currencyCode, String notes) async {
+    const platform = MethodChannel('co.uk.ricedrop.iosapp');
+
+    try {
+      final response = await platform.invokeMethod('initiatePayment', {
+        'amountCents': amountCents,
+        'currencyCode': currencyCode,
+        'notes': notes,
+        'locationID': dotenv.env['SQUARE_LOCATION_ID'],
+        'applicationID': dotenv.env['SQUARE_APPLICATION_ID']
+      });
+      print('Response: $response');
+    } on PlatformException catch (e) {
+      print('Failed to initiate payment: ${e.message}');
+    }
   }
 }

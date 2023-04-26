@@ -16,7 +16,7 @@ _$_CategoryDto _$$_CategoryDtoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_CategoryDtoToJson(_$_CategoryDto instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'category_data': instance.category_data,
+      'category_data': instance.category_data.toJson(),
     };
 
 _$_CategoryData _$$_CategoryDataFromJson(Map<String, dynamic> json) =>

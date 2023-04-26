@@ -15,7 +15,7 @@ class Order with _$Order {
   }) = _Order;
 
   factory Order.empty() {
-    final uuid = Uuid();
+    const uuid = Uuid();
     final idempotencyKey = uuid.v4();
 
     return Order(

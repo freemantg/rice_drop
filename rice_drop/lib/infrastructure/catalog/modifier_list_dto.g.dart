@@ -28,7 +28,7 @@ Map<String, dynamic> _$$_ModifierListDtoToJson(_$_ModifierListDto instance) =>
       'version': instance.version,
       'is_deleted': instance.isDeleted,
       'present_at_all_locations': instance.presentAtAllLocations,
-      'modifier_list_data': instance.modifierListData,
+      'modifier_list_data': instance.modifierListData.toJson(),
     };
 
 _$_ModifierListDataDto _$$_ModifierListDataDtoFromJson(
@@ -46,7 +46,7 @@ Map<String, dynamic> _$$_ModifierListDataDtoToJson(
     <String, dynamic>{
       'name': instance.name,
       'selection_type': instance.selectionType,
-      'modifiers': instance.modifiers,
+      'modifiers': instance.modifiers.map((e) => e.toJson()).toList(),
     };
 
 _$_ModifierDto _$$_ModifierDtoFromJson(Map<String, dynamic> json) =>
@@ -75,7 +75,7 @@ Map<String, dynamic> _$$_ModifierDtoToJson(_$_ModifierDto instance) =>
       'version': instance.version,
       'is_deleted': instance.isDeleted,
       'present_at_all_locations': instance.presentAtAllLocations,
-      'modifier_data': instance.modifierData,
+      'modifier_data': instance.modifierData.toJson(),
     };
 
 _$_ModifierDataDto _$$_ModifierDataDtoFromJson(Map<String, dynamic> json) =>
@@ -92,7 +92,7 @@ _$_ModifierDataDto _$$_ModifierDataDtoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_ModifierDataDtoToJson(_$_ModifierDataDto instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'price_money': instance.priceMoney,
+      'price_money': instance.priceMoney.toJson(),
       'on_by_default': instance.onByDefault,
       'ordinal': instance.ordinal,
       'modifier_list_id': instance.modifierListId,
