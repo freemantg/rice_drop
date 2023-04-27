@@ -19,7 +19,7 @@ mixin _$OrderState {
   OrderStatus get status => throw _privateConstructorUsedError;
   Order get order => throw _privateConstructorUsedError;
   CreateOrder? get createOrder => throw _privateConstructorUsedError;
-  OrderFailure? get failure => throw _privateConstructorUsedError;
+  CreateOrderFailure? get failure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OrderStateCopyWith<OrderState> get copyWith =>
@@ -36,11 +36,11 @@ abstract class $OrderStateCopyWith<$Res> {
       {OrderStatus status,
       Order order,
       CreateOrder? createOrder,
-      OrderFailure? failure});
+      CreateOrderFailure? failure});
 
   $OrderCopyWith<$Res> get order;
   $CreateOrderCopyWith<$Res>? get createOrder;
-  $OrderFailureCopyWith<$Res>? get failure;
+  $CreateOrderFailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
@@ -77,7 +77,7 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as OrderFailure?,
+              as CreateOrderFailure?,
     ) as $Val);
   }
 
@@ -103,12 +103,12 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
 
   @override
   @pragma('vm:prefer-inline')
-  $OrderFailureCopyWith<$Res>? get failure {
+  $CreateOrderFailureCopyWith<$Res>? get failure {
     if (_value.failure == null) {
       return null;
     }
 
-    return $OrderFailureCopyWith<$Res>(_value.failure!, (value) {
+    return $CreateOrderFailureCopyWith<$Res>(_value.failure!, (value) {
       return _then(_value.copyWith(failure: value) as $Val);
     });
   }
@@ -126,14 +126,14 @@ abstract class _$$_OrderStateCopyWith<$Res>
       {OrderStatus status,
       Order order,
       CreateOrder? createOrder,
-      OrderFailure? failure});
+      CreateOrderFailure? failure});
 
   @override
   $OrderCopyWith<$Res> get order;
   @override
   $CreateOrderCopyWith<$Res>? get createOrder;
   @override
-  $OrderFailureCopyWith<$Res>? get failure;
+  $CreateOrderFailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
@@ -168,7 +168,7 @@ class __$$_OrderStateCopyWithImpl<$Res>
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as OrderFailure?,
+              as CreateOrderFailure?,
     ));
   }
 }
@@ -189,7 +189,7 @@ class _$_OrderState implements _OrderState {
   @override
   final CreateOrder? createOrder;
   @override
-  final OrderFailure? failure;
+  final CreateOrderFailure? failure;
 
   @override
   String toString() {
@@ -224,7 +224,7 @@ abstract class _OrderState implements OrderState {
       {required final OrderStatus status,
       required final Order order,
       required final CreateOrder? createOrder,
-      required final OrderFailure? failure}) = _$_OrderState;
+      required final CreateOrderFailure? failure}) = _$_OrderState;
 
   @override
   OrderStatus get status;
@@ -233,7 +233,7 @@ abstract class _OrderState implements OrderState {
   @override
   CreateOrder? get createOrder;
   @override
-  OrderFailure? get failure;
+  CreateOrderFailure? get failure;
   @override
   @JsonKey(ignore: true)
   _$$_OrderStateCopyWith<_$_OrderState> get copyWith =>

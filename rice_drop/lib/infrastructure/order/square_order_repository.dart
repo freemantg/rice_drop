@@ -7,7 +7,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 import '../../domain/order/order.dart';
-import '../../domain/order/order_failure.dart';
+import '../../domain/order/create_order_failure.dart';
 import '../../domain/order/order_repository.dart';
 import '../../domain/pos/square_payment_failure.dart';
 import '../ios/square_pos_handler.dart';
@@ -28,7 +28,8 @@ class SquareOrderRepository implements OrderRepository {
   final SquarePOSHandler _squarePOSHandler;
 
   @override
-  Future<Either<OrderFailure, CreateOrder>> createOrder(Order order) async {
+  Future<Either<CreateOrderFailure, CreateOrder>> createOrder(
+      Order order) async {
     const requestUrl = 'https://connect.squareup.com/v2/orders';
 
     try {
@@ -43,24 +44,24 @@ class SquareOrderRepository implements OrderRepository {
         body: json.encode(orderParseBody),
       );
       if (response.statusCode != 200) {
-        return left(const OrderFailure.serverError());
+        return left(const CreateOrderFailure.serverError());
       } else {
         // Deserialize the JSON response
         Map<String, dynamic> jsonResponse = json.decode(response.body);
         Map<String, dynamic> orderJson = jsonResponse['order'];
         CreateOrder createOrder = CreateOrder.fromJson(orderJson);
-        await launchSquarePos(createOrder);
+        await launchPos(createOrder);
         return right(createOrder);
       }
     } on SocketException {
-      return left(const OrderFailure.network());
+      return left(const CreateOrderFailure.network());
     } catch (e) {
-      return left(const OrderFailure.unknown());
+      return left(const CreateOrderFailure.unknown());
     }
   }
 
   @override
-  Future<Either<SquarePaymentFailure, Unit>> launchSquarePos(
+  Future<Either<SquarePaymentFailure, Unit>> launchPos(
     CreateOrder createOrder,
   ) async {
     final amount = createOrder.totalMoney?.amount;

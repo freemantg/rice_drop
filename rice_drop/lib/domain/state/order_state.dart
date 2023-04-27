@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../infrastructure/order/create_order.dart';
+import '../order/create_order_failure.dart';
 import '../order/order.dart';
-import '../order/order_failure.dart';
 
 part 'order_state.freezed.dart';
 
@@ -12,7 +12,7 @@ class OrderState with _$OrderState {
     required OrderStatus status,
     required Order order,
     required CreateOrder? createOrder,
-    required OrderFailure? failure,
+    required CreateOrderFailure? failure,
   }) = _OrderState;
 
   factory OrderState.initial() {

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'order_failure.dart';
+part of 'create_order_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$OrderFailure {
+mixin _$CreateOrderFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() network,
@@ -75,16 +75,16 @@ mixin _$OrderFailure {
 }
 
 /// @nodoc
-abstract class $OrderFailureCopyWith<$Res> {
-  factory $OrderFailureCopyWith(
-          OrderFailure value, $Res Function(OrderFailure) then) =
-      _$OrderFailureCopyWithImpl<$Res, OrderFailure>;
+abstract class $CreateOrderFailureCopyWith<$Res> {
+  factory $CreateOrderFailureCopyWith(
+          CreateOrderFailure value, $Res Function(CreateOrderFailure) then) =
+      _$CreateOrderFailureCopyWithImpl<$Res, CreateOrderFailure>;
 }
 
 /// @nodoc
-class _$OrderFailureCopyWithImpl<$Res, $Val extends OrderFailure>
-    implements $OrderFailureCopyWith<$Res> {
-  _$OrderFailureCopyWithImpl(this._value, this._then);
+class _$CreateOrderFailureCopyWithImpl<$Res, $Val extends CreateOrderFailure>
+    implements $CreateOrderFailureCopyWith<$Res> {
+  _$CreateOrderFailureCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -101,7 +101,7 @@ abstract class _$$_NetworkCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NetworkCopyWithImpl<$Res>
-    extends _$OrderFailureCopyWithImpl<$Res, _$_Network>
+    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_Network>
     implements _$$_NetworkCopyWith<$Res> {
   __$$_NetworkCopyWithImpl(_$_Network _value, $Res Function(_$_Network) _then)
       : super(_value, _then);
@@ -114,7 +114,7 @@ class _$_Network implements _Network {
 
   @override
   String toString() {
-    return 'OrderFailure.network()';
+    return 'CreateOrderFailure.network()';
   }
 
   @override
@@ -207,7 +207,7 @@ class _$_Network implements _Network {
   }
 }
 
-abstract class _Network implements OrderFailure {
+abstract class _Network implements CreateOrderFailure {
   const factory _Network() = _$_Network;
 }
 
@@ -220,7 +220,7 @@ abstract class _$$_InsufficientStockCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InsufficientStockCopyWithImpl<$Res>
-    extends _$OrderFailureCopyWithImpl<$Res, _$_InsufficientStock>
+    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_InsufficientStock>
     implements _$$_InsufficientStockCopyWith<$Res> {
   __$$_InsufficientStockCopyWithImpl(
       _$_InsufficientStock _value, $Res Function(_$_InsufficientStock) _then)
@@ -234,7 +234,7 @@ class _$_InsufficientStock implements _InsufficientStock {
 
   @override
   String toString() {
-    return 'OrderFailure.insufficientStock()';
+    return 'CreateOrderFailure.insufficientStock()';
   }
 
   @override
@@ -327,7 +327,7 @@ class _$_InsufficientStock implements _InsufficientStock {
   }
 }
 
-abstract class _InsufficientStock implements OrderFailure {
+abstract class _InsufficientStock implements CreateOrderFailure {
   const factory _InsufficientStock() = _$_InsufficientStock;
 }
 
@@ -340,7 +340,7 @@ abstract class _$$_InvalidOrderCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InvalidOrderCopyWithImpl<$Res>
-    extends _$OrderFailureCopyWithImpl<$Res, _$_InvalidOrder>
+    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_InvalidOrder>
     implements _$$_InvalidOrderCopyWith<$Res> {
   __$$_InvalidOrderCopyWithImpl(
       _$_InvalidOrder _value, $Res Function(_$_InvalidOrder) _then)
@@ -354,7 +354,7 @@ class _$_InvalidOrder implements _InvalidOrder {
 
   @override
   String toString() {
-    return 'OrderFailure.invalidOrder()';
+    return 'CreateOrderFailure.invalidOrder()';
   }
 
   @override
@@ -447,7 +447,7 @@ class _$_InvalidOrder implements _InvalidOrder {
   }
 }
 
-abstract class _InvalidOrder implements OrderFailure {
+abstract class _InvalidOrder implements CreateOrderFailure {
   const factory _InvalidOrder() = _$_InvalidOrder;
 }
 
@@ -460,7 +460,7 @@ abstract class _$$_ServerErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ServerErrorCopyWithImpl<$Res>
-    extends _$OrderFailureCopyWithImpl<$Res, _$_ServerError>
+    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_ServerError>
     implements _$$_ServerErrorCopyWith<$Res> {
   __$$_ServerErrorCopyWithImpl(
       _$_ServerError _value, $Res Function(_$_ServerError) _then)
@@ -474,7 +474,7 @@ class _$_ServerError implements _ServerError {
 
   @override
   String toString() {
-    return 'OrderFailure.serverError()';
+    return 'CreateOrderFailure.serverError()';
   }
 
   @override
@@ -567,7 +567,7 @@ class _$_ServerError implements _ServerError {
   }
 }
 
-abstract class _ServerError implements OrderFailure {
+abstract class _ServerError implements CreateOrderFailure {
   const factory _ServerError() = _$_ServerError;
 }
 
@@ -580,7 +580,7 @@ abstract class _$$_UnknownCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnknownCopyWithImpl<$Res>
-    extends _$OrderFailureCopyWithImpl<$Res, _$_Unknown>
+    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_Unknown>
     implements _$$_UnknownCopyWith<$Res> {
   __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
       : super(_value, _then);
@@ -593,7 +593,7 @@ class _$_Unknown implements _Unknown {
 
   @override
   String toString() {
-    return 'OrderFailure.unknown()';
+    return 'CreateOrderFailure.unknown()';
   }
 
   @override
@@ -686,6 +686,6 @@ class _$_Unknown implements _Unknown {
   }
 }
 
-abstract class _Unknown implements OrderFailure {
+abstract class _Unknown implements CreateOrderFailure {
   const factory _Unknown() = _$_Unknown;
 }

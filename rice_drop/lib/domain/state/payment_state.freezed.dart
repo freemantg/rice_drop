@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'square_payment_state.dart';
+part of 'payment_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SquarePaymentState {
+mixin _$PaymentState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,16 +69,16 @@ mixin _$SquarePaymentState {
 }
 
 /// @nodoc
-abstract class $SquarePaymentStateCopyWith<$Res> {
-  factory $SquarePaymentStateCopyWith(
-          SquarePaymentState value, $Res Function(SquarePaymentState) then) =
-      _$SquarePaymentStateCopyWithImpl<$Res, SquarePaymentState>;
+abstract class $PaymentStateCopyWith<$Res> {
+  factory $PaymentStateCopyWith(
+          PaymentState value, $Res Function(PaymentState) then) =
+      _$PaymentStateCopyWithImpl<$Res, PaymentState>;
 }
 
 /// @nodoc
-class _$SquarePaymentStateCopyWithImpl<$Res, $Val extends SquarePaymentState>
-    implements $SquarePaymentStateCopyWith<$Res> {
-  _$SquarePaymentStateCopyWithImpl(this._value, this._then);
+class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
+    implements $PaymentStateCopyWith<$Res> {
+  _$PaymentStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +95,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$SquarePaymentStateCopyWithImpl<$Res, _$_Initial>
+    extends _$PaymentStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -108,7 +108,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'SquarePaymentState.initial()';
+    return 'PaymentState.initial()';
   }
 
   @override
@@ -195,7 +195,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements SquarePaymentState {
+abstract class _Initial implements PaymentState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -208,7 +208,7 @@ abstract class _$$_LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadingCopyWithImpl<$Res>
-    extends _$SquarePaymentStateCopyWithImpl<$Res, _$_Loading>
+    extends _$PaymentStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
@@ -221,7 +221,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'SquarePaymentState.loading()';
+    return 'PaymentState.loading()';
   }
 
   @override
@@ -308,7 +308,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements SquarePaymentState {
+abstract class _Loading implements PaymentState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -321,7 +321,7 @@ abstract class _$$_SuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$_SuccessCopyWithImpl<$Res>
-    extends _$SquarePaymentStateCopyWithImpl<$Res, _$_Success>
+    extends _$PaymentStateCopyWithImpl<$Res, _$_Success>
     implements _$$_SuccessCopyWith<$Res> {
   __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
       : super(_value, _then);
@@ -334,7 +334,7 @@ class _$_Success implements _Success {
 
   @override
   String toString() {
-    return 'SquarePaymentState.success()';
+    return 'PaymentState.success()';
   }
 
   @override
@@ -421,7 +421,7 @@ class _$_Success implements _Success {
   }
 }
 
-abstract class _Success implements SquarePaymentState {
+abstract class _Success implements PaymentState {
   const factory _Success() = _$_Success;
 }
 
@@ -432,11 +432,13 @@ abstract class _$$_FailureCopyWith<$Res> {
       __$$_FailureCopyWithImpl<$Res>;
   @useResult
   $Res call({SquarePaymentFailure failure});
+
+  $SquarePaymentFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
 class __$$_FailureCopyWithImpl<$Res>
-    extends _$SquarePaymentStateCopyWithImpl<$Res, _$_Failure>
+    extends _$PaymentStateCopyWithImpl<$Res, _$_Failure>
     implements _$$_FailureCopyWith<$Res> {
   __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
       : super(_value, _then);
@@ -444,14 +446,22 @@ class __$$_FailureCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
     return _then(_$_Failure(
-      freezed == failure
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as SquarePaymentFailure,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SquarePaymentFailureCopyWith<$Res> get failure {
+    return $SquarePaymentFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
   }
 }
 
@@ -465,7 +475,7 @@ class _$_Failure implements _Failure {
 
   @override
   String toString() {
-    return 'SquarePaymentState.failure(failure: $failure)';
+    return 'PaymentState.failure(failure: $failure)';
   }
 
   @override
@@ -473,12 +483,11 @@ class _$_Failure implements _Failure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Failure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -561,7 +570,7 @@ class _$_Failure implements _Failure {
   }
 }
 
-abstract class _Failure implements SquarePaymentState {
+abstract class _Failure implements PaymentState {
   const factory _Failure(final SquarePaymentFailure failure) = _$_Failure;
 
   SquarePaymentFailure get failure;
