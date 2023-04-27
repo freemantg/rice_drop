@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OrderState {
   OrderStatus get status => throw _privateConstructorUsedError;
   Order get order => throw _privateConstructorUsedError;
+  CreateOrder? get createOrder => throw _privateConstructorUsedError;
   OrderFailure? get failure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,9 +32,14 @@ abstract class $OrderStateCopyWith<$Res> {
           OrderState value, $Res Function(OrderState) then) =
       _$OrderStateCopyWithImpl<$Res, OrderState>;
   @useResult
-  $Res call({OrderStatus status, Order order, OrderFailure? failure});
+  $Res call(
+      {OrderStatus status,
+      Order order,
+      CreateOrder? createOrder,
+      OrderFailure? failure});
 
   $OrderCopyWith<$Res> get order;
+  $CreateOrderCopyWith<$Res>? get createOrder;
   $OrderFailureCopyWith<$Res>? get failure;
 }
 
@@ -52,6 +58,7 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
   $Res call({
     Object? status = null,
     Object? order = null,
+    Object? createOrder = freezed,
     Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -63,6 +70,10 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as Order,
+      createOrder: freezed == createOrder
+          ? _value.createOrder
+          : createOrder // ignore: cast_nullable_to_non_nullable
+              as CreateOrder?,
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -75,6 +86,18 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
   $OrderCopyWith<$Res> get order {
     return $OrderCopyWith<$Res>(_value.order, (value) {
       return _then(_value.copyWith(order: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CreateOrderCopyWith<$Res>? get createOrder {
+    if (_value.createOrder == null) {
+      return null;
+    }
+
+    return $CreateOrderCopyWith<$Res>(_value.createOrder!, (value) {
+      return _then(_value.copyWith(createOrder: value) as $Val);
     });
   }
 
@@ -99,10 +122,16 @@ abstract class _$$_OrderStateCopyWith<$Res>
       __$$_OrderStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({OrderStatus status, Order order, OrderFailure? failure});
+  $Res call(
+      {OrderStatus status,
+      Order order,
+      CreateOrder? createOrder,
+      OrderFailure? failure});
 
   @override
   $OrderCopyWith<$Res> get order;
+  @override
+  $CreateOrderCopyWith<$Res>? get createOrder;
   @override
   $OrderFailureCopyWith<$Res>? get failure;
 }
@@ -120,6 +149,7 @@ class __$$_OrderStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? order = null,
+    Object? createOrder = freezed,
     Object? failure = freezed,
   }) {
     return _then(_$_OrderState(
@@ -131,6 +161,10 @@ class __$$_OrderStateCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as Order,
+      createOrder: freezed == createOrder
+          ? _value.createOrder
+          : createOrder // ignore: cast_nullable_to_non_nullable
+              as CreateOrder?,
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -143,18 +177,23 @@ class __$$_OrderStateCopyWithImpl<$Res>
 
 class _$_OrderState implements _OrderState {
   const _$_OrderState(
-      {required this.status, required this.order, required this.failure});
+      {required this.status,
+      required this.order,
+      required this.createOrder,
+      required this.failure});
 
   @override
   final OrderStatus status;
   @override
   final Order order;
   @override
+  final CreateOrder? createOrder;
+  @override
   final OrderFailure? failure;
 
   @override
   String toString() {
-    return 'OrderState(status: $status, order: $order, failure: $failure)';
+    return 'OrderState(status: $status, order: $order, createOrder: $createOrder, failure: $failure)';
   }
 
   @override
@@ -164,11 +203,14 @@ class _$_OrderState implements _OrderState {
             other is _$_OrderState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.order, order) || other.order == order) &&
+            (identical(other.createOrder, createOrder) ||
+                other.createOrder == createOrder) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, order, failure);
+  int get hashCode =>
+      Object.hash(runtimeType, status, order, createOrder, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -181,12 +223,15 @@ abstract class _OrderState implements OrderState {
   const factory _OrderState(
       {required final OrderStatus status,
       required final Order order,
+      required final CreateOrder? createOrder,
       required final OrderFailure? failure}) = _$_OrderState;
 
   @override
   OrderStatus get status;
   @override
   Order get order;
+  @override
+  CreateOrder? get createOrder;
   @override
   OrderFailure? get failure;
   @override

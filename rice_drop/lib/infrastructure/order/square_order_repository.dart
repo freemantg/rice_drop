@@ -2,25 +2,30 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart' hide Order;
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../domain/order/order.dart';
 import '../../domain/order/order_failure.dart';
 import '../../domain/order/order_repository.dart';
-import '../../domain/pos/launch_square_pos_failure.dart';
+import '../../domain/pos/square_payment_failure.dart';
+import '../ios/square_pos_handler.dart';
 import 'create_order.dart';
 import 'order_dto.dart';
 
 class SquareOrderRepository implements OrderRepository {
-  SquareOrderRepository({required this.httpClient});
+  SquareOrderRepository(
+      {required this.httpClient, required SquarePOSHandler squarePOSHandler})
+      : _squarePOSHandler = squarePOSHandler;
 
   final accessToken = dotenv.env['SQUARE_ACCESS_TOKEN'];
-  final locationId = dotenv.env['SQUARE_LOCATION_ID'];
-  final applicationId = dotenv.env['SQUARE_APPLICATION_ID'];
+  final locationID = dotenv.env['SQUARE_LOCATION_ID'];
+  final applicationID = dotenv.env['SQUARE_APPLICATION_ID'];
+  final callbackUrl = dotenv.env['CALLBACK_URL'];
 
   final http.Client httpClient;
+  final SquarePOSHandler _squarePOSHandler;
 
   @override
   Future<Either<OrderFailure, CreateOrder>> createOrder(Order order) async {
@@ -28,7 +33,7 @@ class SquareOrderRepository implements OrderRepository {
 
     try {
       final orderParseBody =
-          OrderDto.fromDomain(order).toApiLineItems(locationId: locationId!);
+          OrderDto.fromDomain(order).toApiLineItems(locationId: locationID!);
       final response = await http.post(
         Uri.parse(requestUrl),
         headers: {
@@ -55,43 +60,48 @@ class SquareOrderRepository implements OrderRepository {
   }
 
   @override
-  Future<Either<LaunchSquarePOSFailure, Unit>> launchSquarePos(
+  Future<Either<SquarePaymentFailure, Unit>> launchSquarePos(
     CreateOrder createOrder,
   ) async {
-    final locationId = dotenv.env['SQUARE_LOCATION_ID'];
-    final orderId = createOrder.id;
     final amount = createOrder.totalMoney?.amount;
-    final applicationId = dotenv.env['SQUARE_APPLICATION_ID'];
-    final callbackUrl = dotenv.env['CALLBACK_URL'];
     final currency = createOrder.totalMoney?.currency?.toString().substring(9);
 
-    final jsonMap = {
-      'location_id': locationId,
-      'client_id': applicationId,
-      'api_version': createOrder.version,
-      'order_id': orderId,
-      'amount_money': {
-        'amount': amount,
-        'currency_code': currency,
-      },
-      'callback_url': callbackUrl,
-    };
-
-    final jsonString = json.encode(jsonMap);
-    final urlEncodedJson = Uri.encodeQueryComponent(jsonString);
-
-    final posUrl = 'square-commerce-v1://payment/create?data=$urlEncodedJson';
+    if (locationID == null || applicationID == null) {
+      return left(const SquarePaymentFailure.invalidIDs());
+    }
 
     try {
-      if (await canLaunchUrl(Uri.parse(posUrl))) {
-        print('POS URL: $posUrl');
-        await launchUrl(Uri.parse(posUrl));
-        return right(unit);
+      await _squarePOSHandler.initiatePayment(
+        amountCents: amount!,
+        currencyCode: currency!,
+        notes: 'notes',
+        callbackUrlScheme: callbackUrl!,
+        locationID: locationID!,
+        applicationID: applicationID!,
+      );
+      return right(unit);
+    } on PlatformException catch (e) {
+      if (e.code == 'user_cancel' ||
+          e.code == 'payment_canceled' ||
+          e.code == 'payment_failed') {
+        return left(const SquarePaymentFailure.paymentError());
+      } else if (e.code == 'payment_invalid') {
+        return left(const SquarePaymentFailure.paymentInvalid());
+      } else if (e.code == 'no_network') {
+        return left(const SquarePaymentFailure.noNetwork());
+      } else if (e.code == 'amount_too_small') {
+        return left(const SquarePaymentFailure.amountTooSmall());
+      } else if (e.code == 'amount_too_large') {
+        return left(const SquarePaymentFailure.amountTooLarge());
+      } else if (e.code == 'currency_mismatch') {
+        return left(const SquarePaymentFailure.currencyMismatch());
+      } else if (e.code == 'app_not_installed') {
+        return left(const SquarePaymentFailure.appNotInstalled());
+      } else if (e.code == 'no_location') {
+        return left(const SquarePaymentFailure.noLocation());
       } else {
-        return left(const LaunchSquarePOSFailure.appNotInstalled());
+        return left(SquarePaymentFailure.unknown(e.message));
       }
-    } catch (e) {
-      return left(LaunchSquarePOSFailure.unhandledException(e.toString()));
     }
   }
 }

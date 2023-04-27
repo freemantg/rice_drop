@@ -21,7 +21,7 @@ class OrderNotifier extends StateNotifier<OrderState> {
     state = successOrFailure.fold(
       (failure) => state.copyWith(status: OrderStatus.error),
       (createOrder) {
-        return state;
+        return state.copyWith(createOrder: createOrder);
       },
     );
   }

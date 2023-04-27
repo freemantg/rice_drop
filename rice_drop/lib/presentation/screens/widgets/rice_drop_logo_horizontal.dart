@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../main.dart';
-
 class RiceDropLogoHorizontal extends StatelessWidget {
   const RiceDropLogoHorizontal({
     super.key,
@@ -9,16 +7,9 @@ class RiceDropLogoHorizontal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => MyApp().initiatePayment(
-        1,
-        "GBP",
-        "TESTING",
-      ),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxHeight: 42.0),
-        child: Image.asset("assets/logo/Rice Drop Logo.png"),
-      ),
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxHeight: 42.0),
+      child: Image.asset("assets/logo/Rice Drop Logo.png"),
     );
   }
 }
