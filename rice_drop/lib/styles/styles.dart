@@ -12,6 +12,7 @@ class _AppStyle {
 class _Colors {
   late final primaryThemeColor = const Color(0xFF085930);
   late final onPrimaryThemeColor = const Color(0xFFFFFFFF);
+  late final secondaryThemeColor = const Color(0xFFC39A6C);
 }
 
 @immutable

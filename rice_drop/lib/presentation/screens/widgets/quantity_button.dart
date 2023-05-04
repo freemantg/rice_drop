@@ -2,7 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:rice_drop/styles/styles.dart';
+
+import '../../../styles/styles.dart';
 
 class QuantityButton extends HookWidget {
   const QuantityButton({

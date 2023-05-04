@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart' hide Order;
 
 import '../../infrastructure/order/create_order.dart';
-import '../pos/square_payment_failure.dart';
+import '../payment/square_payment_failure.dart';
 import 'create_order_failure.dart';
 import 'order.dart';
 

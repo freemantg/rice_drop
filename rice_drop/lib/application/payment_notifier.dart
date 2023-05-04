@@ -12,10 +12,11 @@ class PaymentNotifier extends StateNotifier<PaymentState> {
   final OrderRepository _orderRepository;
 
   Future<void> initiatePayment(CreateOrder createOrder) async {
+    state = const PaymentState.loading();
     final successOrFailure = await _orderRepository.launchPos(createOrder);
     state = successOrFailure.fold(
       (failure) => PaymentState.failure(failure),
-      (success) => PaymentState.success(),
+      (success) => const PaymentState.success(),
     );
   }
 }

@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rice_drop/domain/state/catalog_state.dart';
-import 'package:rice_drop/presentation/providers/providers.dart';
-import 'package:rice_drop/styles/space.dart';
-import 'package:rice_drop/styles/styles.dart';
 
 import '../../domain/catalog/category.dart';
+import '../../domain/state/catalog_state.dart';
+import '../../styles/space.dart';
+import '../../styles/styles.dart';
+import '../providers/providers.dart';
 import 'widgets/widgets.dart';
 
 @RoutePage()
@@ -46,14 +46,6 @@ class ItemGridScreen extends HookConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              category.name.toUpperCase(),
-              style: $styles.text.h2.copyWith(
-                color: $styles.colors.primaryThemeColor,
-                fontSize: 24.0,
-              ),
-            ),
-            HSpace(size: $styles.insets.sm),
             buildItemGridBody(),
             HSpace(size: $styles.insets.xl),
           ],

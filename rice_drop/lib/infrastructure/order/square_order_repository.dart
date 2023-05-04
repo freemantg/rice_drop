@@ -6,10 +6,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
-import '../../domain/order/order.dart';
 import '../../domain/order/create_order_failure.dart';
+import '../../domain/order/order.dart';
 import '../../domain/order/order_repository.dart';
-import '../../domain/pos/square_payment_failure.dart';
+import '../../domain/payment/square_payment_failure.dart';
 import '../ios/square_pos_handler.dart';
 import 'create_order.dart';
 import 'order_dto.dart';

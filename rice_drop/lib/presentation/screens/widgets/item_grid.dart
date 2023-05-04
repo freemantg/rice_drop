@@ -1,17 +1,14 @@
-import 'dart:io';
-
 import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:rice_drop/presentation/providers/providers.dart';
 
 import '../../../domain/catalog/item.dart';
 import '../../../domain/catalog/modifier_list.dart';
-
+import '../../../shared/extensions.dart';
 import '../../../styles/styles.dart';
 import '../../core/app_router.gr.dart';
+import '../../providers/providers.dart';
 
 class ItemGrid extends ConsumerWidget {
   const ItemGrid({
@@ -40,7 +37,7 @@ class ItemGrid extends ConsumerWidget {
                     : 1,
         crossAxisSpacing: $styles.insets.sm,
         mainAxisSpacing: $styles.insets.sm,
-        childAspectRatio: 0.9,
+        childAspectRatio: 0.65,
       ),
       physics: const BouncingScrollPhysics(),
       itemCount: items.length,
@@ -92,22 +89,30 @@ class ItemCard extends ConsumerWidget {
               );
       },
       child: Card(
+        color: Colors.transparent,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(width: 1, color: $styles.colors.primaryThemeColor),
+          borderRadius: BorderRadius.circular(0),
+        ),
+        elevation: 0,
         child: Padding(
-          padding: EdgeInsets.all($styles.insets.xs),
+          padding: EdgeInsets.all($styles.insets.sm),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
                     if (item.imageUrl.isNotEmpty) {
-                      return Hero(
-                        tag: item.imageUrl,
-                        child: CachedNetworkImage(
-                          imageUrl: item.imageUrl,
-                          fit: BoxFit.scaleDown,
-                          width: constraints.maxWidth,
-                          height: constraints.maxHeight,
+                      return AspectRatio(
+                        aspectRatio: 2,
+                        child: Hero(
+                          tag: item.imageUrl,
+                          child: CachedNetworkImage(
+                            imageUrl: item.imageUrl,
+                            fit: BoxFit.scaleDown,
+                            width: constraints.maxWidth,
+                            height: constraints.maxHeight,
+                          ),
                         ),
                       );
                     } else {
@@ -117,10 +122,8 @@ class ItemCard extends ConsumerWidget {
                 ),
               ),
               SizedBox(height: $styles.insets.md),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       item.name.toUpperCase(),
@@ -128,13 +131,25 @@ class ItemCard extends ConsumerWidget {
                         height: 0,
                         fontSize: 16.0,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                     SizedBox(height: $styles.insets.xs),
                     Text(
-                      NumberFormat.simpleCurrency(locale: Platform.localeName)
-                          .format(item.priceMoney.amount / 100),
+                      maxLines: 3,
+                      item.description,
+                      overflow: TextOverflow.ellipsis,
+                      style: $styles.text.bodySmall.copyWith(
+                        height: 0,
+                        fontSize: 12.0,
+                      ),
                       textAlign: TextAlign.center,
-                      style: $styles.text.body.copyWith(height: 0),
+                    ),
+                    const Spacer(),
+                    Text(
+                      item.priceMoney.amount.toCurrency(),
+                      textAlign: TextAlign.center,
+                      style: $styles.text.bodySmallBold
+                          .copyWith(color: $styles.colors.primaryThemeColor),
                     ),
                   ],
                 ),

@@ -1,12 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:auto_route/auto_route.dart';
-import 'package:rice_drop/domain/order/order.dart';
-import 'package:rice_drop/presentation/screens/widgets/widgets.dart';
-import 'package:rice_drop/styles/space.dart';
-import 'package:rice_drop/domain/catalog/item.dart';
-import 'package:rice_drop/domain/catalog/modifier_list.dart';
-import 'package:rice_drop/styles/styles.dart';
+
+import '../../domain/catalog/item.dart';
+import '../../domain/catalog/modifier_list.dart';
+import '../../domain/order/order.dart';
+import '../../styles/space.dart';
+import '../../styles/styles.dart';
+import 'widgets/widgets.dart';
 
 @RoutePage()
 class ItemScreen extends HookWidget {
@@ -26,7 +27,6 @@ class ItemScreen extends HookWidget {
     return Scaffold(
       bottomNavigationBar: _buildBottomNavigationBar(),
       appBar: const StyledAppBar(),
-      endDrawer: const OrderEndDrawer(),
       body: _buildBody(),
     );
   }
