@@ -4,8 +4,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../domain/catalog/category.dart';
 import '../../domain/state/catalog_state.dart';
-import '../../styles/space.dart';
-import '../../styles/styles.dart';
 import '../providers/providers.dart';
 import 'widgets/widgets.dart';
 
@@ -36,21 +34,6 @@ class ItemGridScreen extends HookConsumerWidget {
       }
     }
 
-    return Padding(
-      padding: EdgeInsets.only(
-        top: $styles.insets.md,
-        right: $styles.insets.xl,
-        left: $styles.insets.xl,
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            buildItemGridBody(),
-            HSpace(size: $styles.insets.xl),
-          ],
-        ),
-      ),
-    );
+    return buildItemGridBody();
   }
 }

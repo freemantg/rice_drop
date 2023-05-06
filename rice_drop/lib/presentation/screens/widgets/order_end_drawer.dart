@@ -21,19 +21,21 @@ class OrderSummary extends ConsumerWidget {
     final modifiers = ref.watch(catalogNotifierProvider).modifierLists;
 
     return Expanded(
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: $styles.insets.sm,
-          vertical: $styles.insets.sm,
-        ),
-        child: Column(
-          children: [
-            const OrderSummaryHeader(),
-            HSpace(size: $styles.insets.md),
-            Expanded(child: LineItemsList(order: order, modifiers: modifiers)),
-            const OrderEndDrawerBottomBar()
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const OrderSummaryHeader(),
+          Expanded(
+            child: (order.totalItems == 0)
+                ? Center(
+                    child: Text(
+                    'Your basket is empty',
+                    style: $styles.text.h4.copyWith(color: Colors.grey),
+                  ))
+                : LineItemsList(order: order, modifiers: modifiers),
+          ),
+          const OrderEndDrawerBottomBar()
+        ],
       ),
     );
   }
@@ -49,77 +51,109 @@ class OrderEndDrawerBottomBar extends ConsumerWidget {
     final order = ref.watch(orderNotifierProvider).order;
     final createOrder = ref.watch(orderNotifierProvider).createOrder;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Divider(color: $styles.colors.primaryThemeColor),
-        Row(
-          children: [
-            Text(
-              'Total: ',
-              style: $styles.text.h4.copyWith(fontSize: 18.0),
-            ),
-            Text(
-              '${order.totalItems} items',
-              style: $styles.text.caption.copyWith(fontSize: 16.0),
-            ),
-            const Spacer(),
-            Text(
-              order.totalPrice.toCurrency(),
-              style: $styles.text.h3.copyWith(
-                fontWeight: FontWeight.bold,
-                fontSize: 22.0,
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: $styles.insets.md,
+        horizontal: $styles.insets.md,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Divider(color: $styles.colors.primaryThemeColor),
+          Row(
+            children: [
+              Text(
+                'Total: ',
+                style: $styles.text.h4.copyWith(fontSize: 18.0),
+              ),
+              const Spacer(),
+              Text(
+                order.totalPrice.toCurrency(),
+                style: $styles.text.h3,
+              ),
+            ],
+          ),
+          HSpace(size: $styles.insets.sm),
+          ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(
+                $styles.colors.primaryThemeColor,
+              ),
+              shape: MaterialStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular($styles.corners.sm),
+                ),
               ),
             ),
-          ],
-        ),
-        HSpace(size: $styles.insets.sm),
-        ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(
-              $styles.colors.primaryThemeColor,
-            ),
-            shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular($styles.corners.sm),
+            child: Padding(
+              padding: EdgeInsets.all($styles.insets.sm),
+              child: Text(
+                'CHECKOUT',
+                style: $styles.text.bodyBold.copyWith(color: Colors.white),
               ),
             ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all($styles.insets.sm),
-            child: Text(
-              'FINISH & PAY',
-              style: $styles.text.bodyBold.copyWith(
-                color: Colors.white,
-              ),
+            onPressed: () => ref
+                .read(orderNotifierProvider.notifier)
+                .createOrder(order)
+                .then(
+              (_) {
+                if (createOrder != null) {
+                  ref
+                      .read(paymentNotifierProvider.notifier)
+                      .initiatePayment(createOrder);
+                }
+              },
             ),
-          ),
-          onPressed: () =>
-              ref.read(orderNotifierProvider.notifier).createOrder(order).then(
-            (_) {
-              if (createOrder != null) {
-                ref
-                    .read(paymentNotifierProvider.notifier)
-                    .initiatePayment(createOrder);
-              }
-            },
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }
 
-class OrderSummaryHeader extends StatelessWidget {
+class OrderSummaryHeader extends ConsumerWidget {
   const OrderSummaryHeader({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Text(
-      'Your Order',
-      style: $styles.text.h3.copyWith(color: $styles.colors.primaryThemeColor),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final order = ref.watch(orderNotifierProvider).order;
+
+    return Container(
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: $styles.colors.primaryThemeColor,
+        border: Border.all(color: $styles.colors.primaryThemeColor),
+      ),
+      padding: EdgeInsets.only(
+        top: $styles.insets.lg,
+        bottom: $styles.insets.xs,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'YOUR ORDER',
+            style: $styles.text.h4
+                .copyWith(color: $styles.colors.onPrimaryThemeColor),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: $styles.insets.xs),
+            padding: EdgeInsets.all($styles.insets.xxs),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: $styles.colors.secondaryThemeColor,
+            ),
+            child: Text(
+              order.totalItems.toString(),
+              style: $styles.text.h4.copyWith(
+                color: $styles.colors.onPrimaryThemeColor,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -137,6 +171,8 @@ class LineItemsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      padding: EdgeInsets.all($styles.insets.sm),
+      shrinkWrap: true,
       separatorBuilder: (_, __) => const Divider(),
       itemCount: order.lineItems.length,
       itemBuilder: (context, index) {
@@ -162,7 +198,7 @@ class LineItemWidget extends StatelessWidget {
     return Consumer(builder: (context, ref, _) {
       return Column(
         children: [
-          HSpace(size: $styles.insets.xs),
+          HSpace(size: $styles.insets.md),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -246,9 +282,7 @@ class LineItemActions extends StatelessWidget {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          lineItem.catalogObject.skipModifierScreen
-              ? const SizedBox(width: 48.0)
-              : EditButton(lineItem: lineItem, modifiers: modifiers),
+          EditButton(lineItem: lineItem, modifiers: modifiers),
           QuantityButton(
             quantity: lineItem.quantity,
             onQuantityChanged: (newQuantity) {
@@ -278,28 +312,34 @@ class EditButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
-        final itemModifiers = modifiers.where(
-          (modifier) {
-            return lineItem.catalogObject.modifierListInfo.any(
-              (itemModifier) => itemModifier.modifierListId == modifier.id,
+    return Opacity(
+      opacity: lineItem.catalogObject.skipModifierScreen ? 0.0 : 1.0,
+      child: IgnorePointer(
+        ignoring: lineItem.catalogObject.skipModifierScreen,
+        child: TextButton(
+          onPressed: () {
+            final itemModifiers = modifiers.where(
+              (modifier) {
+                return lineItem.catalogObject.modifierListInfo.any(
+                  (itemModifier) => itemModifier.modifierListId == modifier.id,
+                );
+              },
+            ).toList();
+            context.router.push(
+              ItemRoute(
+                item: lineItem.catalogObject,
+                modifierLists: itemModifiers,
+                initialLineItem: lineItem,
+              ),
             );
           },
-        ).toList();
-        context.router.push(
-          ItemRoute(
-            item: lineItem.catalogObject,
-            modifierLists: itemModifiers,
-            initialLineItem: lineItem,
+          child: Text(
+            'Edit',
+            style: $styles.text.bodySmall.copyWith(
+              height: 0,
+              fontSize: 12.0,
+            ),
           ),
-        );
-      },
-      child: Text(
-        'Edit',
-        style: $styles.text.bodySmall.copyWith(
-          height: 0,
-          fontSize: 12.0,
         ),
       ),
     );
