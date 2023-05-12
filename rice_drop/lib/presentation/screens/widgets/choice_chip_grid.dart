@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rice_drop/presentation/providers/providers.dart';
-import 'package:rice_drop/shared/extensions.dart';
 
 import '../../../domain/catalog/modifier_list.dart';
 import '../../../domain/order/order.dart';
+import '../../../shared/extensions.dart';
 import '../../../styles/space.dart';
 import '../../../styles/styles.dart';
+import '../../providers/providers.dart';
 
 class ChoiceChipGrid extends HookConsumerWidget {
   const ChoiceChipGrid({
@@ -48,52 +48,45 @@ class ChoiceChipGrid extends HookConsumerWidget {
     final selectedModifiers = ref.watch(modifierSelectionNotifierProvider);
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          modifierList.modifierListData.name,
-          style: $styles.text.caption.copyWith(
-            fontWeight: FontWeight.bold,
-            color: Colors.grey,
+        Center(
+          child: Text(
+            modifierList.modifierListData.name.renameModifiers(),
+            style: $styles.text.h4.copyWith(
+              color: $styles.colors.primaryThemeColor,
+            ),
           ),
         ),
         HSpace(size: $styles.insets.xs),
-        Row(
-          children: [
-            Expanded(
-              flex: 3,
-              child: Wrap(
-                spacing: $styles.insets.xs,
-                runSpacing: $styles.insets.xs,
-                children: modifierList.modifierListData.modifiers
-                    .map(
-                      (modifier) => StyledChoiceChip(
-                        modifier: modifier,
-                        selected: selectedModifiers
-                                .modifierSelection[modifierList.id]
-                                ?.contains(modifier) ??
-                            false,
-                        onSelected: () {
-                          final selectionType =
-                              modifierList.modifierListData.selectionType;
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: $styles.insets.xs,
+          children: modifierList.modifierListData.modifiers
+              .map(
+                (modifier) => StyledChoiceChip(
+                  modifier: modifier,
+                  selected: selectedModifiers.modifierSelection[modifierList.id]
+                          ?.contains(modifier) ??
+                      false,
+                  onSelected: () {
+                    final selectionType =
+                        modifierList.modifierListData.selectionType;
 
-                          ref
-                              .read(modifierSelectionNotifierProvider.notifier)
-                              .selectModifier(
-                                modifierList.id,
-                                modifier,
-                                multipleModifiers:
-                                    selectionType == "MULTIPLE" ? true : false,
-                              );
-                        },
-                      ),
-                    )
-                    .toList(),
-              ),
-            ),
-            const Spacer(),
-          ],
+                    ref
+                        .read(modifierSelectionNotifierProvider.notifier)
+                        .selectModifier(
+                          modifierList.id,
+                          modifier,
+                          multipleModifiers:
+                              selectionType == "MULTIPLE" ? true : false,
+                        );
+                  },
+                ),
+              )
+              .toList(),
         ),
+        HSpace(size: $styles.insets.md),
       ],
     );
   }

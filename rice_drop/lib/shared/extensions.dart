@@ -9,3 +9,20 @@ extension IntCurrentFormat on int {
     return formatter.format(this / 100);
   }
 }
+
+extension ModifiersFormat on String {
+  String renameModifiers() {
+    if (this == "Drop Boxes") {
+      return "CHOOSE YOUR BASE";
+    } else if (this == "Slaw") {
+      return "MAKE IT YOURS";
+    }
+    return this;
+  }
+}
+
+extension ItemTitleFormat on String {
+  String addNewlineBeforeDropBoxes() {
+    return replaceAll('Drop Box', '\nDrop Box').toUpperCase();
+  }
+}

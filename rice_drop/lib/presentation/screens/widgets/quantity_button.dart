@@ -18,16 +18,14 @@ class QuantityButton extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all($styles.insets.xs),
       decoration: BoxDecoration(
         color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular($styles.corners.md),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            padding: EdgeInsets.zero,
-            iconSize: 16.0,
             onPressed: () {
               onQuantityChanged(max(1, quantity - 1));
             },
@@ -35,11 +33,50 @@ class QuantityButton extends HookWidget {
           ),
           Text(
             quantity.toString(),
-            style: $styles.text.bodySmallBold,
+            style: $styles.text.h3,
           ),
           IconButton(
-            padding: EdgeInsets.zero,
-            iconSize: 16.0,
+            onPressed: () {
+              onQuantityChanged(min(10, quantity + 1));
+            },
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class QuantityMiniButton extends HookWidget {
+  const QuantityMiniButton({
+    super.key,
+    required this.quantity,
+    required this.onQuantityChanged,
+  });
+
+  final int quantity;
+  final ValueChanged<int> onQuantityChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey.shade200,
+        borderRadius: BorderRadius.circular($styles.corners.md),
+      ),
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () {
+              onQuantityChanged(max(1, quantity - 1));
+            },
+            icon: const Icon(Icons.remove),
+          ),
+          Text(
+            quantity.toString(),
+            style: $styles.text.h4,
+          ),
+          IconButton(
             onPressed: () {
               onQuantityChanged(min(10, quantity + 1));
             },

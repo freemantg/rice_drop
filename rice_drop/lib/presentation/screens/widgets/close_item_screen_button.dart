@@ -10,7 +10,9 @@ class CloseItemScreenButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () => context.router.popUntilRoot(),
-      icon: const Icon(Icons.close),
+      icon: const Icon(
+        Icons.close,
+      ),
     );
   }
 }

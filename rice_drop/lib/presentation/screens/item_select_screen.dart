@@ -4,14 +4,13 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../domain/catalog/category.dart';
-import '../../shared/text_constants.dart';
 import '../../styles/styles.dart';
 import '../providers/providers.dart';
 import 'item_grid_screen.dart';
 import 'widgets/widgets.dart';
 
 @RoutePage()
-class ItemSelectScreen extends HookConsumerWidget {
+class ItemSelectScreen extends StatefulHookConsumerWidget {
   const ItemSelectScreen({
     Key? key,
     required this.title,
@@ -20,26 +19,35 @@ class ItemSelectScreen extends HookConsumerWidget {
   final String title;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ItemSelectScreen> createState() => _ItemSelectScreenState();
+}
+
+class _ItemSelectScreenState extends ConsumerState<ItemSelectScreen>
+    with TickerProviderStateMixin {
+  @override
+  Widget build(BuildContext context) {
     final categories = useState<List<CategoryModel>?>(null);
 
     useEffect(() {
       Future<void> _fetchItemsAndInitializeTabController() async {
         await ref.read(catalogNotifierProvider.notifier).fetchData();
         categories.value = ref.read(catalogNotifierProvider).categories;
+
+        // Initialize the TabController here
+        ref.read(tabControllerProvider.notifier).state = TabController(
+          length: (categories.value?.length ?? 0) + 1,
+          vsync: this, // using 'this' as TickerProvider
+        );
       }
 
       Future.microtask(() => _fetchItemsAndInitializeTabController());
-      return () {};
+      return () {
+        // Dispose the TabController when not needed
+        ref.read(tabControllerProvider.notifier).state?.dispose();
+      };
     }, const []);
 
-    final tabController = useMemoized(
-      () => TabController(
-        vsync: Navigator.of(context),
-        length: (categories.value?.length ?? 0) + 1,
-      ),
-      [categories.value],
-    );
+    final tabController = ref.watch(tabControllerProvider.notifier).state;
 
     return SafeArea(
       child: Scaffold(
@@ -53,7 +61,7 @@ class ItemSelectScreen extends HookConsumerWidget {
   }
 
   Widget _buildTabBar(
-    TabController tabController,
+    TabController? tabController,
     List<CategoryModel> categories,
   ) {
     return Row(
@@ -89,7 +97,7 @@ class ItemSelectScreen extends HookConsumerWidget {
                 child: TabBarView(
                   controller: tabController,
                   children: [
-                    const TrendingTabContent(),
+                    TrendingTabContent(categories: categories),
                     ...categories
                         .map((category) => ItemGridScreen(category: category))
                         .toList()
@@ -101,52 +109,6 @@ class ItemSelectScreen extends HookConsumerWidget {
         ),
         const OrderSummary(),
       ],
-    );
-  }
-}
-
-class AllergensButton extends StatelessWidget {
-  const AllergensButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
-        showDialog(
-          context: context,
-          builder: (context) => const AllergensAlertDialog(),
-        );
-      },
-      child: Text(
-        'Allergens?',
-        style: $styles.text.bodyBold
-            .copyWith(color: $styles.colors.onPrimaryThemeColor),
-      ),
-    );
-  }
-}
-
-class AllergensAlertDialog extends StatelessWidget {
-  const AllergensAlertDialog({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      icon: Icon(
-        Icons.info,
-        color: $styles.colors.primaryThemeColor,
-      ),
-      title: const Text('Allergens'),
-      titleTextStyle: $styles.text.h3.copyWith(color: Colors.black),
-      content: const Text(
-        TextConstants.allergensInformation,
-        textAlign: TextAlign.center,
-      ),
-      contentTextStyle: $styles.text.body.copyWith(color: Colors.black),
     );
   }
 }

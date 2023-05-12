@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -8,8 +7,9 @@ import '../../../domain/catalog/item.dart';
 import '../../../domain/catalog/modifier_list.dart';
 import '../../../shared/extensions.dart';
 import '../../../styles/styles.dart';
-import '../../core/app_router.gr.dart';
 import '../../providers/providers.dart';
+import '../item_screen.dart';
+import 'widgets.dart';
 
 class ItemGrid extends ConsumerWidget {
   const ItemGrid({
@@ -94,7 +94,7 @@ class ItemCard extends HookConsumerWidget {
     }, [animation]);
 
     return GestureDetector(
-      onTap: () {
+      onTap: () async {
         item.skipModifierScreen
             ? ref
                 .read(orderNotifierProvider.notifier)
@@ -106,11 +106,14 @@ class ItemCard extends HookConsumerWidget {
                 .then((value) {
                 controller.forward();
               })
-            : context.router.push(
-                ItemRoute(
-                  item: item,
-                  modifierLists: modifiers,
-                ),
+            : await showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return ModifierSelectorDialog(
+                    item: item,
+                    modifierLists: modifiers,
+                  );
+                },
               );
       },
       child: ScaleTransition(
@@ -130,17 +133,10 @@ class ItemCard extends HookConsumerWidget {
                   child: LayoutBuilder(
                     builder: (context, constraints) {
                       if (item.imageUrl.isNotEmpty) {
-                        return AspectRatio(
-                          aspectRatio: 2,
-                          child: Hero(
-                            tag: item.imageUrl,
-                            child: CachedNetworkImage(
-                              imageUrl: item.imageUrl,
-                              fit: BoxFit.scaleDown,
-                              width: constraints.maxWidth,
-                              height: constraints.maxHeight,
-                            ),
-                          ),
+                        return CachedNetworkImage(
+                          imageUrl: item.imageUrl,
+                          width: constraints.maxWidth,
+                          height: constraints.maxHeight,
                         );
                       } else {
                         return const Text('ERROR LOADING IMAGE');
@@ -186,6 +182,41 @@ class ItemCard extends HookConsumerWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ModifierSelectorDialog extends HookWidget {
+  const ModifierSelectorDialog({
+    Key? key,
+    required this.item,
+    required this.modifierLists,
+  }) : super(key: key);
+
+  final Item item;
+  final List<ModifierList> modifierLists;
+
+  @override
+  Widget build(BuildContext context) {
+    final quantity = useState<int>(1);
+
+    return AlertDialog(
+      elevation: 0,
+      shape: const RoundedRectangleBorder(),
+      content: ItemScreen(item: item, modifierLists: modifierLists),
+      actionsPadding: EdgeInsets.only(
+        left: $styles.insets.xs,
+        right: $styles.insets.xs,
+        bottom: $styles.insets.xs,
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop<int>(quantity.value);
+          },
+          child: AddToBasketButton(item: item),
+        ),
+      ],
     );
   }
 }

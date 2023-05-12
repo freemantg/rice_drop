@@ -283,7 +283,7 @@ class LineItemActions extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           EditButton(lineItem: lineItem, modifiers: modifiers),
-          QuantityButton(
+          QuantityMiniButton(
             quantity: lineItem.quantity,
             onQuantityChanged: (newQuantity) {
               ref.read(orderNotifierProvider.notifier).updateLineItem(

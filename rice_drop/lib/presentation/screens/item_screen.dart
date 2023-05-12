@@ -1,6 +1,4 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../domain/catalog/item.dart';
 import '../../domain/catalog/modifier_list.dart';
@@ -9,8 +7,7 @@ import '../../styles/space.dart';
 import '../../styles/styles.dart';
 import 'widgets/widgets.dart';
 
-@RoutePage()
-class ItemScreen extends HookWidget {
+class ItemScreen extends StatelessWidget {
   const ItemScreen({
     Key? key,
     required this.item,
@@ -24,61 +21,25 @@ class ItemScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: _buildBottomNavigationBar(),
-      appBar: const StyledAppBar(),
-      body: _buildBody(),
-    );
-  }
-
-  LayoutBuilder _buildBody() {
-    return LayoutBuilder(
-      builder: (context, constraints) => Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              top: $styles.insets.sm,
-              right: $styles.insets.sm,
-            ),
-            child: const Align(
-              alignment: Alignment.centerRight,
-              child: CloseItemScreenButton(),
-            ),
+    return Stack(
+      children: [
+        SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ItemImage(imageUrl: item.imageUrl),
+              HSpace(size: $styles.insets.lg),
+              ItemTitleAndDescription(item: item),
+              HSpace(size: $styles.insets.xl),
+              ModifiersChips(
+                modifierLists: modifierLists,
+                initialLineItem: initialLineItem,
+              ),
+            ],
           ),
-          const Spacer(),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxHeight: MediaQuery.of(context).size.height / 1.5,
-            ),
-            child: Row(
-              children: [
-                FullSizeItemImage(imageUrl: item.imageUrl),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Spacer(),
-                      AnimatedTitleAndDescription(item: item),
-                      HSpace(size: $styles.insets.md),
-                      AnimatedModifiersChips(
-                        modifierLists: modifierLists,
-                        initialLineItem: initialLineItem,
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-          const Spacer(),
-        ],
-      ),
+        ),
+        const CloseItemScreenButton(),
+      ],
     );
-  }
-
-  Widget _buildBottomNavigationBar() {
-    return AnimatedAddToBasketButton(item: item);
   }
 }

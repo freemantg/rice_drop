@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rice_drop/domain/order/order.dart';
-import 'package:rice_drop/presentation/providers/providers.dart';
-import 'package:rice_drop/shared/extensions.dart';
 
 import '../../../domain/catalog/item.dart';
+import '../../../domain/order/order.dart';
+import '../../../shared/extensions.dart';
 import '../../../styles/styles.dart';
+import '../../providers/providers.dart';
 
 class AddToOrderButton extends ConsumerWidget {
   const AddToOrderButton({
@@ -63,10 +63,6 @@ class AddToOrderButton extends ConsumerWidget {
                 quantity: quantity,
               );
         }
-        // Schedule the opening of the EndDrawer after navigating back to the home page
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          ref.read(endDrawerNotifierProvider.notifier).openEndDrawer();
-        });
         // Navigate back to the home page
         AutoRouter.of(context).pop();
       },
@@ -81,6 +77,7 @@ class AddToOrderButton extends ConsumerWidget {
                 color: Colors.white,
               ),
             ),
+            const Spacer(),
             Text(
               totalPrice.toCurrency(),
               style: $styles.text.bodyBold.copyWith(
