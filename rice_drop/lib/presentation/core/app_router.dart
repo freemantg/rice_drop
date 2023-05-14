@@ -9,10 +9,7 @@ class AppRouter extends $AppRouter {
 
   @override
   final List<AutoRoute> routes = [
-    AutoRoute(page: TapToOrderRoute.page, path: '/'),
-    AutoRoute(page: ItemSelectRoute.page),
-    AutoRoute(page: ItemRoute.page),
-
-    /// routes go here
+    AutoRoute(page: ItemSelectRoute.page, path: '/'),
+    AutoRoute(page: CheckoutRoute.page),
   ];
 }

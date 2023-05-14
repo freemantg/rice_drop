@@ -278,13 +278,14 @@ class __$$_LineItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LineItem implements _LineItem {
+class _$_LineItem extends _LineItem {
   const _$_LineItem(
       {required this.id,
       required this.catalogObject,
       required this.quantity,
       final List<Modifier>? modifiers})
-      : _modifiers = modifiers;
+      : _modifiers = modifiers,
+        super._();
 
   @override
   final String id;
@@ -332,12 +333,13 @@ class _$_LineItem implements _LineItem {
       __$$_LineItemCopyWithImpl<_$_LineItem>(this, _$identity);
 }
 
-abstract class _LineItem implements LineItem {
+abstract class _LineItem extends LineItem {
   const factory _LineItem(
       {required final String id,
       required final Item catalogObject,
       required final int quantity,
       final List<Modifier>? modifiers}) = _$_LineItem;
+  const _LineItem._() : super._();
 
   @override
   String get id;

@@ -34,15 +34,15 @@ class OrderSummary extends ConsumerWidget {
                   ))
                 : LineItemsList(order: order, modifiers: modifiers),
           ),
-          const OrderEndDrawerBottomBar()
+          const OrderSummaryBottomBar()
         ],
       ),
     );
   }
 }
 
-class OrderEndDrawerBottomBar extends ConsumerWidget {
-  const OrderEndDrawerBottomBar({
+class OrderSummaryBottomBar extends ConsumerWidget {
+  const OrderSummaryBottomBar({
     super.key,
   });
 
@@ -97,10 +97,11 @@ class OrderEndDrawerBottomBar extends ConsumerWidget {
                 .createOrder(order)
                 .then(
               (_) {
+                context.router.push(const CheckoutRoute());
                 if (createOrder != null) {
-                  ref
-                      .read(paymentNotifierProvider.notifier)
-                      .initiatePayment(createOrder);
+                  // ref
+                  //     .read(paymentNotifierProvider.notifier)
+                  //     .initiatePayment(createOrder);
                 }
               },
             ),
@@ -207,8 +208,8 @@ class LineItemWidget extends StatelessWidget {
                 height: 48.0,
               ),
               VSpace(size: $styles.insets.sm),
-              Expanded(child: LineItemDetails(lineItem: lineItem)),
-              LineItemPrice(lineItem: lineItem),
+              Expanded(flex: 3, child: LineItemDetails(lineItem: lineItem)),
+              Expanded(child: LineItemPrice(lineItem: lineItem)),
             ],
           ),
           VSpace(size: $styles.insets.sm),
@@ -317,7 +318,7 @@ class EditButton extends StatelessWidget {
       child: IgnorePointer(
         ignoring: lineItem.catalogObject.skipModifierScreen,
         child: TextButton(
-          onPressed: () {
+          onPressed: () async {
             final itemModifiers = modifiers.where(
               (modifier) {
                 return lineItem.catalogObject.modifierListInfo.any(
@@ -325,11 +326,12 @@ class EditButton extends StatelessWidget {
                 );
               },
             ).toList();
-            context.router.push(
-              ItemRoute(
-                item: lineItem.catalogObject,
-                modifierLists: itemModifiers,
+            await showDialog(
+              context: context,
+              builder: (context) => ModifierSelectorDialog(
+                item: lineItem.toItem(),
                 initialLineItem: lineItem,
+                modifierLists: itemModifiers,
               ),
             );
           },

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../domain/catalog/category.dart';
 import '../../../styles/space.dart';
 import '../../../styles/styles.dart';
+import '../../providers/tab_controller.dart';
 
-class TrendingTabContent extends StatelessWidget {
+class TrendingTabContent extends ConsumerWidget {
   const TrendingTabContent({
     Key? key,
     required this.categories,
@@ -13,7 +15,9 @@ class TrendingTabContent extends StatelessWidget {
   final List<CategoryModel> categories;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final tabController = ref.watch(tabControllerProvider).tabController;
+
     return Padding(
       padding: EdgeInsets.only(
         top: $styles.insets.xs,
@@ -25,25 +29,22 @@ class TrendingTabContent extends StatelessWidget {
           SliverGrid(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 1,
-              childAspectRatio: 16 / 8,
+              childAspectRatio: 16 / 9,
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular($styles.corners.sm),
-                    ),
-                    image: const DecorationImage(
-                      image:
-                          AssetImage('assets/pictures/category_header_1.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      categories.first.name,
-                      style: $styles.text.h1.copyWith(color: Colors.white),
+                return GestureDetector(
+                  onTap: () => tabController?.animateTo(1),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular($styles.corners.sm),
+                      ),
+                      image: const DecorationImage(
+                        image:
+                            AssetImage('assets/pictures/category_header_1.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 );
@@ -61,25 +62,20 @@ class TrendingTabContent extends StatelessWidget {
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular($styles.corners.sm),
-                    ),
-                    color: Colors.green,
-                    image: const DecorationImage(
-                      image: AssetImage(
-                        'assets/pictures/parallax_scene_layer_6.png',
+                return GestureDetector(
+                  onTap: () => tabController?.animateTo(index + 2),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular($styles.corners.sm),
                       ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      categories[index + 1]
-                          .name, // starts from 2 because the first grid takes index 1
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),
+                      color: Colors.green,
+                      image:  DecorationImage(
+                        image: AssetImage(
+                          'assets/pictures/category_header_${index+2}.png',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 );

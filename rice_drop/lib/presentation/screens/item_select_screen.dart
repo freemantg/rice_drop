@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../domain/catalog/category.dart';
 import '../../styles/styles.dart';
 import '../providers/providers.dart';
+import '../providers/tab_controller.dart';
 import 'item_grid_screen.dart';
 import 'widgets/widgets.dart';
 
@@ -13,10 +14,7 @@ import 'widgets/widgets.dart';
 class ItemSelectScreen extends StatefulHookConsumerWidget {
   const ItemSelectScreen({
     Key? key,
-    required this.title,
   }) : super(key: key);
-
-  final String title;
 
   @override
   ConsumerState<ItemSelectScreen> createState() => _ItemSelectScreenState();
@@ -24,39 +22,43 @@ class ItemSelectScreen extends StatefulHookConsumerWidget {
 
 class _ItemSelectScreenState extends ConsumerState<ItemSelectScreen>
     with TickerProviderStateMixin {
+  Future<void> _fetchItemsAndInitializeTabController() async {
+    await ref.read(catalogNotifierProvider.notifier).fetchData();
+    final categories = ref.read(catalogNotifierProvider).categories;
+
+    final tabControllerNotifier = ref.read(tabControllerProvider);
+    final tabController = tabControllerNotifier.tabController;
+
+    if (tabController == null) {
+      ref.read(tabControllerProvider.notifier).setTabController(
+            TabController(
+              length: (categories.length) + 1,
+              vsync: this, // using 'this' as TickerProvider
+            ),
+          );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final categories = useState<List<CategoryModel>?>(null);
+    final categories = ref.read(catalogNotifierProvider).categories;
+    final tabController = ref.watch(tabControllerProvider).tabController;
 
-    useEffect(() {
-      Future<void> _fetchItemsAndInitializeTabController() async {
-        await ref.read(catalogNotifierProvider.notifier).fetchData();
-        categories.value = ref.read(catalogNotifierProvider).categories;
-
-        // Initialize the TabController here
-        ref.read(tabControllerProvider.notifier).state = TabController(
-          length: (categories.value?.length ?? 0) + 1,
-          vsync: this, // using 'this' as TickerProvider
-        );
-      }
-
-      Future.microtask(() => _fetchItemsAndInitializeTabController());
-      return () {
-        // Dispose the TabController when not needed
-        ref.read(tabControllerProvider.notifier).state?.dispose();
-      };
-    }, const []);
-
-    final tabController = ref.watch(tabControllerProvider.notifier).state;
+    useEffect(
+      () {
+        Future.microtask(() => _fetchItemsAndInitializeTabController());
+        return () => tabController?.dispose();
+      },
+      const [],
+    );
 
     return SafeArea(
       child: Scaffold(
-        body: categories.value != null
-            ? ParallaxHeader(
-                child: _buildTabBar(tabController, categories.value!),
-              )
+          body: ParallaxHeader(
+        child: categories.isNotEmpty
+            ? _buildTabBar(tabController, categories)
             : const Center(child: CircularProgressIndicator()),
-      ),
+      )),
     );
   }
 

@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../domain/catalog/item.dart';
 import '../../../domain/catalog/modifier_list.dart';
+import '../../../domain/order/order.dart';
 import '../../../shared/extensions.dart';
 import '../../../styles/styles.dart';
 import '../../providers/providers.dart';
@@ -191,10 +192,12 @@ class ModifierSelectorDialog extends HookWidget {
     Key? key,
     required this.item,
     required this.modifierLists,
+    this.initialLineItem,
   }) : super(key: key);
 
   final Item item;
   final List<ModifierList> modifierLists;
+  final LineItem? initialLineItem;
 
   @override
   Widget build(BuildContext context) {
@@ -203,7 +206,11 @@ class ModifierSelectorDialog extends HookWidget {
     return AlertDialog(
       elevation: 0,
       shape: const RoundedRectangleBorder(),
-      content: ItemScreen(item: item, modifierLists: modifierLists),
+      content: ItemScreen(
+        item: item,
+        modifierLists: modifierLists,
+        initialLineItem: initialLineItem,
+      ),
       actionsPadding: EdgeInsets.only(
         left: $styles.insets.xs,
         right: $styles.insets.xs,
@@ -214,7 +221,10 @@ class ModifierSelectorDialog extends HookWidget {
           onPressed: () {
             Navigator.of(context).pop<int>(quantity.value);
           },
-          child: AddToBasketButton(item: item),
+          child: AddToBasketButton(
+            item: item,
+            initialLineItem: initialLineItem,
+          ),
         ),
       ],
     );

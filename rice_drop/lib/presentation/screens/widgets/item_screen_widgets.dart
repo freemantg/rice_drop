@@ -38,9 +38,14 @@ class ModifiersChips extends HookWidget {
 }
 
 class AddToBasketButton extends HookWidget {
-  const AddToBasketButton({required this.item, Key? key}) : super(key: key);
+  const AddToBasketButton({
+    required this.item,
+    this.initialLineItem,
+    Key? key,
+  }) : super(key: key);
 
   final Item item;
+  final LineItem? initialLineItem;
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +64,7 @@ class AddToBasketButton extends HookWidget {
           child: AddToOrderButton(
             item: item,
             quantity: quantityState.value,
+            initialLineItem: initialLineItem,
           ),
         ),
       ],

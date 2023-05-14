@@ -9,7 +9,7 @@ part 'order.freezed.dart';
 @freezed
 class Order with _$Order {
   Order._();
-   factory Order({
+  factory Order({
     required String idempotencyKey,
     required List<LineItem> lineItems,
   }) = _Order;
@@ -61,10 +61,24 @@ class Order with _$Order {
 
 @freezed
 class LineItem with _$LineItem {
+  const LineItem._();
   const factory LineItem({
     required String id,
     required Item catalogObject,
     required int quantity,
     List<Modifier>? modifiers,
   }) = _LineItem;
+
+  Item toItem() {
+    return Item(
+      id: catalogObject.id,
+      name: catalogObject.name,
+      description: catalogObject.description,
+      priceMoney: catalogObject.priceMoney,
+      imageUrl: catalogObject.imageUrl,
+      categoryId: catalogObject.id,
+      skipModifierScreen: catalogObject.skipModifierScreen,
+      modifierListInfo: catalogObject.modifierListInfo,
+    );
+  }
 }

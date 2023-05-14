@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
 
@@ -19,24 +18,7 @@ import '../../infrastructure/data_source/remote_data_source.dart';
 import '../../infrastructure/ios/square_pos_handler.dart';
 import '../../infrastructure/order/square_order_repository.dart';
 
-final tabControllerProvider =
-    StateNotifierProvider.autoDispose<TabControllerNotifier, TabController?>(
-  (ref) => TabControllerNotifier(),
-);
 
-class TabControllerNotifier extends StateNotifier<TabController?> {
-  TabControllerNotifier() : super(null);
-  void updateTabController(TabController controller) {
-    state?.dispose();
-    state = controller;
-  }
-
-  @override
-  void dispose() {
-    state?.dispose();
-    super.dispose();
-  }
-}
 
 class CategoriesController extends StateNotifier<List<CategoryModel>?> {
   CategoriesController(this.ref) : super(null) {
