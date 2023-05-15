@@ -75,37 +75,34 @@ class OrderSummaryBottomBar extends ConsumerWidget {
           ),
           HSpace(size: $styles.insets.sm),
           ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(
-                $styles.colors.primaryThemeColor,
-              ),
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular($styles.corners.sm),
+              style: ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(
+                  $styles.colors.primaryThemeColor,
+                ),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular($styles.corners.sm),
+                  ),
                 ),
               ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all($styles.insets.sm),
-              child: Text(
-                'CHECKOUT',
-                style: $styles.text.bodyBold.copyWith(color: Colors.white),
+              child: Padding(
+                padding: EdgeInsets.all($styles.insets.sm),
+                child: Text(
+                  'CHECKOUT',
+                  style: $styles.text.bodyBold.copyWith(color: Colors.white),
+                ),
               ),
-            ),
-            onPressed: () => ref
-                .read(orderNotifierProvider.notifier)
-                .createOrder(order)
-                .then(
-              (_) {
-                context.router.push(const CheckoutRoute());
+              onPressed: () {
+                ref.read(orderNotifierProvider.notifier).createOrder(order);
                 if (createOrder != null) {
-                  // ref
-                  //     .read(paymentNotifierProvider.notifier)
-                  //     .initiatePayment(createOrder);
+                  context.router.push(
+                    CheckoutRoute(
+                      order: order,
+                      createOrder: createOrder,
+                    ),
+                  );
                 }
-              },
-            ),
-          )
+              }),
         ],
       ),
     );

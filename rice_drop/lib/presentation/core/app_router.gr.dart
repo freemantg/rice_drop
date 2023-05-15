@@ -11,6 +11,8 @@
 import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:flutter/material.dart' as _i5;
 import 'package:rice_drop/domain/catalog/category.dart' as _i6;
+import 'package:rice_drop/domain/order/order.dart' as _i7;
+import 'package:rice_drop/infrastructure/order/create_order.dart' as _i8;
 import 'package:rice_drop/presentation/screens/checkout_screen.dart' as _i3;
 import 'package:rice_drop/presentation/screens/item_grid_screen.dart' as _i1;
 import 'package:rice_drop/presentation/screens/item_select_screen.dart' as _i2;
@@ -38,9 +40,14 @@ abstract class $AppRouter extends _i4.RootStackRouter {
       );
     },
     CheckoutRoute.name: (routeData) {
+      final args = routeData.argsAs<CheckoutRouteArgs>();
       return _i4.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.CheckoutScreen(),
+        child: _i3.CheckoutScreen(
+          key: args.key,
+          order: args.order,
+          createOrder: args.createOrder,
+        ),
       );
     },
   };
@@ -100,14 +107,43 @@ class ItemSelectRoute extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.CheckoutScreen]
-class CheckoutRoute extends _i4.PageRouteInfo<void> {
-  const CheckoutRoute({List<_i4.PageRouteInfo>? children})
-      : super(
+class CheckoutRoute extends _i4.PageRouteInfo<CheckoutRouteArgs> {
+  CheckoutRoute({
+    _i5.Key? key,
+    required _i7.Order order,
+    required _i8.CreateOrder createOrder,
+    List<_i4.PageRouteInfo>? children,
+  }) : super(
           CheckoutRoute.name,
+          args: CheckoutRouteArgs(
+            key: key,
+            order: order,
+            createOrder: createOrder,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'CheckoutRoute';
 
-  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
+  static const _i4.PageInfo<CheckoutRouteArgs> page =
+      _i4.PageInfo<CheckoutRouteArgs>(name);
+}
+
+class CheckoutRouteArgs {
+  const CheckoutRouteArgs({
+    this.key,
+    required this.order,
+    required this.createOrder,
+  });
+
+  final _i5.Key? key;
+
+  final _i7.Order order;
+
+  final _i8.CreateOrder createOrder;
+
+  @override
+  String toString() {
+    return 'CheckoutRouteArgs{key: $key, order: $order, createOrder: $createOrder}';
+  }
 }

@@ -50,7 +50,6 @@ class SquareOrderRepository implements OrderRepository {
         Map<String, dynamic> jsonResponse = json.decode(response.body);
         Map<String, dynamic> orderJson = jsonResponse['order'];
         CreateOrder createOrder = CreateOrder.fromJson(orderJson);
-        await launchPos(createOrder);
         return right(createOrder);
       }
     } on SocketException {

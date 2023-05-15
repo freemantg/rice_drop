@@ -25,7 +25,10 @@ class MyApp extends StatelessWidget {
       routeInformationParser: _appRouter.defaultRouteParser(),
       routerDelegate: _appRouter.delegate(),
       theme: ThemeData(
-        appBarTheme: AppBarTheme(color: $styles.colors.onPrimaryThemeColor),
+        appBarTheme: AppBarTheme(
+          color: $styles.colors.primaryThemeColor,
+          foregroundColor: $styles.colors.onPrimaryThemeColor,
+        ),
         useMaterial3: true,
         colorScheme:
             ColorScheme.fromSeed(seedColor: $styles.colors.primaryThemeColor),

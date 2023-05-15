@@ -52,6 +52,8 @@ class LineItem with _$LineItem {
 
   factory LineItem.fromJson(Map<String, dynamic> json) =>
       _$LineItemFromJson(json);
+
+      
 }
 
 @freezed
