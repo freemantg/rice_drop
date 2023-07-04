@@ -13,6 +13,8 @@ A self-service kiosk IOS application that seamlessly integrates with Square's Po
 
 • RESULT: The self-service checkout kiosk successfully launched and installed in a branch located on Mottingham Road in London.
 
+![11](assets/screenshots/Rice Drop Demo.mp4)
+
 ## Table of Contents
 
 - [🌟 Features](#features)
