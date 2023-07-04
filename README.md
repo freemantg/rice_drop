@@ -26,7 +26,7 @@ https://github.com/freemantg/rice_drop/assets/35115094/b8aae9d1-6bc8-4cc2-981f-4
 - [🤝 Contributing](#contributing)
 - [📝 License](#license)
 
-##🌟 Features 
+## 🌟 Features 
 
 Rice Drop is equipped with features to enhance your dine-in experience:
 
@@ -49,11 +49,11 @@ Rice Drop is equipped with features to enhance your dine-in experience:
 ![9](assets/screenshots/ricedrop_9.png)
 ![10](assets/screenshots/ricedrop_10.png)
 
-##🔗 Square POS API Integration
+## 🔗 Square POS API Integration
 
 The Point of Sale (POS) API from Square allows Rice Drop to process in-person payments through Square's reliable hardware and software ecosystem. This integration enables secure transactions, a key requirement for any self-service kiosk application, while maintaining PCI compliance standards, shifting the burden of PCI compliance from you to Square.
 
-##🏗️ Architecture
+## 🏗️ Architecture
 
 Rice Drop uses Domain-Driven Design (DDD) and Clean Architecture principles to provide a layered architectural model:
 
@@ -62,7 +62,7 @@ Rice Drop uses Domain-Driven Design (DDD) and Clean Architecture principles to p
 - **Domain Layer:** The core of Rice Drop, encapsulates all the business logic. It includes models and business rules for orders, menus, and transactions.
 - **Infrastructure Layer:** This layer is responsible for all data operations, managing data storage and retrieval through APIs and databases.
 
-##🔧 Technical Stack
+## 🔧 Technical Stack
 
 Rice Drop is built with the following technologies:
 
@@ -75,14 +75,14 @@ Rice Drop is built with the following technologies:
 - **http:** Critical for making API requests to the Square API for payment processing and other interactions. It simplifies the process of fetching data from Square, efficiently handling the necessary HTTP requests for Rice Drop.
 
 
-##🚀 Getting Started
+## 🚀 Getting Started
 
 1. Install [Flutter](https://flutter.dev/docs/get-started/install) on your local machine.
 2. Clone the repository with `git clone https://github.com/rice-drop/rice_drop.git`.
 3. Run `flutter packages get` in the root directory to download the project dependencies.
 4. Execute `flutter run` to run the project on your device/emulator.
 
-##🧪 Unit Testing
+## 🧪 Unit Testing
 
 Rice Drop places a strong emphasis on software quality and maintainability. We utilize extensive unit testing, covering all the major components, to ensure the robustness and reliability of the software. 
 
@@ -90,11 +90,11 @@ To run the tests, use the following command in the project root:
 
 `Flutter Test`
 
-##🤝 Contributing
+## 🤝 Contributing
 
 We welcome contributions from the community. If you wish to contribute, please refer to our contributing guidelines.
 
-##📝 License
+## 📝 License
 
 Rice Drop is licensed under the MIT License. See `LICENSE` for more information.
 
