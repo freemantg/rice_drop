@@ -66,12 +66,12 @@ Rice Drop uses Domain-Driven Design (DDD) and Clean Architecture principles to p
 
 Rice Drop is built with the following technologies:
 
-- **Flutter:** The foundation of Rice Drop, providing a toolkit for building a natively compiled, interactive user interface.
+- **Flutter:** The foundation of Rice Drop, providing a toolkit for building a natively compiled, interactive UI.
 - **Flutter Hooks:** A utility to manage state in an elegant, efficient manner.
 - **Riverpod:** Rice Drop's state management solution, ensuring a safe, efficient, and scalable tracking of user orders and interactions.
-- **Auto Route:** Automates route generation and manages complex navigation patterns, enhancing user experience across the app.
+- **Auto Route:** Automates route generation and manages complex navigation patterns.
 - **Freezed:** Generates code for union types, facilitating type-safe handling of complex state changes and leading to fewer bugs.
-- **Dartz:** Used for robust error handling, wrapping computations that could fail, thus enhancing system resilience.
+- **Dartz:** Used for robust error handling, wrapping computations that could fail..
 - **http:** Critical for making API requests to the Square API for payment processing and other interactions. It simplifies the process of fetching data from Square, efficiently handling the necessary HTTP requests for Rice Drop.
 
 
