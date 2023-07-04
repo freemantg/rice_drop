@@ -1,0 +1,10 @@
+^C:\USERS\F-TAN\DOCUMENTS\GITHUB\RICE_DROP\RICE_DROP\BUILD\WINDOWS\CMAKEFILES\9DDB5727315BC350965F00FA3DE3D6B7\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

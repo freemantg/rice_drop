@@ -1,0 +1,17 @@
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/icudtl.dat
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/flutter_windows.dll
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/.env
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Rhodesia-Regular.ttf
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Rubik-Light.ttf
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Rubik-Regular.ttf
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Rubik-SemiBold.ttf
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/assets/logo/Rice%20Drop%20Logo.png
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/assets/pictures/1.png
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag

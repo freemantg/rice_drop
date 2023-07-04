@@ -1,0 +1,28 @@
+^C:\USERS\F-TAN\DOCUMENTS\GITHUB\RICE_DROP\RICE_DROP\BUILD\WINDOWS\CMAKEFILES\13696A0C05816DA4C14CCB28445052EE\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter\flutter PROJECT_DIR=C:\Users\F-Tan\Documents\GitHub\rice_drop\rice_drop FLUTTER_ROOT=C:\src\flutter\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\F-Tan\Documents\GitHub\rice_drop\rice_drop\windows\flutter\ephemeral PROJECT_DIR=C:\Users\F-Tan\Documents\GitHub\rice_drop\rice_drop FLUTTER_TARGET=C:\Users\F-Tan\Documents\GitHub\rice_drop\rice_drop\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\F-Tan\Documents\GitHub\rice_drop\rice_drop\.dart_tool\package_config.json C:/src/flutter/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\F-TAN\DOCUMENTS\GITHUB\RICE_DROP\RICE_DROP\BUILD\WINDOWS\CMAKEFILES\4BF9084F95D8D51A609E897FC5C636FC\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\F-TAN\DOCUMENTS\GITHUB\RICE_DROP\RICE_DROP\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/windows -BC:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows --check-stamp-file C:/Users/F-Tan/Documents/GitHub/rice_drop/rice_drop/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

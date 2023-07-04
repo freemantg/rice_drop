@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\F-Tan\Documents\GitHub\rice_drop\rice_drop\build\windows\CMakeFiles\b41b00d5438993f4160b79bf7f70557b\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FC5BDC35-61B8-3B00-A11E-F3A8EC65AF3A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
