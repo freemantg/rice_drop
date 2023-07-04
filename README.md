@@ -32,10 +32,20 @@ Rice Drop is equipped with features to enhance your dine-in experience:
 - **Square POS API Integration:** Direct integration with the Square POS API for reliable and secure transaction processing.
 - **Diverse Menu:** Explore a wide variety of menu items directly from the app.
 - **Customizable Orders:** Personalised orders to suit customers' tastes.
-- **Order Tracking:** Keep track of orders from preparation to pickup.
+- **Order Tracking:** Keep track of orders from preparation to pick up.
 - **Secure Payments:** Hassle-free and secure payment processing powered by the Square POS API.
 
-![Rice Drop Screenshots](assets/screenshots/rice_drop.png)
+![0](assets/screenshots/ricedrop_0.png)
+![1](assets/screenshots/ricedrop_1.png)
+![2](assets/screenshots/ricedrop_2.png)
+![3](assets/screenshots/ricedrop_3.png)
+![4](assets/screenshots/ricedrop_4.png)
+![5](assets/screenshots/ricedrop_5.png)
+![6](assets/screenshots/ricedrop_6.png)
+![7](assets/screenshots/ricedrop_7.png)
+![8](assets/screenshots/ricedrop_8.png)
+![9](assets/screenshots/ricedrop_9.png)
+![10](assets/screenshots/ricedrop_10.png)
 
 ##🔗 Square POS API Integration
 
