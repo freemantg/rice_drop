@@ -28,7 +28,7 @@ https://github.com/freemantg/rice_drop/assets/35115094/b8aae9d1-6bc8-4cc2-981f-4
 
 ## 🌟 Features 
 
-Rice Drop is equipped with features to enhance your dine-in experience:
+The self-service kiosk is equipped with features to enhance Rice Drop's ordering experience:
 
 - **Easy-to-Use On-Brand Interface:** An intuitive, on-brand user interface ensuring easy navigation and use.
 - **Square POS API Integration:** Direct integration with the Square POS API for reliable and secure transaction processing.
