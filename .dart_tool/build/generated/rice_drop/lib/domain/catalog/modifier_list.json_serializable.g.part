@@ -1,0 +1,77 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$_ModifierList _$$_ModifierListFromJson(Map<String, dynamic> json) =>
+    _$_ModifierList(
+      type: json['type'] as String,
+      id: json['id'] as String,
+      modifierListData: ModifierListData.fromJson(
+          json['modifier_list_data'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_ModifierListToJson(_$_ModifierList instance) =>
+    <String, dynamic>{
+      'type': instance.type,
+      'id': instance.id,
+      'modifier_list_data': instance.modifierListData.toJson(),
+    };
+
+_$_ModifierListData _$$_ModifierListDataFromJson(Map<String, dynamic> json) =>
+    _$_ModifierListData(
+      name: json['name'] as String,
+      selectionType: json['selection_type'] as String,
+      modifiers: (json['modifiers'] as List<dynamic>)
+          .map((e) => Modifier.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_ModifierListDataToJson(_$_ModifierListData instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'selection_type': instance.selectionType,
+      'modifiers': instance.modifiers.map((e) => e.toJson()).toList(),
+    };
+
+_$_Modifier _$$_ModifierFromJson(Map<String, dynamic> json) => _$_Modifier(
+      id: json['id'] as String,
+      modifierData:
+          ModifierData.fromJson(json['modifier_data'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_ModifierToJson(_$_Modifier instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'modifier_data': instance.modifierData.toJson(),
+    };
+
+_$_ModifierData _$$_ModifierDataFromJson(Map<String, dynamic> json) =>
+    _$_ModifierData(
+      name: json['name'] as String,
+      priceMoney:
+          PriceMoney.fromJson(json['price_money'] as Map<String, dynamic>),
+      onByDefault: json['on_by_default'] as bool,
+      ordinal: json['ordinal'] as int,
+      modifierListId: json['modifier_list_id'] as String,
+    );
+
+Map<String, dynamic> _$$_ModifierDataToJson(_$_ModifierData instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'price_money': instance.priceMoney.toJson(),
+      'on_by_default': instance.onByDefault,
+      'ordinal': instance.ordinal,
+      'modifier_list_id': instance.modifierListId,
+    };
+
+_$_PriceMoney _$$_PriceMoneyFromJson(Map<String, dynamic> json) =>
+    _$_PriceMoney(
+      amount: json['amount'] as int,
+      currency: json['currency'] as String,
+    );
+
+Map<String, dynamic> _$$_PriceMoneyToJson(_$_PriceMoney instance) =>
+    <String, dynamic>{
+      'amount': instance.amount,
+      'currency': instance.currency,
+    };
