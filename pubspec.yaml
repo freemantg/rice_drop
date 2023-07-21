@@ -1,5 +1,5 @@
 name: rice_drop
-description: A new Flutter project.
+description: Self Service Kiosk with Square Point of Sale API.
 publish_to: "none"
 
 version: 1.0.0+1
@@ -25,6 +25,7 @@ dependencies:
   intl: ^0.18.0
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
+  mockito: ^5.4.2
   riverpod: ^2.3.2
   url_launcher: ^6.1.10
   uuid: ^3.0.7
@@ -38,11 +39,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/pictures/
     - assets/logo/Rice Drop Logo.png
-    - .env
 
   fonts:
     - family: Rhodesia

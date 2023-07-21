@@ -12,7 +12,7 @@ Map<String, dynamic> _$$_ItemDtoToJson(_$_ItemDto instance) =>
     <String, dynamic>{
       'type': instance.type,
       'id': instance.id,
-      'item_data': instance.itemData,
+      'item_data': instance.itemData.toJson(),
     };
 
 _$_ItemDataDto _$$_ItemDataDtoFromJson(Map<String, dynamic> json) =>
@@ -50,8 +50,9 @@ Map<String, dynamic> _$$_ItemDataDtoToJson(_$_ItemDataDto instance) =>
       'is_taxable': instance.isTaxable,
       'visibility': instance.visibility,
       'category_id': instance.categoryId,
-      'modifier_list_info': instance.modifierListInfo,
-      'variations': instance.variations,
+      'modifier_list_info':
+          instance.modifierListInfo?.map((e) => e.toJson()).toList(),
+      'variations': instance.variations?.map((e) => e.toJson()).toList(),
       'product_type': instance.productType,
       'skip_modifier_screen': instance.skipModifierScreen,
       'ecom_uri': instance.ecomUri,
@@ -109,7 +110,7 @@ Map<String, dynamic> _$$_VariationDtoToJson(_$_VariationDto instance) =>
       'version': instance.version,
       'is_deleted': instance.isDeleted,
       'present_at_all_locations': instance.presentAtAllLocations,
-      'item_variation_data': instance.itemVariationData,
+      'item_variation_data': instance.itemVariationData?.toJson(),
     };
 
 _$_ItemVariationDataDto _$$_ItemVariationDataDtoFromJson(
@@ -131,7 +132,7 @@ Map<String, dynamic> _$$_ItemVariationDataDtoToJson(
       'name': instance.name,
       'ordinal': instance.ordinal,
       'pricing_type': instance.pricingType,
-      'price_money': instance.priceMoney,
+      'price_money': instance.priceMoney?.toJson(),
     };
 
 _$_PriceMoneyDto _$$_PriceMoneyDtoFromJson(Map<String, dynamic> json) =>

@@ -195,7 +195,7 @@ abstract class _ModifierList extends ModifierList {
       {required final String type,
       required final String id,
       @JsonKey(name: 'modifier_list_data')
-          required final ModifierListData modifierListData}) = _$_ModifierList;
+      required final ModifierListData modifierListData}) = _$_ModifierList;
   const _ModifierList._() : super._();
 
   factory _ModifierList.fromJson(Map<String, dynamic> json) =
@@ -564,7 +564,7 @@ abstract class _Modifier implements Modifier {
   const factory _Modifier(
       {required final String id,
       @JsonKey(name: 'modifier_data')
-          required final ModifierData modifierData}) = _$_Modifier;
+      required final ModifierData modifierData}) = _$_Modifier;
 
   factory _Modifier.fromJson(Map<String, dynamic> json) = _$_Modifier.fromJson;
 
@@ -798,13 +798,11 @@ class _$_ModifierData implements _ModifierData {
 abstract class _ModifierData implements ModifierData {
   const factory _ModifierData(
       {required final String name,
-      @JsonKey(name: 'price_money')
-          required final PriceMoney priceMoney,
-      @JsonKey(name: 'on_by_default')
-          required final bool onByDefault,
+      @JsonKey(name: 'price_money') required final PriceMoney priceMoney,
+      @JsonKey(name: 'on_by_default') required final bool onByDefault,
       required final int ordinal,
       @JsonKey(name: 'modifier_list_id')
-          required final String modifierListId}) = _$_ModifierData;
+      required final String modifierListId}) = _$_ModifierData;
 
   factory _ModifierData.fromJson(Map<String, dynamic> json) =
       _$_ModifierData.fromJson;

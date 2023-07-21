@@ -262,34 +262,22 @@ abstract class $ItemDataDtoCopyWith<$Res> {
   $Res call(
       {String? name,
       String? description,
-      @JsonKey(name: 'label_color')
-          String? labelColor,
-      @JsonKey(name: 'is_taxable')
-          bool? isTaxable,
+      @JsonKey(name: 'label_color') String? labelColor,
+      @JsonKey(name: 'is_taxable') bool? isTaxable,
       String? visibility,
-      @JsonKey(name: 'category_id')
-          String? categoryId,
+      @JsonKey(name: 'category_id') String? categoryId,
       @JsonKey(name: 'modifier_list_info')
-          List<ModifierListInfoDto>? modifierListInfo,
+      List<ModifierListInfoDto>? modifierListInfo,
       List<VariationDto>? variations,
-      @JsonKey(name: 'product_type')
-          String? productType,
-      @JsonKey(name: 'skip_modifier_screen')
-          bool? skipModifierScreen,
-      @JsonKey(name: 'ecom_uri')
-          String? ecomUri,
-      @JsonKey(name: 'ecom_available')
-          bool? ecomAvailable,
-      @JsonKey(name: 'ecom_visibility')
-          String? ecomVisibility,
-      @JsonKey(name: 'ecom_image_uris')
-          List<String>? ecomImageUris,
-      @JsonKey(name: 'description_html')
-          String? descriptionHtml,
-      @JsonKey(name: 'description_plaintext')
-          String? descriptionPlaintext,
-      @JsonKey(name: 'kitchen_name')
-          String? kitchenName});
+      @JsonKey(name: 'product_type') String? productType,
+      @JsonKey(name: 'skip_modifier_screen') bool? skipModifierScreen,
+      @JsonKey(name: 'ecom_uri') String? ecomUri,
+      @JsonKey(name: 'ecom_available') bool? ecomAvailable,
+      @JsonKey(name: 'ecom_visibility') String? ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris') List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html') String? descriptionHtml,
+      @JsonKey(name: 'description_plaintext') String? descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name') String? kitchenName});
 }
 
 /// @nodoc
@@ -407,34 +395,22 @@ abstract class _$$_ItemDataDtoCopyWith<$Res>
   $Res call(
       {String? name,
       String? description,
-      @JsonKey(name: 'label_color')
-          String? labelColor,
-      @JsonKey(name: 'is_taxable')
-          bool? isTaxable,
+      @JsonKey(name: 'label_color') String? labelColor,
+      @JsonKey(name: 'is_taxable') bool? isTaxable,
       String? visibility,
-      @JsonKey(name: 'category_id')
-          String? categoryId,
+      @JsonKey(name: 'category_id') String? categoryId,
       @JsonKey(name: 'modifier_list_info')
-          List<ModifierListInfoDto>? modifierListInfo,
+      List<ModifierListInfoDto>? modifierListInfo,
       List<VariationDto>? variations,
-      @JsonKey(name: 'product_type')
-          String? productType,
-      @JsonKey(name: 'skip_modifier_screen')
-          bool? skipModifierScreen,
-      @JsonKey(name: 'ecom_uri')
-          String? ecomUri,
-      @JsonKey(name: 'ecom_available')
-          bool? ecomAvailable,
-      @JsonKey(name: 'ecom_visibility')
-          String? ecomVisibility,
-      @JsonKey(name: 'ecom_image_uris')
-          List<String>? ecomImageUris,
-      @JsonKey(name: 'description_html')
-          String? descriptionHtml,
-      @JsonKey(name: 'description_plaintext')
-          String? descriptionPlaintext,
-      @JsonKey(name: 'kitchen_name')
-          String? kitchenName});
+      @JsonKey(name: 'product_type') String? productType,
+      @JsonKey(name: 'skip_modifier_screen') bool? skipModifierScreen,
+      @JsonKey(name: 'ecom_uri') String? ecomUri,
+      @JsonKey(name: 'ecom_available') bool? ecomAvailable,
+      @JsonKey(name: 'ecom_visibility') String? ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris') List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html') String? descriptionHtml,
+      @JsonKey(name: 'description_plaintext') String? descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name') String? kitchenName});
 }
 
 /// @nodoc
@@ -545,34 +521,22 @@ class _$_ItemDataDto extends _ItemDataDto {
   const _$_ItemDataDto(
       {this.name,
       this.description,
-      @JsonKey(name: 'label_color')
-          this.labelColor,
-      @JsonKey(name: 'is_taxable')
-          this.isTaxable,
+      @JsonKey(name: 'label_color') this.labelColor,
+      @JsonKey(name: 'is_taxable') this.isTaxable,
       this.visibility,
-      @JsonKey(name: 'category_id')
-          this.categoryId,
+      @JsonKey(name: 'category_id') this.categoryId,
       @JsonKey(name: 'modifier_list_info')
-          final List<ModifierListInfoDto>? modifierListInfo,
+      final List<ModifierListInfoDto>? modifierListInfo,
       final List<VariationDto>? variations,
-      @JsonKey(name: 'product_type')
-          this.productType,
-      @JsonKey(name: 'skip_modifier_screen')
-          this.skipModifierScreen,
-      @JsonKey(name: 'ecom_uri')
-          this.ecomUri,
-      @JsonKey(name: 'ecom_available')
-          this.ecomAvailable,
-      @JsonKey(name: 'ecom_visibility')
-          this.ecomVisibility,
-      @JsonKey(name: 'ecom_image_uris')
-          final List<String>? ecomImageUris,
-      @JsonKey(name: 'description_html')
-          this.descriptionHtml,
-      @JsonKey(name: 'description_plaintext')
-          this.descriptionPlaintext,
-      @JsonKey(name: 'kitchen_name')
-          this.kitchenName})
+      @JsonKey(name: 'product_type') this.productType,
+      @JsonKey(name: 'skip_modifier_screen') this.skipModifierScreen,
+      @JsonKey(name: 'ecom_uri') this.ecomUri,
+      @JsonKey(name: 'ecom_available') this.ecomAvailable,
+      @JsonKey(name: 'ecom_visibility') this.ecomVisibility,
+      @JsonKey(name: 'ecom_image_uris') final List<String>? ecomImageUris,
+      @JsonKey(name: 'description_html') this.descriptionHtml,
+      @JsonKey(name: 'description_plaintext') this.descriptionPlaintext,
+      @JsonKey(name: 'kitchen_name') this.kitchenName})
       : _modifierListInfo = modifierListInfo,
         _variations = variations,
         _ecomImageUris = ecomImageUris,
@@ -736,36 +700,26 @@ class _$_ItemDataDto extends _ItemDataDto {
 
 abstract class _ItemDataDto extends ItemDataDto {
   const factory _ItemDataDto(
-      {final String? name,
-      final String? description,
-      @JsonKey(name: 'label_color')
-          final String? labelColor,
-      @JsonKey(name: 'is_taxable')
-          final bool? isTaxable,
-      final String? visibility,
-      @JsonKey(name: 'category_id')
-          final String? categoryId,
-      @JsonKey(name: 'modifier_list_info')
+          {final String? name,
+          final String? description,
+          @JsonKey(name: 'label_color') final String? labelColor,
+          @JsonKey(name: 'is_taxable') final bool? isTaxable,
+          final String? visibility,
+          @JsonKey(name: 'category_id') final String? categoryId,
+          @JsonKey(name: 'modifier_list_info')
           final List<ModifierListInfoDto>? modifierListInfo,
-      final List<VariationDto>? variations,
-      @JsonKey(name: 'product_type')
-          final String? productType,
-      @JsonKey(name: 'skip_modifier_screen')
-          final bool? skipModifierScreen,
-      @JsonKey(name: 'ecom_uri')
-          final String? ecomUri,
-      @JsonKey(name: 'ecom_available')
-          final bool? ecomAvailable,
-      @JsonKey(name: 'ecom_visibility')
-          final String? ecomVisibility,
-      @JsonKey(name: 'ecom_image_uris')
-          final List<String>? ecomImageUris,
-      @JsonKey(name: 'description_html')
-          final String? descriptionHtml,
-      @JsonKey(name: 'description_plaintext')
+          final List<VariationDto>? variations,
+          @JsonKey(name: 'product_type') final String? productType,
+          @JsonKey(name: 'skip_modifier_screen') final bool? skipModifierScreen,
+          @JsonKey(name: 'ecom_uri') final String? ecomUri,
+          @JsonKey(name: 'ecom_available') final bool? ecomAvailable,
+          @JsonKey(name: 'ecom_visibility') final String? ecomVisibility,
+          @JsonKey(name: 'ecom_image_uris') final List<String>? ecomImageUris,
+          @JsonKey(name: 'description_html') final String? descriptionHtml,
+          @JsonKey(name: 'description_plaintext')
           final String? descriptionPlaintext,
-      @JsonKey(name: 'kitchen_name')
-          final String? kitchenName}) = _$_ItemDataDto;
+          @JsonKey(name: 'kitchen_name') final String? kitchenName}) =
+      _$_ItemDataDto;
   const _ItemDataDto._() : super._();
 
   factory _ItemDataDto.fromJson(Map<String, dynamic> json) =
@@ -952,12 +906,11 @@ class __$$_ModifierListInfoDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ModifierListInfoDto extends _ModifierListInfoDto {
   const _$_ModifierListInfoDto(
-      {@JsonKey(name: 'modifier_list_id')
-          required this.modifierListId,
+      {@JsonKey(name: 'modifier_list_id') required this.modifierListId,
       @JsonKey(name: 'min_selected_modifiers')
-          required this.minSelectedModifiers,
+      required this.minSelectedModifiers,
       @JsonKey(name: 'max_selected_modifiers')
-          required this.maxSelectedModifiers,
+      required this.maxSelectedModifiers,
       required this.enabled})
       : super._();
 
@@ -1017,12 +970,11 @@ class _$_ModifierListInfoDto extends _ModifierListInfoDto {
 
 abstract class _ModifierListInfoDto extends ModifierListInfoDto {
   const factory _ModifierListInfoDto(
-      {@JsonKey(name: 'modifier_list_id')
-          required final String modifierListId,
+      {@JsonKey(name: 'modifier_list_id') required final String modifierListId,
       @JsonKey(name: 'min_selected_modifiers')
-          required final int minSelectedModifiers,
+      required final int minSelectedModifiers,
       @JsonKey(name: 'max_selected_modifiers')
-          required final int maxSelectedModifiers,
+      required final int maxSelectedModifiers,
       required final bool enabled}) = _$_ModifierListInfoDto;
   const _ModifierListInfoDto._() : super._();
 
@@ -1082,17 +1034,13 @@ abstract class $VariationDtoCopyWith<$Res> {
   $Res call(
       {String? type,
       String? id,
-      @JsonKey(name: 'updated_at')
-          DateTime? updatedAt,
-      @JsonKey(name: 'created_at')
-          DateTime? createdAt,
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'created_at') DateTime? createdAt,
       int? version,
-      @JsonKey(name: 'is_deleted')
-          bool? isDeleted,
-      @JsonKey(name: 'present_at_all_locations')
-          bool? presentAtAllLocations,
+      @JsonKey(name: 'is_deleted') bool? isDeleted,
+      @JsonKey(name: 'present_at_all_locations') bool? presentAtAllLocations,
       @JsonKey(name: 'item_variation_data')
-          ItemVariationDataDto? itemVariationData});
+      ItemVariationDataDto? itemVariationData});
 
   $ItemVariationDataDtoCopyWith<$Res>? get itemVariationData;
 }
@@ -1180,17 +1128,13 @@ abstract class _$$_VariationDtoCopyWith<$Res>
   $Res call(
       {String? type,
       String? id,
-      @JsonKey(name: 'updated_at')
-          DateTime? updatedAt,
-      @JsonKey(name: 'created_at')
-          DateTime? createdAt,
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'created_at') DateTime? createdAt,
       int? version,
-      @JsonKey(name: 'is_deleted')
-          bool? isDeleted,
-      @JsonKey(name: 'present_at_all_locations')
-          bool? presentAtAllLocations,
+      @JsonKey(name: 'is_deleted') bool? isDeleted,
+      @JsonKey(name: 'present_at_all_locations') bool? presentAtAllLocations,
       @JsonKey(name: 'item_variation_data')
-          ItemVariationDataDto? itemVariationData});
+      ItemVariationDataDto? itemVariationData});
 
   @override
   $ItemVariationDataDtoCopyWith<$Res>? get itemVariationData;
@@ -1339,17 +1283,14 @@ abstract class _VariationDto implements VariationDto {
   factory _VariationDto(
       {final String? type,
       final String? id,
-      @JsonKey(name: 'updated_at')
-          final DateTime? updatedAt,
-      @JsonKey(name: 'created_at')
-          final DateTime? createdAt,
+      @JsonKey(name: 'updated_at') final DateTime? updatedAt,
+      @JsonKey(name: 'created_at') final DateTime? createdAt,
       final int? version,
-      @JsonKey(name: 'is_deleted')
-          final bool? isDeleted,
+      @JsonKey(name: 'is_deleted') final bool? isDeleted,
       @JsonKey(name: 'present_at_all_locations')
-          final bool? presentAtAllLocations,
+      final bool? presentAtAllLocations,
       @JsonKey(name: 'item_variation_data')
-          final ItemVariationDataDto? itemVariationData}) = _$_VariationDto;
+      final ItemVariationDataDto? itemVariationData}) = _$_VariationDto;
 
   factory _VariationDto.fromJson(Map<String, dynamic> json) =
       _$_VariationDto.fromJson;

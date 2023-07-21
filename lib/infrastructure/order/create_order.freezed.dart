@@ -64,36 +64,22 @@ abstract class $CreateOrderCopyWith<$Res> {
       _$CreateOrderCopyWithImpl<$Res, CreateOrder>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id')
-          String? id,
-      @JsonKey(name: 'location_id')
-          String? locationId,
-      @JsonKey(name: 'line_items')
-          List<LineItem>? lineItems,
-      @JsonKey(name: 'created_at')
-          DateTime? createdAt,
-      @JsonKey(name: 'updated_at')
-          DateTime? updatedAt,
-      @JsonKey(name: 'state')
-          String? state,
-      @JsonKey(name: 'version')
-          int? version,
-      @JsonKey(name: 'total_tax_money')
-          Money? totalTaxMoney,
-      @JsonKey(name: 'total_discount_money')
-          Money? totalDiscountMoney,
-      @JsonKey(name: 'total_tip_money')
-          Money? totalTipMoney,
-      @JsonKey(name: 'total_money')
-          Money? totalMoney,
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'location_id') String? locationId,
+      @JsonKey(name: 'line_items') List<LineItem>? lineItems,
+      @JsonKey(name: 'created_at') DateTime? createdAt,
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'state') String? state,
+      @JsonKey(name: 'version') int? version,
+      @JsonKey(name: 'total_tax_money') Money? totalTaxMoney,
+      @JsonKey(name: 'total_discount_money') Money? totalDiscountMoney,
+      @JsonKey(name: 'total_tip_money') Money? totalTipMoney,
+      @JsonKey(name: 'total_money') Money? totalMoney,
       @JsonKey(name: 'total_service_charge_money')
-          Money? totalServiceChargeMoney,
-      @JsonKey(name: 'net_amounts')
-          NetAmounts? netAmounts,
-      @JsonKey(name: 'source')
-          Source? source,
-      @JsonKey(name: 'net_amount_due_money')
-          Money? netAmountDueMoney});
+      Money? totalServiceChargeMoney,
+      @JsonKey(name: 'net_amounts') NetAmounts? netAmounts,
+      @JsonKey(name: 'source') Source? source,
+      @JsonKey(name: 'net_amount_due_money') Money? netAmountDueMoney});
 
   $MoneyCopyWith<$Res>? get totalTaxMoney;
   $MoneyCopyWith<$Res>? get totalDiscountMoney;
@@ -302,36 +288,22 @@ abstract class _$$_OrderCopyWith<$Res> implements $CreateOrderCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id')
-          String? id,
-      @JsonKey(name: 'location_id')
-          String? locationId,
-      @JsonKey(name: 'line_items')
-          List<LineItem>? lineItems,
-      @JsonKey(name: 'created_at')
-          DateTime? createdAt,
-      @JsonKey(name: 'updated_at')
-          DateTime? updatedAt,
-      @JsonKey(name: 'state')
-          String? state,
-      @JsonKey(name: 'version')
-          int? version,
-      @JsonKey(name: 'total_tax_money')
-          Money? totalTaxMoney,
-      @JsonKey(name: 'total_discount_money')
-          Money? totalDiscountMoney,
-      @JsonKey(name: 'total_tip_money')
-          Money? totalTipMoney,
-      @JsonKey(name: 'total_money')
-          Money? totalMoney,
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'location_id') String? locationId,
+      @JsonKey(name: 'line_items') List<LineItem>? lineItems,
+      @JsonKey(name: 'created_at') DateTime? createdAt,
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'state') String? state,
+      @JsonKey(name: 'version') int? version,
+      @JsonKey(name: 'total_tax_money') Money? totalTaxMoney,
+      @JsonKey(name: 'total_discount_money') Money? totalDiscountMoney,
+      @JsonKey(name: 'total_tip_money') Money? totalTipMoney,
+      @JsonKey(name: 'total_money') Money? totalMoney,
       @JsonKey(name: 'total_service_charge_money')
-          Money? totalServiceChargeMoney,
-      @JsonKey(name: 'net_amounts')
-          NetAmounts? netAmounts,
-      @JsonKey(name: 'source')
-          Source? source,
-      @JsonKey(name: 'net_amount_due_money')
-          Money? netAmountDueMoney});
+      Money? totalServiceChargeMoney,
+      @JsonKey(name: 'net_amounts') NetAmounts? netAmounts,
+      @JsonKey(name: 'source') Source? source,
+      @JsonKey(name: 'net_amount_due_money') Money? netAmountDueMoney});
 
   @override
   $MoneyCopyWith<$Res>? get totalTaxMoney;
@@ -596,36 +568,23 @@ class _$_Order implements _Order {
 
 abstract class _Order implements CreateOrder {
   const factory _Order(
-      {@JsonKey(name: 'id')
-          final String? id,
-      @JsonKey(name: 'location_id')
-          final String? locationId,
-      @JsonKey(name: 'line_items')
-          final List<LineItem>? lineItems,
-      @JsonKey(name: 'created_at')
-          final DateTime? createdAt,
-      @JsonKey(name: 'updated_at')
-          final DateTime? updatedAt,
-      @JsonKey(name: 'state')
-          final String? state,
-      @JsonKey(name: 'version')
-          final int? version,
-      @JsonKey(name: 'total_tax_money')
-          final Money? totalTaxMoney,
-      @JsonKey(name: 'total_discount_money')
-          final Money? totalDiscountMoney,
-      @JsonKey(name: 'total_tip_money')
-          final Money? totalTipMoney,
-      @JsonKey(name: 'total_money')
-          final Money? totalMoney,
+      {@JsonKey(name: 'id') final String? id,
+      @JsonKey(name: 'location_id') final String? locationId,
+      @JsonKey(name: 'line_items') final List<LineItem>? lineItems,
+      @JsonKey(name: 'created_at') final DateTime? createdAt,
+      @JsonKey(name: 'updated_at') final DateTime? updatedAt,
+      @JsonKey(name: 'state') final String? state,
+      @JsonKey(name: 'version') final int? version,
+      @JsonKey(name: 'total_tax_money') final Money? totalTaxMoney,
+      @JsonKey(name: 'total_discount_money') final Money? totalDiscountMoney,
+      @JsonKey(name: 'total_tip_money') final Money? totalTipMoney,
+      @JsonKey(name: 'total_money') final Money? totalMoney,
       @JsonKey(name: 'total_service_charge_money')
-          final Money? totalServiceChargeMoney,
-      @JsonKey(name: 'net_amounts')
-          final NetAmounts? netAmounts,
-      @JsonKey(name: 'source')
-          final Source? source,
+      final Money? totalServiceChargeMoney,
+      @JsonKey(name: 'net_amounts') final NetAmounts? netAmounts,
+      @JsonKey(name: 'source') final Source? source,
       @JsonKey(name: 'net_amount_due_money')
-          final Money? netAmountDueMoney}) = _$_Order;
+      final Money? netAmountDueMoney}) = _$_Order;
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
 
@@ -723,30 +682,20 @@ abstract class $LineItemCopyWith<$Res> {
       _$LineItemCopyWithImpl<$Res, LineItem>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'uid')
-          String? uid,
-      @JsonKey(name: 'quantity')
-          String? quantity,
-      @JsonKey(name: 'name')
-          String? name,
-      @JsonKey(name: 'base_price_money')
-          Money? basePriceMoney,
-      @JsonKey(name: 'modifiers')
-          List<Modifier>? modifiers,
-      @JsonKey(name: 'gross_sales_money')
-          Money? grossSalesMoney,
-      @JsonKey(name: 'total_tax_money')
-          Money? totalTaxMoney,
-      @JsonKey(name: 'total_discount_money')
-          Money? totalDiscountMoney,
-      @JsonKey(name: 'total_money')
-          Money? totalMoney,
+      {@JsonKey(name: 'uid') String? uid,
+      @JsonKey(name: 'quantity') String? quantity,
+      @JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'base_price_money') Money? basePriceMoney,
+      @JsonKey(name: 'modifiers') List<Modifier>? modifiers,
+      @JsonKey(name: 'gross_sales_money') Money? grossSalesMoney,
+      @JsonKey(name: 'total_tax_money') Money? totalTaxMoney,
+      @JsonKey(name: 'total_discount_money') Money? totalDiscountMoney,
+      @JsonKey(name: 'total_money') Money? totalMoney,
       @JsonKey(name: 'variation_total_price_money')
-          Money? variationTotalPriceMoney,
-      @JsonKey(name: 'item_type')
-          String? itemType,
+      Money? variationTotalPriceMoney,
+      @JsonKey(name: 'item_type') String? itemType,
       @JsonKey(name: 'total_service_charge_money')
-          Money? totalServiceChargeMoney});
+      Money? totalServiceChargeMoney});
 
   $MoneyCopyWith<$Res>? get basePriceMoney;
   $MoneyCopyWith<$Res>? get grossSalesMoney;
@@ -928,30 +877,20 @@ abstract class _$$_LineItemCopyWith<$Res> implements $LineItemCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'uid')
-          String? uid,
-      @JsonKey(name: 'quantity')
-          String? quantity,
-      @JsonKey(name: 'name')
-          String? name,
-      @JsonKey(name: 'base_price_money')
-          Money? basePriceMoney,
-      @JsonKey(name: 'modifiers')
-          List<Modifier>? modifiers,
-      @JsonKey(name: 'gross_sales_money')
-          Money? grossSalesMoney,
-      @JsonKey(name: 'total_tax_money')
-          Money? totalTaxMoney,
-      @JsonKey(name: 'total_discount_money')
-          Money? totalDiscountMoney,
-      @JsonKey(name: 'total_money')
-          Money? totalMoney,
+      {@JsonKey(name: 'uid') String? uid,
+      @JsonKey(name: 'quantity') String? quantity,
+      @JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'base_price_money') Money? basePriceMoney,
+      @JsonKey(name: 'modifiers') List<Modifier>? modifiers,
+      @JsonKey(name: 'gross_sales_money') Money? grossSalesMoney,
+      @JsonKey(name: 'total_tax_money') Money? totalTaxMoney,
+      @JsonKey(name: 'total_discount_money') Money? totalDiscountMoney,
+      @JsonKey(name: 'total_money') Money? totalMoney,
       @JsonKey(name: 'variation_total_price_money')
-          Money? variationTotalPriceMoney,
-      @JsonKey(name: 'item_type')
-          String? itemType,
+      Money? variationTotalPriceMoney,
+      @JsonKey(name: 'item_type') String? itemType,
       @JsonKey(name: 'total_service_charge_money')
-          Money? totalServiceChargeMoney});
+      Money? totalServiceChargeMoney});
 
   @override
   $MoneyCopyWith<$Res>? get basePriceMoney;
@@ -1051,30 +990,20 @@ class __$$_LineItemCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_LineItem implements _LineItem {
   const _$_LineItem(
-      {@JsonKey(name: 'uid')
-          this.uid,
-      @JsonKey(name: 'quantity')
-          this.quantity,
-      @JsonKey(name: 'name')
-          this.name,
-      @JsonKey(name: 'base_price_money')
-          this.basePriceMoney,
-      @JsonKey(name: 'modifiers')
-          final List<Modifier>? modifiers,
-      @JsonKey(name: 'gross_sales_money')
-          this.grossSalesMoney,
-      @JsonKey(name: 'total_tax_money')
-          this.totalTaxMoney,
-      @JsonKey(name: 'total_discount_money')
-          this.totalDiscountMoney,
-      @JsonKey(name: 'total_money')
-          this.totalMoney,
+      {@JsonKey(name: 'uid') this.uid,
+      @JsonKey(name: 'quantity') this.quantity,
+      @JsonKey(name: 'name') this.name,
+      @JsonKey(name: 'base_price_money') this.basePriceMoney,
+      @JsonKey(name: 'modifiers') final List<Modifier>? modifiers,
+      @JsonKey(name: 'gross_sales_money') this.grossSalesMoney,
+      @JsonKey(name: 'total_tax_money') this.totalTaxMoney,
+      @JsonKey(name: 'total_discount_money') this.totalDiscountMoney,
+      @JsonKey(name: 'total_money') this.totalMoney,
       @JsonKey(name: 'variation_total_price_money')
-          this.variationTotalPriceMoney,
-      @JsonKey(name: 'item_type')
-          this.itemType,
+      this.variationTotalPriceMoney,
+      @JsonKey(name: 'item_type') this.itemType,
       @JsonKey(name: 'total_service_charge_money')
-          this.totalServiceChargeMoney})
+      this.totalServiceChargeMoney})
       : _modifiers = modifiers;
 
   factory _$_LineItem.fromJson(Map<String, dynamic> json) =>
@@ -1194,30 +1123,20 @@ class _$_LineItem implements _LineItem {
 
 abstract class _LineItem implements LineItem {
   const factory _LineItem(
-      {@JsonKey(name: 'uid')
-          final String? uid,
-      @JsonKey(name: 'quantity')
-          final String? quantity,
-      @JsonKey(name: 'name')
-          final String? name,
-      @JsonKey(name: 'base_price_money')
-          final Money? basePriceMoney,
-      @JsonKey(name: 'modifiers')
-          final List<Modifier>? modifiers,
-      @JsonKey(name: 'gross_sales_money')
-          final Money? grossSalesMoney,
-      @JsonKey(name: 'total_tax_money')
-          final Money? totalTaxMoney,
-      @JsonKey(name: 'total_discount_money')
-          final Money? totalDiscountMoney,
-      @JsonKey(name: 'total_money')
-          final Money? totalMoney,
+      {@JsonKey(name: 'uid') final String? uid,
+      @JsonKey(name: 'quantity') final String? quantity,
+      @JsonKey(name: 'name') final String? name,
+      @JsonKey(name: 'base_price_money') final Money? basePriceMoney,
+      @JsonKey(name: 'modifiers') final List<Modifier>? modifiers,
+      @JsonKey(name: 'gross_sales_money') final Money? grossSalesMoney,
+      @JsonKey(name: 'total_tax_money') final Money? totalTaxMoney,
+      @JsonKey(name: 'total_discount_money') final Money? totalDiscountMoney,
+      @JsonKey(name: 'total_money') final Money? totalMoney,
       @JsonKey(name: 'variation_total_price_money')
-          final Money? variationTotalPriceMoney,
-      @JsonKey(name: 'item_type')
-          final String? itemType,
+      final Money? variationTotalPriceMoney,
+      @JsonKey(name: 'item_type') final String? itemType,
       @JsonKey(name: 'total_service_charge_money')
-          final Money? totalServiceChargeMoney}) = _$_LineItem;
+      final Money? totalServiceChargeMoney}) = _$_LineItem;
 
   factory _LineItem.fromJson(Map<String, dynamic> json) = _$_LineItem.fromJson;
 
@@ -2030,16 +1949,12 @@ class _$_NetAmounts implements _NetAmounts {
 
 abstract class _NetAmounts implements NetAmounts {
   const factory _NetAmounts(
-      {@JsonKey(name: 'total_money')
-          final Money? totalMoney,
-      @JsonKey(name: 'tax_money')
-          final Money? taxMoney,
-      @JsonKey(name: 'discount_money')
-          final Money? discountMoney,
-      @JsonKey(name: 'tip_money')
-          final Money? tipMoney,
+      {@JsonKey(name: 'total_money') final Money? totalMoney,
+      @JsonKey(name: 'tax_money') final Money? taxMoney,
+      @JsonKey(name: 'discount_money') final Money? discountMoney,
+      @JsonKey(name: 'tip_money') final Money? tipMoney,
       @JsonKey(name: 'service_charge_money')
-          final Money? serviceChargeMoney}) = _$_NetAmounts;
+      final Money? serviceChargeMoney}) = _$_NetAmounts;
 
   factory _NetAmounts.fromJson(Map<String, dynamic> json) =
       _$_NetAmounts.fromJson;

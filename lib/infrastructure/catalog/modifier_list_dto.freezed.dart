@@ -50,17 +50,13 @@ abstract class $ModifierListDtoCopyWith<$Res> {
   $Res call(
       {String type,
       String id,
-      @JsonKey(name: 'updated_at')
-          DateTime updatedAt,
-      @JsonKey(name: 'created_at')
-          DateTime createdAt,
+      @JsonKey(name: 'updated_at') DateTime updatedAt,
+      @JsonKey(name: 'created_at') DateTime createdAt,
       int version,
-      @JsonKey(name: 'is_deleted')
-          bool isDeleted,
-      @JsonKey(name: 'present_at_all_locations')
-          bool presentAtAllLocations,
+      @JsonKey(name: 'is_deleted') bool isDeleted,
+      @JsonKey(name: 'present_at_all_locations') bool presentAtAllLocations,
       @JsonKey(name: 'modifier_list_data')
-          ModifierListDataDto modifierListData});
+      ModifierListDataDto modifierListData});
 
   $ModifierListDataDtoCopyWith<$Res> get modifierListData;
 }
@@ -143,17 +139,13 @@ abstract class _$$_ModifierListDtoCopyWith<$Res>
   $Res call(
       {String type,
       String id,
-      @JsonKey(name: 'updated_at')
-          DateTime updatedAt,
-      @JsonKey(name: 'created_at')
-          DateTime createdAt,
+      @JsonKey(name: 'updated_at') DateTime updatedAt,
+      @JsonKey(name: 'created_at') DateTime createdAt,
       int version,
-      @JsonKey(name: 'is_deleted')
-          bool isDeleted,
-      @JsonKey(name: 'present_at_all_locations')
-          bool presentAtAllLocations,
+      @JsonKey(name: 'is_deleted') bool isDeleted,
+      @JsonKey(name: 'present_at_all_locations') bool presentAtAllLocations,
       @JsonKey(name: 'modifier_list_data')
-          ModifierListDataDto modifierListData});
+      ModifierListDataDto modifierListData});
 
   @override
   $ModifierListDataDtoCopyWith<$Res> get modifierListData;
@@ -222,17 +214,13 @@ class _$_ModifierListDto extends _ModifierListDto {
   const _$_ModifierListDto(
       {required this.type,
       required this.id,
-      @JsonKey(name: 'updated_at')
-          required this.updatedAt,
-      @JsonKey(name: 'created_at')
-          required this.createdAt,
+      @JsonKey(name: 'updated_at') required this.updatedAt,
+      @JsonKey(name: 'created_at') required this.createdAt,
       required this.version,
-      @JsonKey(name: 'is_deleted')
-          required this.isDeleted,
+      @JsonKey(name: 'is_deleted') required this.isDeleted,
       @JsonKey(name: 'present_at_all_locations')
-          required this.presentAtAllLocations,
-      @JsonKey(name: 'modifier_list_data')
-          required this.modifierListData})
+      required this.presentAtAllLocations,
+      @JsonKey(name: 'modifier_list_data') required this.modifierListData})
       : super._();
 
   factory _$_ModifierListDto.fromJson(Map<String, dynamic> json) =>
@@ -308,17 +296,14 @@ abstract class _ModifierListDto extends ModifierListDto {
   const factory _ModifierListDto(
           {required final String type,
           required final String id,
-          @JsonKey(name: 'updated_at')
-              required final DateTime updatedAt,
-          @JsonKey(name: 'created_at')
-              required final DateTime createdAt,
+          @JsonKey(name: 'updated_at') required final DateTime updatedAt,
+          @JsonKey(name: 'created_at') required final DateTime createdAt,
           required final int version,
-          @JsonKey(name: 'is_deleted')
-              required final bool isDeleted,
+          @JsonKey(name: 'is_deleted') required final bool isDeleted,
           @JsonKey(name: 'present_at_all_locations')
-              required final bool presentAtAllLocations,
+          required final bool presentAtAllLocations,
           @JsonKey(name: 'modifier_list_data')
-              required final ModifierListDataDto modifierListData}) =
+          required final ModifierListDataDto modifierListData}) =
       _$_ModifierListDto;
   const _ModifierListDto._() : super._();
 
@@ -825,17 +810,14 @@ abstract class _ModifierDto extends ModifierDto {
   const factory _ModifierDto(
       {final String? type,
       required final String id,
-      @JsonKey(name: 'updated_at')
-          final DateTime? updatedAt,
-      @JsonKey(name: 'created_at')
-          final DateTime? createdAt,
+      @JsonKey(name: 'updated_at') final DateTime? updatedAt,
+      @JsonKey(name: 'created_at') final DateTime? createdAt,
       final int? version,
-      @JsonKey(name: 'is_deleted')
-          final bool? isDeleted,
+      @JsonKey(name: 'is_deleted') final bool? isDeleted,
       @JsonKey(name: 'present_at_all_locations')
-          final bool? presentAtAllLocations,
+      final bool? presentAtAllLocations,
       @JsonKey(name: 'modifier_data')
-          required final ModifierDataDto modifierData}) = _$_ModifierDto;
+      required final ModifierDataDto modifierData}) = _$_ModifierDto;
   const _ModifierDto._() : super._();
 
   factory _ModifierDto.fromJson(Map<String, dynamic> json) =
@@ -1108,15 +1090,12 @@ class _$_ModifierDataDto extends _ModifierDataDto {
 abstract class _ModifierDataDto extends ModifierDataDto {
   const factory _ModifierDataDto(
       {required final String name,
-      @JsonKey(name: 'price_money')
-          required final PriceMoneyDto priceMoney,
-      @JsonKey(name: 'on_by_default')
-          required final bool onByDefault,
+      @JsonKey(name: 'price_money') required final PriceMoneyDto priceMoney,
+      @JsonKey(name: 'on_by_default') required final bool onByDefault,
       required final int ordinal,
-      @JsonKey(name: 'modifier_list_id')
-          required final String modifierListId,
+      @JsonKey(name: 'modifier_list_id') required final String modifierListId,
       @JsonKey(name: 'kitchen_name')
-          final String? kitchenName}) = _$_ModifierDataDto;
+      final String? kitchenName}) = _$_ModifierDataDto;
   const _ModifierDataDto._() : super._();
 
   factory _ModifierDataDto.fromJson(Map<String, dynamic> json) =
