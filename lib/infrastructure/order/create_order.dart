@@ -30,6 +30,8 @@ class CreateOrder with _$CreateOrder {
 
   factory CreateOrder.fromJson(Map<String, dynamic> json) =>
       _$CreateOrderFromJson(json);
+
+  factory CreateOrder.empty() => const CreateOrder();
 }
 
 @freezed
@@ -45,15 +47,14 @@ class LineItem with _$LineItem {
     @JsonKey(name: 'total_tax_money') Money? totalTaxMoney,
     @JsonKey(name: 'total_discount_money') Money? totalDiscountMoney,
     @JsonKey(name: 'total_money') Money? totalMoney,
-    @JsonKey(name: 'variation_total_price_money') Money? variationTotalPriceMoney,
+    @JsonKey(name: 'variation_total_price_money')
+    Money? variationTotalPriceMoney,
     @JsonKey(name: 'item_type') String? itemType,
     @JsonKey(name: 'total_service_charge_money') Money? totalServiceChargeMoney,
   }) = _LineItem;
 
   factory LineItem.fromJson(Map<String, dynamic> json) =>
       _$LineItemFromJson(json);
-
-      
 }
 
 @freezed

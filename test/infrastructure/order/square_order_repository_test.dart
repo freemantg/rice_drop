@@ -27,7 +27,7 @@ void main() {
         httpClient: mockClient,
         squarePOSHandler: mockSquarePOSHandler,
       );
-      
+
       group(
         'createOrder',
         () {
@@ -49,8 +49,9 @@ void main() {
               () async {
             when(mockClient.post(any,
                     headers: anyNamed('headers'), body: anyNamed('body')))
-                .thenAnswer((_) async => http.Response('{"order": {}}',
-                    200)); // set your expected JSON response here
+                .thenAnswer(
+              (_) async => http.Response('{"order": {}}', 200),
+            );
 
             final result = await squareOrderRepository.createOrder(tOrder);
 
@@ -61,6 +62,27 @@ void main() {
           });
         },
       );
+
+      group('launchPos', () {
+        test(
+            'should return unit when the call to SquarePOSHandler is successful',
+            () async {
+          when(mockSquarePOSHandler.initiatePayment(
+            amountCents: anyNamed('amountCents'),
+            currencyCode: anyNamed('currencyCode'),
+            notes: anyNamed('notes'),
+            callbackUrlScheme: anyNamed('callbackUrlScheme'),
+            locationID: anyNamed('locationID'),
+            applicationID: anyNamed('applicationID'),
+          )).thenAnswer((_) async => {});
+
+          final result =
+              await squareOrderRepository.launchPos(CreateOrder.empty());
+
+          expect(result.isRight(), true);
+        });
+
+      });
     },
   );
 }
