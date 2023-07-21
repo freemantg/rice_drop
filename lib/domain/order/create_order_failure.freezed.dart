@@ -46,29 +46,33 @@ mixin _$CreateOrderFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Network value) network,
-    required TResult Function(_InsufficientStock value) insufficientStock,
-    required TResult Function(_InvalidOrder value) invalidOrder,
-    required TResult Function(_ServerError value) serverError,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(CreateOrderFailureNetwork value) network,
+    required TResult Function(CreateOrderFailureInsufficientStock value)
+        insufficientStock,
+    required TResult Function(CreateOrderFailureInvalidOrder value)
+        invalidOrder,
+    required TResult Function(CreateOrderFailureServerError value) serverError,
+    required TResult Function(CreateOrderFailureUnknown value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Network value)? network,
-    TResult? Function(_InsufficientStock value)? insufficientStock,
-    TResult? Function(_InvalidOrder value)? invalidOrder,
-    TResult? Function(_ServerError value)? serverError,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(CreateOrderFailureNetwork value)? network,
+    TResult? Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult? Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult? Function(CreateOrderFailureServerError value)? serverError,
+    TResult? Function(CreateOrderFailureUnknown value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_InsufficientStock value)? insufficientStock,
-    TResult Function(_InvalidOrder value)? invalidOrder,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(CreateOrderFailureNetwork value)? network,
+    TResult Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult Function(CreateOrderFailureServerError value)? serverError,
+    TResult Function(CreateOrderFailureUnknown value)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -93,24 +97,26 @@ class _$CreateOrderFailureCopyWithImpl<$Res, $Val extends CreateOrderFailure>
 }
 
 /// @nodoc
-abstract class _$$_NetworkCopyWith<$Res> {
-  factory _$$_NetworkCopyWith(
-          _$_Network value, $Res Function(_$_Network) then) =
-      __$$_NetworkCopyWithImpl<$Res>;
+abstract class _$$CreateOrderFailureNetworkCopyWith<$Res> {
+  factory _$$CreateOrderFailureNetworkCopyWith(
+          _$CreateOrderFailureNetwork value,
+          $Res Function(_$CreateOrderFailureNetwork) then) =
+      __$$CreateOrderFailureNetworkCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NetworkCopyWithImpl<$Res>
-    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_Network>
-    implements _$$_NetworkCopyWith<$Res> {
-  __$$_NetworkCopyWithImpl(_$_Network _value, $Res Function(_$_Network) _then)
+class __$$CreateOrderFailureNetworkCopyWithImpl<$Res>
+    extends _$CreateOrderFailureCopyWithImpl<$Res, _$CreateOrderFailureNetwork>
+    implements _$$CreateOrderFailureNetworkCopyWith<$Res> {
+  __$$CreateOrderFailureNetworkCopyWithImpl(_$CreateOrderFailureNetwork _value,
+      $Res Function(_$CreateOrderFailureNetwork) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Network implements _Network {
-  const _$_Network();
+class _$CreateOrderFailureNetwork implements CreateOrderFailureNetwork {
+  const _$CreateOrderFailureNetwork();
 
   @override
   String toString() {
@@ -120,7 +126,8 @@ class _$_Network implements _Network {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Network);
+        (other.runtimeType == runtimeType &&
+            other is _$CreateOrderFailureNetwork);
   }
 
   @override
@@ -169,11 +176,13 @@ class _$_Network implements _Network {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Network value) network,
-    required TResult Function(_InsufficientStock value) insufficientStock,
-    required TResult Function(_InvalidOrder value) invalidOrder,
-    required TResult Function(_ServerError value) serverError,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(CreateOrderFailureNetwork value) network,
+    required TResult Function(CreateOrderFailureInsufficientStock value)
+        insufficientStock,
+    required TResult Function(CreateOrderFailureInvalidOrder value)
+        invalidOrder,
+    required TResult Function(CreateOrderFailureServerError value) serverError,
+    required TResult Function(CreateOrderFailureUnknown value) unknown,
   }) {
     return network(this);
   }
@@ -181,11 +190,12 @@ class _$_Network implements _Network {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Network value)? network,
-    TResult? Function(_InsufficientStock value)? insufficientStock,
-    TResult? Function(_InvalidOrder value)? invalidOrder,
-    TResult? Function(_ServerError value)? serverError,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(CreateOrderFailureNetwork value)? network,
+    TResult? Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult? Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult? Function(CreateOrderFailureServerError value)? serverError,
+    TResult? Function(CreateOrderFailureUnknown value)? unknown,
   }) {
     return network?.call(this);
   }
@@ -193,11 +203,12 @@ class _$_Network implements _Network {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_InsufficientStock value)? insufficientStock,
-    TResult Function(_InvalidOrder value)? invalidOrder,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(CreateOrderFailureNetwork value)? network,
+    TResult Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult Function(CreateOrderFailureServerError value)? serverError,
+    TResult Function(CreateOrderFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (network != null) {
@@ -207,30 +218,34 @@ class _$_Network implements _Network {
   }
 }
 
-abstract class _Network implements CreateOrderFailure {
-  const factory _Network() = _$_Network;
+abstract class CreateOrderFailureNetwork implements CreateOrderFailure {
+  const factory CreateOrderFailureNetwork() = _$CreateOrderFailureNetwork;
 }
 
 /// @nodoc
-abstract class _$$_InsufficientStockCopyWith<$Res> {
-  factory _$$_InsufficientStockCopyWith(_$_InsufficientStock value,
-          $Res Function(_$_InsufficientStock) then) =
-      __$$_InsufficientStockCopyWithImpl<$Res>;
+abstract class _$$CreateOrderFailureInsufficientStockCopyWith<$Res> {
+  factory _$$CreateOrderFailureInsufficientStockCopyWith(
+          _$CreateOrderFailureInsufficientStock value,
+          $Res Function(_$CreateOrderFailureInsufficientStock) then) =
+      __$$CreateOrderFailureInsufficientStockCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InsufficientStockCopyWithImpl<$Res>
-    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_InsufficientStock>
-    implements _$$_InsufficientStockCopyWith<$Res> {
-  __$$_InsufficientStockCopyWithImpl(
-      _$_InsufficientStock _value, $Res Function(_$_InsufficientStock) _then)
+class __$$CreateOrderFailureInsufficientStockCopyWithImpl<$Res>
+    extends _$CreateOrderFailureCopyWithImpl<$Res,
+        _$CreateOrderFailureInsufficientStock>
+    implements _$$CreateOrderFailureInsufficientStockCopyWith<$Res> {
+  __$$CreateOrderFailureInsufficientStockCopyWithImpl(
+      _$CreateOrderFailureInsufficientStock _value,
+      $Res Function(_$CreateOrderFailureInsufficientStock) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_InsufficientStock implements _InsufficientStock {
-  const _$_InsufficientStock();
+class _$CreateOrderFailureInsufficientStock
+    implements CreateOrderFailureInsufficientStock {
+  const _$CreateOrderFailureInsufficientStock();
 
   @override
   String toString() {
@@ -240,7 +255,8 @@ class _$_InsufficientStock implements _InsufficientStock {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_InsufficientStock);
+        (other.runtimeType == runtimeType &&
+            other is _$CreateOrderFailureInsufficientStock);
   }
 
   @override
@@ -289,11 +305,13 @@ class _$_InsufficientStock implements _InsufficientStock {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Network value) network,
-    required TResult Function(_InsufficientStock value) insufficientStock,
-    required TResult Function(_InvalidOrder value) invalidOrder,
-    required TResult Function(_ServerError value) serverError,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(CreateOrderFailureNetwork value) network,
+    required TResult Function(CreateOrderFailureInsufficientStock value)
+        insufficientStock,
+    required TResult Function(CreateOrderFailureInvalidOrder value)
+        invalidOrder,
+    required TResult Function(CreateOrderFailureServerError value) serverError,
+    required TResult Function(CreateOrderFailureUnknown value) unknown,
   }) {
     return insufficientStock(this);
   }
@@ -301,11 +319,12 @@ class _$_InsufficientStock implements _InsufficientStock {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Network value)? network,
-    TResult? Function(_InsufficientStock value)? insufficientStock,
-    TResult? Function(_InvalidOrder value)? invalidOrder,
-    TResult? Function(_ServerError value)? serverError,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(CreateOrderFailureNetwork value)? network,
+    TResult? Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult? Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult? Function(CreateOrderFailureServerError value)? serverError,
+    TResult? Function(CreateOrderFailureUnknown value)? unknown,
   }) {
     return insufficientStock?.call(this);
   }
@@ -313,11 +332,12 @@ class _$_InsufficientStock implements _InsufficientStock {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_InsufficientStock value)? insufficientStock,
-    TResult Function(_InvalidOrder value)? invalidOrder,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(CreateOrderFailureNetwork value)? network,
+    TResult Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult Function(CreateOrderFailureServerError value)? serverError,
+    TResult Function(CreateOrderFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (insufficientStock != null) {
@@ -327,30 +347,36 @@ class _$_InsufficientStock implements _InsufficientStock {
   }
 }
 
-abstract class _InsufficientStock implements CreateOrderFailure {
-  const factory _InsufficientStock() = _$_InsufficientStock;
+abstract class CreateOrderFailureInsufficientStock
+    implements CreateOrderFailure {
+  const factory CreateOrderFailureInsufficientStock() =
+      _$CreateOrderFailureInsufficientStock;
 }
 
 /// @nodoc
-abstract class _$$_InvalidOrderCopyWith<$Res> {
-  factory _$$_InvalidOrderCopyWith(
-          _$_InvalidOrder value, $Res Function(_$_InvalidOrder) then) =
-      __$$_InvalidOrderCopyWithImpl<$Res>;
+abstract class _$$CreateOrderFailureInvalidOrderCopyWith<$Res> {
+  factory _$$CreateOrderFailureInvalidOrderCopyWith(
+          _$CreateOrderFailureInvalidOrder value,
+          $Res Function(_$CreateOrderFailureInvalidOrder) then) =
+      __$$CreateOrderFailureInvalidOrderCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InvalidOrderCopyWithImpl<$Res>
-    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_InvalidOrder>
-    implements _$$_InvalidOrderCopyWith<$Res> {
-  __$$_InvalidOrderCopyWithImpl(
-      _$_InvalidOrder _value, $Res Function(_$_InvalidOrder) _then)
+class __$$CreateOrderFailureInvalidOrderCopyWithImpl<$Res>
+    extends _$CreateOrderFailureCopyWithImpl<$Res,
+        _$CreateOrderFailureInvalidOrder>
+    implements _$$CreateOrderFailureInvalidOrderCopyWith<$Res> {
+  __$$CreateOrderFailureInvalidOrderCopyWithImpl(
+      _$CreateOrderFailureInvalidOrder _value,
+      $Res Function(_$CreateOrderFailureInvalidOrder) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_InvalidOrder implements _InvalidOrder {
-  const _$_InvalidOrder();
+class _$CreateOrderFailureInvalidOrder
+    implements CreateOrderFailureInvalidOrder {
+  const _$CreateOrderFailureInvalidOrder();
 
   @override
   String toString() {
@@ -360,7 +386,8 @@ class _$_InvalidOrder implements _InvalidOrder {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_InvalidOrder);
+        (other.runtimeType == runtimeType &&
+            other is _$CreateOrderFailureInvalidOrder);
   }
 
   @override
@@ -409,11 +436,13 @@ class _$_InvalidOrder implements _InvalidOrder {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Network value) network,
-    required TResult Function(_InsufficientStock value) insufficientStock,
-    required TResult Function(_InvalidOrder value) invalidOrder,
-    required TResult Function(_ServerError value) serverError,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(CreateOrderFailureNetwork value) network,
+    required TResult Function(CreateOrderFailureInsufficientStock value)
+        insufficientStock,
+    required TResult Function(CreateOrderFailureInvalidOrder value)
+        invalidOrder,
+    required TResult Function(CreateOrderFailureServerError value) serverError,
+    required TResult Function(CreateOrderFailureUnknown value) unknown,
   }) {
     return invalidOrder(this);
   }
@@ -421,11 +450,12 @@ class _$_InvalidOrder implements _InvalidOrder {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Network value)? network,
-    TResult? Function(_InsufficientStock value)? insufficientStock,
-    TResult? Function(_InvalidOrder value)? invalidOrder,
-    TResult? Function(_ServerError value)? serverError,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(CreateOrderFailureNetwork value)? network,
+    TResult? Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult? Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult? Function(CreateOrderFailureServerError value)? serverError,
+    TResult? Function(CreateOrderFailureUnknown value)? unknown,
   }) {
     return invalidOrder?.call(this);
   }
@@ -433,11 +463,12 @@ class _$_InvalidOrder implements _InvalidOrder {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_InsufficientStock value)? insufficientStock,
-    TResult Function(_InvalidOrder value)? invalidOrder,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(CreateOrderFailureNetwork value)? network,
+    TResult Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult Function(CreateOrderFailureServerError value)? serverError,
+    TResult Function(CreateOrderFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (invalidOrder != null) {
@@ -447,30 +478,34 @@ class _$_InvalidOrder implements _InvalidOrder {
   }
 }
 
-abstract class _InvalidOrder implements CreateOrderFailure {
-  const factory _InvalidOrder() = _$_InvalidOrder;
+abstract class CreateOrderFailureInvalidOrder implements CreateOrderFailure {
+  const factory CreateOrderFailureInvalidOrder() =
+      _$CreateOrderFailureInvalidOrder;
 }
 
 /// @nodoc
-abstract class _$$_ServerErrorCopyWith<$Res> {
-  factory _$$_ServerErrorCopyWith(
-          _$_ServerError value, $Res Function(_$_ServerError) then) =
-      __$$_ServerErrorCopyWithImpl<$Res>;
+abstract class _$$CreateOrderFailureServerErrorCopyWith<$Res> {
+  factory _$$CreateOrderFailureServerErrorCopyWith(
+          _$CreateOrderFailureServerError value,
+          $Res Function(_$CreateOrderFailureServerError) then) =
+      __$$CreateOrderFailureServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ServerErrorCopyWithImpl<$Res>
-    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_ServerError>
-    implements _$$_ServerErrorCopyWith<$Res> {
-  __$$_ServerErrorCopyWithImpl(
-      _$_ServerError _value, $Res Function(_$_ServerError) _then)
+class __$$CreateOrderFailureServerErrorCopyWithImpl<$Res>
+    extends _$CreateOrderFailureCopyWithImpl<$Res,
+        _$CreateOrderFailureServerError>
+    implements _$$CreateOrderFailureServerErrorCopyWith<$Res> {
+  __$$CreateOrderFailureServerErrorCopyWithImpl(
+      _$CreateOrderFailureServerError _value,
+      $Res Function(_$CreateOrderFailureServerError) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ServerError implements _ServerError {
-  const _$_ServerError();
+class _$CreateOrderFailureServerError implements CreateOrderFailureServerError {
+  const _$CreateOrderFailureServerError();
 
   @override
   String toString() {
@@ -480,7 +515,8 @@ class _$_ServerError implements _ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ServerError);
+        (other.runtimeType == runtimeType &&
+            other is _$CreateOrderFailureServerError);
   }
 
   @override
@@ -529,11 +565,13 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Network value) network,
-    required TResult Function(_InsufficientStock value) insufficientStock,
-    required TResult Function(_InvalidOrder value) invalidOrder,
-    required TResult Function(_ServerError value) serverError,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(CreateOrderFailureNetwork value) network,
+    required TResult Function(CreateOrderFailureInsufficientStock value)
+        insufficientStock,
+    required TResult Function(CreateOrderFailureInvalidOrder value)
+        invalidOrder,
+    required TResult Function(CreateOrderFailureServerError value) serverError,
+    required TResult Function(CreateOrderFailureUnknown value) unknown,
   }) {
     return serverError(this);
   }
@@ -541,11 +579,12 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Network value)? network,
-    TResult? Function(_InsufficientStock value)? insufficientStock,
-    TResult? Function(_InvalidOrder value)? invalidOrder,
-    TResult? Function(_ServerError value)? serverError,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(CreateOrderFailureNetwork value)? network,
+    TResult? Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult? Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult? Function(CreateOrderFailureServerError value)? serverError,
+    TResult? Function(CreateOrderFailureUnknown value)? unknown,
   }) {
     return serverError?.call(this);
   }
@@ -553,11 +592,12 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_InsufficientStock value)? insufficientStock,
-    TResult Function(_InvalidOrder value)? invalidOrder,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(CreateOrderFailureNetwork value)? network,
+    TResult Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult Function(CreateOrderFailureServerError value)? serverError,
+    TResult Function(CreateOrderFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -567,29 +607,32 @@ class _$_ServerError implements _ServerError {
   }
 }
 
-abstract class _ServerError implements CreateOrderFailure {
-  const factory _ServerError() = _$_ServerError;
+abstract class CreateOrderFailureServerError implements CreateOrderFailure {
+  const factory CreateOrderFailureServerError() =
+      _$CreateOrderFailureServerError;
 }
 
 /// @nodoc
-abstract class _$$_UnknownCopyWith<$Res> {
-  factory _$$_UnknownCopyWith(
-          _$_Unknown value, $Res Function(_$_Unknown) then) =
-      __$$_UnknownCopyWithImpl<$Res>;
+abstract class _$$CreateOrderFailureUnknownCopyWith<$Res> {
+  factory _$$CreateOrderFailureUnknownCopyWith(
+          _$CreateOrderFailureUnknown value,
+          $Res Function(_$CreateOrderFailureUnknown) then) =
+      __$$CreateOrderFailureUnknownCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UnknownCopyWithImpl<$Res>
-    extends _$CreateOrderFailureCopyWithImpl<$Res, _$_Unknown>
-    implements _$$_UnknownCopyWith<$Res> {
-  __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
+class __$$CreateOrderFailureUnknownCopyWithImpl<$Res>
+    extends _$CreateOrderFailureCopyWithImpl<$Res, _$CreateOrderFailureUnknown>
+    implements _$$CreateOrderFailureUnknownCopyWith<$Res> {
+  __$$CreateOrderFailureUnknownCopyWithImpl(_$CreateOrderFailureUnknown _value,
+      $Res Function(_$CreateOrderFailureUnknown) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Unknown implements _Unknown {
-  const _$_Unknown();
+class _$CreateOrderFailureUnknown implements CreateOrderFailureUnknown {
+  const _$CreateOrderFailureUnknown();
 
   @override
   String toString() {
@@ -599,7 +642,8 @@ class _$_Unknown implements _Unknown {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Unknown);
+        (other.runtimeType == runtimeType &&
+            other is _$CreateOrderFailureUnknown);
   }
 
   @override
@@ -648,11 +692,13 @@ class _$_Unknown implements _Unknown {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Network value) network,
-    required TResult Function(_InsufficientStock value) insufficientStock,
-    required TResult Function(_InvalidOrder value) invalidOrder,
-    required TResult Function(_ServerError value) serverError,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(CreateOrderFailureNetwork value) network,
+    required TResult Function(CreateOrderFailureInsufficientStock value)
+        insufficientStock,
+    required TResult Function(CreateOrderFailureInvalidOrder value)
+        invalidOrder,
+    required TResult Function(CreateOrderFailureServerError value) serverError,
+    required TResult Function(CreateOrderFailureUnknown value) unknown,
   }) {
     return unknown(this);
   }
@@ -660,11 +706,12 @@ class _$_Unknown implements _Unknown {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Network value)? network,
-    TResult? Function(_InsufficientStock value)? insufficientStock,
-    TResult? Function(_InvalidOrder value)? invalidOrder,
-    TResult? Function(_ServerError value)? serverError,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(CreateOrderFailureNetwork value)? network,
+    TResult? Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult? Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult? Function(CreateOrderFailureServerError value)? serverError,
+    TResult? Function(CreateOrderFailureUnknown value)? unknown,
   }) {
     return unknown?.call(this);
   }
@@ -672,11 +719,12 @@ class _$_Unknown implements _Unknown {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_InsufficientStock value)? insufficientStock,
-    TResult Function(_InvalidOrder value)? invalidOrder,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(CreateOrderFailureNetwork value)? network,
+    TResult Function(CreateOrderFailureInsufficientStock value)?
+        insufficientStock,
+    TResult Function(CreateOrderFailureInvalidOrder value)? invalidOrder,
+    TResult Function(CreateOrderFailureServerError value)? serverError,
+    TResult Function(CreateOrderFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -686,6 +734,6 @@ class _$_Unknown implements _Unknown {
   }
 }
 
-abstract class _Unknown implements CreateOrderFailure {
-  const factory _Unknown() = _$_Unknown;
+abstract class CreateOrderFailureUnknown implements CreateOrderFailure {
+  const factory CreateOrderFailureUnknown() = _$CreateOrderFailureUnknown;
 }

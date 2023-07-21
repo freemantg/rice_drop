@@ -5,13 +5,13 @@ part 'create_order_failure.freezed.dart';
 @freezed
 class CreateOrderFailure with _$CreateOrderFailure {
   // Indicates a network-related failure
-  const factory CreateOrderFailure.network() = _Network;
+  const factory CreateOrderFailure.network() = CreateOrderFailureNetwork;
   // Indicates a failure due to insufficient stock
-  const factory CreateOrderFailure.insufficientStock() = _InsufficientStock;
+  const factory CreateOrderFailure.insufficientStock() = CreateOrderFailureInsufficientStock;
   // Indicates a failure due to an invalid order (e.g., wrong item information)
-  const factory CreateOrderFailure.invalidOrder() = _InvalidOrder;
+  const factory CreateOrderFailure.invalidOrder() = CreateOrderFailureInvalidOrder;
   // Indicates a failure due to server error
-  const factory CreateOrderFailure.serverError() = _ServerError;
+  const factory CreateOrderFailure.serverError() = CreateOrderFailureServerError;
   // Indicates a failure due to an unknown error
-  const factory CreateOrderFailure.unknown() = _Unknown;
+  const factory CreateOrderFailure.unknown() = CreateOrderFailureUnknown;
 }

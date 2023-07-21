@@ -61,44 +61,54 @@ mixin _$SquarePaymentFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -124,25 +134,29 @@ class _$SquarePaymentFailureCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_PaymentErrorCopyWith<$Res> {
-  factory _$$_PaymentErrorCopyWith(
-          _$_PaymentError value, $Res Function(_$_PaymentError) then) =
-      __$$_PaymentErrorCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailurePaymentErrorCopyWith<$Res> {
+  factory _$$SquarePaymentFailurePaymentErrorCopyWith(
+          _$SquarePaymentFailurePaymentError value,
+          $Res Function(_$SquarePaymentFailurePaymentError) then) =
+      __$$SquarePaymentFailurePaymentErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_PaymentErrorCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_PaymentError>
-    implements _$$_PaymentErrorCopyWith<$Res> {
-  __$$_PaymentErrorCopyWithImpl(
-      _$_PaymentError _value, $Res Function(_$_PaymentError) _then)
+class __$$SquarePaymentFailurePaymentErrorCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailurePaymentError>
+    implements _$$SquarePaymentFailurePaymentErrorCopyWith<$Res> {
+  __$$SquarePaymentFailurePaymentErrorCopyWithImpl(
+      _$SquarePaymentFailurePaymentError _value,
+      $Res Function(_$SquarePaymentFailurePaymentError) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_PaymentError implements _PaymentError {
-  const _$_PaymentError();
+class _$SquarePaymentFailurePaymentError
+    implements SquarePaymentFailurePaymentError {
+  const _$SquarePaymentFailurePaymentError();
 
   @override
   String toString() {
@@ -152,7 +166,8 @@ class _$_PaymentError implements _PaymentError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_PaymentError);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailurePaymentError);
   }
 
   @override
@@ -216,16 +231,22 @@ class _$_PaymentError implements _PaymentError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return paymentError(this);
   }
@@ -233,16 +254,18 @@ class _$_PaymentError implements _PaymentError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return paymentError?.call(this);
   }
@@ -250,16 +273,18 @@ class _$_PaymentError implements _PaymentError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (paymentError != null) {
@@ -269,30 +294,36 @@ class _$_PaymentError implements _PaymentError {
   }
 }
 
-abstract class _PaymentError implements SquarePaymentFailure {
-  const factory _PaymentError() = _$_PaymentError;
+abstract class SquarePaymentFailurePaymentError
+    implements SquarePaymentFailure {
+  const factory SquarePaymentFailurePaymentError() =
+      _$SquarePaymentFailurePaymentError;
 }
 
 /// @nodoc
-abstract class _$$_PaymentInvalidCopyWith<$Res> {
-  factory _$$_PaymentInvalidCopyWith(
-          _$_PaymentInvalid value, $Res Function(_$_PaymentInvalid) then) =
-      __$$_PaymentInvalidCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailurePaymentInvalidCopyWith<$Res> {
+  factory _$$SquarePaymentFailurePaymentInvalidCopyWith(
+          _$SquarePaymentFailurePaymentInvalid value,
+          $Res Function(_$SquarePaymentFailurePaymentInvalid) then) =
+      __$$SquarePaymentFailurePaymentInvalidCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_PaymentInvalidCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_PaymentInvalid>
-    implements _$$_PaymentInvalidCopyWith<$Res> {
-  __$$_PaymentInvalidCopyWithImpl(
-      _$_PaymentInvalid _value, $Res Function(_$_PaymentInvalid) _then)
+class __$$SquarePaymentFailurePaymentInvalidCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailurePaymentInvalid>
+    implements _$$SquarePaymentFailurePaymentInvalidCopyWith<$Res> {
+  __$$SquarePaymentFailurePaymentInvalidCopyWithImpl(
+      _$SquarePaymentFailurePaymentInvalid _value,
+      $Res Function(_$SquarePaymentFailurePaymentInvalid) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_PaymentInvalid implements _PaymentInvalid {
-  const _$_PaymentInvalid();
+class _$SquarePaymentFailurePaymentInvalid
+    implements SquarePaymentFailurePaymentInvalid {
+  const _$SquarePaymentFailurePaymentInvalid();
 
   @override
   String toString() {
@@ -302,7 +333,8 @@ class _$_PaymentInvalid implements _PaymentInvalid {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_PaymentInvalid);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailurePaymentInvalid);
   }
 
   @override
@@ -366,16 +398,22 @@ class _$_PaymentInvalid implements _PaymentInvalid {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return paymentInvalid(this);
   }
@@ -383,16 +421,18 @@ class _$_PaymentInvalid implements _PaymentInvalid {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return paymentInvalid?.call(this);
   }
@@ -400,16 +440,18 @@ class _$_PaymentInvalid implements _PaymentInvalid {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (paymentInvalid != null) {
@@ -419,30 +461,35 @@ class _$_PaymentInvalid implements _PaymentInvalid {
   }
 }
 
-abstract class _PaymentInvalid implements SquarePaymentFailure {
-  const factory _PaymentInvalid() = _$_PaymentInvalid;
+abstract class SquarePaymentFailurePaymentInvalid
+    implements SquarePaymentFailure {
+  const factory SquarePaymentFailurePaymentInvalid() =
+      _$SquarePaymentFailurePaymentInvalid;
 }
 
 /// @nodoc
-abstract class _$$_NoNetworkCopyWith<$Res> {
-  factory _$$_NoNetworkCopyWith(
-          _$_NoNetwork value, $Res Function(_$_NoNetwork) then) =
-      __$$_NoNetworkCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailureNoNetworkCopyWith<$Res> {
+  factory _$$SquarePaymentFailureNoNetworkCopyWith(
+          _$SquarePaymentFailureNoNetwork value,
+          $Res Function(_$SquarePaymentFailureNoNetwork) then) =
+      __$$SquarePaymentFailureNoNetworkCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NoNetworkCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_NoNetwork>
-    implements _$$_NoNetworkCopyWith<$Res> {
-  __$$_NoNetworkCopyWithImpl(
-      _$_NoNetwork _value, $Res Function(_$_NoNetwork) _then)
+class __$$SquarePaymentFailureNoNetworkCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailureNoNetwork>
+    implements _$$SquarePaymentFailureNoNetworkCopyWith<$Res> {
+  __$$SquarePaymentFailureNoNetworkCopyWithImpl(
+      _$SquarePaymentFailureNoNetwork _value,
+      $Res Function(_$SquarePaymentFailureNoNetwork) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NoNetwork implements _NoNetwork {
-  const _$_NoNetwork();
+class _$SquarePaymentFailureNoNetwork implements SquarePaymentFailureNoNetwork {
+  const _$SquarePaymentFailureNoNetwork();
 
   @override
   String toString() {
@@ -452,7 +499,8 @@ class _$_NoNetwork implements _NoNetwork {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NoNetwork);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailureNoNetwork);
   }
 
   @override
@@ -516,16 +564,22 @@ class _$_NoNetwork implements _NoNetwork {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return noNetwork(this);
   }
@@ -533,16 +587,18 @@ class _$_NoNetwork implements _NoNetwork {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return noNetwork?.call(this);
   }
@@ -550,16 +606,18 @@ class _$_NoNetwork implements _NoNetwork {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (noNetwork != null) {
@@ -569,30 +627,35 @@ class _$_NoNetwork implements _NoNetwork {
   }
 }
 
-abstract class _NoNetwork implements SquarePaymentFailure {
-  const factory _NoNetwork() = _$_NoNetwork;
+abstract class SquarePaymentFailureNoNetwork implements SquarePaymentFailure {
+  const factory SquarePaymentFailureNoNetwork() =
+      _$SquarePaymentFailureNoNetwork;
 }
 
 /// @nodoc
-abstract class _$$_AmountTooSmallCopyWith<$Res> {
-  factory _$$_AmountTooSmallCopyWith(
-          _$_AmountTooSmall value, $Res Function(_$_AmountTooSmall) then) =
-      __$$_AmountTooSmallCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailureAmountTooSmallCopyWith<$Res> {
+  factory _$$SquarePaymentFailureAmountTooSmallCopyWith(
+          _$SquarePaymentFailureAmountTooSmall value,
+          $Res Function(_$SquarePaymentFailureAmountTooSmall) then) =
+      __$$SquarePaymentFailureAmountTooSmallCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AmountTooSmallCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_AmountTooSmall>
-    implements _$$_AmountTooSmallCopyWith<$Res> {
-  __$$_AmountTooSmallCopyWithImpl(
-      _$_AmountTooSmall _value, $Res Function(_$_AmountTooSmall) _then)
+class __$$SquarePaymentFailureAmountTooSmallCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailureAmountTooSmall>
+    implements _$$SquarePaymentFailureAmountTooSmallCopyWith<$Res> {
+  __$$SquarePaymentFailureAmountTooSmallCopyWithImpl(
+      _$SquarePaymentFailureAmountTooSmall _value,
+      $Res Function(_$SquarePaymentFailureAmountTooSmall) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AmountTooSmall implements _AmountTooSmall {
-  const _$_AmountTooSmall();
+class _$SquarePaymentFailureAmountTooSmall
+    implements SquarePaymentFailureAmountTooSmall {
+  const _$SquarePaymentFailureAmountTooSmall();
 
   @override
   String toString() {
@@ -602,7 +665,8 @@ class _$_AmountTooSmall implements _AmountTooSmall {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AmountTooSmall);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailureAmountTooSmall);
   }
 
   @override
@@ -666,16 +730,22 @@ class _$_AmountTooSmall implements _AmountTooSmall {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return amountTooSmall(this);
   }
@@ -683,16 +753,18 @@ class _$_AmountTooSmall implements _AmountTooSmall {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return amountTooSmall?.call(this);
   }
@@ -700,16 +772,18 @@ class _$_AmountTooSmall implements _AmountTooSmall {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (amountTooSmall != null) {
@@ -719,30 +793,36 @@ class _$_AmountTooSmall implements _AmountTooSmall {
   }
 }
 
-abstract class _AmountTooSmall implements SquarePaymentFailure {
-  const factory _AmountTooSmall() = _$_AmountTooSmall;
+abstract class SquarePaymentFailureAmountTooSmall
+    implements SquarePaymentFailure {
+  const factory SquarePaymentFailureAmountTooSmall() =
+      _$SquarePaymentFailureAmountTooSmall;
 }
 
 /// @nodoc
-abstract class _$$_AmountTooLargeCopyWith<$Res> {
-  factory _$$_AmountTooLargeCopyWith(
-          _$_AmountTooLarge value, $Res Function(_$_AmountTooLarge) then) =
-      __$$_AmountTooLargeCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailureAmountTooLargeCopyWith<$Res> {
+  factory _$$SquarePaymentFailureAmountTooLargeCopyWith(
+          _$SquarePaymentFailureAmountTooLarge value,
+          $Res Function(_$SquarePaymentFailureAmountTooLarge) then) =
+      __$$SquarePaymentFailureAmountTooLargeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AmountTooLargeCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_AmountTooLarge>
-    implements _$$_AmountTooLargeCopyWith<$Res> {
-  __$$_AmountTooLargeCopyWithImpl(
-      _$_AmountTooLarge _value, $Res Function(_$_AmountTooLarge) _then)
+class __$$SquarePaymentFailureAmountTooLargeCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailureAmountTooLarge>
+    implements _$$SquarePaymentFailureAmountTooLargeCopyWith<$Res> {
+  __$$SquarePaymentFailureAmountTooLargeCopyWithImpl(
+      _$SquarePaymentFailureAmountTooLarge _value,
+      $Res Function(_$SquarePaymentFailureAmountTooLarge) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AmountTooLarge implements _AmountTooLarge {
-  const _$_AmountTooLarge();
+class _$SquarePaymentFailureAmountTooLarge
+    implements SquarePaymentFailureAmountTooLarge {
+  const _$SquarePaymentFailureAmountTooLarge();
 
   @override
   String toString() {
@@ -752,7 +832,8 @@ class _$_AmountTooLarge implements _AmountTooLarge {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AmountTooLarge);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailureAmountTooLarge);
   }
 
   @override
@@ -816,16 +897,22 @@ class _$_AmountTooLarge implements _AmountTooLarge {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return amountTooLarge(this);
   }
@@ -833,16 +920,18 @@ class _$_AmountTooLarge implements _AmountTooLarge {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return amountTooLarge?.call(this);
   }
@@ -850,16 +939,18 @@ class _$_AmountTooLarge implements _AmountTooLarge {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (amountTooLarge != null) {
@@ -869,30 +960,36 @@ class _$_AmountTooLarge implements _AmountTooLarge {
   }
 }
 
-abstract class _AmountTooLarge implements SquarePaymentFailure {
-  const factory _AmountTooLarge() = _$_AmountTooLarge;
+abstract class SquarePaymentFailureAmountTooLarge
+    implements SquarePaymentFailure {
+  const factory SquarePaymentFailureAmountTooLarge() =
+      _$SquarePaymentFailureAmountTooLarge;
 }
 
 /// @nodoc
-abstract class _$$_CurrencyMismatchCopyWith<$Res> {
-  factory _$$_CurrencyMismatchCopyWith(
-          _$_CurrencyMismatch value, $Res Function(_$_CurrencyMismatch) then) =
-      __$$_CurrencyMismatchCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailureCurrencyMismatchCopyWith<$Res> {
+  factory _$$SquarePaymentFailureCurrencyMismatchCopyWith(
+          _$SquarePaymentFailureCurrencyMismatch value,
+          $Res Function(_$SquarePaymentFailureCurrencyMismatch) then) =
+      __$$SquarePaymentFailureCurrencyMismatchCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CurrencyMismatchCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_CurrencyMismatch>
-    implements _$$_CurrencyMismatchCopyWith<$Res> {
-  __$$_CurrencyMismatchCopyWithImpl(
-      _$_CurrencyMismatch _value, $Res Function(_$_CurrencyMismatch) _then)
+class __$$SquarePaymentFailureCurrencyMismatchCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailureCurrencyMismatch>
+    implements _$$SquarePaymentFailureCurrencyMismatchCopyWith<$Res> {
+  __$$SquarePaymentFailureCurrencyMismatchCopyWithImpl(
+      _$SquarePaymentFailureCurrencyMismatch _value,
+      $Res Function(_$SquarePaymentFailureCurrencyMismatch) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CurrencyMismatch implements _CurrencyMismatch {
-  const _$_CurrencyMismatch();
+class _$SquarePaymentFailureCurrencyMismatch
+    implements SquarePaymentFailureCurrencyMismatch {
+  const _$SquarePaymentFailureCurrencyMismatch();
 
   @override
   String toString() {
@@ -902,7 +999,8 @@ class _$_CurrencyMismatch implements _CurrencyMismatch {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_CurrencyMismatch);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailureCurrencyMismatch);
   }
 
   @override
@@ -966,16 +1064,22 @@ class _$_CurrencyMismatch implements _CurrencyMismatch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return currencyMismatch(this);
   }
@@ -983,16 +1087,18 @@ class _$_CurrencyMismatch implements _CurrencyMismatch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return currencyMismatch?.call(this);
   }
@@ -1000,16 +1106,18 @@ class _$_CurrencyMismatch implements _CurrencyMismatch {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (currencyMismatch != null) {
@@ -1019,30 +1127,36 @@ class _$_CurrencyMismatch implements _CurrencyMismatch {
   }
 }
 
-abstract class _CurrencyMismatch implements SquarePaymentFailure {
-  const factory _CurrencyMismatch() = _$_CurrencyMismatch;
+abstract class SquarePaymentFailureCurrencyMismatch
+    implements SquarePaymentFailure {
+  const factory SquarePaymentFailureCurrencyMismatch() =
+      _$SquarePaymentFailureCurrencyMismatch;
 }
 
 /// @nodoc
-abstract class _$$_AppNotInstalledCopyWith<$Res> {
-  factory _$$_AppNotInstalledCopyWith(
-          _$_AppNotInstalled value, $Res Function(_$_AppNotInstalled) then) =
-      __$$_AppNotInstalledCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailureAppNotInstalledCopyWith<$Res> {
+  factory _$$SquarePaymentFailureAppNotInstalledCopyWith(
+          _$SquarePaymentFailureAppNotInstalled value,
+          $Res Function(_$SquarePaymentFailureAppNotInstalled) then) =
+      __$$SquarePaymentFailureAppNotInstalledCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AppNotInstalledCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_AppNotInstalled>
-    implements _$$_AppNotInstalledCopyWith<$Res> {
-  __$$_AppNotInstalledCopyWithImpl(
-      _$_AppNotInstalled _value, $Res Function(_$_AppNotInstalled) _then)
+class __$$SquarePaymentFailureAppNotInstalledCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailureAppNotInstalled>
+    implements _$$SquarePaymentFailureAppNotInstalledCopyWith<$Res> {
+  __$$SquarePaymentFailureAppNotInstalledCopyWithImpl(
+      _$SquarePaymentFailureAppNotInstalled _value,
+      $Res Function(_$SquarePaymentFailureAppNotInstalled) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AppNotInstalled implements _AppNotInstalled {
-  const _$_AppNotInstalled();
+class _$SquarePaymentFailureAppNotInstalled
+    implements SquarePaymentFailureAppNotInstalled {
+  const _$SquarePaymentFailureAppNotInstalled();
 
   @override
   String toString() {
@@ -1052,7 +1166,8 @@ class _$_AppNotInstalled implements _AppNotInstalled {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AppNotInstalled);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailureAppNotInstalled);
   }
 
   @override
@@ -1116,16 +1231,22 @@ class _$_AppNotInstalled implements _AppNotInstalled {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return appNotInstalled(this);
   }
@@ -1133,16 +1254,18 @@ class _$_AppNotInstalled implements _AppNotInstalled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return appNotInstalled?.call(this);
   }
@@ -1150,16 +1273,18 @@ class _$_AppNotInstalled implements _AppNotInstalled {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (appNotInstalled != null) {
@@ -1169,30 +1294,36 @@ class _$_AppNotInstalled implements _AppNotInstalled {
   }
 }
 
-abstract class _AppNotInstalled implements SquarePaymentFailure {
-  const factory _AppNotInstalled() = _$_AppNotInstalled;
+abstract class SquarePaymentFailureAppNotInstalled
+    implements SquarePaymentFailure {
+  const factory SquarePaymentFailureAppNotInstalled() =
+      _$SquarePaymentFailureAppNotInstalled;
 }
 
 /// @nodoc
-abstract class _$$_NoLocationCopyWith<$Res> {
-  factory _$$_NoLocationCopyWith(
-          _$_NoLocation value, $Res Function(_$_NoLocation) then) =
-      __$$_NoLocationCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailureNoLocationCopyWith<$Res> {
+  factory _$$SquarePaymentFailureNoLocationCopyWith(
+          _$SquarePaymentFailureNoLocation value,
+          $Res Function(_$SquarePaymentFailureNoLocation) then) =
+      __$$SquarePaymentFailureNoLocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NoLocationCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_NoLocation>
-    implements _$$_NoLocationCopyWith<$Res> {
-  __$$_NoLocationCopyWithImpl(
-      _$_NoLocation _value, $Res Function(_$_NoLocation) _then)
+class __$$SquarePaymentFailureNoLocationCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailureNoLocation>
+    implements _$$SquarePaymentFailureNoLocationCopyWith<$Res> {
+  __$$SquarePaymentFailureNoLocationCopyWithImpl(
+      _$SquarePaymentFailureNoLocation _value,
+      $Res Function(_$SquarePaymentFailureNoLocation) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NoLocation implements _NoLocation {
-  const _$_NoLocation();
+class _$SquarePaymentFailureNoLocation
+    implements SquarePaymentFailureNoLocation {
+  const _$SquarePaymentFailureNoLocation();
 
   @override
   String toString() {
@@ -1202,7 +1333,8 @@ class _$_NoLocation implements _NoLocation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NoLocation);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailureNoLocation);
   }
 
   @override
@@ -1266,16 +1398,22 @@ class _$_NoLocation implements _NoLocation {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return noLocation(this);
   }
@@ -1283,16 +1421,18 @@ class _$_NoLocation implements _NoLocation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return noLocation?.call(this);
   }
@@ -1300,16 +1440,18 @@ class _$_NoLocation implements _NoLocation {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (noLocation != null) {
@@ -1319,30 +1461,35 @@ class _$_NoLocation implements _NoLocation {
   }
 }
 
-abstract class _NoLocation implements SquarePaymentFailure {
-  const factory _NoLocation() = _$_NoLocation;
+abstract class SquarePaymentFailureNoLocation implements SquarePaymentFailure {
+  const factory SquarePaymentFailureNoLocation() =
+      _$SquarePaymentFailureNoLocation;
 }
 
 /// @nodoc
-abstract class _$$_InvalidIDsCopyWith<$Res> {
-  factory _$$_InvalidIDsCopyWith(
-          _$_InvalidIDs value, $Res Function(_$_InvalidIDs) then) =
-      __$$_InvalidIDsCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailureInvalidIDsCopyWith<$Res> {
+  factory _$$SquarePaymentFailureInvalidIDsCopyWith(
+          _$SquarePaymentFailureInvalidIDs value,
+          $Res Function(_$SquarePaymentFailureInvalidIDs) then) =
+      __$$SquarePaymentFailureInvalidIDsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InvalidIDsCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_InvalidIDs>
-    implements _$$_InvalidIDsCopyWith<$Res> {
-  __$$_InvalidIDsCopyWithImpl(
-      _$_InvalidIDs _value, $Res Function(_$_InvalidIDs) _then)
+class __$$SquarePaymentFailureInvalidIDsCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailureInvalidIDs>
+    implements _$$SquarePaymentFailureInvalidIDsCopyWith<$Res> {
+  __$$SquarePaymentFailureInvalidIDsCopyWithImpl(
+      _$SquarePaymentFailureInvalidIDs _value,
+      $Res Function(_$SquarePaymentFailureInvalidIDs) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_InvalidIDs implements _InvalidIDs {
-  const _$_InvalidIDs();
+class _$SquarePaymentFailureInvalidIDs
+    implements SquarePaymentFailureInvalidIDs {
+  const _$SquarePaymentFailureInvalidIDs();
 
   @override
   String toString() {
@@ -1352,7 +1499,8 @@ class _$_InvalidIDs implements _InvalidIDs {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_InvalidIDs);
+        (other.runtimeType == runtimeType &&
+            other is _$SquarePaymentFailureInvalidIDs);
   }
 
   @override
@@ -1416,16 +1564,22 @@ class _$_InvalidIDs implements _InvalidIDs {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return invalidIDs(this);
   }
@@ -1433,16 +1587,18 @@ class _$_InvalidIDs implements _InvalidIDs {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return invalidIDs?.call(this);
   }
@@ -1450,16 +1606,18 @@ class _$_InvalidIDs implements _InvalidIDs {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (invalidIDs != null) {
@@ -1469,24 +1627,29 @@ class _$_InvalidIDs implements _InvalidIDs {
   }
 }
 
-abstract class _InvalidIDs implements SquarePaymentFailure {
-  const factory _InvalidIDs() = _$_InvalidIDs;
+abstract class SquarePaymentFailureInvalidIDs implements SquarePaymentFailure {
+  const factory SquarePaymentFailureInvalidIDs() =
+      _$SquarePaymentFailureInvalidIDs;
 }
 
 /// @nodoc
-abstract class _$$_UnknownCopyWith<$Res> {
-  factory _$$_UnknownCopyWith(
-          _$_Unknown value, $Res Function(_$_Unknown) then) =
-      __$$_UnknownCopyWithImpl<$Res>;
+abstract class _$$SquarePaymentFailureUnknownCopyWith<$Res> {
+  factory _$$SquarePaymentFailureUnknownCopyWith(
+          _$SquarePaymentFailureUnknown value,
+          $Res Function(_$SquarePaymentFailureUnknown) then) =
+      __$$SquarePaymentFailureUnknownCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$$_UnknownCopyWithImpl<$Res>
-    extends _$SquarePaymentFailureCopyWithImpl<$Res, _$_Unknown>
-    implements _$$_UnknownCopyWith<$Res> {
-  __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
+class __$$SquarePaymentFailureUnknownCopyWithImpl<$Res>
+    extends _$SquarePaymentFailureCopyWithImpl<$Res,
+        _$SquarePaymentFailureUnknown>
+    implements _$$SquarePaymentFailureUnknownCopyWith<$Res> {
+  __$$SquarePaymentFailureUnknownCopyWithImpl(
+      _$SquarePaymentFailureUnknown _value,
+      $Res Function(_$SquarePaymentFailureUnknown) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1494,7 +1657,7 @@ class __$$_UnknownCopyWithImpl<$Res>
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_$_Unknown(
+    return _then(_$SquarePaymentFailureUnknown(
       freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -1505,8 +1668,8 @@ class __$$_UnknownCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Unknown implements _Unknown {
-  const _$_Unknown(this.message);
+class _$SquarePaymentFailureUnknown implements SquarePaymentFailureUnknown {
+  const _$SquarePaymentFailureUnknown(this.message);
 
   @override
   final String? message;
@@ -1520,7 +1683,7 @@ class _$_Unknown implements _Unknown {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Unknown &&
+            other is _$SquarePaymentFailureUnknown &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1530,8 +1693,9 @@ class _$_Unknown implements _Unknown {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UnknownCopyWith<_$_Unknown> get copyWith =>
-      __$$_UnknownCopyWithImpl<_$_Unknown>(this, _$identity);
+  _$$SquarePaymentFailureUnknownCopyWith<_$SquarePaymentFailureUnknown>
+      get copyWith => __$$SquarePaymentFailureUnknownCopyWithImpl<
+          _$SquarePaymentFailureUnknown>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1591,16 +1755,22 @@ class _$_Unknown implements _Unknown {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentError value) paymentError,
-    required TResult Function(_PaymentInvalid value) paymentInvalid,
-    required TResult Function(_NoNetwork value) noNetwork,
-    required TResult Function(_AmountTooSmall value) amountTooSmall,
-    required TResult Function(_AmountTooLarge value) amountTooLarge,
-    required TResult Function(_CurrencyMismatch value) currencyMismatch,
-    required TResult Function(_AppNotInstalled value) appNotInstalled,
-    required TResult Function(_NoLocation value) noLocation,
-    required TResult Function(_InvalidIDs value) invalidIDs,
-    required TResult Function(_Unknown value) unknown,
+    required TResult Function(SquarePaymentFailurePaymentError value)
+        paymentError,
+    required TResult Function(SquarePaymentFailurePaymentInvalid value)
+        paymentInvalid,
+    required TResult Function(SquarePaymentFailureNoNetwork value) noNetwork,
+    required TResult Function(SquarePaymentFailureAmountTooSmall value)
+        amountTooSmall,
+    required TResult Function(SquarePaymentFailureAmountTooLarge value)
+        amountTooLarge,
+    required TResult Function(SquarePaymentFailureCurrencyMismatch value)
+        currencyMismatch,
+    required TResult Function(SquarePaymentFailureAppNotInstalled value)
+        appNotInstalled,
+    required TResult Function(SquarePaymentFailureNoLocation value) noLocation,
+    required TResult Function(SquarePaymentFailureInvalidIDs value) invalidIDs,
+    required TResult Function(SquarePaymentFailureUnknown value) unknown,
   }) {
     return unknown(this);
   }
@@ -1608,16 +1778,18 @@ class _$_Unknown implements _Unknown {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentError value)? paymentError,
-    TResult? Function(_PaymentInvalid value)? paymentInvalid,
-    TResult? Function(_NoNetwork value)? noNetwork,
-    TResult? Function(_AmountTooSmall value)? amountTooSmall,
-    TResult? Function(_AmountTooLarge value)? amountTooLarge,
-    TResult? Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult? Function(_AppNotInstalled value)? appNotInstalled,
-    TResult? Function(_NoLocation value)? noLocation,
-    TResult? Function(_InvalidIDs value)? invalidIDs,
-    TResult? Function(_Unknown value)? unknown,
+    TResult? Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult? Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult? Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult? Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult? Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult? Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult? Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult? Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult? Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult? Function(SquarePaymentFailureUnknown value)? unknown,
   }) {
     return unknown?.call(this);
   }
@@ -1625,16 +1797,18 @@ class _$_Unknown implements _Unknown {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentError value)? paymentError,
-    TResult Function(_PaymentInvalid value)? paymentInvalid,
-    TResult Function(_NoNetwork value)? noNetwork,
-    TResult Function(_AmountTooSmall value)? amountTooSmall,
-    TResult Function(_AmountTooLarge value)? amountTooLarge,
-    TResult Function(_CurrencyMismatch value)? currencyMismatch,
-    TResult Function(_AppNotInstalled value)? appNotInstalled,
-    TResult Function(_NoLocation value)? noLocation,
-    TResult Function(_InvalidIDs value)? invalidIDs,
-    TResult Function(_Unknown value)? unknown,
+    TResult Function(SquarePaymentFailurePaymentError value)? paymentError,
+    TResult Function(SquarePaymentFailurePaymentInvalid value)? paymentInvalid,
+    TResult Function(SquarePaymentFailureNoNetwork value)? noNetwork,
+    TResult Function(SquarePaymentFailureAmountTooSmall value)? amountTooSmall,
+    TResult Function(SquarePaymentFailureAmountTooLarge value)? amountTooLarge,
+    TResult Function(SquarePaymentFailureCurrencyMismatch value)?
+        currencyMismatch,
+    TResult Function(SquarePaymentFailureAppNotInstalled value)?
+        appNotInstalled,
+    TResult Function(SquarePaymentFailureNoLocation value)? noLocation,
+    TResult Function(SquarePaymentFailureInvalidIDs value)? invalidIDs,
+    TResult Function(SquarePaymentFailureUnknown value)? unknown,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -1644,11 +1818,12 @@ class _$_Unknown implements _Unknown {
   }
 }
 
-abstract class _Unknown implements SquarePaymentFailure {
-  const factory _Unknown(final String? message) = _$_Unknown;
+abstract class SquarePaymentFailureUnknown implements SquarePaymentFailure {
+  const factory SquarePaymentFailureUnknown(final String? message) =
+      _$SquarePaymentFailureUnknown;
 
   String? get message;
   @JsonKey(ignore: true)
-  _$$_UnknownCopyWith<_$_Unknown> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SquarePaymentFailureUnknownCopyWith<_$SquarePaymentFailureUnknown>
+      get copyWith => throw _privateConstructorUsedError;
 }
